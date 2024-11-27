@@ -51,21 +51,20 @@ jobs:
           path: |
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
-
-      - name: Enter root
-        run: pwd && cd root && pwd && ls
       
       - name: Install Dependency
+        working-directory: ./root
         run: npm install
       
       - name: Build
+        working-directory: ./root
         run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: ./public-dist
+          path: ./root/public-dist
       
       - name: Deploy to GitHub Pages
         id: deployment
