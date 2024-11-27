@@ -53,7 +53,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
 
       - name: Enter root
-        run: cd root
+        run: pwd && cd root && pwd && ls
       
       - name: Install Dependency
         run: npm install
