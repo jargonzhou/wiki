@@ -1,0 +1,54 @@
+created: 20230104152413814
+creator: 林一二
+modified: 20241126230915515
+modifier: zhoujiagen@gmail.com
+title: Mathematics
+type: text/vnd.tiddlywiki
+
+! Terminology
+
+* [[Terminology]]
+
+! Machine Learning
+
+* [[NLP]]
+
+! Tools
+
+* [[IPython]], [[Jupyter]]
+* [[NumPy]]
+* [[pandas]]
+* [[Matplotlib]]
+* [[Scipy]]
+* [[SymPy]]
+* [[statsmodels]]
+* [[NLTK]]
+* [[scikit-learn]]
+* [[R]]
+
+! Frameworks
+
+* [[Chainer]]
+* [[Deeplearning4j]]
+* [[Deepnl]]
+* [[Dynet]]
+* [[Keras]]
+* [[Erick]]
+* [[OpenNMT]]
+* [[PyTorch]]
+* [[spaCy]]
+* Stanford's [[CoreNLP]]
+* [[TensorFlow]]
+* [[TFLearn]]
+* [[Theano]]
+
+
+! Books
+
+* [[Natural Language Processing with Python]]
+* [[Mastering NLP from Foundations to LLMs]]
+
+! References
+
+* [[Bibliography]]
+

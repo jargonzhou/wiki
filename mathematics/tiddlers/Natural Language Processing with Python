@@ -1,0 +1,16 @@
+@Book{Bird2009,
+  author           = {Steven Bird and Ewan Klein and Edward Loper},
+  publisher        = {O’Reilly Media},
+  title            = {Natural Language Processing with Python},
+  year             = {2009},
+  isbn             = {978-0-596-51649-9},
+  abstract         = {This version of the NLTK book is updated for Python 3 and NLTK 3.
+The first edition of the book, published by O'Reilly, is available at http://nltk.org/book_1ed/. (There are currently no plans for a second edition of the book.)},
+  comment          = {504 pages},
+  creationdate     = {2023-06-10T17:58:28},
+  file             = {:Python/Natural Language Processing with Python, 2009.pdf:PDF},
+  groups           = {NLP},
+  modificationdate = {2024-11-21T07:03:32},
+  subtitle         = {Analyzing Text with the Natural Language Toolkit},
+  url              = {https://www.nltk.org/book/},
+}

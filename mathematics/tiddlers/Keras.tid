@@ -1,0 +1,7 @@
+created: 20241126100415868
+creator: zhoujiagen@gmail.com
+modified: 20241126100419342
+modifier: zhoujiagen@gmail.com
+title: Keras
+
+Keras is a high-level neural-network based Python API that runs on CPU or GPU. It supports convolutional and recurrent networks and may run on top of TensorFlow, CNTK, or Theano. The main focus is to enable users fast experimentation . There are many examples of Keras usage in the comparative table: classification, text generation and summarization, tagging, parsing, machine translation, speech recognition, and others.

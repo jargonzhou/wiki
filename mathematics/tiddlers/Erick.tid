@@ -1,0 +1,7 @@
+created: 20241126100538277
+creator: zhoujiagen@gmail.com
+modified: 20241126100539877
+modifier: zhoujiagen@gmail.com
+title: Erick
+
+Erick Rocha Fonseca’s nlpnet is also a Python library for NLP tasks based on neural networks. Convolutional networks enable users to perform part-of-speech tagging, semantic role labeling, and dependency parsing . Most of the architecture is language independent.

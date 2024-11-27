@@ -1,0 +1,199 @@
+created: 20241126073635184
+creator: zhoujiagen@gmail.com
+modified: 20241126101407824
+modifier: zhoujiagen@gmail.com
+tags: [[Machine Learning]] NLP 2024-09-15
+title: NLP
+type: text/vnd.tiddlywiki
+
+---
+
+tags:
+
+* MachineLearning
+* NLP
+* number headings: auto, first-level 1, max 6, 1.1
+* date: 2024-09-15
+
+---
+
+|            |                                                                                                                                        |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 时间         | 内容                                                                                                                                     |
+| 2019-04-14 | reading The Illustrated Word2vec: [ext[https://jalammar.github.io/illustrated-word2vec/]] |
+| 2019-04-16 | 添加word2vec笔记和实践word2vec.ipynb                                                                                                          |
+| 2019-04-19 | reading A Primer on Neural Network Models for Natural Language Processing<br><br>until feature representation                          |
+| 2020-07-15 | 添加NLTK资源                                                                                                                               |
+
+! 1 Tips for Recapture
+
+<!-- 帮助重温的过程总结. -->
+
+# Step 1
+# Step 2
+# Step 3
+# Step 4
+
+! 2 术语
+
+<!-- 记录阅读过程中出现的关键字及其简单的解释. -->
+
+Stemming: 词干还原
+Lemmatization: 词形归并
+lemma:
+Morphplogical Normalization: 词形还原
+sequence-to-sequence (seq2seq) neural networks
+Part-Of-Speech(POS) Tagging: 词性标注
+
+CBOW: continuous bag-of-words
+skip-gram models
+
+Lexis: 词汇学
+
+Semantics: 语义学
+lexemes: 词位
+content words: 实词
+function words: 虚词
+utterance: 说话方式
+signify: 表示...的意思
+symbol/referent: 符号/指示物
+name/thing/sense: 名称/事物/含义
+mental perception: 心理知觉
+mental images: 心理意象
+semantic range: 语义区
+semantic field: 语义场
+hyponymy: 词义之间的上下文关系
+componential analysis: (语义)成分分析
+synonym: 同义词
+antonym: 反义词
+
+collocation: 词的搭配
+idiom: 习语
+homonymy: 同音异义
+polysemy: 一词多义
+pragmatics: 语用学
+discourse analysis: 语篇分析
+
+Phonetics: 语音学
+
+Phonology: 音位学
+
+Morphology: 形态学
+
+Syntax: 句法学
+
+! 3 介绍
+
+<!-- 描述软件的来源、特性、解决的关键性问题等. -->
+
+! 4 动机
+
+<!-- 描述阅读软件源码的动机, 要达到什么目的等. -->
+
+! 5 系统结构
+
+<!-- 描述软件的系统结构, 核心和辅助组件的结构; 系统较复杂时细分展示. -->
+
+! 6 使用
+
+<!-- 记录软件如何使用. -->
+
+!! 6.1 NLTK
+
+* NLTK Corpora: http://www.nltk.org/nltk\_data/
+
+!! 6.2 Lemmatization
+
+State-of-the-art Multilingual Lemmatization: An analysis of state-of-the-art lemmatizers that work for tens of languages
+https://towardsdatascience.com/state-of-the-art-multilingual-lemmatization-f303e8ff1a8
+
+!! 6.3 word2vec
+
+GloVe vector trained on Wikipedia
+GloVe: Global Vectors for Word Representation
+https://nlp.stanford.edu/projects/glove/
+
+Using the Gensim library in python, we can add and subtract word vectors, and it would find the most similar words to the resulting vector. The image shows a list of the most similar words, each with its cosine similarity.
+gensim: Topic Modelling for Humans
+https://radimrehurek.com/gensim/index.html
+models.word2vec – Word2vec embeddings
+https://radimrehurek.com/gensim/models/word2vec.html
+scripts.glove2word2vec – Convert glove format to word2vec
+https://radimrehurek.com/gensim/scripts/glove2word2vec.html
+
+Skipgram with Negative Sampling (SGNS)
+[img[./images/image1.png]]
+
+训练过程
+
+(1) 数据集和模型
+[img[./images/image3.png]]
+[img[./images/image4.png]]
+
+(2) 模型参数调整
+
+input ⦁ output: 向量点积(dot product)
+
+sigmoid在线计算器: https://keisan.casio.com/
+sigmoid(0.2)=0.5498339973124779085592
+sigmoid(-1.11)=0.247870888560429841227
+sigmoid(0.74)=0.6769958562385229973568
+
+We can now use this error score to adjust the embeddings of not, thou, aaron, and taco so that the next time we make this calculation, the result would be closer to the target scores.
+''TODO(zhoujiagen) 如何adjust的?''
+[img[./images/image2.png]]
+
+!! 6.4 Morden deep learning techniques
+
+! 7 数据结构和算法
+
+<!-- 描述软件中重要的数据结构和算法, 支撑过程部分的记录. -->
+
+! 8 过程
+
+<!-- 描述软件中重要的过程性内容, 例如服务器的启动、服务器响应客户端请求、服务器背景活动等. -->
+
+! 9 文献引用
+
+<!-- 记录软件相关和进一步阅读资料: 文献、网页链接等. -->
+
+入门:
+
+* A Primer on Neural Network Models for Natural Language Processing
+* 词嵌入:
+* Recurrent neural network based language model
+* Distributed Representations of Words and Phrases and their Compositionality
+* 深度学习方法:
+* Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank
+
+! 10 其他备注
+
+[[awesome-nlp: 📖 A curated list of resources dedicated to Natural Language Processing (NLP)|https://github.com/keon/awesome-nlp]]
+
+! 11 Courses
+
+[[Stanford CS 224N - Natural Language Processing with Deep Learning|https://web.stanford.edu/class/cs224n/]]
+
+! 12 TODO
+
+* [[Natural Language Processing with PyTorch|https://www.oreilly.com/library/view/natural-language-processing/9781491978221/]]
+* [ext[https://www.kdnuggets.com/2023/06/5-free-books-natural-language-processing-read-2023.html]]
+* [ext[https://www.guvi.in/blog/best-natural-language-processing-books/]]
+* [ext[https://www.analyticsvidhya.com/blog/2023/07/nlp-books-every-data-scientist-must-read/]]
+
+! 13 Applications
+
+Large Language Model
+
+* [[Ollama|https://ollama.com/]]
+** [[starcoder2|https://ollama.com/library/starcoder2]]
+
+! 14 WordNet
+
+* [[wngloss(7WN)|https://wordnet.princeton.edu/documentation/wngloss7wn]]: WordNet系统中使用的术语.
+* [[How to get domain of words using WordNet in Python?|https://stackoverflow.com/questions/21902411/how-to-get-domain-of-words-using-wordnet-in-python]]: [[WordNet Domain resource|http://wndomains.fbk.eu/]]
+
+! 15 VerbNet
+
+* [[VerbNet Homepage|https://verbs.colorado.edu/verbnet/]]
+* [[A Class-Based Verb Lexicon, by Martha Palmer|https://verbs.colorado.edu/~mpalmer/projects/verbnet.html]]

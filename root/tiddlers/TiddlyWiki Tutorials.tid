@@ -1,0 +1,26 @@
+author: zhoujiagen@gmail.com
+created: 20230104152413814
+creator: 林一二
+modified: 20241126054854249
+modifier: zhoujiagen@gmail.com
+tags: TiddlyWiki
+title: TiddlyWiki Tutorials
+type: text/vnd.tiddlywiki
+
+! WikiText
+
+Action: [[WikiText]]
+
+! TidGi
+
+Click {{$:/core/images/edit-button}} button on top-right of this card to start edit.
+
+Visit [ext[教程 (Chinese)|https://tw-cn.netlify.app/]] or [ext[Official Site (English)|https://tiddlywiki.com/]] to learn.
+
+! Tasks
+
+* <$checkbox tag="task"> Skimming basic usages of [[WikiText]]</$checkbox>
+* <$checkbox tag="task"> Publish on GitHub Pages</$checkbox>
+* <$checkbox tag="task"> How to define and use tiddler templates?</$checkbox>
+* <$checkbox tag="task"> Can we create folders for different topics?</$checkbox>
+

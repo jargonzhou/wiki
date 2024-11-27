@@ -1,0 +1,68 @@
+created: 20241126083219818
+creator: zhoujiagen@gmail.com
+modified: 20241126083337240
+modifier: zhoujiagen@gmail.com
+tags: [[Machine Learning]] Scipy
+title: Scipy
+type: text/vnd.tiddlywiki
+
+* 024-01-12
+
+! 1 Tips for Recapture
+
+<!-- 帮助重温的过程总结. -->
+
+# Step 1
+# Step 2
+# Step 3
+# Step 4
+
+! 2 术语
+
+<!-- 记录阅读过程中出现的关键字及其简单的解释. -->
+
+! 3 介绍
+
+<!-- 描述软件的来源、特性、解决的关键性问题等. -->
+<<<.tc-big-quote
+SciPy
+
+SciPy (pronounced "Sigh Pie") is an open-source software for mathematics, science, and engineering. It includes modules for statistics, optimization, integration, linear algebra, Fourier transforms, signal and image processing, ODE solvers, and more.
+<<<
+
+* citing: https://scipy.org/citing-scipy/
+** Pauli Virtanen et al. (2020) ''SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python''. Nature Methods, 17(3), 261-272. DOI: 10.1038/s41592-019-0686-2.
+
+! 4 动机
+
+<!-- 描述阅读软件源码的动机, 要达到什么目的等. -->
+
+! 5 系统结构
+
+<!-- 描述软件的系统结构, 核心和辅助组件的结构; 系统较复杂时细分展示. -->
+
+! 6 使用
+
+<!-- 记录软件如何使用. -->
+
+! 7 数据结构和算法
+
+<!-- 描述软件中重要的数据结构和算法, 支撑过程部分的记录. -->
+
+! 8 过程
+
+<!-- 描述软件中重要的过程性内容, 例如服务器的启动、服务器响应客户端请求、服务器背景活动等. -->
+
+! 9 文献引用
+
+<!-- 记录软件相关和进一步阅读资料: 文献、网页链接等. -->
+
+* [[Doc|https://docs.scipy.org/doc/scipy/]]
+* [[Code|https://github.com/scipy/scipy]]
+
+! 10 其他备注
+
+* Gaël Varoquaux, Emmanuelle Gouillart, Olaf Vahtras. [[Scipy Lecture Notes|https://www.scipy-lectures.org]], 2015 Edition.
+* 2024-11-20 https://scipy-lectures.org/README.html
+* [[Scientific Python Lectures|https://lectures.scientific-python.org/]]
+** [[Code|https://github.com/scipy-lectures/scientific-python-lectures]]

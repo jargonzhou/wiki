@@ -1,0 +1,7 @@
+created: 20241126100606687
+creator: zhoujiagen@gmail.com
+modified: 20241126100608361
+modifier: zhoujiagen@gmail.com
+title: PyTorch
+
+PyTorch is a fast and flexible neural network framework with an imperative paradigm. It builds neural networks on a tape-based autograd system and provides tensor computation with strong GPU acceleration . Recurrent neural networks are mostly used in PyTorch for machine translation, classification, text generation, tagging, and other NLP tasks.

@@ -1,0 +1,290 @@
+created: 20241126050006202
+creator: zhoujiagen@gmail.com
+modified: 20241127022806970
+modifier: zhoujiagen@gmail.com
+tags: [[Common Lisp]] Lisp TableOfContents
+title: Common Lisp
+type: text/vnd.tiddlywiki
+
+! 1 Materials
+
+* [[Common Lisp - wikipedia|https://en.wikipedia.org/wiki/Common_Lisp]]
+* [[CLiki|https://www.cliki.net/]]
+
+<<<.tc-big-quote
+CLiki
+
+CLiki is a [[Common Lisp|https://www.cliki.net/Common%20Lisp]] wiki hosted by [[The Common Lisp Foundation|http://cl-foundation.org/]]. CLiki contains resources for learning about and using the programming language [[Common Lisp|https://www.cliki.net/Common%20Lisp]], and information about [[DFSG|https://www.cliki.net/DFSG]]-compliant ''free software'' implemented in Common Lisp.
+<<<
+
+* [[Common-Lisp.net|https://common-lisp.net/]]
+
+<<<.tc-big-quote
+Common-Lisp.net
+
+This site is one among many gateways to Common Lisp. Its goal is to provide the Common Lisp community with development resources and to work as a starting point for new programmers.
+<<<
+
+!! 1.1 Specifications
+
+* \[\[spec.CLHS(Common Lisp HyperSpec)]]
+* The Common Lisp Standard: ANSI INCITS 226-1994 (formerly ANSI X3.226:1994)
+** [[Most recent standard of Common Lisp|https://stackoverflow.com/questions/33848241/most-recent-standard-of-common-lisp]]
+* \[\[book.Common Lisp- The Language]]
+
+!! 1.2 Books
+
+* https://lisp-lang.org/books
+** \[\[book.The Common Lisp Cookbook]]
+* https://www.cliki.net/Lisp%20books
+* https://common-lisp.net/documentation
+
+!! 1.3 Implementations
+
+* https://common-lisp.net/implementations
+
+* https://lisp-lang.org/wiki/article/implementations
+
+* \[\[SBCL(Steel Bank Common Lisp)]]
+
+* [[CMUCL|https://gitlab.common-lisp.net/cmucl/cmucl]]
+
+!! 1.4 Koans
+
+> In programming Koans are exercises, puzzles, or problems - typically presented as a suite of unit tests - intended to get developers up to speed with the idioms and features of a programming language.
+
+* https://github.com/google/lisp-koans
+
+> Common Lisp Koans is a language learning exercise in the same vein as the ruby koans, python koans and others. It is a port of the prior koans with some modifications to highlight lisp-specific features. Structured as ordered groups of broken unit tests, the project guides the learner progressively through many Common Lisp language features.
+
+!! 1.5 Style Guide
+
+* [[Google Common Lisp Style Guide|https://google.github.io/styleguide/lispguide.xml]]
+
+! 2 Tools
+
+* [[Development tools of CLiki|https://www.cliki.net/Development]]
+* [[Awesome Common Lisp Learning|https://github.com/GustavBertram/awesome-common-lisp-learning]]
+* [[Awesome Common Lisp|https://github.com/CodyReichert/awesome-cl]]: A curated list of awesome Common Lisp frameworks, libraries and other shiny stuff.
+* [[common-lisp-libraries|https://github.com/cl-library-docs/common-lisp-libraries]]: Common Lisp documentation - libraries or the HyperSpec - isn't known to be particularly "modern" or "attractive".
+
+!! 2.1 Editors
+
+* \[\[index.SLIME]]
+* \[\[Alive]]
+* [[Lem|https://github.com/lem-project/lem]]: Lem is the editor/IDE well-tuned for Common Lisp.
+* \[\[index.SLY]]
+
+!! 2.2 LispWorks
+
+* http://www.lispworks.com/downloads/index.html
+
+!! 2.3 Portacle
+
+* https://portacle.github.io/
+
+> \[!info] Portacle
+> Portacle is a complete IDE for Common Lisp that you can take with you on a USB stick. It is multi-platform and can be run on Windows, OS X, and Linux. Since it does not require any complicated installation process, it is set up and running in no time.
+>
+> It lends itself very well both to absolute beginners of Lisp that just need a good starting point, as well as advanced users that want to minimise the time spent getting everything ready.
+> The following software packages are included in Portacle:
+>
+> * Emacs
+> * SBCL
+> * Quicklisp
+> * Git
+
+无法打开的情况处理: [[Portacle Does Not Launch on MacOS Sierra 10.12.1|https://github.com/portacle/portacle/issues/53]]
+
+* windows:
+** `D:\software\portacle\portacle\all\quicklisp\local-projects\alive-lsp`
+
+!! 2.4 Roswell
+
+* \[\[Roswell]]
+
+!! 2.5 SQL
+
+!!! 2.5.1 CLSQL
+
+> A multi-platform SQL interface for Common Lisp
+
+* [[CLSQL Users' Guide|http://clsql.kpe.io/manual/]]
+
+安装:
+
+```shell
+brew install mysql-connector-c
+```
+
+```lisp
+(ql:quickload :clsql)
+```
+
+建立连接:
+
+```lisp
+> (connected-databases)
+NIL
+> (database-name-from-spec '("127.0.0.1" "movies" "root" "admin") :mysql)
+"127.0.0.1/movies/root"
+> (connect '("127.0.0.1" "movies" "root" "admin") :database-type :mysql)
+<CLSQL-MYSQL:MYSQL-DATABASE 127.0.0.1/movies/root OPEN {1004683993}>
+> (connected-databases)
+(#<CLSQL-MYSQL:MYSQL-DATABASE 127.0.0.1/movies/root OPEN {1004683993}>)
+> (disconnect)
+T
+> (connected-databases)
+NIL
+
+> (connect '("127.0.0.1" "movies" "root" "admin") :database-type :mysql)
+<CLSQL-MYSQL:MYSQL-DATABASE 127.0.0.1/movies/root OPEN {10046878B3}>
+```
+
+执行查询:
+
+```lisp
+> (query "SELECT  ORDINAL_POSITION, COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_DEFAULT, COLUMN_COMMENT FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'movies' AND TABLE_NAME = 'Movies' ORDER BY ORDINAL_POSITION;")
+((1 "title" "varchar(100)" "NO" NIL "") (2 "year" "int(11)" "NO" NIL "")
+ (3 "length" "int(11)" "YES" NIL "") (4 "genre" "varchar(10)" "YES" NIL "")
+ (5 "studioName" "varchar(30)" "YES" NIL "")
+ (6 "producerC#" "int(11)" "YES" NIL ""))
+("ORDINAL_POSITION" "COLUMN_NAME" "COLUMN_TYPE" "IS_NULLABLE" "COLUMN_DEFAULT"
+ "COLUMN_COMMENT")
+
+> (query "SELECT * FROM Movies;")
+NIL
+("title" "year" "length" "genre" "studioName" "producerC#")
+```
+
+关闭连接:
+
+```lisp
+> (connected-databases)
+(#<CLSQL-MYSQL:MYSQL-DATABASE 127.0.0.1/movies/root OPEN {10047F2453}>)
+> (find-database "127.0.0.1/movies/root")
+<CLSQL-MYSQL:MYSQL-DATABASE 127.0.0.1/movies/root OPEN {10047F2453}>
+1
+> (disconnect :database (find-database "127.0.0.1/movies/root"))
+T
+> (find-database "127.0.0.1/movies/root")
+
+debugger invoked on a SQL-DATABASE-ERROR in thread
+<THREAD "main thread" RUNNING {10004F84C3}>:
+  A database error occurred: NIL / NIL
+  There exists no database called 127.0.0.1/movies/root.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return nil.
+  1: [ABORT   ] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV (FIND-DATABASE "127.0.0.1/movies/root") #<NULL-LEXENV>)
+0] 0
+NIL
+> (connected-databases)
+NIL
+```
+
+!!! 2.5.2 cl-dbi
+
+> [[Database independent interface for Common Lisp|https://github.com/fukamachi/cl-dbi]]
+
+安装:
+
+```lisp
+(ql:quickload :cl-dbi)
+```
+
+简单使用:
+
+```lisp
+(defvar *connection*
+  (dbi:connect :mysql
+               :host "127.0.0.1"
+               :port 3306
+               :database-name "movies"
+               :username "root"
+               :password "admin"))
+*CONNECTION*
+```
+
+```lisp
+(let* ((query (dbi:prepare *connection*
+                           "SELECT * FROM Movies WHERE `producerC#` = ?"))
+       (query (dbi:execute query 1)))
+  (loop for row = (dbi:fetch query)
+        while row
+        ;; process "row".
+        do (print row)))
+
+(:|title| "title" :|year| 2000 :|length| 120 :|genre| "genre" :|studioName|
+ "studioName" :|producerC#| 1)
+NIL
+```
+
+```lisp
+> (dbi:fetch-all (dbi:execute (dbi:prepare *connection* "SELECT * FROM Movies WHERE `producerC#` = ?")
+                            1))
+((:|title| "title" :|year| 2000 :|length| 120 :|genre| "genre" :|studioName|
+  "studioName" :|producerC#| 1))
+```
+
+!! 2.6 Threads
+
+* [[The Common Lisp Cookbook – Threads|https://lispcookbook.github.io/cl-cookbook/process.html]]
+
+Bordeaux: \[\[Bordeaux]]
+
+!! 2.7 Web Application
+
+!!! 2.7.1 AllegroServe
+
+* https://github.com/franzinc/aserve
+
+> AllegroServe, a web server written in Common Lisp
+
+!!! 2.7.2 Caveman2
+
+* \[\[Caveman2]]
+
+!!! 2.7.3 Hunchentoot
+
+* https://github.com/edicl/hunchentoot
+
+> Hunchentoot is a web server written in Common Lisp and at the same time a toolkit for building dynamic websites. As a stand-alone web server, Hunchentoot is capable of HTTP/1.1 chunking (both directions), persistent connections (keep-alive), and SSL.
+
+!!! 2.7.4 Clack
+
+* https://github.com/fukamachi/clack
+
+> Clack - Web Application Environment for Common Lisp
+
+!!! 2.7.5 woo
+
+* https://github.com/fukamachi/woo
+
+> Woo is a fast non-blocking HTTP server built on top of [[libev|http://software.schmorp.de/pkg/libev.html]]. Although Woo is written in Common Lisp, it aims to be the fastest web server written in any programming language.
+
+!! 2.8 Docker
+
+* [[Building Docker images for Common Lisp applications|https://fukamachi.hashnode.dev/building-docker-images-for-common-lisp-applications]]
+
+    clfoundation/sbcl
+    fukamachi/sbcl
+
+!! 2.9 Testing
+
+* [[Unit Testing in awesome-cl|https://github.com/CodyReichert/awesome-cl?tab=readme-ov-file#unit-testing]]
+* [[Comparison of Common Lisp Testing Frameworks (28 Aug 2023 Edition)|https://sabracrolleton.github.io/testing-framework]]
+
+! 3 FAQ
+
+* [[SBCL warning that a variable is defined but never used|https://stackoverflow.com/questions/31225756/sbcl-warning-that-a-variable-is-defined-but-never-used]]
+
+```lisp
+(defun worker-2 (context p)
+  (declare (ignore context))
+  (print p))
+```

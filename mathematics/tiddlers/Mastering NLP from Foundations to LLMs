@@ -1,0 +1,14 @@
+@Book{Gazit2024,
+  author           = {Lior Gazit and Meysam Ghaffari},
+  publisher        = {Packt},
+  title            = {Mastering NLP from Foundations to LLMs},
+  year             = {2024},
+  isbn             = {978-1-80461-918-6},
+  comment          = {Apply advanced rule-based techniques to LLMs and solve real-world business problems using Python
+
+340 pages},
+  creationdate     = {2024-11-20T22:13:05},
+  groups           = {NLP},
+  modificationdate = {2024-11-20T22:15:31},
+  url              = {https://www.packtpub.com/en-be/product/mastering-nlp-from-foundations-to-llms-9781804619186},
+}

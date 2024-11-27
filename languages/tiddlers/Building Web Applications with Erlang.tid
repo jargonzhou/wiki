@@ -1,0 +1,25 @@
+bibtex-author: Zachary Kessin
+bibtex-entry-type: book
+bibtex-publisher: O’Reilly Media
+bibtex-title: Building Web Applications with Erlang
+bibtex-year: 2012
+created: 20241126095606305
+creator: zhoujiagen@gmail.com
+modified: 20241126095906781
+modifier: zhoujiagen@gmail.com
+tags: bibtex-entry
+title: Building Web Applications with Erlang
+type: text/vnd.tiddlywiki
+
+```
+@Book{Kessin2012,
+  author           = {Zachary Kessin},
+  publisher        = {O’Reilly Media},
+  title            = {Building Web Applications with Erlang},
+  year             = {2012},
+  isbn             = {978-1-449-30996-1},
+  file             = {:Erlang/Building Web Applications with Erlang, 2012.pdf:PDF},
+  groups           = {Erlang},
+  modificationdate = {2024-08-25T10:32:19},
+}
+```

@@ -1,0 +1,20 @@
+created: 20241126100717010
+creator: zhoujiagen@gmail.com
+modified: 20241126101035054
+modifier: zhoujiagen@gmail.com
+tags: 
+title: Bibliography
+type: text/vnd.tiddlywiki
+
+* Data Wrangling with Python
+* Python for Data Analysis
+* Hands-On Machine Learning with Scikit-Learn & TensorFlow
+* Python深度学习 Deep Learning with Python, Francois Chollet, Manning Publication
+* 深入理解TensorFlow架构设计与实现. 彭靖田, 林健,白小龙.
+* Scala机器学习. Alex Kozlv.
+
+
+* <<ref [[Mastering NLP from Foundations to LLMs]]>>
+* <<ref [[Natural Language Processing with Python]]>>
+
+<<bibliography>>
