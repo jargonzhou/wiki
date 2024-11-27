@@ -1,6 +1,6 @@
 # ref https://github.com/tiddly-gittly/TidGi-Official-Website/blob/master/.github/workflows/gh-pages.yml
 
-name: Manual workflow
+name: Manual Publish Pages
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -58,7 +58,7 @@ jobs:
       
       - name: Build
         working-directory: ./root
-        run: npm run build
+        run: npm run buildonline
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
