@@ -1,0 +1,29 @@
+created: 20241127050218570
+creator: jargonzhou
+modified: 20241127091149448
+modifier: jargonzhou
+tags: TableOfContents
+title: Lisp
+type: text/vnd.tiddlywiki
+
+! 1 Materials
+
+* [[Lisp - wikipedia|https://en.wikipedia.org/wiki/Lisp_\(programming_language\)]]
+* [[List of Lisp-family programming languages - wikipedia|https://en.wikipedia.org/wiki/List_of_Lisp-family_programming_languages]]
+* Awesome Lisp Languages: https://github.com/dundalek/awesome-lisp-languages
+
+! 2 What is a Lisp image?
+
+* [[stackoverflow|https://stackoverflow.com/questions/480083/what-is-a-lisp-image]]
+* The image is usually a file, a dump of the memory of a Lisp system, contains all functions, variable values, symbols, etc of the Lisp system.
+* [[SBCL - Saving a Core Image|https://www.sbcl.org/manual/index.html#Saving-a-Core-Image]]
+* [[Base Lisp Image|https://github.com/40ants/base-lisp-image]]: Base image for Common Lisp projects with SBCL or CCL and latest ASDF, Qlot and Roswell
+
+! 3 mal - Make a Lisp
+
+* https://github.com/kanaka/mal
+** [[The Make-A-Lisp Process|https://github.com/kanaka/mal/blob/master/process/guide.md]]
+
+# Mal is a Clojure inspired Lisp interpreter
+# Mal is a learning tool
+# Mal is implemented in 89 languages (95 different implementations and 115 runtime modes)

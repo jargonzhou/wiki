@@ -1,0 +1,17 @@
+created: 20241127061352055
+creator: jargonzhou
+modified: 20241127061501717
+modifier: jargonzhou
+tags: [[Common Lisp]] Test
+title: Rove
+
+
+<<<.tc-big-quote
+Rove
+
+Rove is a unit testing framework for Common Lisp applications. This is intended to be a successor of Prove.
+<<<
+
+! References
+
+* [[Code|https://github.com/fukamachi/rove]]

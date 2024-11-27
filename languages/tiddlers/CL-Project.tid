@@ -1,0 +1,34 @@
+created: 20241127061521601
+creator: jargonzhou
+modified: 20241127061708904
+modifier: jargonzhou
+tags: [[Common Lisp]] Skaffold
+title: CL-Project
+
+* 2024-08-17
+
+! Skaffold
+
+example: 
+
+* https://lispcookbook.github.io/cl-cookbook/getting-started.html#creating-a-new-project
+* https://lispcookbook.github.io/cl-cookbook/systems.html#create-a-project-skeleton
+
+action: 
+
+* `github/hack-modeling/Lisp/common-lisp/common-lisp-cookbook/01-getting-started/example-cl-project`
+
+```lisp
+(ql:quickload "cl-project")
+
+(cl-project:make-project #p"lib/cl-sample/"
+:author "Eitaro Fukamachi"
+:email "e.arrows@gmail.com"
+:license "LLGPL"
+:depends-on '(:clack :cl-annot))
+```
+
+
+! References
+
+* [[Code|https://github.com/fukamachi/cl-project]]: Generate modern project skeletons

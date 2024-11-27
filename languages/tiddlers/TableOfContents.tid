@@ -1,15 +1,15 @@
 caption: Contents
 created: 20241126102445146
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 list-after: $:/core/ui/SideBar/Open
-modified: 20241126103906348
-modifier: zhoujiagen@gmail.com
+modified: 20241127065031910
+modifier: jargonzhou
 tags: $:/tags/SideBar
 title: TableOfContents
 type: text/vnd.tiddlywiki
 
 <div class="tc-table-of-contents">
 
-<<toc 'TableOfContents'>>
+<<toc-selective-expandable'TableOfContents'>>
 
 </div>

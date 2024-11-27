@@ -1,0 +1,17 @@
+created: 20241127084758629
+creator: jargonzhou
+modified: 20241127085333450
+modifier: jargonzhou
+tags: TableOfContents [[Linear Algebra]]
+title: Linear Algebra
+
+
+* Scalar, Vector, Matrices
+* vector multiplication: dot product, cross product
+* Euclidean norm
+* matrix transpose
+* determinants
+* eigenvalue, eigenvector
+* eigenvalue decomposition
+* singular value decomposition
+

@@ -1,7 +1,7 @@
 created: 20241126100144341
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 modified: 20241126100146479
-modifier: zhoujiagen@gmail.com
+modifier: jargonzhou
 title: Deeplearning4j
 
 Deeplearning4j is a deep learning Java programming library, but it also has a Python API, Keras that will be described below. Distributed CPUs and GPUs, parallel training via iterative reduce, and micro-service architecture adaptation are its main features . Vector space modeling enables the tool to solve text-mining problems. Parts of speech (PoS) tagging, dependency parsing, and word2vec for creating word embedding are discussed in the documentation.

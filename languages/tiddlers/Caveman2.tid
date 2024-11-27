@@ -1,0 +1,145 @@
+created: 20241127060718983
+creator: jargonzhou
+modified: 20241127061031570
+modifier: jargonzhou
+tags: [[Common Lisp]] Web Caveman Clack
+title: Caveman2
+type: text/vnd.tiddlywiki
+
+* 2024-08-17
+
+<<<.tc-big-quote
+Caveman2
+
+Lightweight web application framework
+<<<
+
+[[Clack|https://github.com/fukamachi/clack]]: Web Application Environment for Common Lisp.
+Server:
+
+* [[Hunchentoot|http://weitz.de/hunchentoot/]]
+* [[Wookie|http://wookie.beeets.com/]]
+* [[Toot|https://github.com/gigamonkey/toot]]
+* [[Woo|https://github.com/fukamachi/woo]]
+
+<<<.tc-big-quote
+Clack
+
+Clack is a web application environment for Common Lisp inspired by Python's WSGI and Ruby's Rack.
+<<<
+
+
+[[Lack|https://github.com/fukamachi/lack]]: Lack, the core of Clack
+
+<<<.tc-big-quote
+Lack
+
+Lack is a Common Lisp library which allows web applications to be constructed of modular components. It was originally a part of [[Clack|https://github.com/fukamachi/clack]], however it's going to be rewritten as an individual project since Clack v2 with performance and simplicity in mind.
+
+The scope is defining Lack applications and wrapping it up with Lack middlewares. On the other hand, [[Clack|https://github.com/fukamachi/clack]] is an abstraction layer for HTTP and HTTP servers and provides unified API.
+<<<
+
+
+! Skaffold
+
+安装, 创建模板项目:
+
+```lisp
+> (sb-posix:getcwd)
+"/Users/zhoujiagen/workspace/polyglot-languages/common-lisp/web-app/caveman2"
+
+(ql:quickload :caveman2)
+
+(caveman2:make-project #P"demo-web"
+                       :author "zhoujiagen")
+```
+
+添加ASDF配置文件`~/.config/common-lisp/source-registry.conf.d/caveman2.conf`:
+
+```lisp
+(:tree "/Users/zhoujiagen/workspace/polyglot-languages/common-lisp/web-app/caveman2/")
+```
+
+定制:
+
+* `src/config.lisp`
+
+```lisp
+
+(defconfig :common
+    `(:databases
+      ((:maindb :mysql
+		:host "127.0.0.1"
+		:port 3306
+		:database-name "movies"
+		:username "root"
+		:password "*****"))))
+
+(defconfig |development|
+    '(:databases
+      ((:maindb :mysql
+	:host "127.0.0.1"
+	:port 3306
+	:database-name "movies"
+	:username "root"
+	:passowrd "*****"))))
+```
+
+* `src/db.lisp`
+
+```lisp
+(:export ...
+  :find-movies-from-db)
+
+(defun find-movies-from-db (|id|)
+  (with-connection (db)
+    (let* ((query (dbi:prepare *connection*
+                               "SELECT * FROM Movies WHERE `producerC#` = ?"))
+	   (query (dbi:execute query |id|))
+	   (result nil))
+      (loop for row = (dbi:fetch query)
+         while row
+         do (push row result))
+      result)))
+```
+
+* `src/web.lisp`
+
+```lisp
+(defroute "/user.json" (&key |id|)
+  (let ((movies (find-movies-from-db |id|)))
+    (render-json (car movies))))
+```
+
+启动:
+
+```lisp
+(asdf:load-system "demo-web")
+(demo-web:start :port 8080)
+(demo-web:stop)
+```
+
+输出:
+
+    http://localhost:8080/user.json?id=1
+    {"title":"title","year":2000,"length":120,"genre":"genre","studioName":"studioName","producerC#":1}
+
+    http://localhost:8080/user.json?id=2
+    null
+
+```lisp
+Hunchentoot server is started.
+Listening on 127.0.0.1:8080.
+S(CLACK.HANDLER::HANDLER
+   :SERVER :HUNCHENTOOT
+   :ACCEPTOR #<SB-THREAD:THREAD "clack-handler-hunchentoot" RUNNING
+                {100433C8E3}>)
+> 127.0.0.1 - [03/Sep/2019:11:04:29 +08:00] "GET /user.json?id=1 HTTP/1.1" 200 99 "-" "-"
+127.0.0.1 - [03/Sep/2019:11:04:39 +08:00] "GET /user.json?id=2 HTTP/1.1" 200 4 "-" "-"
+127.0.0.1 - [03/Sep/2019:11:04:45 +08:00] "GET /user.json?id=1 HTTP/1.1" 200 99 "-" "-"
+```
+
+! References
+
+* [[Code|https://github.com/fukamachi/caveman]]
+

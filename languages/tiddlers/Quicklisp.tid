@@ -1,0 +1,150 @@
+created: 20241127060023197
+creator: jargonzhou
+modified: 20241127060319473
+modifier: jargonzhou
+tags: [[Common Lisp]] Quicklisp
+title: Quicklisp
+type: text/vnd.tiddlywiki
+
+* 2024-08-17
+
+<<<.tc-big-quote
+Quicklisp
+
+Quicklisp is a library manager for Common Lisp. It works with your existing Common Lisp implementation to download, install, and load any of over 1,500 libraries with a few simple commands.
+
+Quicklisp is easy to install and works with ABCL, Allegro CL, Clasp, Clozure CL, CLISP, CMUCL, ECL, LispWorks, MKCL, SBCL, and Scieneer CL, on Linux, Mac OS X, and Windows. The libraries were last updated on June 19, 2023.
+
+* The Quicklisp beta includes the following projects: https://www.quicklisp.org/beta/releases.html
+<<<
+
+! Skaffold
+
+```shell
+curl -O https://beta.quicklisp.org/quicklisp.lisp
+sbcl --load quicklisp.lisp
+* (quicklisp-quickstart:install)
+...
+  ==== quicklisp installed ====
+
+    To load a system, use: (ql:quickload "system-name")
+
+    To find systems, use: (ql:system-apropos "term")
+
+    To load Quicklisp every time you start Lisp, use: (ql:add-to-init-file)
+
+    For more information, see http://www.quicklisp.org/beta/
+
+NIL
+```
+
+To find out what's available in Quicklisp:
+
+```lisp
+* (ql:system-apropos "vecto")
+```
+
+To load software:
+
+```lisp
+* (ql:quickload "vecto")
+...
+; Loading "vecto"
+[package net.tuxee.aa]............................
+[package net.tuxee.aa-bin]........................
+[package net.tuxee.paths].........................
+[package net.tuxee.vectors].......................
+[package impl-specific-gray]......................
+[package trivial-gray-streams]....................
+[package salza2]..................................
+[package zpng]....................................
+[package zpb-ttf].................................
+[package vecto]........
+("vecto")
+```
+
+To remove software:
+
+```lisp
+* (ql:uninstall "vecto")
+T
+```
+
+To load Quicklisp when you start Lisp:
+
+```lisp
+* (ql:add-to-init-file)
+I will append the following lines to #P"/Users/zhang/.sbclrc":
+
+  ;;; The following lines added by ql:add-to-init-file:
+  #-quicklisp
+  (let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp"
+                                         (user-homedir-pathname))))
+    (when (probe-file quicklisp-init)
+      (load quicklisp-init)))
+
+Press Enter to continue.
+
+#P"/Users/zhang/.sbclrc"
+
+
+;;;
+;;; in case of forget to run this
+;;;
+* (quicklisp-quickstart:install)
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD tid=6383 "main thread" RUNNING {1003F20133}>:
+  Quicklisp has already been installed. Load #P"/home/zhoujiagen/quicklisp/setup.lisp" instead.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [LOAD-SETUP] Load #P"/home/zhoujiagen/quicklisp/setup.lisp"
+  1: [ABORT     ] Exit debugger, returning to top level.
+
+(QUICKLISP-QUICKSTART:INSTALL :PATH NIL :PROXY NIL :CLIENT-URL NIL :CLIENT-VERSION NIL :DIST-URL NIL :DIST-VERSION NIL)
+   source: (ERROR "Quicklisp has already been installed. Load ~S instead."
+                  SETUP-FILE)
+0] 1
+* (load #P"/home/zhoujiagen/quicklisp/setup.lisp")
+T
+```
+
+To install and configure SLIME:
+
+```lisp
+* (ql:quickload "quicklisp-slime-helper")
+
+* (quit)
+```
+
+To get updated software:
+
+```lisp
+; To get updated software
+* (ql:update-dist "quicklisp")
+You already have the latest version of "quicklisp": 2023-10-21.
+NIL
+```
+
+To update the Quicklisp client:
+
+```lisp
+* (ql:update-client)
+The most up-to-date client, version 2021-02-13, is already installed.
+T
+```
+
+To see what systems depend on a particular system:
+
+```lisp
+* (ql:who-depends-on "vecto")
+("3b-swf" "cl-geometry-tests" "cl-rrt.benchmark" "cl-rrt.test"
+ "com.elbeno.curve" "hh-web" "lispbuilder-sdl-vecto" "open-vrp" "open-vrp-lib"
+ "vectometry")
+```
+
+! Quickdocs
+
+* [[Quickdocs|https://quickdocs.org/]]: Find Common Lisp libraries shipped by Quicklisp

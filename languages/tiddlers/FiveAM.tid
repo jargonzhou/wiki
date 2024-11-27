@@ -1,0 +1,19 @@
+created: 20241127062109506
+creator: jargonzhou
+modified: 20241127062223255
+modifier: jargonzhou
+tags: [[Common Lisp]] Testing
+title: FiveAM
+type: text/vnd.tiddlywiki
+
+* 2024-10-27
+
+! Usage
+
+* The Common Lisp Cookbook - Testing and Continuous Integration
+
+! References
+
+* [[Code|https://github.com/lispci/fiveam]]
+* [[Doc|https://fiveam.common-lisp.dev/docs/index.html]]
+

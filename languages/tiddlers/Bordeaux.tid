@@ -1,0 +1,88 @@
+created: 20241127060403526
+creator: jargonzhou
+modified: 20241127060659133
+modifier: jargonzhou
+tags: [[Common Lisp]] Concurrency Bordeaux
+title: Bordeaux
+
+<<<.tc-big-quote
+Bordeaux-Threads is a Common Lisp threading library.
+
+It exposes generic primitives required for synchronization in multi-threading programming, such as threads, mutexes, semaphores and condition variables, as well as some atomic operations.
+<<<
+
+! Usage
+
+With [[Quicklisp]]:
+
+```lisp
+; Windwos
+> (member :thread-support *FEATURES*)
+NIL
+; Windows WSL
+> (member :thread-support *FEATURES*)
+(:THREAD-SUPPORT :QUICKLISP :ASDF3.3 :ASDF3.2 :ASDF3.1 :ASDF3 :ASDF2 :ASDF
+ :OS-UNIX :NON-BASE-CHARS-EXIST-P :ASDF-UNICODE :ARENA-ALLOCATOR :X86-64
+ :GENCGC :64-BIT :ANSI-CL :COMMON-LISP :ELF :IEEE-FLOATING-POINT :LINUX
+ :LITTLE-ENDIAN :PACKAGE-LOCAL-NICKNAMES :SB-LDB :SB-PACKAGE-LOCKS :SB-THREAD
+ :SB-UNICODE :SBCL :UNIX)
+```
+
+```lisp
+> (ql:quickload :bt-semaphore)
+To load "bt-semaphore":
+  Load 2 ASDF systems:
+    asdf bordeaux-threads
+  Install 1 Quicklisp release:
+    bt-semaphore
+; Fetching #<URL "http://beta.quicklisp.org/archive/bt-semaphore/2018-07-11/bt-semaphore-20180711-git.tgz">
+; 4.09KB
+==================================================
+4,185 bytes in 0.00 seconds (0.00KB/sec)
+; Loading "bt-semaphore"
+; Loading "bt-semaphore"
+[package alexandria]..............................
+[package alexandria-2]............................
+[package global-vars].............................
+[package trivial-garbage].........................
+[package bordeaux-threads]........................
+[package bordeaux-threads-2]......................
+[package bt-semaphore]
+(:BT-SEMAPHORE)
+```
+
+```lisp
+> (member :thread-support *FEATURES*)
+(:THREAD-SUPPORT :QUICKLISP :SB-BSD-SOCKETS-ADDRINFO :ASDF3.3 :ASDF3.2 :ASDF3.1
+ :ASDF3 :ASDF2 :ASDF :OS-MACOSX :OS-UNIX :NON-BASE-CHARS-EXIST-P :ASDF-UNICODE
+ :X86-64 :64-BIT :64-BIT-REGISTERS :ALIEN-CALLBACKS :ANSI-CL :AVX2 :BSD
+ :C-STACK-IS-CONTROL-STACK :CALL-SYMBOL :COMMON-LISP :COMPACT-INSTANCE-HEADER
+ :COMPARE-AND-SWAP-VOPS :CYCLE-COUNTER :DARWIN :FP-AND-PC-STANDARD-SAVE :GENCGC
+ :IEEE-FLOATING-POINT :IMMOBILE-CODE :IMMOBILE-SPACE :INODE64 :INTEGER-EQL-VOP
+ :LINKAGE-TABLE :LITTLE-ENDIAN :MACH-EXCEPTION-HANDLER :MACH-O
+ :OS-PROVIDES-BLKSIZE-T :OS-PROVIDES-DLADDR :OS-PROVIDES-DLOPEN
+ :OS-PROVIDES-PUTWC :OS-PROVIDES-SUSECONDS-T :PACKAGE-LOCAL-NICKNAMES
+ :RELOCATABLE-HEAP :SB-CORE-COMPRESSION :SB-DOC :SB-EVAL :SB-LDB
+ :SB-PACKAGE-LOCKS :SB-SIMD-PACK :SB-SIMD-PACK-256 :SB-SOURCE-LOCATIONS
+ :SB-THREAD :SB-UNICODE :SBCL :STACK-ALLOCATABLE-CLOSURES
+ :STACK-ALLOCATABLE-FIXED-OBJECTS :STACK-ALLOCATABLE-LISTS
+ :STACK-ALLOCATABLE-VECTORS :STACK-GROWS-DOWNWARD-NOT-UPWARD
+ :UNDEFINED-FUN-RESTARTS :UNIX :UNWIND-TO-FRAME-AND-CALL-VOP)
+ > bt:*supports-threads-p*
+ T
+ >
+```
+
+! Constructs
+
+* Threads
+* Locks
+* Condition Variables
+* Semaphores
+* Atomics
+* Timeouts
+
+! References
+
+* [[Code|https://github.com/sionescu/bordeaux-threads]]
+* [[Bordeaux Threads APIv2|https://blog.cddr.org/posts/2023-05-27-bordeaux-threads-apiv2/]]

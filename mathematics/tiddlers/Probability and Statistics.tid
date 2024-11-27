@@ -1,0 +1,26 @@
+created: 20241127085339586
+creator: jargonzhou
+modified: 20241127090109030
+modifier: jargonzhou
+tags: [[Probability and Statistics]] TableOfContents
+title: Probability and Statistics
+
+
+* trail/experiment, sample space, event
+
+relationship between events:
+
+* complementary event
+* union and intersection
+* mutually exclusive
+* independent
+
+discrete random variables:
+
+* probability mass function(PMF)
+* probability density function(PDF)
+* cumulative distribution function(CDF)
+
+maximum likelihood estimation(MLE)
+
+Bayesian estimation

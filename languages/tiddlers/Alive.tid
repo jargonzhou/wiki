@@ -1,0 +1,87 @@
+created: 20241127061751513
+creator: jargonzhou
+modified: 20241127062030214
+modifier: jargonzhou
+tags: VSCode [[Common Lisp]] Alive
+title: Alive
+
+* version: 0.4.4. - 2024-08-17
+
+<<<.tc-big-quote
+Alive
+
+The Average Lisp VSCode Environment
+<<<
+
+! Installation
+
+```shell
+cd ~/quicklisp/local-projects
+git clone https://github.com/nobody-famous/alive-lsp.git
+➜  alive-lsp git:(main) ls
+README-dev.md README.md     alive-lsp.asd clue          clue.asd      run-server.sh run-tests.ps1 run-tests.sh  src           test
+
+✗ rlwrap sbcl
+* (ql:quickload "bordeaux-threads")
+* (ql:quickload "usocket")
+* (ql:quickload "cl-json")
+* (ql:quickload "flexi-streams")
+
+* (ql:quickload "alive-lsp")
+* (alive/server::start :port 8006)
+#<SB-THREAD:THREAD "Alive LSP Server" RUNNING {10034D5D73}>
+
+# Alive VSCode Settings
+Lsp > Install:Path
+# MacOS
+/Users/zhang/quicklisp/local-projects/alive-lsp
+# Windwos WSL
+/home/zhoujiagen/quicklisp/local-projects/alive-lsp
+Lsp > Remote:Port
+8006
+```
+
+! Usage
+
+```lisp
+cl-user >(+ 1 1)
+(+ 1 1)
+2
+```
+
+Load file:
+
+```lisp
+; cat hello.lsp
+(defun hello-world ()
+  "The Common Lisp HelloWorld"
+  (format t "Hello, Common Lisp!!~%"))
+
+; VSCode command
+> Alive: Load File Into REPL
+; compiling file "/Users/zhang/workspace/gitlab/learning-lisp/codes/common-lisp/example/hello.lisp" (written 24 DEC 2023 09:07:26 PM):
+; processing (DEFUN HELLO-WORLD ...)
+; wrote /Users/zhang/workspace/gitlab/learning-lisp/codes/common-lisp/example/hello.fasl
+; compilation finished in 0:00:00.009
+
+cl-user >(hello-world)
+Hello, Common Lisp!!
+NIL
+```
+
+Close:
+
+```lisp
+cl-user >(exit)
+Connection got disposed.
+cl-user >(+ 1 1)
+(+ 1 1)
+Language client is not ready yet
+; Restart VSCode
+```
+
+
+! References
+
+* [[Alive: The Average Lisp VSCode Environment|https://github.com/nobody-famous/alive]]: Common Lisp Extension for VSCode
+* [[alive-lsp|https://github.com/nobody-famous/alive-lsp]]: Language Server Protocol implementation for use with the Alive extension

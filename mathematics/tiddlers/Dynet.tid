@@ -1,7 +1,7 @@
 created: 20241126100356727
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 modified: 20241126100358217
-modifier: zhoujiagen@gmail.com
+modifier: jargonzhou
 title: Dynet
 
 Dynet is a tool developed by Carnegie Mellon University and many others. It supports C++ and Python languages, runs on either CPU or GPU . Dynet is based on the dynamic declaration of network structure . This tool was used for creating outstanding systems for NLP problems including syntactic parsing, machine translation, morphological inflection, and many others.

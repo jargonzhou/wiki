@@ -1,7 +1,7 @@
 created: 20241126100553560
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 modified: 20241126100554908
-modifier: zhoujiagen@gmail.com
+modifier: jargonzhou
 title: OpenNMT
 
 OpenNMT is a Python machine translation tool that works under the MIT license and relies on the PyTorch library. The system demonstrates efficiency and state-of-the-art translation accuracy and is used by many translation providers . It also incorporates text summarization, speech recognition, and image-to-text conversion blocks.

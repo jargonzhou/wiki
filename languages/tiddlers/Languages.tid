@@ -1,8 +1,17 @@
 created: 20241126051155393
-creator: zhoujiagen@gmail.com
-modified: 20241126103925627
-modifier: zhoujiagen@gmail.com
-tags: Langauges TableOfContents
+creator: jargonzhou
+modified: 20241127091117287
+modifier: jargonzhou
+tags: TableOfContents
 title: Languages
 
-* [[Common Lisp]]
+* [[Lisp]]
+** [[Common Lisp]]
+** [[Scheme]]
+** [[Racket]]
+** [[Clojure]]
+
+! Tools
+
+* [[GitHub Pages|https://pages.github.com/]]: Websites for you and your projects.
+* [[GitHub Actions]]

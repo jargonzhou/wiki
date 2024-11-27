@@ -1,0 +1,12 @@
+caption: {{$:/language/codemirror6/wordCount/caption}}
+caption-zh: {{$:/language/codemirror6/zh/wordCount/caption}}
+created: 20241127044321853
+creator: jargonzhou
+description: {{$:/language/codemirror6/wordCount/description}}
+description-zh: {{$:/language/codemirror6/zh/wordCount/description}}
+modified: 20241127044321853
+modifier: jargonzhou
+settings-template: $:/plugins/oeyoews/tiddlywiki-codemirror-6/ui/templates/settings/input-switch
+title: $:/config/codemirror-6/wordCount
+
+yes

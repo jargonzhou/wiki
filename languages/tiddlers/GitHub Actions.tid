@@ -1,0 +1,170 @@
+created: 20241127042933183
+creator: jargonzhou
+modified: 20241127045854194
+modifier: jargonzhou
+tags: GitHub DevOps
+title: GitHub Actions
+type: text/vnd.tiddlywiki
+
+! 1 Tips for Recapture
+
+<!-- 帮助重温的过程总结. -->
+
+# Step 1
+# Step 2
+
+! 2 术语
+
+<!-- 记录阅读过程中出现的关键字及其简单的解释. -->
+
+! 3 介绍
+
+<!-- 描述软件的来源、特性、解决的关键性问题等. -->
+
+<<<.tc-big-quote
+GitHub Actions
+
+GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
+
+GitHub Actions goes beyond just DevOps and lets you run workflows when other events happen in your repository. For example, you can run a workflow to automatically add the appropriate labels whenever someone creates a new issue in your repository.
+
+GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or you can host your own self-hosted runners in your own data center or cloud infrastructure.
+<<<
+
+! 4 动机
+
+<!-- 描述阅读软件源码的动机, 要达到什么目的等. -->
+
+! 5 系统结构
+
+<!-- 描述软件的系统结构, 核心和辅助组件的结构; 系统较复杂时细分展示. -->
+
+* Workflow
+* Events
+* Jobs
+* Actions
+* Runners
+
+! 6 使用
+
+<!-- 记录软件如何使用. -->
+
+!! Push TidGi Wikis to GitHub Pages
+
+[[manual.yml|https://github.com/jargonzhou/wiki/blob/main/.github/workflows/manual.yml]]:
+
+```yaml
+# ref https://github.com/tiddly-gittly/TidGi-Official-Website/blob/master/.github/workflows/gh-pages.yml
+
+name: Manual Publish Pages
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Person to greet'
+        # Default value if no value is explicitly provided
+        default: 'World'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: string
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # # This workflow contains a single job called "greet"
+  # greet:
+  #   # The type of runner that the job will run on
+  #   runs-on: ubuntu-latest
+
+  #   # Steps represent a sequence of tasks that will be executed as part of the job
+  #   steps:
+  #   # Runs a single command using the runners shell
+  #   - name: Send greeting
+  #     run: echo "Hello ${{ inputs.name }}"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '16'
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
+      
+      - name: Install Dependency
+        working-directory: ./root
+        run: npm install
+      
+      - name: Build
+        working-directory: ./root
+        run: npm run buildonline
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: ./root/public-dist
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+```
+
+! 7 数据结构和算法
+
+<!-- 描述软件中重要的数据结构和算法, 支撑过程部分的记录. -->
+
+! 8 过程
+
+<!-- 描述软件中重要的过程性内容, 例如服务器的启动、服务器响应客户端请求、服务器背景活动等. -->
+
+! 9 文献引用
+
+<!-- 记录软件相关和进一步阅读资料: 文献、网页链接等. -->
+
+* [[Home|https://docs.github.com/en/actions]]
+
+<<bibliography>>
+
+! 10 其他备注
+
+* <<ref "Running GitHub Actions in Another Directory">>
+
+```yaml
+# step level
+      - run: |
+          cd directory_1
+          cat file_1
+
+      - run: cat file_1
+        working-directory: directory_1
+
+# job level
+job:
+  name:
+    defaults:
+      run:
+        working-directory: directory_3
+
+# workflow level
+defaults:
+  run:
+    working-directory: directory_3
+```

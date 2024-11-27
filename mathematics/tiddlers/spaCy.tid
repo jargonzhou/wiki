@@ -1,7 +1,7 @@
 created: 20241126100620240
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 modified: 20241126100621583
-modifier: zhoujiagen@gmail.com
+modifier: jargonzhou
 title: spaCy
 
 Developers called spaCy the fastest system in the world. They also affirm that their tool is the best way to prepare text for deep learning. Spacy works excellent with well-known Python libraries like gensim, Keras, TensorFlow, and scikit-learn. Matthew Honnibal, the author of the library, says that spaCy’s mission is to make cutting-edge NLP practical and commonly available . Text classification, named entity recognition, part of speech tagging, dependency parsing, and other examples are presented in the comparative table.

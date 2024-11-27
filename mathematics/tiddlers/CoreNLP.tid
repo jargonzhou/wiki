@@ -1,7 +1,7 @@
 created: 20241126100634887
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 modified: 20241126100636120
-modifier: zhoujiagen@gmail.com
+modifier: jargonzhou
 title: CoreNLP
 
 Stanford's CoreNLP is a flexible, fast, and modern grammatical analysis tool that provides APIs for most common programming languages including Python. It also has an ability to run as a simple web service. As mentioned on the official website, the framework has a part-of-speech (POS) tagger, named entity recognizer (NER), parser, coreference resolution system, sentiment analysis, bootstrapped pattern learning, and open information extraction tools.

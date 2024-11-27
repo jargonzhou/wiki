@@ -1,7 +1,7 @@
 created: 20241126100121123
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 modified: 20241126100122504
-modifier: zhoujiagen@gmail.com
+modifier: jargonzhou
 title: Chainer
 
 Chainer, developed by the Japanese company Preferred Networks founded in 2014, is a powerful, flexible, and intuitive Python-based framework for neural networks that adopts a “define-by-run” scheme . It stores the history of computation instead of programming logic. Chainer supports CUDA computation and multi-GPU. The framework released under the MIT License and is already applied for sentiment analysis, machine translation, speech recognition, question answering, and so on using different types of neural networks like convolutional networks, recurrent networks, and sequence to sequence models.

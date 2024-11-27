@@ -1,7 +1,7 @@
 created: 20241126100341411
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 modified: 20241126100344559
-modifier: zhoujiagen@gmail.com
+modifier: jargonzhou
 title: Deepnl
 
 Deepnl is another neural network Python library especially created for natural language processing by Giuseppe Attardi. It provides tools for part-of-speech tagging, named entity recognition, semantic role labeling (using convolutional neural networks ), and word embedding creation.

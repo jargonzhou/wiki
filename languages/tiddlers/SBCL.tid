@@ -1,0 +1,266 @@
+created: 20241127053207943
+creator: jargonzhou
+modified: 20241127064805935
+modifier: jargonzhou
+tags: [[Common Lisp]] SBCL
+title: SBCL
+
+
+|Date|Description|
+|2024-11-25|use version 2.4.10, kick off RTFSC.|
+
+
+<<<.tc-big-quote
+Steel Bank Common Lisp (SBCL)
+
+Steel Bank Common Lisp (SBCL) is a high performance Common Lisp compiler. It is open source / free software, with a permissive license. In addition to the compiler and runtime system for ANSI Common Lisp, it provides an interactive environment including a debugger, a statistical profiler, a code coverage tool, and many other extensions.
+<<<
+
+* [[Wikipedia|https://en.wikipedia.org/wiki/Steel_Bank_Common_Lisp]]
+
+> The name "Steel Bank Common Lisp" is a reference to [[Carnegie Mellon University Common Lisp|https://en.wikipedia.org/wiki/CMUCL "CMUCL"]] from which SBCL forked: [[Andrew Carnegie|https://en.wikipedia.org/wiki/Andrew_Carnegie "Andrew Carnegie"]] made his fortune in the steel industry and [[Andrew Mellon|https://en.wikipedia.org/wiki/Andrew_Mellon "Andrew Mellon"]] was a successful banker.
+
+! Terms
+
+* PCL: ''Portable Common Loops''. SBCL's CLOS is based on PCL
+* VOP: stands for ''Virtual Operation'', and is the basic unit of currency in the Compiler Backend. VOPs usually expand into assembly instructions.
+* POP: ''Peephole OPtimizer'', 窥孔优化
+* IR2: IR2 is the ''Virtual Machine Representation''; the second internal representation that the compiler backend works with. (After IR1 is transformed and otherwise manipulated to the compiler's heart's content, it's translated into IR2 for further transformations.) IR2 involves VOPs.
+
+! Installation
+
+!! MacOS
+
+```shell
+$ brew install sbcl
+$ brew install rlwrap
+
+✗ which sbcl
+/usr/local/bin/sbcl
+✗ sbcl --version
+SBCL 2.4.7
+
+```
+
+installation directory:
+
+```shell
+➜  sbcl pwd
+/usr/local/Cellar/sbcl/2.4.7/share/sbcl
+```
+
+!! Windows
+
+WSL (Ubuntu)
+
+```
+➜  ~ which sbcl
+/usr/local/bin/sbcl
+➜  ~ sbcl --version
+SBCL 2.4.7
+
+# default core file
+/usr/local/lib/sbcl/sbcl.core
+```
+
+! RTFSC
+
+!! Directories
+
+SBCL source tree has the following subdirectories:
+
+* `contrib`: contains extensions to SBCL.
+* `doc`: contains some documentation.
+* `src/assembly`: contains the source-file assembler and architecture-specific subdirectories holding assembly code for that architecture.
+* `src/code`: contains Lisp code for the runtime system and standard CL utilities.
+* `src/cold`: contains code used while building SBCL.
+* `src/compiler`: contains the Python compiler. Has architecture-specific subdirectories which hold backends for different machines. The generic subdirectory holds code that is shared across most backends.
+* `src/pcl`: contains the PCL implementation of CLOS.
+* `src/runtime`: contains C code for the runtime system.
+* `tests`: contains tests.
+* `tools-for-build`: contains tools used for building SBCL.
+
+!! Packages
+
+SBCL has the following implementation specific packages (for more details see package-data-list.lisp-expr file in the root source directory):
+
+```shell
+$ grep "defpackage" src/cold/exports.lisp | sort
+(defpackage "SB-ALIEN"
+(defpackage "SB-ALIEN-INTERNALS"
+(defpackage "SB-APROF"
+(defpackage "SB-ASSEM"
+(defpackage "SB-BIGNUM"
+(defpackage "SB-BROTHERTREE"
+(defpackage "SB-C"
+(defpackage "SB-DEBUG"
+(defpackage "SB-DI"
+(defpackage "SB-DISASSEM"
+(defpackage "SB-DYNCOUNT"
+(defpackage "SB-EVAL"
+(defpackage "SB-EXT"
+(defpackage "SB-FASL"
+(defpackage "SB-FORMAT"
+(defpackage "SB-GRAY"
+(defpackage "SB-IMPL"
+(defpackage "SB-INT"
+(defpackage "SB-INTERPRETER"
+(defpackage "SB-KERNEL"
+(defpackage "SB-LOCKLESS"
+(defpackage "SB-LOOP"
+(defpackage "SB-MOP"
+(defpackage "SB-PCL"
+(defpackage "SB-PRETTY"
+(defpackage "SB-PROFILE"
+(defpackage "SB-REGALLOC"
+(defpackage "SB-SEQUENCE"
+(defpackage "SB-SYS"
+(defpackage "SB-THREAD"
+(defpackage "SB-UNICODE"
+(defpackage "SB-UNIX"
+(defpackage "SB-VM"
+(defpackage "SB-WALKER"
+(defpackage "SB-WIN32"
+(defpackage #.(backend-asm-package-name)
+```
+
+`contrib`:
+
+```shell
+$ pwd
+/d/workspace/rtfsc/sbcl/contrib
+$ find . | grep -E "*\.asd" | sort
+./sb-aclrepl/sb-aclrepl.asd
+./sb-bsd-sockets/sb-bsd-sockets.asd
+./sb-capstone/sb-capstone.asd
+./sb-cltl2/sb-cltl2.asd
+./sb-concurrency/sb-concurrency.asd
+./sb-cover/sb-cover.asd
+./sb-executable/sb-executable.asd
+./sb-gmp/sb-gmp.asd
+./sb-grovel/sb-grovel.asd
+./sb-introspect/sb-introspect.asd
+./sb-md5/sb-md5.asd
+./sb-mpfr/sb-mpfr.asd
+./sb-perf/sb-perf.asd
+./sb-posix/sb-posix.asd
+./sb-queue/sb-queue.asd
+./sb-rotate-byte/sb-rotate-byte.asd
+./sb-rt/sb-rt.asd
+./sb-simd/sb-simd.asd
+./sb-simple-streams/sb-simple-streams.asd
+./sb-sprof/sb-sprof.asd
+```
+
+! Build From Source
+
+old version: 2.4.7
+
+```shell
+➜  sbcl git:(sbcl-2.4.10) sh make.sh "sbcl" 
+...
+The build seems to have finished successfully, including 20 (out of 20)
+contributed modules. If you would like to run more extensive tests on
+the new SBCL, you can try:
+
+  cd ./tests && sh ./run-tests.sh
+
+To build documentation:
+
+  cd ./doc/manual && make
+
+To install SBCL (more information in INSTALL):
+
+  sh install.sh
+
+//build started:  Mon Nov 25 12:26:08 CST 2024
+//build finished: Mon Nov 25 12:29:58 CST 2024
+
+➜  sbcl git:(sbcl-2.4.10) ✗ grep -E "*\.sh" make.sh | grep -v "#"
+sh make-config.sh "$@" --check-host-lisp || exit $?
+maybetime sh make-host-1.sh
+maybetime sh make-target-1.sh
+maybetime sh make-host-2.sh
+maybetime sh make-target-2.sh
+maybetime sh make-target-contrib.sh
+echo "  cd ./tests && sh ./run-tests.sh"
+echo "  sh install.sh"
+
+➜  sbcl git:(sbcl-2.4.10) sudo sh install.sh
+[sudo] password for zhoujiagen:
+/usr/local
+
+SBCL has been installed:
+ binary /usr/local/bin/sbcl
+ core and contribs in /usr/local/lib/sbcl/
+
+Documentation:
+ man /usr/local/share/man/man1/sbcl.1
+➜  sbcl git:(sbcl-2.4.10) sbcl --version
+SBCL 2.4.10
+```
+
+```shell
+➜  sbcl git:(sbcl-2.4.10) ✗ src/runtime/sbcl --core output/cold-sbcl.core
+This is SBCL 2.4.10, an implementation of ANSI Common Lisp.
+...
+Disassembler: 126 printers, 53 prefilters, 4 labelers
+cross-compiler SXHASH tests passed: 3538 cases
+*
+```
+
+! Usage
+
+```shell
+➜  ~ rlwrap sbcl
+This is SBCL 2.4.7, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+
+* (+ 1 1)
+2
+* "hello, world"
+"hello, world"
+* (format t "hello, world")
+hello, world
+NIL
+* (defun hello-world () (format t "hello, world"))
+HELLO-WORLD
+* (hello-world)                                   
+hello, world
+NIL
+* (exit)
+➜  ~ 
+
+* (sb-ext:exit)
+➜  ~ 
+```
+
+`*default-pathname-defaults*` see [[Prove]].
+
+! References
+
+* [[Home|https://www.sbcl.org/]]
+* [[Code|https://github.com/sbcl/sbcl]]: 91% Common Lisp, 7.6% C, 0.4% Assembly.
+* [[Manual|https://www.sbcl.org/manual/index.html]]
+
+[[Links|https://www.sbcl.org/links.html]]:
+Links to SBCL pages:
+
+* [[SBCL's SourceForge page|http://sourceforge.net/projects/sbcl]] - file downloads, mailing lists, and other resources
+* [[The SBCL Manual|https://www.sbcl.org/manual/]] - a fine manual
+* [[The SBCL Internals Manual|https://www.sbcl.org/sbcl-internals/]] - describes SBCL's implementation details
+* [[The SBCL Internals CLiki|http://sbcl-internals.cliki.net/]] - a wiki describing SBCL's implementation
+** https://web.archive.org/web/20120814000933/http://sbcl-internals.cliki.net/index
+* [[Planet SBCL|http://planet.sbcl.org/]] - a meta-blog of blogs of SBCL developers, SBCL commits, and SBCL test results
+* [[SBCL Benchmarks|http://sbcl.boinkor.net/bench/]] - automatic benchmarks of SBCL builds, used by the SBCL developers for catching performance regressions
+* Links to other interesting / relevant pages:
+* [[CLiki|http://www.cliki.net/]] - a SBCL-powered Wiki for free Common Lisp software
+* [[Planet Lisp|http://planet.lisp.org/]] - a meta-blog of blogs from Common Lisp users and implementors
+* [[The HyperSpec|http://www.lispworks.com/reference/HyperSpec/]] - an online hyperlinked version of the ANSI Common Lisp specification
+
+! [[SBCL Manual]]

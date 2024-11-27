@@ -1,7 +1,7 @@
 created: 20241126100242131
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 modified: 20241126100244476
-modifier: zhoujiagen@gmail.com
+modifier: jargonzhou
 title: Theano
 
 Theano is a numerical computation Python library that enables users to create their own machine learning models . Many frameworks like Keras are built on top of Theano. There are tools for machine translation, speech recognition, word embedding, and text classification. Look at Theano’s applications in the table.

@@ -1,0 +1,98 @@
+created: 20241127064658365
+creator: jargonzhou
+modified: 20241127064758711
+modifier: jargonzhou
+tags: [[Common Lisp]] SBCL Manual
+title: SBCL Manual
+
+
+! Manual
+
+!! Getting Support and Reporting Bugs
+
+!! Introduction
+
+!! Starting and Stopping
+
+!! Compiler
+
+!! Debugger
+
+!! Efficiency
+
+!! Beyond the ANSI Standard
+
+!! External Formats
+
+!! Foreign Function Interface
+
+!! Pathnames
+
+!! Streams
+
+!! Package Locks
+
+an errors solved using `sb-ext:unlock-package`
+
+```lisp
+* (asdf:test-system "example-cl-project")
+; compiling file "~/quicklisp/dists/quicklisp/software/dissect-20231021-git/backend/sbcl.lisp" (written 18 AUG 2024 10:54:10 AM):
+; 
+; caught ERROR:
+;   READ error during COMPILE-FILE:
+;   
+;     Lock on package SB-DI violated when interning DEBUG-VAR-INFO while in package
+;     DISSECT.
+;   See also:
+;     The SBCL Manual, Node "Package Locks"
+;   
+;     (in form starting at line: 38, column: 0, position: 1539)
+
+; compilation aborted after 0:00:00.034
+
+debugger invoked on a UIOP/LISP-BUILD:COMPILE-FILE-ERROR in thread
+#<THREAD tid=775 "main thread" RUNNING {1003F90143}>:
+  COMPILE-FILE-ERROR while
+  compiling #<CL-SOURCE-FILE "dissect" "backend" "sbcl">
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+; unlock!!!
+* (sb-ext:unlock-package :sb-di)
+T
+* (asdf:test-system "example-cl-project")
+Testing System example-cl-project/tests
+
+;; testing 'example-cl-project/tests/main'
+test-target-1
+  should (= 1 1) to be true
+    ✓ Expect (= 1 1) to be true.
+
+✓ 1 test completed
+
+Summary:
+  All 1 test passed.
+```
+
+!! Threading
+
+!! Timers
+
+!! Networking
+
+!! Profiling
+
+!! Contributed Modules
+
+* `sb-aclrepl`: an Allegro CL-style REPL for SBCL.
+* `sb-concurrency`: additional data structures, synchronization primitives and tools for concurrent programming.
+* `sb-cover`: a code coverage tool for SBCL.
+* `sb-grovel`: help in generation of foreign function interfaces.
+* `sb-md5`: implements RFC1321 MD5 Message Digest Algorithm.
+* `sb-posix`: interface for calling out to OS.
+* `sb-queue`: merged into `sb-concurrency`.
+* `sb-rotate-byte`: an interface to bitwise rotation.
+* `sb-simd`: an interface for SIMD programming in SBCL.
+
+!! Deprecation
+

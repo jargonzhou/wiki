@@ -1,7 +1,7 @@
 created: 20241126100647543
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 modified: 20241126100648634
-modifier: zhoujiagen@gmail.com
+modifier: jargonzhou
 title: TensorFlow
 
 The Google Brain Team developed TensorFlow and released it in 2015 for research purposes. Now many companies like Airbus, Intel, IBM, Twitter and others use TensorFlow at production scale. The system architecture is flexible, so it is possible to perform computations on CPUs or GPUs. The main concept is flow graphs usage. Nodes of the graph reflect mathematical operations, while the edges represent multidimensional data arrays (tensors) communicated between them . One of the most known of TensorFlow’s NLP application is Google Translate. Other applications are text classification and summarization, speech recognition, tagging, and so on.

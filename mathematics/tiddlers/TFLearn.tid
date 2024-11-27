@@ -1,7 +1,7 @@
 created: 20241126100701460
-creator: zhoujiagen@gmail.com
+creator: jargonzhou
 modified: 20241126100703163
-modifier: zhoujiagen@gmail.com
+modifier: jargonzhou
 title: TFLearn
 
 As Tensorflow is a low-level API, many high-level APIs were created to run on top of it to make the user experience faster and more understandable. TFLearn is one of these tools that runs on CPU and GPU. It has a special graph visualization tool with details about weights, gradients, activations, and so on . The library is already used for sentiment analysis, text generation, and named entity recognition. It lets users work with convolutional neural networks and recurrent neural networks (LSTM).
