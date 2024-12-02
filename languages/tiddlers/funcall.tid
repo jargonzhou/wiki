@@ -1,0 +1,60 @@
+created: 20241202073708338
+creator: jargonzhou
+modified: 20241202073720315
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: funcall
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+funcall function &rest args => result*
+```
+
+''Arguments and Values'':
+
+* function: 函数指示器
+* args: 函数的参数
+* results: 函数的返回值
+
+''Description'':
+
+`funcall`在使用参数`args`调用函数`function`.
+如果`function`是个符号, 通过在全局环境中找到其函数值将其转换为一个函数.
+
+''Examples'':
+
+```lisp
+(funcall #'+ 1 2 3) =>  6
+(funcall 'car '(1 2 3)) =>  1
+(funcall 'position 1 '(1 2 3 2 1) :start 1) =>  4
+(cons 1 2) =>  (1 . 2)
+(flet ((cons (x y) `(kons ,x ,y)))
+  (let ((cons (symbol-function '+)))
+(funcall #'cons
+         (funcall 'cons 1 2)
+         (funcall cons 1 2))))
+=>  (KONS (1 . 2) 3)
+```
+
+''Affected By'': 无.
+
+''Exceptional Situations'':
+
+如果`function`是个符号, 且没有全局定义的同名函数或者是全局定义的同名宏或特殊操作符时, 发出类型为`undefined-function`的错误信号.
+
+''See Also'':
+
+[[apply|#apply]], [[function|#function]], [[3.1 求值|../03-Evaluation-and-Compilation#3.1]].
+
+''Notes'':
+
+```lisp
+(funcall function arg1 arg2 ...)
+==  (apply function arg1 arg2 ... nil)
+==  (apply function (list arg1 arg2 ...))
+```
+
+`funcall`和普通函数调用之前的区别是, 前者是通过求值一个形式获得的函数, 而后者是在函数通常出现的位置做特殊解释获得的.

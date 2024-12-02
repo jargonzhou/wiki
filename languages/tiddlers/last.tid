@@ -1,0 +1,28 @@
+created: 20241202073925764
+creator: jargonzhou
+modified: 20241202073940509
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: last
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+last list &optional n => tail
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

@@ -1,0 +1,75 @@
+created: 20241202075049996
+creator: jargonzhou
+modified: 20241202075104218
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: symbol-macrolet
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+symbol-macrolet ( (symbol expansion)* ) declaration* form*
+=> result*
+```
+
+''Arguments and Values'':
+
+* `symbol`: 一个符号
+* `expansion`: 一个形式
+* `declaration`: 一个`decalre`表达式, 不被求值
+* `forms`: 一个隐式的`progn`
+* `results`: `forms`返回的值
+
+''Description'':
+
+`symbol-macrolet`提供了影响 ''符号的宏扩展环境'' 的机制.
+
+`symbol-macrolet`在词法上, 为每个由`symbol`命名的符号宏建立展开函数.
+符号宏的展开函数唯一可以保证的属性是, 当被应用在形式和环境时, 返回正确的展开(展开在概念上存储在展开函数中还是环境中是依赖于实现的).
+
+`symbol-macrolet`的词法作用域中对`symbol`作为变量的引用, 被使用正常的宏展开过程处理, 见[[3.1.2.1.1 符号作为形式|../03-Evaluation-and-Compilation#3.1.2.1.1]].
+符号宏的展开受与调用符号宏相同的词法环境中进一步的宏展开影响, 跟常规宏一样.
+
+`let`中的`declaration`在这里也可使用, 有一个例外: 如果用`special`声明一个已用`symbol-macrolet`定义的符号时, `symbol-macrolet`发出错误信号.
+
+当`symbol-macrolet`形式中的`forms`被展开时, 使用`setq`设置指定变量的值时被视为是`setf`.
+`psetq`一个定义为符号宏的符号时, 被视为是`psetf`, `multiple-value-setq`被视为是`values`上调用`setf`.
+
+`symbol-macrolet`的使用可以被`let`遮盖. 换种方式说, `symbol-macrolet`只在`forms`周围的`symbol`词法绑定作用域中替换`symbol`的出现.
+
+''Examples'':
+
+```lisp
+;;; The following is equivalent to
+;;;   (list 'foo (let ((x 'bar)) x)),
+;;; not
+;;;   (list 'foo (let (('foo 'bar)) 'foo))
+ (symbol-macrolet ((x 'foo))
+   (list x (let ((x 'bar)) x))) ;被let遮盖
+=>  (foo bar)
+NOT=>  (foo foo)
+
+ (symbol-macrolet ((x '(foo x)))
+   (list x))
+=>  ((FOO X))
+```
+
+''Affected By'': 无.
+
+''Exceptional Situations'':
+
+如果尝试绑定定义为 ''全局变量'' 的符号, 发出类型为`program-error`的错误信号.
+
+如果`declaration`中包含`special`声明, 使用了被`symbol-macrolet`绑定的符号, 发出类型为`program-error`的错误信号.
+
+''See Also'':
+
+[[with-slots|#with-slots]], [[macroexpand|#macroexpand]]
+
+''Notes'':
+
+特殊形式`symbol-macrolet`是实现`macroexpand`的基本机制.
+
+如果一个`symbol-macrolet`形式是顶级形式, `forms`也按顶级形式处理. 见[[3.2.3 文件编译|../03-Evaluation-and-Compilation#3.2.3]].

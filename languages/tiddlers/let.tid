@@ -1,0 +1,113 @@
+created: 20241202074022402
+creator: jargonzhou
+modified: 20241202074101833
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: let
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+let ( { var | (var [init-form]) }* ) declaration* form* => result*
+let* ( { var | (var [init-form]) }* ) declaration* form* => result*
+```
+
+''Arguments and Values'':
+
+* `var`: 一个符号
+* `init-form`: 一个形式(称为初始值形式)
+* `declaration`: 一个`declare`表达式, 不被求值
+* `form`: 一个形式
+* `results`: `forms`返回的值
+
+''Description'':
+
+`let`和`let*` ''创建新的变量绑定'', 并使用这些绑定执行一组形式.
+`let`按并行方式执行绑定, `let*`按串行方式执行绑定.
+
+形式
+
+```lisp
+(let ((var1 init-form-1)
+		(var2 init-form-2)
+		...
+		(varm init-form-m))
+declaration1
+declaration2
+...
+declarationp
+form1
+form2
+...
+formn)
+```
+
+首先按顺序求值表达式`init-form-1`、`init-form-2`等, 保存结果值.
+然后所有变量`varj`绑定到对应的值; 每个绑定是 ''词法的'', 除非存在相反的`special`声明.
+接着按顺序求值`formk`; 除最后一个值外丢弃所有值(即, `let`的体是一个隐式的`progn`).
+
+`let*`与`let`相似, 但按串行方式执行变量绑定. 一个`var`的`init-form`表达式可以引用前面绑定的`var`.
+
+形式
+
+```lisp
+(let* ((var1 init-form-1)
+		 (var2 init-form-2)
+		 ...
+		 (varm init-form-m))
+declaration1
+declaration2
+...
+declarationp
+form1
+form2
+...
+formn)
+```
+
+首先求值表达式`init-form-1`, 将结果绑定到`var1`; 然后求值表达式`init-form-2`, 将结果绑定到`var2`, 等等. 接着, 表达式`formj`按序求值; 除最后一个值外丢弃所有值(即, `let*`的体是一个隐式的`progn`).
+
+在`let`和`let*`中, 如果一个`var`没有对应的`init-form`, 则`var`初始化为`nil`.
+
+特殊形式`let`有属性: 名称绑定的作用域不包含任意初始值形式.
+对于`let*`, 变量的作用域也包含之后的变量绑定中剩余的初始值形式.
+
+''Examples'':
+
+```lisp
+(setq a 'top) =>  TOP
+(defun dummy-function () a) =>  DUMMY-FUNCTION
+
+(let ((a 'inside) (b a)) ;(b a)中a是指toplevel的a
+ (format nil "~S ~S ~S" a b (dummy-function))) =>  "INSIDE TOP TOP"
+
+(let* ((a 'inside) (b a));(b a)中a是指前一个绑定的变量
+ (format nil "~S ~S ~S" a b (dummy-function))) =>  "INSIDE INSIDE TOP"
+
+(let ((a 'inside) (b a))
+ (declare (special a)) ;将a改为非词法的
+ (format nil "~S ~S ~S" a b (dummy-function))) =>  "INSIDE TOP INSIDE"
+```
+
+下面的代码是不正确的.
+
+```lisp
+(let (x)
+(declare (integer x))
+(setq x (gcd y z))
+...)
+```
+
+`x`的初始值为`nil`, 违背了类型声明`(declare (integer x))`.
+
+''Affected By'': 无.
+
+''Exceptional Situations'': 无.
+
+''See Also'':
+
+[[progv|#progv]]
+
+''Notes'': 无.

@@ -1,0 +1,27 @@
+created: 20241202072903586
+creator: jargonzhou
+modified: 20241202072953683
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: cons
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+cons object-1 object-2 => cons
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

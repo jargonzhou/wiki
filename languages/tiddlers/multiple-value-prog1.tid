@@ -1,0 +1,28 @@
+created: 20241202074436897
+creator: jargonzhou
+modified: 20241202074446844
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: multiple-value-prog1
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+multiple-value-prog1 first-form form* => first-form-results
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

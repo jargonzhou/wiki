@@ -1,0 +1,28 @@
+created: 20241202075255115
+creator: jargonzhou
+modified: 20241202075305072
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: unwind-protect
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+unwind-protect protected-form cleanup-form* => result*
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

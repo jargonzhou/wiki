@@ -1,0 +1,68 @@
+created: 20241202072237774
+creator: jargonzhou
+modified: 20241202072240447
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: and
+
+
+> \[!tip] "Macro"
+> ''Syntax'':
+
+```lisp
+and form* => result*
+```
+
+''Arguments and Values'':
+
+* `form`: 一个形式
+* `results`: 最后一个`form`的求值结果, 或符号`nil`, 或`t`
+
+''Description'':
+
+宏`and`按 ''从左至右'' 的顺序一次求值一个`form`.
+一旦任意形式求值为`nil`, `and`不再对剩下的`form`求值直接返回`nil`.
+如果除最后一个外所有的`form`求值为true, `and`返回求值最后一个`form`的结果.
+
+如果没有提供`form`, `(and)`返回`t`.
+
+`and`可以返回最后一个子形式的多值.
+
+''Examples'':
+
+```lisp
+(if (and (>= n 0)
+			 (< n (length a-simple-vector))
+			 (eq (elt a-simple-vector n) 'foo))
+	(princ "Foo!"))
+```
+
+如果`a-simple-vector`的`n`位置元素是符号`foo`, `n`对`a-simple-vector`是有效的索引, 则上述表达式输出`Foo!`. 如果`n`越界, 因为`and`保证从左至右的顺序测试其内容部分, `elt`不被调用.
+
+```lisp
+(setq temp1 1 temp2 1 temp3 1) =>  1
+(and (incf temp1) (incf temp2) (incf temp3)) =>  2
+(and (eql 2 temp1) (eql 2 temp2) (eql 2 temp3)) =>  true
+(decf temp3) =>  1
+
+; (eq temp3 'nil)求值为false, (decf temp3)不被执行
+(and (decf temp1) (decf temp2) (eq temp3 'nil) (decf temp3)) =>  NIL
+
+(and (eql temp1 temp2) (eql temp2 temp3)) =>  true
+(and) =>  T
+```
+
+''Affected By'': 无.
+
+''Exceptional Situations'': 无.
+
+''See Also'':
+
+[[cond|#cond]], [[every|#every]], [[if|#if]], [[or|#or]], [[when|#when]]
+
+''Notes'':
+
+```lisp
+(and form) ==  (let () form)
+(and form1 form2 ...) ==  (when form1 (and form2 ...))
+```

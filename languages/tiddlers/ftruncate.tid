@@ -1,0 +1,35 @@
+created: 20241202072649482
+creator: jargonzhou
+modified: 20241202072726687
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: ftruncate
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+floor number &optional divisor => quotient, remainder
+ffloor number &optional divisor => quotient, remainder
+ceiling number &optional divisor => quotient, remainder
+fceiling number &optional divisor => quotient, remainder
+truncate number &optional divisor => quotient, remainder
+ftruncate number &optional divisor => quotient, remainder
+round number &optional divisor => quotient, remainder
+fround number &optional divisor => quotient, remainder
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

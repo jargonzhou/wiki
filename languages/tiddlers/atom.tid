@@ -1,0 +1,28 @@
+created: 20241202072503636
+creator: jargonzhou
+modified: 20241202072506938
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: atom
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+atom object => generalized-boolean
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

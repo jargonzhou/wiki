@@ -1,0 +1,28 @@
+created: 20241202074515802
+creator: jargonzhou
+modified: 20241202074521885
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: not
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+not x => boolean
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

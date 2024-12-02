@@ -1,6 +1,6 @@
 created: 20230104152413814
 creator: jargonzhou
-modified: 20241127072641963
+modified: 20241129035218833
 modifier: jargonzhou
 tags: TableOfContents
 title: Mathematics
@@ -9,6 +9,10 @@ type: text/vnd.tiddlywiki
 ! Terminology
 
 * [[Terminology]]
+
+! Symbols
+
+* [[Symbols]]
 
 ! Machine Learning
 
@@ -43,11 +47,9 @@ type: text/vnd.tiddlywiki
 * [[TFLearn]]
 * [[Theano]]
 
+! Topics
 
-! Books
-
-* [[Natural Language Processing with Python]]
-* [[Mastering NLP from Foundations to LLMs]]
+* [[Data Visualization]]
 
 ! References
 

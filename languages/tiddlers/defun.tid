@@ -1,0 +1,30 @@
+created: 20241202073302699
+creator: jargonzhou
+modified: 20241202073319838
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: defun
+
+
+> \[!tip] "Macro"
+> ''Syntax'':
+
+```lisp
+defun function-name lambda-list [[declaration* | documentation]] form*
+
+=> function-name
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

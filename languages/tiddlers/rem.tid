@@ -1,0 +1,29 @@
+created: 20241202074353545
+creator: jargonzhou
+modified: 20241202074404650
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: rem
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+mod number divisor => modulus
+rem number divisor => remainder
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

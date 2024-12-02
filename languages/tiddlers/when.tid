@@ -1,0 +1,94 @@
+created: 20241202075233335
+creator: jargonzhou
+modified: 20241202075247639
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: when
+
+
+> \[!tip] "Macro"
+> ''Syntax'':
+
+```lisp
+when test-form form* => result*
+unless test-form form* => result*
+```
+
+''Arguments and Values'':
+
+* `test-form`: 一个形式
+* `forms`: 一个隐式的`progn`
+* `result`: 在`when`形式中, 如果`test-form`求值为true, 或在`unless`形式中`test-form`求值为false, 返回`forms`的求值结果; 其他情况返回`nil`
+
+''Description'':
+
+`when`和`unless`允许依赖于单个`test-form`执行`forms`.
+
+在`when`形式中, 如果`test-form`求值为true, `forms`按 ''从左至右'' 的顺序求值, `forms`返回的结果作为`when`形式的返回结果. 否则, 如果`test-form`求值为false, `forms`不被求值, `when`形式返回`nil`.
+
+在`unless`形式中, 如果`test-form`求值为false, `forms`按 ''从左至右'' 的顺序求值, `forms`返回的结果作为`unless`形式的返回结果. 否则, 如果`test-form`求值为true, `forms`不被求值, `unless`形式返回`nil`.
+
+''Examples'':
+
+```lisp
+(when t 'hello) =>  HELLO
+(unless t 'hello) =>  NIL
+
+(when nil 'hello) =>  NIL
+(unless nil 'hello) =>  HELLO
+
+(when t) =>  NIL
+(unless nil) =>  NIL
+
+(when t (prin1 1) (prin1 2) (prin1 3))
+>>  123
+=>  3
+
+(unless t (prin1 1) (prin1 2) (prin1 3)) =>  NIL
+(when nil (prin1 1) (prin1 2) (prin1 3)) =>  NIL
+(unless nil (prin1 1) (prin1 2) (prin1 3))
+>>  123
+=>  3
+
+(let ((x 3))
+(list
+			;;1: (4)
+			(when (oddp x) (incf x) (list x))
+			;;2: NIL - 不执行(incf x) (list x)
+			(when (oddp x) (incf x) (list x))
+			;;3: (5)
+			(unless (oddp x) (incf x) (list x))
+			;;4: NIL - 不执行(incf x) (list x)
+			(unless (oddp x) (incf x) (list x))
+
+			;;5: 6
+			(if (oddp x) (incf x) (list x))
+			;;6: (6)
+			(if (oddp x) (incf x) (list x))
+			;;7: 7
+			(if (not (oddp x)) (incf x) (list x))
+			;;8: (7)
+			(if (not (oddp x)) (incf x) (list x))))
+=>  ((4) NIL (5) NIL 6 (6) 7 (7))
+```
+
+''Affected By'': 无.
+
+''Exceptional Situations'': 无.
+
+''See Also'':
+
+[[and|#and]], [[cond|#cond]], [[if|#if]], [[or|#or]]
+
+''Notes'':
+
+```lisp
+(when test {form}+) ==  (and test (progn {form}+))
+(when test {form}+) ==  (cond (test {form}+))
+(when test {form}+) ==  (if test (progn {form}+) nil)
+(when test {form}+) ==  (unless (not test) {form}+)
+
+(unless test {form}+) ==  (cond ((not test) {form}+))
+(unless test {form}+) ==  (if test nil (progn {form}+))
+(unless test {form}+) ==  (when (not test) {form}+)
+```

@@ -1,0 +1,70 @@
+created: 20241202074945638
+creator: jargonzhou
+modified: 20241202074957677
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: setq
+
+
+> \[!attention] "Special Form"
+> ''Syntax'':
+
+```lisp
+setq { pair }* => result
+
+pair ::= var form
+```
+
+''Pronunciation'': \['set,kyoo]
+
+''Arguments and Values'':
+
+* `var`: 一个符号, 命名了一个不是常值变量的变量
+* `form`: 一个形式
+* `result`: 最后一个`form`的主值, 或者在没有提供`pair`时为`nil`
+
+''Description'':
+
+赋值给变量. `setq var1 form1 var2 form2 ...`是Lisp中简单的变量赋值语句.
+首先`form1`被求值, 其求值结果存放在变量`var1`中, 接着`form2`被求值, 其求值结果存放在变量`var2`中, 等等.
+`setq`可被用于 ''词法'' 或 ''动态'' 变量的赋值.
+
+如果任意一个变量`var`引用了`symbol-macrolet`生成的绑定, 则该变量被视为使用了`setf`(而不是`setq`).
+
+''Examples'':
+
+```lisp
+;; A simple use of SETQ to establish values for variables.
+(setq a 1 b 2 c 3) =>  3
+a =>  1
+b =>  2
+c =>  3
+
+;; Use of SETQ to update values by sequential assignment.
+;; 串行赋值
+(setq a (1+ b) b (1+ a) c (+ a b)) =>  7
+a =>  3
+b =>  4
+c =>  7
+
+;; This illustrates the use of SETQ on a symbol macro.
+(let ((x (list 10 20 30))) ;x=(10 20 30)
+(symbol-macrolet ((y (car x)) (z (cadr x))) ; y=10, z=20
+	(setq y (1+ z) z (1+ y)) ;y=21, z=22 -- setf x=(21 22 30)
+	(list x y z)))
+=>  ((21 22 30) 21 22)
+```
+
+''Side Effects'':
+
+每个`form`的主值被赋值给相应的`var`.
+
+''Affected By'': 无.
+
+''Exceptional Situations'': 无.
+
+''See Also'':
+
+[[psetq|#psetq]], [[set|#set]]. [[setf|#setf]], [[symbol-macrolet|#symbol-macrolet]]
+
+''Notes'': 无.

@@ -1,0 +1,28 @@
+created: 20241202075314778
+creator: jargonzhou
+modified: 20241202075324441
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: zerop
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+zerop number => generalized-boolean
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

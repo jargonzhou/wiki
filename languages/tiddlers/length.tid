@@ -1,0 +1,28 @@
+created: 20241202073946774
+creator: jargonzhou
+modified: 20241202074003057
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: length
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+length sequence => n
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

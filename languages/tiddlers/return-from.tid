@@ -1,0 +1,28 @@
+created: 20241202074843088
+creator: jargonzhou
+modified: 20241202074853096
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: return-from
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+return-from name [result] =>|
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

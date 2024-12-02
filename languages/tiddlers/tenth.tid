@@ -1,0 +1,47 @@
+created: 20241202073610044
+creator: jargonzhou
+modified: 20241202073624823
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: tenth
+
+
+> \[!tip] "Accessor"
+> ''Syntax'':
+
+```lisp
+first list => object
+second list => object
+third list => object
+fourth list => object
+fifth list => object
+sixth list => object
+seventh list => object
+eighth list => object
+ninth list => object
+tenth list => object
+(setf (first list) new-object)
+(setf (second list) new-object)
+(setf (third list) new-object)
+(setf (fourth list) new-object)
+(setf (fifth list) new-object)
+(setf (sixth list) new-object)
+(setf (seventh list) new-object)
+(setf (eighth list) new-object)
+(setf (ninth list) new-object)
+(setf (tenth list) new-object)
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

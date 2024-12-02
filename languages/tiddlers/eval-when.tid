@@ -1,0 +1,28 @@
+created: 20241202073521271
+creator: jargonzhou
+modified: 20241202073536436
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: eval-when
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+eval-when (situation*) form* => result*
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

@@ -1,0 +1,28 @@
+created: 20241202073434120
+creator: jargonzhou
+modified: 20241202073448414
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: eq
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+eq x y => generalized-boolean
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

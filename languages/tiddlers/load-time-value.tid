@@ -1,0 +1,28 @@
+created: 20241202074158927
+creator: jargonzhou
+modified: 20241202074228232
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: load-time-value
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+load-time-value form &optional read-only-p => object
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

@@ -1,0 +1,44 @@
+created: 20241202075031634
+creator: jargonzhou
+modified: 20241202075042926
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: nsubstitute-if-not
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+substitute newitem olditem sequence &key from-end test test-not start end count key
+=> result-sequence
+
+substitute-if newitem predicate sequence &key from-end start end count key
+=> result-sequence
+
+substitute-if-not newitem predicate sequence &key from-end start end count key
+=> result-sequence
+
+nsubstitute newitem olditem sequence &key from-end test test-not start end count key
+=> sequence
+
+nsubstitute-if newitem predicate sequence &key from-end start end count key
+=> sequence
+
+nsubstitute-if-not newitem predicate sequence &key from-end start end count key
+=> sequence
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

@@ -1,0 +1,79 @@
+created: 20241202074926077
+creator: jargonzhou
+modified: 20241202074940543
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: psetf
+
+
+> \[!tip] "Macro"
+> ''Syntax'':
+
+```lisp
+setf {pair}* => result*
+psetf {pair}* => nil
+
+pair::= place newvalue
+```
+
+''Arguments and Values'':
+
+* `place`: 一个位置
+* `newvalue`: 一个形式
+* `results`: 为最后一个位置存储形式放回的多值, 或在没有`pairs`时返回`nil`
+
+''Description'':
+
+`setf`将`place`的值修改为`newvalue`.
+
+`(setf place newvalue)`展开为一个更新形式, 出处求值`newvalue`的结果到被`place`引用的位置.
+一些`place`形式使用带可选传递参数的访问器. 这些可选传递参数是否被`setf`允许, 或它们使用的效果是什么, 是由`setf`展开器函数决定的, 不受`setf`的控制. 任何接受`&optional`、`&rest`或`&key`传递参数且这些传递参数声明为可用于`setf`的函数的文档必须描述如何处理这些传递参数.
+
+如果提供了多个`pair`, `pairs`按顺序处理, 即:
+
+```lisp
+(setf place-1 newvalue-1
+		place-2 newvalue-2
+		...
+		place-N newvalue-N)
+```
+
+等价于:
+
+```lisp
+(progn (setf place-1 newvalue-1)
+		 (setf place-2 newvalue-2)
+		 ...
+		 (setf place-N newvalue-N))
+```
+
+对于`psetf`, 如果提供了多个`pair`, 则将新值指派给位置是并行执行的.
+待求值的所有子形式(`place`和`newvalue`的形式), 按从左到右的顺序求值; 在所有求值完成后, 所有指派动作按不可预计的顺序执行.
+
+`setf`和`psetf`展开的详情, 见[[5.1.2 位置的种类|../05-Data-and-Control-Flow#5.1.2]].
+
+''Examples'':
+
+```lisp
+(setq x (cons 'a 'b) y (list 1 2 3)) =>  (1 2 3)
+(setf (car x) 'x (cadr y) (car x) (cdr x) y) =>  (1 X 3)
+x =>  (X 1 X 3)
+y =>  (1 X 3)
+
+(setq x (cons 'a 'b) y (list 1 2 3)) =>  (1 2 3)
+(psetf (car x) 'x (cadr y) (car x) (cdr x) y) =>  NIL
+x =>  (X 1 A 3)
+y =>  (1 A 3)
+```
+
+''Affected By'':
+
+[[define-setf-expander|#define-setf-expander]], [[defsetf|#defsetf]], [[`*macroexpand-hook*`|#*macroexpand-hook*]]
+
+''Exceptional Situations'': 无.
+
+''See Also'':
+
+[[define-setf-expander|#define-setf-expander]], [[defsetf|#defsetf]], [[macroexpand-1|#macroexpand-1]], [[rotatef|#rotatef]], [[shiftf|#shiftf]], [[5.1 通用的引用|../05-Data-and-Control-Flow#5.1]]
+
+''Notes'': 无.

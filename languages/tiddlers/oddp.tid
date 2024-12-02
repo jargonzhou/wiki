@@ -1,0 +1,29 @@
+created: 20241202073547330
+creator: jargonzhou
+modified: 20241202073558980
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: oddp
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+evenp integer => generalized-boolean
+oddp integer => generalized-boolean
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

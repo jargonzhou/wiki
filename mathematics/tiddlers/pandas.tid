@@ -1,26 +1,13 @@
 created: 20241126083037363
 creator: jargonzhou
-modified: 20241126083147930
+modified: 20241127100924262
 modifier: jargonzhou
 tags: [[Machine Learning]] pandas
 title: pandas
 type: text/vnd.tiddlywiki
 
 * 2024-11-20
-
-! 1 Tips for Recapture
-
-<!-- 帮助重温的过程总结. -->
-
-# Action: `jupyter-notebooks/Python/pandas/_pandas.ipynb`
-
-! 2 术语
-
-<!-- 记录阅读过程中出现的关键字及其简单的解释. -->
-
-! 3 介绍
-
-<!-- 描述软件的来源、特性、解决的关键性问题等. -->
+* Action: `jupyter-notebooks/Python/pandas/_pandas.ipynb`
 
 <<<.tc-big-quote
 pandas
@@ -28,31 +15,27 @@ pandas
 pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.
 <<<
 
-! 4 动机
 
-<!-- 描述阅读软件源码的动机, 要达到什么目的等. -->
+! Extension data types
 
-! 5 系统结构
+allow new data types to be added besides [[NumPy]]supported.
 
-<!-- 描述软件的系统结构, 核心和辅助组件的结构; 系统较复杂时细分展示. -->
+* `BooleanDtype` Nullable Boolean data, use `boolean` when passing as string
+* `CategoricalDtype` Categorical data type, use `category` when passing as string
+* `DatetimeTZDtype` Datetime with time zone
+* `Float32Dtype` 32-bit nullable floating point, use `Float32` when passing as string
+* `Float64Dtype` 64-bit nullable floating point, use `Float64` when passing as string
+* `Int8Dtype` 8-bit nullable signed integer, use `Int8` when passing as string
+* `Int16Dtype` 16-bit nullable signed integer, use `Int16` when passing as string
+* `Int32Dtype` 32-bit nullable signed integer, use `Int32` when passing as string
+* `Int64Dtype` 64-bit nullable signed integer, use `Int64` when passing as string
+* `UInt8Dtype` 8-bit nullable unsigned integer, use `UInt8` when passing as string
+* `UInt16Dtype` 16-bit nullable unsigned integer, use `UInt16` when passing as string
+* `UInt32Dtype` 32-bit nullable unsigned integer, use `UInt32` when passing as string
+* `UInt64Dtype` 64-bit nullable unsigned integer, use `UInt64` when passing as string
 
-! 6 使用
-
-<!-- 记录软件如何使用. -->
-
-! 7 数据结构和算法
-
-<!-- 描述软件中重要的数据结构和算法, 支撑过程部分的记录. -->
-
-! 8 过程
-
-<!-- 描述软件中重要的过程性内容, 例如服务器的启动、服务器响应客户端请求、服务器背景活动等. -->
-
-! 9 文献引用
-
-<!-- 记录软件相关和进一步阅读资料: 文献、网页链接等. -->
+! References
 
 * [[Home|http://pandas.pydata.org/]]
 * [[cheatsheet|https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf]]
 
-! 10 其他备注

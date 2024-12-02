@@ -1,0 +1,28 @@
+created: 20241202074547962
+creator: jargonzhou
+modified: 20241202074556622
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: nthcdr
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+nthcdr n list => tail
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

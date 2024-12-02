@@ -1,0 +1,28 @@
+created: 20241202073021600
+creator: jargonzhou
+modified: 20241202073031686
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: eql
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+eql x y => generalized-boolean
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

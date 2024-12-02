@@ -1,0 +1,28 @@
+created: 20241202073117405
+creator: jargonzhou
+modified: 20241202073147158
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: copy-list
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+copy-list list => copy
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

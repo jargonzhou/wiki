@@ -1,0 +1,35 @@
+created: 20241202073633287
+creator: jargonzhou
+modified: 20241202073648256
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: macrolet
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+flet ((function-name lambda-list [[local-declaration* | local-documentation]] local-form*)*) declaration* form*
+=> result*
+
+labels ((function-name lambda-list [[local-declaration* | local-documentation]] local-form*)*) declaration* form*
+=> result*
+
+macrolet ((name lambda-list [[local-declaration* | local-documentation]] local-form*)*) declaration* form*
+=> result*
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

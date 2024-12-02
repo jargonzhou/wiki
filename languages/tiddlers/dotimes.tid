@@ -1,0 +1,30 @@
+created: 20241202073410053
+creator: jargonzhou
+modified: 20241202073433160
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: dotimes
+
+
+> \[!tip] "Macro"
+> ''Syntax'':
+
+```lisp
+dotimes (var count-form [result-form]) declaration* {tag | statement}*
+
+=> result*
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

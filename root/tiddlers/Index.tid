@@ -1,6 +1,6 @@
 created: 20241126035300004
 creator: jargonzhou
-modified: 20241126073359710
+modified: 20241202013403886
 modifier: jargonzhou
 tags: Index
 title: Index
@@ -9,10 +9,23 @@ title: Index
 
 [[TiddlyWiki Tutorials]]
 
+! Methodology
+
+* [[Concept Map]]
+
 ! Languages
 
 [[Languages]]
 
 ! Mathematics
 
-[[Mathematics]]
+* [[Mathematics]]
+
+! Data Engineering
+
+* [[Data Engineering]]
+* [[Data Theory]]
+* [[Data Storage]]
+* [[Databases]]
+* [[Data Pipeline]]
+* [[Data Mesh]]

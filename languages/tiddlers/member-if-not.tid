@@ -1,0 +1,30 @@
+created: 20241202074337746
+creator: jargonzhou
+modified: 20241202074349714
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: member-if-not
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+member item list &key key test test-not => tail
+member-if predicate list &key key => tail
+member-if-not predicate list &key key => tail
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

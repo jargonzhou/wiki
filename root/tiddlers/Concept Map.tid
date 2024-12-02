@@ -1,0 +1,55 @@
+created: 20241128053926789
+creator: jargonzhou
+modified: 20241128055319929
+modifier: jargonzhou
+title: Concept Map
+
+<<<.tc-big-quote
+[[Concept map - wikipedia|https://en.wikipedia.org/wiki/Concept_map]]
+
+A ''concept map'' or ''conceptual diagram''' is a diagram that depicts suggested relationships between concepts. Concept maps may be used by instructional designers, engineers, technical writers, and others to organize and structure knowledge.
+
+A concept map typically represents ideas and information as boxes or circles, which it connects with labeled arrows, often in a downward-branching hierarchical structure but also in free-form maps. The relationship between concepts can be articulated in linking phrases such as "causes", "requires", "such as" or "contributes to".
+
+The technique for visualizing these relationships among different concepts is called **concept mapping**. Concept maps have been used to define the ontology of computer systems, for example with the object-role modeling or Unified Modeling Language formalism.
+<<<
+
+! Examples
+
+- [[Concept Mapping Tools|https://uwaterloo.ca/centre-for-teaching-excellence/catalogs/tip-sheets/concept-mapping-tools]]
+
+[img[https://uwaterloo.ca/centre-for-teaching-excellence/sites/default/files/uploads/images/parts_of_speech.png]]
+
+A concept map about concept maps:
+[img[https://cmap.ihmc.us/docs/images/Theory/Fig1CmapAboutCmaps-large.png]]
+
+! Tools
+
+- [[CmapTools|https://cmap.ihmc.us/]]
+
+Display settings: 快捷链接 > 属性 > 兼容性 > 更改高DPI设置 > 高DPI缩放替代 > 系统.
+
+
+! References
+
+* [[Research Publications on CmapTools & Concept Mapping|https://cmap.ihmc.us/publications/research-publications.php]]
+**The Theory Underlying Concept Maps and How to Construct and Use Them
+
+```bibtex
+@book{moon2011applied,
+  title={Applied Concept Mapping: Capturing, Analyzing, and Organizing Knowledge},
+  author={Moon, B. and Hoffman, R.R. and Novak, J. and Canas, A.},
+  isbn={9781439828618},
+  lccn={2010027609},
+  url={https://books.google.com.sg/books?id=GhrOBQAAQBAJ},
+  year={2011},
+  publisher={Taylor \& Francis}
+}
+```
+
+* [[Concept Mapping - Cornell University The Learning Strategies Center|https://lsc.cornell.edu/how-to-study/concept-maps/]]
+
+> Concept maps are a powerful tool for identifying relationships among ideas you learn in class. Understanding these relationships and depicting them visually can help you learn course material at a much deeper level and retain it better, too.
+
+* [[Concept Map - Lucidchart|https://www.lucidchart.com/pages/concept-map]]
+

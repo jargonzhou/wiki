@@ -1,0 +1,68 @@
+created: 20241202074805628
+creator: jargonzhou
+modified: 20241202074829797
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: quote
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+quote object => object
+```
+
+''Arguments and Values'':
+
+* `object`: 一个对象, 不被求值
+
+''Description'':
+
+特殊操作符`quote`直接返回`object`.
+
+如果字面量对象(包括被引述的对象)被破坏性修改时, 后果未定义.
+
+''Examples'':
+
+```lisp
+(setq a 1) =>  1
+
+(quote (setq a 3)) =>  (SETQ A 3)
+a =>  1 ;object未被求值
+
+'a =>  A
+''a =>  (QUOTE A)
+'''a =>  (QUOTE (QUOTE A))
+
+(setq a 43) =>  43
+(list a (cons a 3)) =>  (43 (43 . 3))
+(list (quote a) (quote (cons a 3))) =>  (A (CONS A 3))
+
+1 =>  1
+'1 =>  1
+
+"foo" =>  "foo"
+'"foo" =>  "foo"
+
+(car '(a b)) =>  A
+'(car '(a b)) =>  (CAR (QUOTE (A B)))
+
+#(car '(a b)) =>  #(CAR (QUOTE (A B)))
+'#(car '(a b)) =>  #(CAR (QUOTE (A B)))
+```
+
+''Affected By'': 无.
+
+''Exceptional Situations'': 无.
+
+''See Also'':
+
+[[3.1 求值(Evaluation)|../03-Evaluation-and-Compilation#3.1]], [[2.4.3 `'`(single-quote)|../02-Syntax#2.4.3]], [[3.2.1 编译器术语|../03-Evaluation-and-Compilation#3.2.1]]
+
+''Notes'':
+
+文本记法`'object`等价于`(quote object)`, 见[[3.2.1 编译器术语|../03-Evaluation-and-Compilation#3.2.1]].
+
+自求值对象不需要被`quote`引述. 符号和列表用于标识程序的部分, 不使用`quote`不能作为常值数据使用.
+因为`quote`抑制了这些对象的求值, 它们称为数据而不是程序.

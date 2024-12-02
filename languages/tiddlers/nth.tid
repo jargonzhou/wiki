@@ -1,0 +1,29 @@
+created: 20241202074526589
+creator: jargonzhou
+modified: 20241202074540358
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: nth
+
+
+> \[!tip] "Accessor"
+> ''Syntax'':
+
+```lisp
+nth n list => object
+(setf (nth n list) new-object)
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

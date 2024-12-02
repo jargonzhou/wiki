@@ -1,0 +1,33 @@
+created: 20241202075014500
+creator: jargonzhou
+modified: 20241202075025128
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: nsubst-if-not
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+subst new old tree &key key test test-not => new-tree
+subst-if new predicate tree &key key => new-tree
+subst-if-not new predicate tree &key key => new-tree
+nsubst new old tree &key key test test-not => new-tree
+nsubst-if new predicate tree &key key => new-tree
+nsubst-if-not new predicate tree &key key => new-tree
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

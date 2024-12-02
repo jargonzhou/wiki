@@ -1,0 +1,33 @@
+created: 20241202074314814
+creator: jargonzhou
+modified: 20241202074332670
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: mapcon
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+mapc function &rest lists+ => list-1
+mapcar function &rest lists+ => result-list
+mapcan function &rest lists+ => concatenated-results
+mapl function &rest lists+ => list-1
+maplist function &rest lists+ => result-list
+mapcon function &rest lists+ => concatenated-results
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

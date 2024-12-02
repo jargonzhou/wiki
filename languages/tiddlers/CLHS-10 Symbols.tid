@@ -1,0 +1,39 @@
+created: 20241202062817495
+creator: jargonzhou
+modified: 20241202071535893
+modifier: jargonzhou
+tags: CLHS
+title: CLHS-10 Symbols
+type: text/vnd.tiddlywiki
+
+! 10 符号
+!! 10.1 Symbol Concepts
+
+下图列出了一些可用于符号的属性列表(property list)的已定义名称:
+
+图 10-1. 属性列表的已定义名称.
+
+```lisp
+get
+remprop
+symbol-plist
+```
+
+下图给出了一些可用于创建和探究符号的已定义名称:
+
+图 10-2. 符号创建和探究的已定义名称.
+
+```lisp
+copy-symbol
+gensym
+gentemp
+keywordp
+make-symbol
+symbol-name
+symbol-package
+symbol-value
+```
+
+!! 10.2 符号的字典
+
+见 [[符号的字典|CLHS Dictionary]].

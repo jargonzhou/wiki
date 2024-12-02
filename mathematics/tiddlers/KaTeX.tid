@@ -1,0 +1,16 @@
+created: 20241129035429939
+creator: jargonzhou
+modified: 20241129035854227
+modifier: jargonzhou
+tags: Symbols
+title: KaTeX
+
+<<<.tc-big-quote
+$$\KaTeX$$
+
+KaTeX is a fast, easy-to-use JavaScript library for TeX math rendering on the web.
+<<<
+
+! References
+* [[Home|https://katex.org/]]
+* [[Supported Functions|https://katex.org/docs/supported]]: supported $$\TeX$$ functions.

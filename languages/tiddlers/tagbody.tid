@@ -1,0 +1,28 @@
+created: 20241202075107792
+creator: jargonzhou
+modified: 20241202075128157
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: tagbody
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+tagbody {tag | statement}* => nil
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

@@ -1,0 +1,62 @@
+created: 20241202073818447
+creator: jargonzhou
+modified: 20241202073835492
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: if
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+if test-form then-form [else-form] => result*
+```
+
+''Arguments and Values'':
+
+* `test-form`: 一个形式
+* `then-form`: 一个形式
+* `else-form`:一个形式, 默认为`nil`
+* `results`: 如果`test-form`为true, `then-form`返回的结果; 否则是`else-form`返回的结果
+
+''Description'':
+
+`if`允许依赖于单个`test-form`执行形式.
+
+首先求值`test-form`, 如果其结果为true, 则选择`then-form`, 否则选择`else-form`. 对选择的形式求值.
+
+''Examples'':
+
+```lisp
+(if t 1) =>  1
+(if nil 1 2) =>  2
+
+(defun test ()
+(dolist (truth-value '(t nil 1 (a b c)))
+	(if truth-value (print 'true) (print 'false))
+	(prin1 truth-value))) =>  TEST
+(test)
+>>  TRUE T
+>>  FALSE NIL
+>>  TRUE 1
+>>  TRUE (A B C)
+=>  NIL
+```
+
+''Affected By'': 无.
+
+''Exceptional Situations'': 无.
+
+''See Also'':
+
+[[cond|#cond]], [[unless|#unless]], [[when|#when]]
+
+''Notes'':
+
+```lisp
+ (if test-form then-form else-form)
+ ==
+ (cond (test-form then-form)
+   (t else-form))
+```

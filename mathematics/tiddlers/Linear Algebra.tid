@@ -1,11 +1,11 @@
 created: 20241127084758629
 creator: jargonzhou
-modified: 20241127085333450
+modified: 20241202044904467
 modifier: jargonzhou
-tags: TableOfContents [[Linear Algebra]]
+tags: [[Linear Algebra]] Mathematics
 title: Linear Algebra
 
-
+! Topics
 * Scalar, Vector, Matrices
 * vector multiplication: dot product, cross product
 * Euclidean norm
@@ -15,3 +15,273 @@ title: Linear Algebra
 * eigenvalue decomposition
 * singular value decomposition
 
+! Symbols
+
+column vector and row vector:
+$$
+\bold{x} = \begin{bmatrix}
+   1 \\
+	 4 \\
+   5 \\
+	 6 
+\end{bmatrix}
+\\
+\bold{y} = \begin{bmatrix}
+   .3 \\
+	 -7
+\end{bmatrix}
+\\
+\bold{z} = \begin{bmatrix}
+   1 & 4 & 5 & 6
+\end{bmatrix}
+$$
+
+vector norm:
+$$
+\lVert \bold{v} \rVert = \sqrt{\sum_{i=1}^{n} v_{i}^{2}}
+$$
+
+unit vector: 
+$$
+\hat{\bold{v}} = \frac{1}{\| \bold{v} \|} \bold{v}
+$$
+
+vector dot product:
+
+$$
+\delta = \sum_{i=1}^{n}a_{i} b_{i} \\
+\lang \bold{a}, \bold{b}\rang
+$$
+
+vector set: 
+$$
+V = \{ \bold{v_{1}}, \cdots, \bold{v_{n}} \}
+$$
+
+linear weighted combination: 
+$$
+\bold{w} = \lambda_{1}\bold{v_{1}} \lambda_{2}\bold{v_{2}} + \cdots + \lambda_{n}\bold{v_{n}}
+$$
+
+linear dependence: 
+$$
+\bold{0} = \lambda_{1} \bold{v_{1}} + \lambda_{2} \bold{v_{2}} + \cdots + \lambda_{n} \bold{v_{n}}, \lambda_{i} \in \reals
+$$
+
+Matrix: $$\bold{A}$$, size $$M \times N$$ (row by column)
+
+$$
+\begin{bmatrix}
+   1 & 2 \\
+   \pi & 4 \\
+   6 & 7
+\end{bmatrix}
+\\
+\begin{bmatrix}
+   -6 & 1/3 \\
+   e^{4.3} & -1.4 \\
+   6/5 & 0
+\end{bmatrix}
+$$
+
+Identity Matrix: $$\bold{I}$$
+
+Zero Matrix: $$\bold{0}$$
+
+Matrix addition:
+$$
+\begin{bmatrix}
+2 & 3 & 4 \\
+1 & 2 & 4
+\end{bmatrix} +
+\begin{bmatrix}
+0 & 3 & 1 \\
+-1 & -4 & 2
+\end{bmatrix} = 
+\begin{bmatrix}
+(2+0) & (3+3) & (4+1) \\
+(1-1) & (2-4) & (4+2)
+\end{bmatrix}
+= 
+\begin{bmatrix}
+2 & 6 & 5 \\
+0 & -2 & 6
+\end{bmatrix}
+$$
+
+shift a matrix: $$\bold{A} = \boldsymbol{\lambda} \bold{I}$$
+
+scalar-matrix multiplication:
+$$
+\gamma \begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix} =
+\begin{bmatrix}
+\gamma a & \gamma b \\
+\gamma c & \gamma d
+\end{bmatrix}
+$$
+
+Hadamard multiplication(element-wise multiplication):
+$$
+\begin{bmatrix}
+2 & 3\\
+4 & 5
+\end{bmatrix} \odot
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix} =
+\begin{bmatrix}
+2a & 3b \\
+4c & 5d
+\end{bmatrix}
+$$
+
+Matrix multiplication:
+$$
+\begin{bmatrix}
+2 & 3\\
+4 & 5
+\end{bmatrix} 
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix} =
+\begin{bmatrix}
+(2a+3c) & (2b+3d) \\
+(4a+5c) & (4b+5d)
+\end{bmatrix}
+$$
+
+Matrix-vector multiplication: $$\bold{A} \bold{v}$$, $$\bold{v}^{T} \bold{A}$$
+
+Matrix transpose:
+$$
+a_{i,j}^{T} = a_{j,i} \\
+$$
+
+$$
+\begin{bmatrix}
+3 & 0 & 4 \\
+9 & 8 & 3
+\end{bmatrix}^{T} =
+\begin{bmatrix}
+3 & 9 \\
+0 & 8 \\
+4 & 3
+\end{bmatrix}
+$$
+
+Matrix Frobenius norm:
+$$
+\lVert \bold{A} \rVert_{F} = \sqrt{\sum_{i=1}^{M}\sum_{j=1}^{N}a_{ij}^{2}}
+$$
+
+p-norm:
+$$
+\lVert \bold{A} \rVert_{p} = \left ( \sum_{i=1}^{M}\sum_{j=1}^{N}|a_{ij}|^{p} \right )^{1/p}
+$$
+
+Matrix column space: $$C(\bold{A})$$
+
+Matrix row space: $$R(\bold{A})$$
+
+Matrix null space: $$N(\bold{A})$$
+
+Matrix rank: $$r(\bold{A})$$, $$\texttt{rank}(\bold{A})$$
+
+augmented matrix: $$\bold{\widetilde{A}}$$
+
+Matrix determinate: $$\texttt{det}(\bold{A})$$, $$|\bold{A}|$$
+
+orthogonal matrix: $$\bold{Q}$$
+$$
+\bold{Q}^{T} \bold{Q} = \bold{I}
+$$
+
+QR decomposition: $$\bold{A} = \bold{Q} \bold{R}$$
+
+QR and inverse:
+$$
+\begin{align}
+   \bold{A} &= \bold{Q} \bold{R} \\
+   \bold{A}^{-1} &= (\bold{Q} \bold{R})^{-1} \\
+   \bold{A}^{-1} &= \bold{R}^{-1} \bold{Q}^{-1} \\
+   \bold{A}^{-1} &= \bold{R}^{-1} \bold{Q}^{T}
+\end{align}
+$$
+
+Matrix equation:
+$$
+\begin{align}
+   x + y &= 4 \\
+   -x/2 + y &= 2
+\end{align}
+$$
+$$
+\begin{bmatrix}
+   1 & 1 \\
+   -1/2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+   x \\
+   y
+\end{bmatrix}
+= 
+\begin{bmatrix}
+   4 \\
+   2
+\end{bmatrix}
+$$
+
+LU decomposition: $$\bold{A} = \bold{L} \bold{U}$$
+
+permutation matrix: $$\bold{P}$$
+
+general linear model: $$\bold{X} \boldsymbol{\beta} = \bold{y}$$
+
+Least Squares Solution to general linear model:
+$$
+\begin{align}
+\bold{X} \boldsymbol{\beta} &= \bold{y} \\
+(\bold{X}^{T} \bold{X})^{-1} \bold{X}^{T} \bold{X} \boldsymbol{\beta} &= (\bold{X}^{T} \bold{X})^{-1} \bold{X}^{T} \bold{y} \\
+\boldsymbol{\beta} &= (\bold{X}^{T} \bold{X})^{-1} \bold{X}^{T} \bold{y}
+\end{align}
+$$
+
+Least Squares via QR:
+$$
+\begin{align}
+\bold{X} \boldsymbol{\beta} &= \bold{y} \\
+\bold{Q} \bold{R} \boldsymbol{\beta} &= \bold{y} \\
+\bold{R} \boldsymbol{\beta} &= \bold{Q}^{T} \bold{y} \\
+\boldsymbol{\beta} &= \bold{R}^{-1} \bold{Q}^{T} \bold{y}
+\end{align}
+$$
+
+Enginevalue:
+$$
+\bold{A} \bold{v} = \lambda \bold{v}
+$$
+
+Singular Value Decomposistion(SVD)
+$$
+\bold{A}_{M \times N} = \bold{U}_{M \times M} \bold{\Sigma}_{M \times N} \bold{V}_{N \times N}^{T}, M \ge N
+\\
+\\
+\bold{\Sigma} = \begin{bmatrix}
+   \sigma_{1} &  & &\\
+    & \sigma_{2} & &\\
+    &  & \ddots &\\
+    & & & \sigma_{N} \\
+    & & & \\
+    & & &
+\end{bmatrix}
+\\
+\sigma_{1} \ge \sigma_{2} \ge \cdots \ge \sigma_{n} \ge 0
+
+$$
+
+here $$\bold{U}$$ and $$\bold{V}$$ are orthogonal matrices, $$\sigma_{i}$$ are the singular value of $$\bold{A}$$.

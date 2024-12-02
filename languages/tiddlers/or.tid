@@ -1,0 +1,28 @@
+created: 20241202074619523
+creator: jargonzhou
+modified: 20241202074646784
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: or
+
+
+> \[!tip] "Macro"
+> ''Syntax'':
+
+```lisp
+or form* => results*
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

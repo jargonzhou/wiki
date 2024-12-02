@@ -1,0 +1,27 @@
+created: 20241202072318605
+creator: jargonzhou
+modified: 20241202072321588
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: adjoin
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+adjoin item list &key key test test-not => new-list
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

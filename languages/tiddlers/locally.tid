@@ -1,0 +1,27 @@
+created: 20241202074229176
+creator: jargonzhou
+modified: 20241202074239489
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: locally
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+locally declaration* form* => result*
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

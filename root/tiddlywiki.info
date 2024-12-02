@@ -11,6 +11,10 @@
     {
       "path": "../mathematics",
       "read-only": false
+    },
+    {
+      "path": "../data-engineering",
+      "read-only": false
     }
   ],
   "build": {

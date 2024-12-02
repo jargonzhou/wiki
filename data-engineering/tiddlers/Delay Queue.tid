@@ -1,0 +1,14 @@
+created: 20241202011328901
+creator: jargonzhou
+modified: 20241202012600037
+modifier: jargonzhou
+tags: [[Data Pipeline]]
+title: Delay Queue
+
+Capture: 2024/12/2
+
+* [[Redis keyspace notifications - Timing of expired events|https://redis.io/docs/latest/develop/use/keyspace-notifications/]]: note the limitations.
+* [[Delayed Messaging for RabbitMQ|https://github.com/rabbitmq/rabbitmq-delayed-message-exchange]]: note the limitations.
+* [[Hashed and Hierarchical Timing Wheels: Data Structures for the Efficient Implementation of a Timer Facility|https://blog.acolyer.org/2015/11/23/hashed-and-hierarchical-timing-wheels/]]: The Morning Paper. 
+** ref: Hashed and Hierarchical Timing Wheels: Data Structures for the Efficient Implementation of a Timer Facility – Varghese & Lauck 1987
+* [[Redisson Delayed Queue|https://redisson.org/docs/data-and-services/collections/#delayed-queue]]

@@ -1,0 +1,22 @@
+created: 20241202074454971
+creator: jargonzhou
+modified: 20241202074504344
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: nil
+
+
+> \[!tip] "Constant Variable"
+> ''Constant Value'':
+
+```lisp
+nil
+```
+
+''Description'':
+
+''Examples'':
+
+''See Also'':
+
+''Notes'':

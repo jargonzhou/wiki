@@ -1,0 +1,28 @@
+created: 20241202075153511
+creator: jargonzhou
+modified: 20241202075205607
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: throw
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+throw tag result-form =>|
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

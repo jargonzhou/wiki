@@ -1,0 +1,53 @@
+created: 20241202074724518
+creator: jargonzhou
+modified: 20241202074740819
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: progn
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+progn form* => result*
+```
+
+''Arguments and Values'':
+
+* `forms`: 一个隐式的`progn`
+* `results`: `forms`的值
+
+''Description'':
+
+`progn`按给定的顺序求值`forms`. 丢弃除最后一个形式外的值.
+
+如果`progn`作为顶级形式出现, 则`progn`中的`forms`被编译器视为顶级形式.
+
+''Examples'':
+
+```lisp
+(progn) =>  NIL
+(progn 1 2 3) =>  3
+(progn (values 1 2 3)) =>  1, 2, 3
+
+(setq a 1) =>  1
+(if a
+	 (progn (setq a nil) 'here)
+	 (progn (setq a t) 'there)) =>  HERE
+a =>  NIL
+```
+
+''Affected By'': 无.
+
+''Exceptional Situations'': 无.
+
+''See Also'':
+
+[[prog1|#prog1]], [[prog2|#prog2]], [[3.1 求值|../03-Evaluation-and-Compilation#3.1]]
+
+''Notes'':
+
+Common Lisp中很多地方包含使用隐式`progn`的语法. 即, 作为其语法的一部分,
+允许写多个被串行求值的形式, 忽略除最后一个形式的结果, 返回最后一个形式的结果.
+这些地方包括但不限于: lambda表达式的体, 多个控制和条件形式的体(`case`、`catch`、`progn`、`when`等).

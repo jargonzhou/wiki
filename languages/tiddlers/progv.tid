@@ -1,0 +1,59 @@
+created: 20241202074746776
+creator: jargonzhou
+modified: 20241202074802090
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: progv
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+progv symbols values form* => result*
+```
+
+''Arguments and Values'':
+
+* `symbols`: 符号列表; 被求值
+* `values`: 对象列表, 被求值
+* `forms`: 隐式`progn`
+* `results`: `forms`返回的值
+
+''Description'':
+
+`progv`创建新的 ''动态变量'' 绑定, 并使用这些绑定执行每个`form`. 按顺序求值每个`form`.
+
+`progv`允许绑定一个或多个 ''运行时确定名称的'' 动态变量. 每个`form`按顺序求值, 使用名称在`symbols`中的绑定到相应的`values`的动态变量.
+如果提供了过少的`values`, 则剩下的符号被绑定为没有值.
+如果提供了过多的`values`, 则多余的被忽略.
+在从`progv`中退出时, 动态变量的绑定被撤销.
+
+''Examples'':
+
+```lisp
+(setq *x* 1) =>  1
+
+(progv '(*x*) '(2) *x*) =>  2
+*x* =>  1 ;动态变量绑定被撤销
+```
+
+假设`*x*`不是全局特殊的,
+
+```lisp
+(let ((*x* 3))				; 变量*x*
+ (progv '(*x*) '(4)	; 符号*x*
+	 (list *x* (symbol-value '*x*)))) =>  (3 4)
+```
+
+''Affected By'': 无.
+
+''Exceptional Situations'': 无.
+
+''See Also'':
+
+[[let|#let]], [[3.1 求值(Evaluation)|../03-Evaluation-and-Compilation#3.1]]
+
+''Notes'':
+
+`progv`在编写内嵌在Lisp中的语言时很有用, 提供了绑定动态变量的机制.

@@ -1,0 +1,29 @@
+created: 20241202073903126
+creator: jargonzhou
+modified: 20241202073915338
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: nintersection
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+intersection list-1 list-2 &key key test test-not => result-list
+nintersection list-1 list-2 &key key test test-not => result-list
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

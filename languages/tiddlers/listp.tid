@@ -1,0 +1,28 @@
+created: 20241202074134177
+creator: jargonzhou
+modified: 20241202074201833
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: listp
+
+
+> \[!note] "Function"
+> ''Syntax'':
+
+```lisp
+listp object => generalized-boolean
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':

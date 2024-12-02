@@ -1,0 +1,28 @@
+created: 20241202072537124
+creator: jargonzhou
+modified: 20241202072544346
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: catch
+
+
+> \[!attention] "Special Operator"
+> ''Syntax'':
+
+```lisp
+catch tag form* => result*
+```
+
+''Arguments and Values'':
+
+''Description'':
+
+''Examples'':
+
+''Affected By'':
+
+''Exceptional Situations'':
+
+''See Also'':
+
+''Notes'':
