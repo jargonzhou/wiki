@@ -1,0 +1,50 @@
+CLHS: 
+caption: t-clhs-symbol
+created: 20241202101406303
+creator: jargonzhou
+modified: 20241202102530122
+modifier: jargonzhou
+tags: $:/tags/TextEditor/Snippet
+title: t-clhs-symbol
+
+! Syntax
+
+<<<
+Put in field 'CLHS':
+
+* Accessor
+* Class
+* Condition Type
+* Constant Variable
+* Declaration
+* Function
+* Macro
+* Special Operator
+* Symbol
+* System Class
+* Type
+* Type Specifier
+* Variable
+<<<
+
+
+```lisp
+
+```
+
+! Arguments and Values
+
+! Description
+
+! Examples
+
+
+! Side Effects
+
+! Affected By
+
+! Exceptional Situations
+
+! See Also
+
+! Notes

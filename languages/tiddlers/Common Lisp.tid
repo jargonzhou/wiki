@@ -1,6 +1,6 @@
 created: 20241126050006202
 creator: jargonzhou
-modified: 20241202050505451
+modified: 20241203063228601
 modifier: jargonzhou
 tags: Lisp TableOfContents
 title: Common Lisp
@@ -8,20 +8,20 @@ type: text/vnd.tiddlywiki
 
 ! Specifications
 
-* [[CLHS]]
+* [[CLHS]]: Common Lisp HyperSpec.
 
 ! Tools
 
-* [[Roswell]]
-* [[SBCL]]
-* [[ASDF]]
-* [[Quicklisp]]
-* [[SLIME]]
-* [[SLY]]
-* [[Alive]]
-* [[CL-Project]]
-* [[Prove]]
-* [[FiveAM]]
-* [[Rove]]
-* [[Bordeaux]]
-* [[Caveman2]]
+* [[Roswell]]: Common Lisp environment setup Utility.
+* [[SBCL]]: Common Lisp compiler.
+* [[ASDF]]: the de facto standard build facility for Common Lisp.
+* [[Quicklisp]]:  a library manager for Common Lisp
+* [[SLIME]]: The Superior Lisp Interaction Mode for Emacs.
+* [[SLY]]: Sylvester the Cat's Common Lisp IDE for Emacs.
+* [[Alive]]: The Average Lisp VSCode Environment.
+* [[CL-Project]]: Generate modern project skeletons for Common Lisp.
+* [[Prove]]: archived, see [[Rove]].
+* [[FiveAM]]: Common Lisp regression testing framework.
+* [[Rove]]: a unit testing framework for Common Lisp applications.
+* [[Bordeaux]]: a Common Lisp threading library
+* [[Caveman2]]: Lightweight web application framework.

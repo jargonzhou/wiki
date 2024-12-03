@@ -1,6 +1,6 @@
 created: 20241202072021071
 creator: jargonzhou
-modified: 20241202073155318
+modified: 20241202101316205
 modifier: jargonzhou
 tags: CLHS
 title: CLHS Symbols
@@ -276,7 +276,7 @@ type: text/vnd.tiddlywiki
 * [[defstruct]]
 * [[deftype]]
 * [[defun]]
-* [[defvar]]
+* [[defvar|defparameter]]
 * [[delete]]
 * [[delete-duplicates]]
 * [[delete-file]]

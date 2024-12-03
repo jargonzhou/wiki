@@ -1,0 +1,80 @@
+created: 20241203045520287
+creator: jargonzhou
+modified: 20241203051818913
+modifier: jargonzhou
+tags: Languages
+title: Jupyter Kernels
+
+
+! Kernel specs
+
+files:
+
+* `kernel.json`
+* `kernel.js`
+* logo image file.
+
+list and uages:
+
+```shell
+$ jupyter kernelspec list
+
+$ jupyter console --kernel bash
+$ jupyter qtconsole --kernel bash
+```
+
+!! Example `kernel.json`
+
+Rust Evcxr:
+
+```json
+{
+  "argv": [
+    "D:\\rust\\.cargo\\bin\\evcxr_jupyter.exe",
+    "--control_file",
+    "{connection_file}"
+  ],
+  "display_name": "Rust",
+  "language": "rust",
+  "interrupt_mode": "message"
+}
+```
+
+common-lisp-jupyter:
+
+```json
+{
+  "argv": [
+    "D:\\software\\SBCL-2.4.10\\sbcl.exe",
+    "--eval",
+    "(ql:quickload :common-lisp-jupyter)",
+    "--eval",
+    "(jupyter:run-kernel 'jupyter/common-lisp:kernel)",
+    "{connection_file}"
+  ],
+  "display_name": "Common Lisp",
+  "language": "common-lisp",
+  "interrupt_mode": "message",
+  "metadata": {
+    "debugger": true
+  }
+}
+```
+
+! ZeroMQ based Messaging
+
+design diagram: [img[https://github.com/jupyter/jupyter_client/blob/main/docs/figs/frontend-kernel.png?raw=true]]
+
+socket channels:
+
+* ''Shell'': requests for code execution, object information, prompts, etc.
+* ''IOPub'': the ‘broadcast channel’.
+* ''stdin'': request input from the active frontend when `raw_input()` is called.
+* ''Control'': use for shutdown/restart/debugging messages.
+* ''Heartbeat'': connection liveness among frontend and kernel.
+
+example: [[simple_kernel.py|https://github.com/dsblank/simple_kernel/blob/master/simple_kernel.py]]
+
+! References
+* [[Making kernels for Jupyter|https://jupyter-client.readthedocs.io/en/latest/kernels.html]]
+* [[Messaging in Jupyter|https://jupyter-client.readthedocs.io/en/latest/index.html]]

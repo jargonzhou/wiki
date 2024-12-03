@@ -1,12 +1,20 @@
 created: 20241127062109506
 creator: jargonzhou
-modified: 20241127062223255
+modified: 20241203063123297
 modifier: jargonzhou
 tags: [[Common Lisp]] Testing
 title: FiveAM
 type: text/vnd.tiddlywiki
 
-* 2024-10-27
+<<<.tc-big-quote
+FiveAM is a testing framework. It takes care of all the boring bookkeeping associated with managing a test framework allowing the developer to focus on writing tests and code.
+
+FiveAM was designed with the following premises:
+
+* Defining tests should be about writing tests, not infrastructure. The developer should be able to focus on what they're testing, not the testing framework.
+
+* Interactive testing is the norm. Common Lisp is an interactive development environment, the testing environment should allow the developer to quickly and easily redefine, change, remove and run tests.
+<<<
 
 ! Usage
 

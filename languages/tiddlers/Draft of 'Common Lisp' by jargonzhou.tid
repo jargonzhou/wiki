@@ -1,0 +1,29 @@
+created: 20241126050006202
+creator: jargonzhou
+draft.of: Common Lisp
+draft.title: Common Lisp
+modified: 20241203063010029
+modifier: jargonzhou
+tags: Lisp TableOfContents
+title: Draft of 'Common Lisp' by jargonzhou
+type: text/vnd.tiddlywiki
+
+! Specifications
+
+* [[CLHS]]
+
+! Tools
+
+* [[Roswell]]: Common Lisp environment setup Utility.
+* [[SBCL]]: Common Lisp compiler.
+* [[ASDF]]: the de facto standard build facility for Common Lisp.
+* [[Quicklisp]]:  a library manager for Common Lisp
+* [[SLIME]]: The Superior Lisp Interaction Mode for Emacs.
+* [[SLY]]: Sylvester the Cat's Common Lisp IDE for Emacs.
+* [[Alive]]: The Average Lisp VSCode Environment.
+* [[CL-Project]]: Generate modern project skeletons for Common Lisp.
+* [[Prove]]: archived, see [[Rove]].
+* [[FiveAM]]
+* [[Rove]]
+* [[Bordeaux]]
+* [[Caveman2]]

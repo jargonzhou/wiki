@@ -1,6 +1,6 @@
 created: 20241126051155393
 creator: jargonzhou
-modified: 20241127091117287
+modified: 20241203045508412
 modifier: jargonzhou
 tags: TableOfContents
 title: Languages
@@ -15,3 +15,5 @@ title: Languages
 
 * [[GitHub Pages|https://pages.github.com/]]: Websites for you and your projects.
 * [[GitHub Actions]]
+* [[Language Server Protocol]]
+* [[Jupyter Kernels]]

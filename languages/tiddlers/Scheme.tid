@@ -1,0 +1,64 @@
+created: 20241202143607560
+creator: jargonzhou
+modified: 20241203062619083
+modifier: jargonzhou
+tags: Scheme TableOfContents
+title: Scheme
+
+! Tutorial
+
+* [[A Scheme Primer|https://spritely.institute/static/papers/scheme-primer.html]]
+** 1. Introduction
+** 2. Setting up
+** 3. Hello Scheme!
+** 4. Basic types, a few small functions
+** 5. Variables and procedures
+** 6. Conditionals and predicates
+** 7. Lists and "cons"
+** 8. Closures
+** 9. Iteration and recursion
+** 10. Mutation, assignment, and other kinds of side effects
+** 11. On the extensibility of Scheme (and Lisps in general)
+** 12. Scheme in Scheme
+
+! Specifications
+
+* [[R6RS]]
+
+! Implementations
+
+* [[SRFI|https://srfi.schemers.org/]]: Scheme Requests for Implementation.
+
+* [[Chez Scheme]]
+* [[Guile]]
+* [[MIT/GNU Scheme]]
+
+! File Extensions
+ref: [[What's the proper scheme file extension?|https://stackoverflow.com/questions/36240629/whats-the-proper-scheme-file-extension]]
+
+* `.scm`: Scheme
+** rare alternatives: `.ss`, `.sc`, `.sch`.
+* `.sps`: Scheme Program Source
+* `.sls`: Scheme Library Source, R6RS `library`.
+* `.sld`: Scheme Library Definition, R7RS `define-library`.
+
+! Libraries
+
+* [[SLIB]]: The SLIB Portable Scheme Library
+* [[JACAL]]: The JACAL Symbolic Math System
+
+! Tools
+* [[Akku]]: a language package manager for Scheme
+* [[scheme-langserver|https://github.com/ufo5260987423/scheme-langserver]]: Scheme language server
+```shell
+# require chez-exe
+git clone https://github.com/ufo5260987423/scheme-langserver
+cd scheme-langserver
+akku install
+bash .akku/env
+compile-chez-program run.ss
+```
+
+! References
+
+* [[Scheme (programming language) - wikipedia|https://en.wikipedia.org/wiki/Scheme_(programming_language)]]

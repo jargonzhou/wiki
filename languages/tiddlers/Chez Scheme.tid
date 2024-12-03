@@ -1,0 +1,51 @@
+created: 20241202143722521
+creator: jargonzhou
+modified: 20241203031735064
+modifier: jargonzhou
+tags: Scheme
+title: Chez Scheme
+
+<<<.tc-big-quote
+Chez Scheme is both a programming language and an implementation of that language, with supporting tools and documentation.
+<<<
+
+! Usage
+
+MacOS:
+
+```shell
+✗ cd csv9.5.8
+✗ ./configure
+✗ sudo make install
+
+✗ which scheme
+/usr/local/bin/scheme
+✗ scheme
+Chez Scheme Version 9.5.8
+Copyright 1984-2022 Cisco Systems, Inc.
+
+> (+ 1 2)
+3
+> (exit)
+```
+
+Work with libraries:
+
+```shell
+export CHEZSCHEMELIBDIRS="/path/to/lib"
+export CHEZSCHEMELIBEXTS=".ss:.scm"
+```
+
+! Tools
+* [[chez-exe|https://github.com/gwatt/chez-exe]]: Chez Scheme self hosting executable
+```shell
+# Windows WSL
+git clone https://github.com/ufo5260987423/chez-exe.git
+scheme --script gen-config.ss --bootpath /usr/lib/csv10.1.0/ta6le
+sudo make install
+```
+
+! References
+* [[Code|https://github.com/cisco/chezscheme]]
+* [[The Scheme Programming Language, 4th Edition|https://www.scheme.com/tspl4/]]
+* [[User's Guide|https://cisco.github.io/ChezScheme/csug/csug.html]]
