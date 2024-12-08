@@ -1,17 +1,24 @@
 created: 20241126051155393
 creator: jargonzhou
-modified: 20241203045508412
-modifier: jargonzhou
+modified: 20241207105733090
+modifier: zhoujiagen@gmail.com
 tags: TableOfContents
 title: Languages
 
+* [[Languages FAQ]]
+
+! Compiler Engineering
+
+* [[Glossary|Compiler Glossary]]
+
+! The Zoo of Programming Languages
 * [[Lisp]]
 ** [[Common Lisp]]
 ** [[Scheme]]
 ** [[Racket]]
 ** [[Clojure]]
 
-! Tools
+! <<a "Tools">> Tools
 
 * [[GitHub Pages|https://pages.github.com/]]: Websites for you and your projects.
 * [[GitHub Actions]]

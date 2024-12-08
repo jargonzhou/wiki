@@ -1,6 +1,6 @@
 created: 20241202065528565
 creator: jargonzhou
-modified: 20241202071618460
+modified: 20241204032254850
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-23 Reader
@@ -105,4 +105,25 @@ READTABLE-CASE     Input Symbol-name
 
 !! 23.2 读取器的字典
 
-见[[读取器的字典|CLHS Dictionary]].
+* system class `readtable`
+* function `copy-readtable`
+* function `make-dispatch-macro-character`
+* function `read`
+* function `read-preserving-whitespace`
+* function `read-delimited-list`
+* function `read-from-string`
+* accessor `readtable-case`
+* function `readtablep`
+* function `set-dispatch-macro-character`
+* function `get-dispatch-macro-character`
+* function `set-macro-character`
+* function `get-macro-character`
+* function `set-syntax-from-char`
+* macro `with-standard-io-syntax`
+* variable ``*read-base*``
+* variable ``*read-default-float-format*``
+* variable ``*read-eval*``
+* variable ``*read-suppress*``
+* variable ``*readtable*``
+* condition type `reader-error`
+

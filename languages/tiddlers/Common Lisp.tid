@@ -1,6 +1,6 @@
 created: 20241126050006202
 creator: jargonzhou
-modified: 20241203063228601
+modified: 20241206091156027
 modifier: jargonzhou
 tags: Lisp TableOfContents
 title: Common Lisp
@@ -10,18 +10,55 @@ type: text/vnd.tiddlywiki
 
 * [[CLHS]]: Common Lisp HyperSpec.
 
+! Topics
+
+* [[Macro]]
+* [[CLOS]]: Common Lisp Object System.
+
 ! Tools
 
-* [[Roswell]]: Common Lisp environment setup Utility.
-* [[SBCL]]: Common Lisp compiler.
 * [[ASDF]]: the de facto standard build facility for Common Lisp.
-* [[Quicklisp]]:  a library manager for Common Lisp
-* [[SLIME]]: The Superior Lisp Interaction Mode for Emacs.
-* [[SLY]]: Sylvester the Cat's Common Lisp IDE for Emacs.
 * [[Alive]]: The Average Lisp VSCode Environment.
 * [[CL-Project]]: Generate modern project skeletons for Common Lisp.
-* [[Prove]]: archived, see [[Rove]].
-* [[FiveAM]]: Common Lisp regression testing framework.
-* [[Rove]]: a unit testing framework for Common Lisp applications.
-* [[Bordeaux]]: a Common Lisp threading library
+* [[Common Lisp language support for VS Code|https://github.com/qingpeng9802/vscode-common-lisp]]: This VS Code extension supports Syntax Highlighting, Snippets, Completion, Hover, Definition, References, Document Symbol, Call Hierarchy, and Semantic Tokens for Common Lisp.
+* [[Quicklisp]]:  a library manager for Common Lisp
+* [[Roswell]]: Common Lisp environment setup Utility.
+* [[SBCL]]: Common Lisp compiler.
+* [[SLIME]]: The Superior Lisp Interaction Mode for Emacs.
+* [[SLY]]: Sylvester the Cat's Common Lisp IDE for Emacs.
+
+!! Touch
+
+* [[lisp-system-browser|https://github.com/mmontone/lisp-system-browser]]: Smalltalk-like system browser for Common Lisp. preinstalled in [[SLIME]]
+* [[sbcl-image-builder|https://github.com/jpcima/sbcl-image-builder]]: Lisp image build for SBCL.
+
+! Packages
+
+* [[Alexandria|https://gitlab.common-lisp.net/alexandria/alexandria]]: Alexandria is a collection of portable public domain utilities.
+* [[Babel|https://github.com/cl-babel/babel]]: Babel, a charset conversion library.
+* [[Bordeaux]]: a Common Lisp threading library.
 * [[Caveman2]]: Lightweight web application framework.
+* [[cl-base64|https://quickdocs.org/cl-base64]]: Base64 encoding and decoding with URI support.
+* [[cl-indentify|https://github.com/yitzchak/cl-indentify|]]: A code beautifier for Common Lisp.
+* [[closer-mop|https://github.com/pcostanza/closer-mop]]: Closer to MOP is a compatibility layer that rectifies many of the absent or incorrect CLOS Meta Object Protocol (MOP) features across a broad range of Common Lisp implementations.
+* [[dissect|https://github.com/Shinmera/dissect]]: A lib for introspecting the call stack and active restarts.
+* [[eclector|https://github.com/s-expressionists/Eclector]]: A portable, extensible Common Lisp reader.
+* [[FiveAM]]: Common Lisp regression testing framework.
+* [[ironclad|https://github.com/sharplispers/ironclad]]: A cryptographic toolkit written in Common Lisp.
+* [[multilang-documentation|https://github.com/Shinmera/multilang-documentation]]: A drop-in replacement for cl:documentation with support for multiple languages.
+* [[nontrivial-gray-streams|https://github.com/yitzchak/nontrivial-gray-streams]]: A compatibility layer for Gray streams including extensions.
+* [[Prove]]: archived, see [[Rove]].
+* [[puri|https://quickdocs.org/puri]]: Portable Universal Resource Indentifier Library.
+* [[pzmq|https://github.com/orivej/pzmq]]: ZeroMQ bindings. 
+* [[Rove]]: a unit testing framework for Common Lisp applications.
+* [[shasht|https://github.com/yitzchak/shasht]]: JSON reading and writing for the Kzinti.
+* [[static-vectors|https://github.com/sionescu/static-vectors]]: Create vectors allocated in static memory.
+* [[trivial-do|https://github.com/yitzchak/trivial-do]]: Looping extensions that follow the style of the core DO functions.
+* [[trivial-garbage|https://github.com/trivial-garbage/trivial-garbage]]: Portable finalizers, weak hash-tables and weak pointers.
+* [[trivial-mimes|https://github.com/Shinmera/trivial-mimes]]: Tiny library to detect mime types in files.
+* [[trivial-features|https://github.com/trivial-features/trivial-features]]: Ensures consistent *FEATURES* across multiple CLs.
+* [[usocket|https://github.com/usocket/usocket]]: Universal socket library for Common Lisp.
+
+! More
+
+

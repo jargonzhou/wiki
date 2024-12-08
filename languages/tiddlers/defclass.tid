@@ -1,0 +1,142 @@
+CLHS: Macro
+created: 20241207013020123
+creator: zhoujiagen@gmail.com
+modified: 20241207090204468
+modifier: zhoujiagen@gmail.com
+tags: [[CLHS Symbols]]
+title: defclass
+
+! Syntax
+
+```lisp
+defclass class-name ({superclass-name}*) ({slot-specifier}*) [[class-option]]
+
+=> new-class
+
+slot-specifier::= slot-name | (slot-name [[slot-option]])
+slot-name::= symbol
+slot-option::= {:reader reader-function-name}* | 
+               {:writer writer-function-name}* | 
+               {:accessor reader-function-name}* | 
+               {:allocation allocation-type} | 
+               {:initarg initarg-name}* | 
+               {:initform form} | 
+               {:type type-specifier} | 
+               {:documentation string} 
+function-name::= {symbol | (setf symbol)}
+class-option::= (:default-initargs . initarg-list) | 
+                (:documentation string) | 
+                (:metaclass class-name) 
+```
+
+! Arguments and Values
+
+; class-name
+: 一个非`nil`的符号
+; superclass-name
+: 一个非`nil`的符号
+; slot-name
+: 一个符号. 语法上可用做变量名称的符号.
+; reader-function-name
+: 一个非`nil`的符号. 在指定槽上可以有多个`:reader`.
+; writer-function-name
+: 一个广义函数名称. 在指定槽上可以有多个`:writer`.
+; reader-function-name
+: 一个非`nil`的符号. 在指定槽上可以有多个`:accessor`.
+; allocation-type
+: 值有`:instance`和`:class`. 在指定槽上最多有一个`:allocation`.
+; initarg-name
+: 一个符号. 在指定槽上可以有多个`:initarg`.
+; form
+: 一个形式. 在指定槽上最多有一个`:init-form`.
+; type-specifier
+: 一个类型描述符. 在指定槽上最多有一个`:type`.
+; class-option
+: 整体引用类, 或引用类的所有槽.
+; initarg-list
+: 初始化参数名称和默认初始值形式的一个列表. 最多有一个`:default-initargs`.
+; class-name
+: 一个非`nil`的符号. 最多有一个`:metaclass`.
+; new-class
+: 新的类对象.
+
+! Description
+
+`defclass`宏定义了一个新的命名类, 返回新的类对象作为结果.
+
+`defclass`的语法提供了指定槽初始化参数的选项, 包括描指定的默认初始值, 为读写槽值自动生成指定广义函数的方法. 默认不定义读写函数, 它们的生成必须显式请求. 但是槽总是可以通过[[slot-value]]访问.
+
+定义一个新类总是导致定义一个有相同名称的类型. 如果`object`的类是名为`class-name`的类或`class-name`的子类, 谓词`(typep object class-name)`返回true. 
+一个类对象可以用作类型描述符. 如果`object`的类是`class`或者`class`的子类, `(typep object class)`返回true.
+
+参数`class-name`指定了新类的合式名称. 如果已存在相同的合式名称类且该类是`standard-class`的实例, 并且如果定义新类的`defclass`形式定义了为`standard-class`实例的类, 则已存在的类被重定义, 并且它和它子类的实例在下次被访问时更新成新的定义. 详情见[[4.3.6 重定义类|CLHS-04 Types and Classes]].
+
+每个`superclass-name`参数指定了新类的直接超类. 如果超类列表为, 则超类默认依赖于元类, 对于[[standard-class]]默认是[[standard-object]].
+
+新类将继承它的每个直接超类的槽和方法, 直接超类的直接超类的槽和方法, 以次类推. 槽和方法如何继承的讨论见[[4.3.4 继承|CLHS-04 Types and Classes]].
+
+有如下的槽选项可用:
+
+* `:reader`槽选项指定了名为`reader-function-name`的广义函数上未限定的方法, 以读取指定槽的值.
+* `:writer`槽选线指定了名为`writer-function-name`的广义函数上未限定的方法, 以写入指定槽的值.
+* `:accessor`槽选项指定了名为`reader-function-name`的广义函数上未限定的方法, 以读取指定槽的值, 和名为`(setf reader-function-name)`的广义函数上未限定的方法, 以结合[[setf]]使用修改槽值.
+* `:allocation`槽选项用于指定指定槽的存储如何分配. 槽的存储可以分配在每个实例中或类对象中. `allocation-type`参数的值可以是关键字`:instance`或者关键字`:class`. 如果`:allocation`槽选项未指定, 则效果与指定`:allocation :instance`相同.
+** 如果`allocation-type`值为`:instance`, 则在类的每个实例上分配名为`slot-name`的局部槽.
+** 如果`allocation-type`值为`:class`, 则在该`defclass`形式创建的类对象中分配给定名称共享槽. 该槽的值被类的所有实例共享. 如果$$C1$$类定义了一个共享槽, 则$$C1$$的任意子类$$C2$$共享这个槽, 除非$$C2$$的`defclass`形式指定了相同名称的槽, 或者在$$C2$$的类优先级列表中$$C1$$之前的类定义了相同名称的槽.
+* `:initarg`槽选项声明了名为`initarg-name`的初始化参数, 指定该初始化实现初始化该槽. 如果在调用[[initialize-instance]]时该初始化参数有值, 则该值将存储在该操作, 并且该槽的`:initform`槽选项(如果有的话)不被求值. 如果没有指定槽的初始化参数, 如果该槽有`:initform`槽选项, 则根据它初始化槽的值.
+* `:type`槽选项指定了槽的内容总是特定的数据类型. 它实际上声明了该类的对象上读广义函数的结果类型. 尝试在槽中存储不满足槽类型的值结果是未定义的. `:type`槽选项的进一步讨论见[[7.5.3 槽继承和槽选项|CLHS-07 Objects]].
+* `:documentation`槽选项提供了槽的文档字符串. 给定槽上至多有一个`:documentation`.
+
+每个类选项是将类作为整体引用的选项. 有如下类选项可用:
+
+* `:default-initargs`类选项后接初始化参数名称和模式初始值形式的列表. 如果在[[make-instance]]的初始化参数列表中未出现这些初始化参数, 详情的初始值形式被求值, 在实例创建之前将初始化参数名称和形式的值追加到初始化参数列表后, 见[[7.1 对象创建和初始化|CLHS-07 Objects]]. 默认初始值形式在每次使用时求值. 该形式被求值的词法环境是`defclass`形式被求值的词法环境. 动态环境是[[make-instance]]被调用时的动态环境. 如果在`:default-initargs`类选项中一个初始化参数名称出现多次, 抛出错误.
+* `:documentation`类选项在类对象上附加文档字符串, `type`是`class-name`. `:documentation`至多有一个.
+* `:metaclass`类选项指定类的实例有不同于系统默认提供的`standard-class`的元类.
+
+注意这些标准类的`defclass`的规则:
+
+* 不要求所定义类的超类在所定义类的`defclass`形式求值前已定义.
+* 所定义类的超类必须在创建所定义类的实例之前已定义.
+* 类必须在它被用作`defmethod`形式的参数特化符之前已定义.
+
+对象系统可以被扩展以涵盖这些规则未被遵守的情况.
+
+一些槽选项是从类的超类继承的, 一些可以通过提供局部槽描述来遮盖或修改.
+除`:default-initargs`外的类选项不能被继承.
+关于槽和槽选项继承的详细描述见[[7.5.3 槽和槽选项的继承|CLHS-07 Objects]]
+
+可以扩展`defclass`的选项. 要求所有实现在观察到类选项或槽选项不是其本地实现时抛出错误.
+
+可以给一个槽指定多个读取, 写入和访问函数或初始化参数.
+其它槽选项不可以在单个槽描述中出现多次, 否则抛出错误.
+
+如果没有给槽指定读取, 写入和访问函数, 只可以通过`slot-value`函数访问槽.
+
+如果一个`defclass`形式作为顶层形式出现, 编译器必须确保该类的名称在后续声明中被识别为有效的类型名称, 在`defmethod`参数特化符中被识别为有效的类名称, 以及能够用在后续`defclass`的`:metaclass`选项中.
+编译器必须确保在`find-class`的`environment`参数是作为一个宏的环境参数接收的值时, 能够返回该类的定义.
+
+! Examples
+
+无.
+
+! Affected By
+
+无.
+
+! Exceptional Situations
+
+如果存在重复的槽名称, 抛出类型为`program-error`的错误.
+
+如果在`:default-initargs`类选项中一个初始化参数名称出现多次, 抛出类型为`program-error`的错误.
+
+如果这些槽选项在单个槽描述中出现多次, 抛出类型为`program-error`的错误: `:allocation`, `:initform`, `:type`, `:documentation`.
+
+要求所有实现在观察到类选项或槽选项不是其本地实现时抛出类型为`program-error`的错误.
+
+! See Also
+
+[[documentation]], [[initialize-instance]], [[make-instance]], [[slot-value]], [[4.3 类|CLHS-04 Types and Classes]], [[4.3.4 继承|CLHS-04 Types and Classes]], [[4.3.6 重定义类|CLHS-04 Types and Classes]], [[4.3.5 确定类优先级列表|CLHS-04 Types and Classes]], [[7.1 对象创建和初始化|CLHS-07 Objects]]
+
+! Notes
+
+无.

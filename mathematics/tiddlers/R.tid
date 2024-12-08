@@ -1,38 +1,31 @@
 created: 20241126084437780
 creator: jargonzhou
-modified: 20241126084635212
-modifier: jargonzhou
+modified: 20241208051539896
+modifier: zhoujiagen@gmail.com
 tags: R
 title: R
+type: text/vnd.tiddlywiki
 
-! 1 Tips for Recapture
+<<<.tc-big-quote
+Introduction to R
 
-<!-- 帮助重温的过程总结. -->
+R is a language and environment for statistical computing and graphics. It is a GNU project which is similar to the S language and environment which was developed at Bell Laboratories (formerly AT&T, now Lucent Technologies) by John Chambers and colleagues. R can be considered as a different implementation of S. There are some important differences, but much code written for S runs unaltered under R.
 
-# Step 1
-# Step 2
+R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, …) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity.
 
-! 2 术语
+One of R’s strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. Great care has been taken over the defaults for the minor design choices in graphics, but the user retains full control.
 
-<!-- 记录阅读过程中出现的关键字及其简单的解释. -->
+R is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.
+<<<
 
-! 3 介绍
+! Terminology
 
-<!-- 描述软件的来源、特性、解决的关键性问题等. -->
+* CRAN: The ''C''omprehensive ''R'' ''A''rchive ''N''etwork
 
-! 4 动机
+! <<a "Packages">> 包
 
-<!-- 描述阅读软件源码的动机, 要达到什么目的等. -->
-
-! 5 系统结构
-
-<!-- 描述软件的系统结构, 核心和辅助组件的结构; 系统较复杂时细分展示. -->
-
-! 6 使用
-
-<!-- 记录软件如何使用. -->
-
-!! 包
+* [[Available CRAN Packages By Name|https://cran.r-project.org/web/packages/available_packages_by_name.html]]
+* [[Quick list of useful R packages|https://support.posit.co/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages]] - 2024-04-26
 
 |包名                    |说明                                                                                                                  |h
 |assertthat              |Easy Pre and Post Assertions                                                                                          |
@@ -89,16 +82,24 @@ title: R
 |uuid                    |Tools for Generating and Handling of UUIDs                                                                            |
 |vctrs                   |Vector Helpers                                                                                                        |
 
-! 7 数据结构和算法
+! Applications
 
-<!-- 描述软件中重要的数据结构和算法, 支撑过程部分的记录. -->
+* [[CRAN Task View: Time Series Analysis|https://cran.r-project.org/web/views/TimeSeries.html]]
 
-! 8 过程
+! References
 
-<!-- 描述软件中重要的过程性内容, 例如服务器的启动、服务器响应客户端请求、服务器背景活动等. -->
-
-! 9 文献引用
-
-<!-- 记录软件相关和进一步阅读资料: 文献、网页链接等. -->
-
-! 10 其他备注
+* [[Home|https://www.r-project.org/]]: The R Project for Statistical Computing
+** [[Books related to R|https://www.r-project.org/doc/bib/R-books.html]]
+** [[The R Manuals|https://cran.r-project.org/manuals.html]]
+*** An Introduction to R
+*** R Data Import/Export
+*** R Installation and Administration	
+*** Writing R Extensions
+*** A draft of The R language definition
+*** R Internals
+*** The R Reference Index
+* R in a Nutshell
+* R Cookbook
+* Graphing Data with R
+* R for Data Science
+* An Introduction to Statistical Learning: with Applications in R

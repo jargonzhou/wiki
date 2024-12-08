@@ -1,6 +1,6 @@
 created: 20241202063700223
 creator: jargonzhou
-modified: 20241202071358088
+modified: 20241204032003179
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-15 Arrays
@@ -170,4 +170,51 @@ sbit
 
 !! 15.2 数组的字典
 
-见[[序列的字典|CLHS Dictionary]].
+* system class `array`
+* type `simple-array`
+* system class `vector`
+* type `simple-vector`
+* system class `bit-vector`
+* type `simple-bit-vector`
+* function `make-array`
+* function `adjust-array`
+* function `adjustable-array-p`
+* accessor `aref`
+* function `array-dimension`
+* function `array-dimensions`
+* function `array-element-type`
+* function `array-has-fill-pointer-p`
+* function `array-displacement`
+* function `array-in-bounds-p`
+* function `array-rank`
+* function `array-row-major-index`
+* function `array-total-size`
+* function `arrayp`
+* accessor `fill-pointer`
+* accessor `row-major-aref`
+* function `upgraded-array-element-type`
+* constant variable `array-dimension-limit`
+* constant variable `array-rank-limit`
+* constant variable `array-total-size-limit`
+* function `simple-vector-p`
+* accessor `svref`
+* function `vector`
+* function `vector-pop`
+* function `vector-push`
+* function `vector-push-extend`
+* function `vectorp`
+* accessor `bit`
+* accessor `sbit`
+* function `bit-and`
+* function `bit-andc1`
+* function `bit-andc2`
+* function `bit-eqv`
+* function `bit-ior`
+* function `bit-nand`
+* function `bit-nor`
+* function `bit-not`
+* function `bit-orc1`
+* function `bit-orc2`
+* function `bit-xor`
+* function `bit-vector-p`
+* function `simple-bit-vector-p`

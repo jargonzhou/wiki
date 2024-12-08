@@ -1,6 +1,6 @@
 created: 20241202065758824
 creator: jargonzhou
-modified: 20241202071444709
+modified: 20241204032503754
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-25 Environment
@@ -99,24 +99,15 @@ sleep
 
 解码的时间是由9个值组成的系列, 表示日历时间中一个时刻点(不考虑闰秒).
 
-* 秒<br>
-* 0到59的整数, 包含两端值.
-* 分钟<br>
-* 0到59的整数, 包含两端值.
-* 小时<br>
-* 0到23的整数, 包含两端值.
-* 日<br>
-* 1到31的整数, 包含两端值(当然上界依赖于年和月).
-* 月<br>
-* 1到12的整数, 包含两端值; 1表示1月, 2表示2月等等.
-* 年<br>
-* 表示公元年的证书. 然而, 如果整数在0到99之间, 使用显式年; 即实际年模100后在当前年五十年范围内(前包含后不包含).因此, 在1978年, 年28表示1928, 但年27表示2027. (按这种格式返回时间的函数总是返回完整的年数字)
-* 一周中的一天<br>
-* 0到6的整数, 包含两端值. 0表示周一, 1表示周二等等.
-* 夏令时标志<br>
-* 一个广义布尔值, 为true时表示使用夏令时.
-* 时区<br>
-* 一个时区.
+* 秒: 0到59的整数, 包含两端值.
+* 分钟: 0到59的整数, 包含两端值.
+* 小时: 0到23的整数, 包含两端值.
+* 日: 1到31的整数, 包含两端值(当然上界依赖于年和月).
+* 月: 1到12的整数, 包含两端值; 1表示1月, 2表示2月等等.
+* 年: 表示公元年的整数. 然而, 如果整数在0到99之间, 使用显式年; 即实际年模100后在当前年五十年范围内(前包含后不包含).因此, 在1978年, 年28表示1928, 但年27表示2027. (按这种格式返回时间的函数总是返回完整的年数字)
+* 一周中的一天: 0到6的整数, 包含两端值. 0表示周一, 1表示周二等等.
+* 夏令时标志: 一个广义布尔值, 为true时表示使用夏令时.
+* 时区: 一个时区.
 
 下图列出了与解码的时间相关的已定义名称:
 
@@ -170,4 +161,46 @@ sleep
 
 !! 25.2 环境的字典
 
-见[[环境的字典|CLHS Dictionary]].
+* function `decode-universal-time`
+* function `encode-universal-time`
+* function `get-universal-time`
+* function `get-decoded-time`
+* function `sleep`
+* function `apropos`
+* function `apropos-list`
+* function `describe`
+* standard generic function `describe-object`
+* macro `trace`
+* macro `untrace`
+* macro `step`
+* macro `time`
+* constant variable `internal-time-units-per-second`
+* function `get-internal-real-time`
+* function `get-internal-run-time`
+* function `disassemble`
+* standard generic function `documentation`
+* standard generic function `(setf documentation)`
+* function `room`
+* function `ed`
+* function `inspect`
+* function `dribble`
+* variable `-`
+* variable `+`
+* variable `++`
+* variable `+++`
+* variable `*`
+* variable `**`
+* variable `***`
+* variable `/`
+* variable `//`
+* variable `///`
+* function `lisp-implementation-type`
+* function `lisp-implementation-version`
+* function `short-site-name`
+* function `long-site-name`
+* function `machine-instance`
+* function `machine-type`
+* function `machine-version`
+* function `software-type`
+* function `software-version`
+* function `user-homedir-pathname`

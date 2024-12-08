@@ -1,6 +1,6 @@
 created: 20241202065132486
 creator: jargonzhou
-modified: 20241202071602038
+modified: 20241204032202272
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-21 Streams
@@ -275,4 +275,73 @@ yes-or-no-p
 
 !! 21.2 流的字典
 
-见[[流的字典|CLHS Dictionary]].
+* system class `stream`
+* system class `broadcast-stream`
+* system class `concatenated-stream`
+* system class `echo-stream`
+* system class `file-stream`
+* system class `string-stream`
+* system class `synonym-stream`
+* system class `two-way-stream`
+* function `input-stream-p`
+* function `output-stream-p`
+* function `interactive-stream-p`
+* function `open-stream-p`
+* function `stream-element-type`
+* function `streamp`
+* function `read-byte`
+* function `write-byte`
+* function `peek-char`
+* function `read-char`
+* function `read-char-no-hang`
+* function `terpri`
+* function `fresh-line`
+* function `unread-char`
+* function `write-char`
+* function `read-line`
+* function `write-string`
+* function `write-line`
+* function `read-sequence`
+* function `write-sequence`
+* function `file-length`
+* function `file-position`
+* function `file-string-length`
+* function `open`
+* function `stream-external-format`
+* macro `with-open-file`
+* function `close`
+* macro `with-open-stream`
+* function `listen`
+* function `clear-input`
+* function `finish-output`
+* function `force-output`
+* function `clear-output`
+* function `y-or-n-p`
+* function `yes-or-no-p`
+* function `make-synonym-stream`
+* function `synonym-stream-symbol`
+* function `broadcast-stream-streams`
+* function `make-broadcast-stream`
+* function `make-two-way-stream`
+* function `two-way-stream-input-stream`
+* function `two-way-stream-output-stream`
+* function `echo-stream-input-stream`
+* function `echo-stream-output-stream`
+* function `make-echo-stream`
+* function `concatenated-stream-streams`
+* function `make-concatenated-stream`
+* function `get-output-stream-string`
+* function `make-string-input-stream`
+* function `make-string-output-stream`
+* macro `with-input-from-string`
+* macro `with-output-to-string`
+* variable ``*debug-io*``
+* variable ``*error-output*``
+* variable ``*query-io*``
+* variable ``*standard-input*``
+* variable ``*standard-output*``
+* variable ``*trace-output*``
+* variable ``*terminal-io*``
+* condition type `stream-error`
+* function `stream-error-stream`
+* condition type `end-of-file`

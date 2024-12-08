@@ -1,6 +1,6 @@
 created: 20241202062933044
 creator: jargonzhou
-modified: 20241202071631935
+modified: 20241204031819498
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-11 Packages
@@ -230,4 +230,33 @@ KEYWORD包与其它包不同的地方在于, 将符号在这个包中内部化�
 
 !! 11.2 包的字典
 
-见[[包的字典|CLHS Dictionary]].
+* system class `package`
+* function `export`
+* function `find-symbol`
+* function `find-package`
+* function `find-all-symbols`
+* function `import`
+* function `list-all-packages`
+* function `rename-package`
+* function `shadow`
+* function `shadowing-import`
+* function `delete-package`
+* function `make-package`
+* macro `with-package-iterator`
+* function `unexport`
+* function `unintern`
+* macro `in-package`
+* function `unuse-package`
+* function `use-package`
+* macro `defpackage`
+* macro `do-symbols`
+* function `intern`
+* function `package-name`
+* function `package-nicknames`
+* function `package-shadowing-symbols`
+* function `package-use-list`
+* function `package-used-by-list`
+* function `packagep`
+* variable `*package*`
+* condition type `package-error`
+* function `package-error-package`

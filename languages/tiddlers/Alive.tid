@@ -1,6 +1,6 @@
 created: 20241127061751513
 creator: jargonzhou
-modified: 20241127062030214
+modified: 20241205055557950
 modifier: jargonzhou
 tags: VSCode [[Common Lisp]] Alive
 title: Alive
@@ -37,6 +37,8 @@ Lsp > Install:Path
 /Users/zhang/quicklisp/local-projects/alive-lsp
 # Windwos WSL
 /home/zhoujiagen/quicklisp/local-projects/alive-lsp
+# Windows
+C:\Users\zhouj\quicklisp\local-projects\alive-lsp
 Lsp > Remote:Port
 8006
 ```

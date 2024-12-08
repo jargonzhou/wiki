@@ -1,6 +1,6 @@
 created: 20241202062022025
 creator: jargonzhou
-modified: 20241202071653709
+modified: 20241204031609675
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-06 Iteration
@@ -1091,4 +1091,8 @@ Error: non-numeric value: A
 
 !! 6.2 迭代的字典
 
-[[迭代的字典|CLHS Dictionary]]
+* macro `do, do*`
+* macro `dotimes`
+* macro `dolist`
+* macro `loop`
+* local macro `loop-finish`

@@ -1,6 +1,6 @@
 created: 20241202065331215
 creator: jargonzhou
-modified: 20241202071625081
+modified: 20241204032240395
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-22 Printer
@@ -1590,4 +1590,44 @@ Scale factor  7: | 3141590.E-06|
 
 !! 22.4 打印器的字典
 
-见[[打印器的字典|CLHS Dictionary]].
+* function `copy-pprint-dispatch`
+* macro `formatter`
+* function `pprint-dispatch`
+* local `macro pprint-exit-if-list-exhausted`
+* function `pprint-fill`
+* function `pprint-linear`
+* function `pprint-tabular`
+* function `pprint-indent`
+* macro `pprint-logical-block`
+* function `pprint-newline`
+* local `macro pprint-pop`
+* function `pprint-tab`
+* standard generic function `print-object`
+* macro `print-unreadable-object`
+* function `set-pprint-dispatch`
+* function `write`
+* function `prin1`
+* function `print`
+* function `pprint`
+* function `princ`
+* function `write-to-string`
+* function `prin1-to-string`
+* function `princ-to-string`
+* variable ``*print-array*``
+* variable ``*print-base*``
+* variable ``*print-radix*``
+* variable ``*print-case*``
+* variable ``*print-circle*``
+* variable ``*print-escape*``
+* variable ``*print-gensym*``
+* variable ``*print-level*``
+* variable ``*print-length*``
+* variable ``*print-lines*``
+* variable ``*print-miser-width*``
+* variable ``*print-pprint-dispatch*``
+* variable ``*print-pretty*``
+* variable ``*print-readably*``
+* variable ``*print-right-margin*``
+* condition type `print-not-readable`
+* function `print-not-readable-object`
+* function `format`

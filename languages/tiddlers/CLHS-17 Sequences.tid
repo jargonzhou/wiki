@@ -1,6 +1,6 @@
 created: 20241202064443383
 creator: jargonzhou
-modified: 20241202071609401
+modified: 20241204032053367
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-17 Sequences
@@ -218,4 +218,45 @@ substitute-if-not
 
 !! 17.3 序列的字典
 
-见[[序列的字典|CLHS Dictionary]].
+* system class `sequence`
+* function `copy-seq`
+* accessor `elt`
+* function `fill`
+* function `make-sequence`
+* accessor `subseq`
+* function `map`
+* function `map-into`
+* function `reduce`
+* function `count`
+* function `count-if`
+* function `count-if-not`
+* function `length`
+* function `reverse`
+* function `nreverse`
+* function `sort`
+* function `stable-sort`
+* function `find`
+* function `find-if`
+* function `find-if-not`
+* function `position`
+* function `position-if`
+* function `position-if-not`
+* function `search`
+* function `mismatch`
+* function `replace`
+* function `substitute`
+* function `substitute-if`
+* function `substitute-if-not`
+* function `nsubstitute`
+* function `nsubstitute-if`
+* function `nsubstitute-if-not`
+* function `concatenate`
+* function `merge`
+* function `remove`
+* function `remove-if`
+* function `remove-if-not`
+* function `delete`
+* function `delete-if`
+* function `delete-if-not`
+* function `remove-duplicates`
+* function `delete-duplicates`

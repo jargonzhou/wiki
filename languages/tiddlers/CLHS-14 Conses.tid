@@ -1,6 +1,6 @@
 created: 20241202063437565
 creator: jargonzhou
-modified: 20241202071426540
+modified: 20241204031925049
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-14 Conses
@@ -173,4 +173,115 @@ union
 
 !! 14.2 Cons字典
 
-见[[Cons的字典|CLHS Dictionary]].
+* system class `list`
+* system class `null`
+* system class `cons`
+* type `atom`
+* function `cons`
+* function `consp`
+* function `atom`
+* function `rplaca, rplacd`
+* accessor `car`
+* accessor `cdr`
+* accessor `caar`
+* accessor `cadr`
+* accessor `cdar`
+* accessor `cddr`
+* accessor `caaar`
+* accessor `caadr`
+* accessor `cadar`
+* accessor `caddr`
+* accessor `cdaar`
+* accessor `cdadr`
+* accessor `cddar`
+* accessor `cdddr`
+* accessor `caaaar`
+* accessor `caaadr`
+* accessor `caadar`
+* accessor `caaddr`
+* accessor `cadaar`
+* accessor `cadadr`
+* accessor `caddar`
+* accessor `cadddr`
+* accessor `cdaaar`
+* accessor `cdaadr`
+* accessor `cdadar`
+* accessor `cdaddr`
+* accessor `cddaar`
+* accessor `cddadr`
+* accessor `cdddar`
+* accessor `cddddr`
+* function `copy-tree`
+* function `sublis`
+* function `nsublis`
+* function `subst`
+* function `subst-if`
+* function `subst-if-not`
+* function `nsubst`
+* function `nsubst-if`
+* function `nsubst-if-not`
+* function `tree-equal`
+* function `copy-list`
+* function `list`
+* function `list*`
+* function `list-length`
+* function `listp`
+* function `make-list`
+* macro `push`
+* macro `pop`
+* accessor `first`
+* accessor `second`
+* accessor `third`
+* accessor `fourth`
+* accessor `fifth`
+* accessor `sixth`
+* accessor `seventh`
+* accessor `eighth`
+* accessor `ninth`
+* accessor `tenth`
+* accessor `nth`
+* function `endp`
+* function `null`
+* function `nconc`
+* function `append`
+* function `revappend`
+* function `nreconc`
+* function `butlast`
+* function `nbutlast`
+* function `last`
+* function `ldiff`
+* function `tailp`
+* function `nthcdr`
+* accessor `rest`
+* function `member`
+* function `member-if`
+* function `member-if-not`
+* function `mapc`
+* function `mapcar`
+* function `mapcan`
+* function `mapl`
+* function `maplist`
+* function `mapcon`
+* function `acons`
+* function `assoc`
+* function `assoc-if`
+* function `assoc-if-not`
+* function `copy-alist`
+* function `pairlis`
+* function `rassoc`
+* function `rassoc-if`
+* function `rassoc-if-not`
+* function `get-properties`
+* accessor `getf`
+* macro `remf`
+* function `intersection`
+* function `nintersection`
+* function `adjoin`
+* macro `pushnew`
+* function `set-difference`
+* function `nset-difference`
+* function `set-exclusive-or`
+* function `nset-exclusive-or`
+* function `subsetp`
+* function `union`
+* function `nunion`

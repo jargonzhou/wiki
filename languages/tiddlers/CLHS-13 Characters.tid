@@ -1,6 +1,6 @@
 created: 20241202063318399
 creator: jargonzhou
-modified: 20241202071409520
+modified: 20241204031901980
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-13 Characters
@@ -261,4 +261,38 @@ a<b<c<d<e<f<g<h<i<j<k<l<m<n<o<p<q<r<s<t<u<v<w<x<y<z
 
 !! 13.2 字符的字典
 
-见[[字符的字典|CLHS Dictionary]].
+* system class `character`
+* type `base-char`
+* type `standard-char`
+* type `extended-char`
+* function `char=`
+* function `char/=`
+* function `char<`
+* function `char>`
+* function `char<=`
+* function `char>=`
+* function `char-equal`
+* function `char-not-equal`
+* function `char-lessp`
+* function `char-greaterp`
+* function `char-not-greaterp`
+* function `char-not-lessp`
+* function `character`
+* function `characterp`
+* function `alpha-char-p`
+* function `alphanumericp`
+* function `digit-char`
+* function `digit-char-p`
+* function `graphic-char-p`
+* function `standard-char-p`
+* function `char-upcase`
+* function `char-downcase`
+* function `upper-case-p`
+* function `lower-case-p`
+* function `both-case-p`
+* function `char-code`
+* function `char-int`
+* function `code-char`
+* constant variable `char-code-limit`
+* function `char-name`
+* function `name-char`

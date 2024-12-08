@@ -1,7 +1,7 @@
 created: 20241202045443861
 creator: jargonzhou
-modified: 20241202080812327
-modifier: jargonzhou
+modified: 20241207033629053
+modifier: zhoujiagen@gmail.com
 tags: [[Common Lisp]]
 title: CLHS
 
@@ -11,41 +11,7 @@ Common Lisp HyperSpec(CLHS)
 The specification set forth in this document is designed to promote the portability of Common Lisp programs among a variety of data processing systems. It is a language specification aimed at an audience of implementors and knowledgeable programmers. It is neither a tutorial nor an implementation guide.
 <<<
 
-
-|章节         |翻译时间 |校对时间 |完成度 |备注 |
-|介绍         |2019-08-24 |       - |    80 |     |
-|语法         |2019-08-27 |         |   100 |     |
-|求值和编译   |2019-09-02 |         |    80 |     |
-|类型和类     |2019-09-10 |         |    80 |     |
-|数据和控制流 |2019-09-16 |         |    80 |     |
-|迭代         |2019-09-29 |         |    80 |     |
-|对象         |2019-09-16 |         |    80 |     |
-|结构         |- |- |- |     |
-|状况         |2019-09-21 |         |    80 |     |
-|符号         |2019-08-29 |         |   100 |     |
-|包           |2019-09-06 |         |   100 |     |
-|数值         |2019-09-24 |         |    80 |     |
-|字符         |2019-09-27 |         |    80 |     |
-|Cons         |2019-09-10 |         |   100 |     |
-|数组         |2019-09-27 |         |    80 |     |
-|字符串       |2019-09-27 |         |   100 |     |
-|序列         |2019-09-27 |         |    80 |     |
-|哈希表       |2019-09-27 |         |    80 |     |
-|文件名       |2019-09-28 |         |    80 |     |
-|文件         |2019-09-29 |         |    80 |     |
-|流           |2019-09-29 |         |    80 |     |
-|打印器       |2019-10-05 |         |    80 |     |
-|读取器       |2019-10-08 |         |    80 |     |
-|系统构造     |2019-09-29 |         |    80 |     |
-|环境         |2019-09-29 |         |    80 |     |
-|词汇表       |- |         |     0 |     |
-|字典         |- |       - |   100 |     |
-|978个符号    |2019-10-08 |         |       |     |
-|图片索引     |- |       - |     - |     |
-
 ! Contents
-
-TODO: fix links.
 
 * [[1 介绍 Introduction|CLHS-01 Introduction]]
 * [[2 语法 Syntax|CLHS-02 Syntax]]
@@ -73,15 +39,10 @@ TODO: fix links.
 * [[24 系统构造 System Construction|CLHS-24 System Construction]]
 * [[25 环境 Environment|CLHS-25 Environment]]
 * [[Glossary|CLHS Glossary]]
-* [[CLHS Dictionary]]
 
 ! Symbols
 
 * [[Symbols|CLHS Symbols]]
-
-! Dictionary
-
-* [[Dictionary|CLHS Dictionary]]
 
 ! Figures
 
@@ -288,6 +249,39 @@ TODO: fix links.
 * 26 词汇表
 
 * 27 符号
+
+! Progress
+
+
+|章节         |翻译时间 |校对时间 |完成度 |备注 |
+|介绍         |2019-08-24 |       - |    80 |     |
+|语法         |2019-08-27 |         |   100 |     |
+|求值和编译   |2019-09-02 |         |    80 |     |
+|类型和类     |2019-09-10 |         |    80 |     |
+|数据和控制流 |2019-09-16 |         |    80 |     |
+|迭代         |2019-09-29 |         |    80 |     |
+|对象         |2019-09-16 |         |    80 |     |
+|结构         |- |- |- |     |
+|状况         |2019-09-21 |         |    80 |     |
+|符号         |2019-08-29 |         |   100 |     |
+|包           |2019-09-06 |         |   100 |     |
+|数值         |2019-09-24 |         |    80 |     |
+|字符         |2019-09-27 |         |    80 |     |
+|Cons         |2019-09-10 |         |   100 |     |
+|数组         |2019-09-27 |         |    80 |     |
+|字符串       |2019-09-27 |         |   100 |     |
+|序列         |2019-09-27 |         |    80 |     |
+|哈希表       |2019-09-27 |         |    80 |     |
+|文件名       |2019-09-28 |         |    80 |     |
+|文件         |2019-09-29 |         |    80 |     |
+|流           |2019-09-29 |         |    80 |     |
+|打印器       |2019-10-05 |         |    80 |     |
+|读取器       |2019-10-08 |         |    80 |     |
+|系统构造     |2019-09-29 |         |    80 |     |
+|环境         |2019-09-29 |         |    80 |     |
+|词汇表       |- |         |     0 |     |
+|978个符号    |2019-10-08 |         |       |     |
+|图片索引     |- |       - |     - |     |
 
 
 ! References

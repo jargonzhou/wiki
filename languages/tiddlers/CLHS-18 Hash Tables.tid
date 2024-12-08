@@ -1,6 +1,6 @@
 created: 20241202064625424
 creator: jargonzhou
-modified: 20241202071506417
+modified: 20241204032109129
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-18 Hash Tables
@@ -99,4 +99,17 @@ sxhash
 
 !! 18.2 哈希表的字典
 
-见[[哈希表的字典|CLHS Dictionary]].
+* system class `hash-table`
+* function `make-hash-table`
+* function `hash-table-p`
+* function `hash-table-count`
+* function `hash-table-rehash-size`
+* function `hash-table-rehash-threshold`
+* function `hash-table-size`
+* function `hash-table-test`
+* accessor `gethash`
+* function `remhash`
+* function `maphash`
+* macro `with-hash-table-iterator`
+* function `clrhash`
+* function `sxhash`

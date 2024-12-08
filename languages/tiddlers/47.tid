@@ -1,0 +1,46 @@
+CLHS: Variable
+created: 20241205050834658
+creator: jargonzhou
+modified: 20241205051534796
+modifier: jargonzhou
+title: /
+
+`/`, `//`, `///`
+
+! Value Type
+
+一个合式列表.
+
+! Initial Value
+
+依赖于实现.
+
+! Description
+
+变量`/`, `//`和`///`由Lisp REPL维护, 保存每次在循环结束时打印输出的结果的值.
+
+`/`的值是最近打印的值, `//`的值是`/`前一个的值, `///`的值是`//`前一个的值.
+
+`/`, `//`和`///`的值在Lisp REPL打印一个顶层形式的返回值之前立即更新.
+如果该形式的求值在正常返回之前中断, `/`, `//`和`///`的值不被更新.
+
+
+! Examples
+
+```lisp
+ (floor 22 7) =>  3, 1
+ (+ (* (car /) 7) (cadr /)) =>  22
+; / means a list (3, 1)
+```
+
+! Affected By
+
+Lisp REPL.
+
+! See Also
+
+[[-]], [[+]], [[*]], [[25.1.1 顶层循环|CLHS-25 Environment]]
+
+! Notes
+
+无

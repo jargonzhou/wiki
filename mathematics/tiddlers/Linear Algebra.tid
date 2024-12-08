@@ -1,19 +1,72 @@
 created: 20241127084758629
 creator: jargonzhou
-modified: 20241202044904467
-modifier: jargonzhou
+modified: 20241207053752107
+modifier: zhoujiagen@gmail.com
 tags: [[Linear Algebra]] Mathematics
 title: Linear Algebra
 
-! Topics
-* Scalar, Vector, Matrices
-* vector multiplication: dot product, cross product
-* Euclidean norm
-* matrix transpose
-* determinants
-* eigenvalue, eigenvector
-* eigenvalue decomposition
-* singular value decomposition
+! Terminology
+
+* 矩阵与方程组(Matrices and System of Equations)
+** 线性方正组(System of Linear Equations)
+** 行阶梯型(Row Echelon Form)
+** 标量(Scalar), 向量(Vector), 矩阵(Matrices)
+** 矩阵代数(Matrix Algebra)
+*** 向量乘积(vector multiplication): 点积(dot product), 叉积(cross product)
+** 矩阵转置(Matrix Transpose)
+** 初等矩阵(Elementary Matrices)
+** 分块矩阵(Partitioned Matrices)
+
+* 行列式(Determinants)
+
+* 向量空间(Vector Spaces)
+** 子空间(Subspaces)
+** 线性独立(Linear Independence)
+** 基(Basis), 维度(Dimension)
+** 基变换(Change of Basis)
+** 行空间(Row Space), 列空间(Column Space)
+
+* 线性转换(Linear Transformations)
+* 线性变换的矩阵表示(Matrix Representation of Linear Transformations)
+** 相似性(Similarity)
+
+* 正交性(Orthogonality)
+** 正交子空间(Orthogonal Subspaces)
+** 最小二乘问题(Least Squares Problems)
+** 内积空间(Inner Product Spaces)
+** 正交集(Orthonormal Sets)
+** 格拉姆-施密特正交化过程(Gram-Schmidt Orthogonalization Process)
+** 正交多项式(Orthogonal Polynomials)
+
+* 特征值(Engenvalues)
+** 特征值(Eigenvalue), 特征向量(Eigenvector)
+** 特征值分解(Eigenvalue Decomposition)
+** 对角化(Diagonalization)
+** 埃尔米特矩阵(Hermitian Matrices)
+** 奇异值分解(Singular Value Decomposition(SVD))
+** 二次型(Quadratic Forms)
+** 正定矩阵(Positive Definite Matrices)
+
+* 数值线性代数(Numerical Linear Algebra)
+** 浮点数(Floating-Point Numbers)
+** 高斯消元法(Gaussian Elimination)
+** 矩阵范数(Matrix Norm)
+*** 欧几里德范数(Euclidean Norm)
+** 条件数(Condition Numbers)
+
+! 矩阵与方程组
+
+! 行列式
+
+! 向量空间
+
+! 线性变换
+
+! 正交性
+
+! 特征值
+
+! 数值线性代数
 
 ! Symbols
 
@@ -285,3 +338,8 @@ $$
 $$
 
 here $$\bold{U}$$ and $$\bold{V}$$ are orthogonal matrices, $$\sigma_{i}$$ are the singular value of $$\bold{A}$$.
+
+! References
+
+* Leon, S. J. ''Linear Algebra with Applications''. Pearson, 2014.
+* Cohen, M. X. ''Practical Linear Algebra for Data Science''. O'Reilly Media, 2022.

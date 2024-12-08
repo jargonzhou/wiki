@@ -1,24 +1,23 @@
+CLHS: Macro
 created: 20241202072237774
 creator: jargonzhou
-modified: 20241202072240447
+modified: 20241204055141624
 modifier: jargonzhou
 tags: [[CLHS Symbols]]
 title: and
 
-
-> \[!tip] "Macro"
-> ''Syntax'':
+! Syntax
 
 ```lisp
 and form* => result*
 ```
 
-''Arguments and Values'':
+! Arguments and Values
 
 * `form`: 一个形式
 * `results`: 最后一个`form`的求值结果, 或符号`nil`, 或`t`
 
-''Description'':
+! Description
 
 宏`and`按 ''从左至右'' 的顺序一次求值一个`form`.
 一旦任意形式求值为`nil`, `and`不再对剩下的`form`求值直接返回`nil`.
@@ -28,7 +27,7 @@ and form* => result*
 
 `and`可以返回最后一个子形式的多值.
 
-''Examples'':
+! Examples
 
 ```lisp
 (if (and (>= n 0)
@@ -52,15 +51,23 @@ and form* => result*
 (and) =>  T
 ```
 
-''Affected By'': 无.
+! Side Effects
 
-''Exceptional Situations'': 无.
+! Affected By
 
-''See Also'':
+无
 
-[[cond|#cond]], [[every|#every]], [[if|#if]], [[or|#or]], [[when|#when]]
+! Exceptional Situations
 
-''Notes'':
+无
+
+! See Also
+
+
+[[cond]], [[every]], [[if]], [[or]], [[when]]
+
+! Notes
+
 
 ```lisp
 (and form) ==  (let () form)

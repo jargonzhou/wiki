@@ -15,11 +15,46 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; 2. Functions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;
+;;; Defining Functions
+;;;
+
 (defun double (x) (* x 2))
 ; same
 (setf (symbol-function 'double%)
   #'(lambda (x) (* x 2)))
 (export 'double%)
+
+;;;
+;;; Closure
+;;;
+
+(defun make-adder (n)
+  #'(lambda (x) (+ x n)))
+
+;;;
+;;; Local Functions
+;;;
+
+;;; count occurences of [obj] in each list in [lsts].
+(defun count-instances (obj lsts)
+  (labels ((instances-in (lst)
+                         (if (consp lst)
+                             (+ (if (eq (car lst) obj) 1 0)
+                                (instances-in (cdr lst)))
+                             0)))
+    (mapcar #'instances-in lsts)))
+(export 'count-instances)
+
+;;;
+;;; Compilation
+;;;
+
+;;; inline
+(defun 50th (lst)
+  (proclaim '(inline 50th))
+  (nth 49 lst))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; 4. Utility Functions
@@ -29,7 +64,7 @@
 ;;; Mapping
 ;;;
 
-;;; map fn from a to b.
+;;; map [fn] from [a] to [b].
 (defun mapa-b (fn a b &optional (step 1))
   (do ((i a (+ i step))
        (result nil))
@@ -45,7 +80,7 @@
   (mapa-b fn 1 n))
 (export 'map1-n)
 
-;;; map fn from start, next value with succ-fn, stop with test-fn.
+;;; map [fn] from [start], next value with [succ-fn], stop with [test-fn].
 (defun map-> (fn start test-fn succ-fn)
   (do ((i start (funcall succ-fn i))
        (result nil))
@@ -53,7 +88,7 @@
     (push (funcall fn i) result)))
 (export 'map->)
 
-;;; mapcar fn on list of lists, return appended list.
+;;; mapcar [fn] on list of lists, return appended list.
 (defun mappend (fn &rest lsts)
   (apply #'append (apply #'mapcar fn lsts)))
 (export 'mapapend)

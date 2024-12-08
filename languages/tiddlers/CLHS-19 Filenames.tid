@@ -1,6 +1,6 @@
 created: 20241202064802041
 creator: jargonzhou
-modified: 20241202071452364
+modified: 20241204032128241
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-19 Filenames
@@ -432,4 +432,29 @@ version::= pos-int | newest-word | wildcard-version
 
 !! 19.4 文件名的字典
 
-见[[文件名的字典|CLHS Dictionary]].
+* system class `PATHNAME`
+* system class `LOGICAL-PATHNAME`
+* Function `PATHNAME`
+* Function `MAKE-PATHNAME`
+* Function `PATHNAMEP`
+* Function `PATHNAME-HOST`
+* Function `PATHNAME-DEVICE`
+* Function `PATHNAME-DIRECTORY`
+* Function `PATHNAME-NAME`
+* Function `PATHNAME-TYPE`
+* Function `PATHNAME-VERSION`
+* Function `LOAD-LOGICAL-PATHNAME-TRANSLATIONS`
+* Accessor `LOGICAL-PATHNAME-TRANSLATIONS`
+* Function `LOGICAL-PATHNAME`
+* Variable ``*DEFAULT-PATHNAME-DEFAULTS*``
+* Function `NAMESTRING`
+* Function `FILE-NAMESTRING`
+* Function `DIRECTORY-NAMESTRING`
+* Function `HOST-NAMESTRING`
+* Function `ENOUGH-NAMESTRING`
+* Function `PARSE-NAMESTRING`
+* Function `WILD-PATHNAME-P`
+* Function `PATHNAME-MATCH-P`
+* Function `TRANSLATE-LOGICAL-PATHNAME`
+* Function `TRANSLATE-PATHNAME`
+* Function `MERGE-PATHNAMES`

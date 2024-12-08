@@ -1,0 +1,101 @@
+created: 20241205023935522
+creator: jargonzhou
+modified: 20241205031209440
+modifier: jargonzhou
+tags: Compiler
+title: Compiler Glossary
+
+! <span id="#AST">AST: Abstract Syntax Tree</span>
+
+! <span id="#AdHocSyntax-DirectedTranslation">Ad Hoc Syntax-Directed Translation</span>
+
+! <span id="#Attribute-GrammarFramework">Attribute-Grammar Framework</span>
+
+! <span id="#BNF">BNF: Backus-Naur Form</span>
+
+! <span id="#Bottom-UpParsing">Bottom-Up Parsing</span>
+
+! <span id="#CodeShape">Code Shape</span>
+
+! <span id="#CompilerStructure">Compiler Structure</span>
+
+* Input: source program
+* Output: target program
+* Components
+** Front End
+*** <a href="##Scanner">Scanner</a>
+*** <a href="##Parser">Parser</a>
+** Optimizer: an IR-to-IR transformer.
+** Back End
+*** <a href="##InstructionSelection">Instruction Selection</a>
+*** <a href="##InstructionScheduling">Instruction Scheduling</a>
+*** <a href="##RegisterAllocation">Register Allocation</a>
+* Data Structure
+** <a href="##IR">IR</a>
+
+! <span id="#CFG">CFG: Context-Free Grammar</span>
+
+! <span id="#DFA">DFA</span>
+
+! <span id="#Data-FlowAnalysis">Data-Flow Analysis</span>
+
+! <span id="#GC">GC: Garbage Collection</span>
+
+! <span id="#InstructionScheduling">Instruction Scheduling</span>
+
+''Instruction scheduling'' aims to reorder the operations in a procedure to reduce its running time.
+
+approaches:
+
+* Greedy List Scheduling
+
+! <span id="#InstructionSelection">Instruction Selection</span>
+
+The process of mapping <a href="##IR">IR</a> operations into target machine operations is calledd ''instruction selection''.
+
+approaches:
+
+* Tree-Pattern Matching
+* Peephole Optimization
+
+! <span id="#IR">IR: Intermediate Representation</span>
+
+! <span id="#LL">LL</span>
+
+! <span id="#LR">LR</span>
+
+! <span id="#NFA">NFA</span>
+
+! <span id="#Optimization">Optimization</span>
+
+! <span id="#ParseTree">Parse Tree</span>
+
+! <span id="#Parser">Parser</span>
+
+! <span id="#Procedure">Procedure</span>
+
+! <span id="#RegisterAllocation">Register Allocation</span>
+
+Hardware registers are constrained resources, compilers usually include a pass that allocation and assign registers to program values.
+
+approaches:
+
+* Graph Coloring
+
+! <span id="#RegularExpression">Regular Expression</span>
+
+! <span id="#ScalarOptimization">Scalar Optimization</span>
+
+! <span id="#Scanner">Scanner</span>
+
+! <span id="#SSA">SSA: Static Single-Assignment</span>
+
+! <span id="#SymbolTable">Symbol Table</span>
+
+! <span id="#Syntax">Syntax</span>
+
+! <span id="#Top-DownParsing">Top-Down Parsing</span>
+
+! <span id="#TypeInference">Type Inference</span>
+
+! <span id="#TypeSystem">Type System</span>

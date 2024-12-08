@@ -1,7 +1,7 @@
 created: 20241127053207943
 creator: jargonzhou
-modified: 20241127064805935
-modifier: jargonzhou
+modified: 20241206233335658
+modifier: zhoujiagen@gmail.com
 tags: [[Common Lisp]] SBCL
 title: SBCL
 
@@ -19,13 +19,6 @@ Steel Bank Common Lisp (SBCL) is a high performance Common Lisp compiler. It is 
 * [[Wikipedia|https://en.wikipedia.org/wiki/Steel_Bank_Common_Lisp]]
 
 > The name "Steel Bank Common Lisp" is a reference to [[Carnegie Mellon University Common Lisp|https://en.wikipedia.org/wiki/CMUCL "CMUCL"]] from which SBCL forked: [[Andrew Carnegie|https://en.wikipedia.org/wiki/Andrew_Carnegie "Andrew Carnegie"]] made his fortune in the steel industry and [[Andrew Mellon|https://en.wikipedia.org/wiki/Andrew_Mellon "Andrew Mellon"]] was a successful banker.
-
-! Terms
-
-* PCL: ''Portable Common Loops''. SBCL's CLOS is based on PCL
-* VOP: stands for ''Virtual Operation'', and is the basic unit of currency in the Compiler Backend. VOPs usually expand into assembly instructions.
-* POP: ''Peephole OPtimizer'', 窥孔优化
-* IR2: IR2 is the ''Virtual Machine Representation''; the second internal representation that the compiler backend works with. (After IR1 is transformed and otherwise manipulated to the compiler's heart's content, it's translated into IR2 for further transformations.) IR2 involves VOPs.
 
 ! Installation
 
@@ -54,10 +47,20 @@ installation directory:
 WSL (Ubuntu)
 
 ```
+➜  sbcl-2.4.10-x86-64-linux sudo sh install.sh
+/usr/local
+
+SBCL has been installed:
+ binary /usr/local/bin/sbcl
+ core and contribs in /usr/local/lib/sbcl/
+
+Documentation:
+ man /usr/local/share/man/man1/sbcl.1
+
 ➜  ~ which sbcl
 /usr/local/bin/sbcl
 ➜  ~ sbcl --version
-SBCL 2.4.7
+SBCL 2.4.10
 
 # default core file
 /usr/local/lib/sbcl/sbcl.core
@@ -65,92 +68,7 @@ SBCL 2.4.7
 
 ! RTFSC
 
-!! Directories
 
-SBCL source tree has the following subdirectories:
-
-* `contrib`: contains extensions to SBCL.
-* `doc`: contains some documentation.
-* `src/assembly`: contains the source-file assembler and architecture-specific subdirectories holding assembly code for that architecture.
-* `src/code`: contains Lisp code for the runtime system and standard CL utilities.
-* `src/cold`: contains code used while building SBCL.
-* `src/compiler`: contains the Python compiler. Has architecture-specific subdirectories which hold backends for different machines. The generic subdirectory holds code that is shared across most backends.
-* `src/pcl`: contains the PCL implementation of CLOS.
-* `src/runtime`: contains C code for the runtime system.
-* `tests`: contains tests.
-* `tools-for-build`: contains tools used for building SBCL.
-
-!! Packages
-
-SBCL has the following implementation specific packages (for more details see package-data-list.lisp-expr file in the root source directory):
-
-```shell
-$ grep "defpackage" src/cold/exports.lisp | sort
-(defpackage "SB-ALIEN"
-(defpackage "SB-ALIEN-INTERNALS"
-(defpackage "SB-APROF"
-(defpackage "SB-ASSEM"
-(defpackage "SB-BIGNUM"
-(defpackage "SB-BROTHERTREE"
-(defpackage "SB-C"
-(defpackage "SB-DEBUG"
-(defpackage "SB-DI"
-(defpackage "SB-DISASSEM"
-(defpackage "SB-DYNCOUNT"
-(defpackage "SB-EVAL"
-(defpackage "SB-EXT"
-(defpackage "SB-FASL"
-(defpackage "SB-FORMAT"
-(defpackage "SB-GRAY"
-(defpackage "SB-IMPL"
-(defpackage "SB-INT"
-(defpackage "SB-INTERPRETER"
-(defpackage "SB-KERNEL"
-(defpackage "SB-LOCKLESS"
-(defpackage "SB-LOOP"
-(defpackage "SB-MOP"
-(defpackage "SB-PCL"
-(defpackage "SB-PRETTY"
-(defpackage "SB-PROFILE"
-(defpackage "SB-REGALLOC"
-(defpackage "SB-SEQUENCE"
-(defpackage "SB-SYS"
-(defpackage "SB-THREAD"
-(defpackage "SB-UNICODE"
-(defpackage "SB-UNIX"
-(defpackage "SB-VM"
-(defpackage "SB-WALKER"
-(defpackage "SB-WIN32"
-(defpackage #.(backend-asm-package-name)
-```
-
-`contrib`:
-
-```shell
-$ pwd
-/d/workspace/rtfsc/sbcl/contrib
-$ find . | grep -E "*\.asd" | sort
-./sb-aclrepl/sb-aclrepl.asd
-./sb-bsd-sockets/sb-bsd-sockets.asd
-./sb-capstone/sb-capstone.asd
-./sb-cltl2/sb-cltl2.asd
-./sb-concurrency/sb-concurrency.asd
-./sb-cover/sb-cover.asd
-./sb-executable/sb-executable.asd
-./sb-gmp/sb-gmp.asd
-./sb-grovel/sb-grovel.asd
-./sb-introspect/sb-introspect.asd
-./sb-md5/sb-md5.asd
-./sb-mpfr/sb-mpfr.asd
-./sb-perf/sb-perf.asd
-./sb-posix/sb-posix.asd
-./sb-queue/sb-queue.asd
-./sb-rotate-byte/sb-rotate-byte.asd
-./sb-rt/sb-rt.asd
-./sb-simd/sb-simd.asd
-./sb-simple-streams/sb-simple-streams.asd
-./sb-sprof/sb-sprof.asd
-```
 
 ! Build From Source
 

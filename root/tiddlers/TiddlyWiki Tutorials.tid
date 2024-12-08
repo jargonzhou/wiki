@@ -1,7 +1,7 @@
 author: jargonzhou
 created: 20230104152413814
 creator: jargonzhou
-modified: 20241126054854249
+modified: 20241206102440316
 modifier: jargonzhou
 tags: TiddlyWiki
 title: TiddlyWiki Tutorials
@@ -19,8 +19,13 @@ Visit [ext[教程 (Chinese)|https://tw-cn.netlify.app/]] or [ext[Official Site (
 
 ! Tasks
 
-* <$checkbox tag="task"> Skimming basic usages of [[WikiText]]</$checkbox>
-* <$checkbox tag="task"> Publish on GitHub Pages</$checkbox>
-* <$checkbox tag="task"> How to define and use tiddler templates?</$checkbox>
-* <$checkbox tag="task"> Can we create folders for different topics?</$checkbox>
+* ☑ Skimming basic usages of [[WikiText]]
+* ☑ Publish on GitHub Pages
+* ☑ How to define and use tiddler templates?
+* ☑ Can we create folders for different topics?
 
+! Symbols
+
+☒
+☑
+➽

@@ -1,6 +1,6 @@
 created: 20241202062345702
 creator: jargonzhou
-modified: 20241202071546469
+modified: 20241204031708236
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-08 Structures
@@ -9,4 +9,6 @@ type: text/vnd.tiddlywiki
 ! 8 结构
 !! 8.1 结构的字典
 
-见[[结构的字典|CLHS Dictionary]]
+* macro `defstruct`
+* function `copy-structure`
+

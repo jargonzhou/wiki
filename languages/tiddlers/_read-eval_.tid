@@ -1,0 +1,35 @@
+CLHS: Variable
+created: 20241204054635537
+creator: jargonzhou
+modified: 20241204055759346
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: *read-eval*
+
+! Value Type
+
+泛化的布尔值.
+
+! Initital Value
+
+`true`
+
+! Description
+
+如果为`true`, `#.`读取器宏正常工作; 否则, `#.`抛出类型为`reader-error`的错误.
+
+! Examples
+
+无
+
+! Affected By
+
+无
+
+! See Also
+
+[[*print-readably*]]
+
+! Notes
+
+如果`*read-eval*`为`false`且`*print-readably*`为`true`, [[print-object]]的任意需要输出`#.`读取器宏引用的方法可以输出其它内容或抛出类型为[[print-not-readable]]的错误.

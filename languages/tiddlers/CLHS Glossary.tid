@@ -1,10 +1,9 @@
 created: 20241202080237480
 creator: jargonzhou
-modified: 20241202080458356
-modifier: jargonzhou
+modified: 20241207112347629
+modifier: zhoujiagen@gmail.com
 tags: CLHS
 title: CLHS Glossary
-
 
 |Abbreviation |Meaning                                    |h
 |adj.         |adjective                                  |
@@ -22,1613 +21,1665 @@ title: CLHS Glossary
 
 
 
-! ()
-> "()"
-> n.
-> 符号`nil`的另一个记法, 强调`nil`表示空列表.
-! absolute
-> "绝对的"
-> adj.
-> 1 特定的时间点, 见[time](#time).
-> 2 目录层次中特定位置, 见[pathname](#pathname).
-> 见[relative](#relative)
-! access
-> "访问"
-> n., v.t.
-> 1 读或写位置的值或数组中元素的值.
-> 2 尝试访问位置的值.
-> 见[place](#place), [value](#value), [array](#array)
-! accessibility
-> "可访问性"
-> n.
-> 可访问的状态.
-! accessible
-> "可访问的"
-> adj.
-> 1 (对象)被引用的能力.
-> 2 (类的实现的共享或本地槽)已在实例的类或超类中定义.
-> 3 (包中符号)在当前包中不使用包前缀可被引用的能力, 不管符号存在于包中还是继承获得的.
-> 见[object](#object), [instance](#instance), [symbol](#symbol)
-! accessor
-> "访问器"
-> n.
-> 执行访问的操作符.
-> 见[operator](#operator), [reader](#reader), [writer](#writer)
-! active
-> "活跃的"
-> adj.
-> 1 (处理器, 重启器或捕获标签)已被建立但还未被解除
-> 2 (数组中元素)由大于等于0但小于填充指针的索引. 对没有填充指针的数组, 所有元素被认为是获取的.
-> 见[handler](#handler), [restart](#restart), [catch tag](#catch tag), [fill pointer](#fill pointer)
-! actual adjustability
-> "实际可调整性"
-> n.
-> 数组相关的一个广义布尔值, 标识数组是否是实际可调整的.
-> 见[actually adjustable](#actually adjustable), [expressed adjustability](#expressed adjustability), [adjustable-array-p](../Symbols#adjustable-array-p)
-! actual argument
-> "实参"
-> n. Trad.
-> 参数.
-> 见[argument](#argument)
-! actual array element type
-> "实际数组元素类型"
-> n.
-> 数组实际被特化后的类型, 是数组的被表达的数组元组类型的升级的数组元素类型.
-> 见[array](#array), [array-element-type](../Symbols#array-element-type), [expressed array element type](#expressed array element type), [upgraded array element type](#upgraded array element type)
-! actual complex part type
-> "实际复数部分类型"
-> n.
-> 复数的实部和虚部的实际表示的类型, 是复数的被表达的复数部分类型的升级的复数部分类型.
-> 见[complext](#complext), [expressed complex part type ](#expressed complex part type ), [upgraded complex part type](#upgraded complex part type)
-! actual parameter
-> "实参"
-> n. Trad.
-> 参数.
-> 见[argument](#argument)
-! actually adjustable
-> "实际可调整的"
-> adj.
-> 可用函数`ADJUST-ARRAY`直接修改数组特性. 需要满足: 数组被表达为可调整的 或 显式用`ADJUSTABLE-ARRY-P`测试.
-> 见[expressly adjustable](#expressly adjustable), [adjust-array](../Symbols#adjust-array), [adjustable-array-p](../Symbols#adjustable-array-p)
-! adjustability
-> "可调整性"
-> n.
-> 1 被表达的可调整性
-> 2 实际可调整性
-> 见[expressed adjustability](#expressed adjustability), [actual adjustability](#actual adjustability)
-! adjustable
-> "可调整的"
-> adj.
-> 1 表达的可调整性
-> 2 实际可调整性
-> 见[expressly adjustable](#expressly adjustable), [actually adjustable](#actually adjustable)
-! after method
-> ":after方法"
-> n.
-> 由限定符`:after`的方法.
-> 见[method](#method), [qualifier](#qualifier)
-! alist
-> "关联列表"
-> n.
-> 关联列表.
-> 见[association list](#association list)
-! alphabetic
-> "字母的"
-> n. adj.
-> 1 字符: 标准字符, 实现定义的字符, 图形字符
-> 2 字符的要素特质, 见2.1.4.1和2.2
-> 3 当前`readtable`中有语法类型要素和有要素特质的字符, 见图2-8
-> 见[character](#character)
-! alphanumeric
-> "字母或数字的"
-> adj.
-> 字母字符或数值字符.
-> 见[alphabetic](#alphabetic), [numeric](#numeric)
-! ampersand
-> "&"
-> n.
-> `&`的标准字符. 见图2-5.
-> 见[standard character](#standard character)
-! anonymous
-> "匿名的"
-> adj.
-> 1 (类或函数)没有名字
-> 2 (重启器)有名字nil
-> 见[mame](#name)
-! apparently uninterned
-> "明显未内部化的"
-> adj.
-> 主包为`nil`.
-> 见[home package](#home package)
-! applicable
-> "可应用的"
-> adj.
-> 1 处理器可应用
-> 2 方法可应用
-> 3 重启器可应用
-> 见[applicable handler](#applicable handler), [applicable method](#applicable method), [applicable restart](#applicable restart)
-! applicable handler
-> "可应用的处理器"
-> n.
-> 活跃处理器关联的类型包含给定条件.
-> 见[condition](#condition), [handler](#handler)
-! applicable method
-> "可应用的方法"
-> n.
-> 广义函数的方法, 其参数满足参数特化符, 见7.6.6.1.1
-> 见[method](#method), [parameter specializers](#parameter specializers)
-! applicable restart
-> "可应用的重启器"
-> n.
-> 1 活跃处理器关联的测试在给定条件作为参数时返回真值
-> 2 活跃处理器关联的测试在`nil`作为参数时返回真值
-> 见[handler](#handler)
-! apply
-> "APPLY函数"
-> v.t.
-> 使用列表中元素作为参数调用函数
-> 见[call](#call), [function](#function)
-! argument
-> "参数"
-> n.
-> 1 作为函数被调用时的数据
-> 2 格式控制中的格式化参数
-> 见[function](#function), [format argument](#format argument)
-! argument evaluation order
-> "参数求值顺序"
-> n.
-> 参数在函数调用中的被求值的顺序, 见3.1
-! argument precedence order
-> "参数优先级顺序"
-> n.
-> 广义函数排序可应用的方法时考虑的参数顺序
-> 见[applicable method](#applicable method)
-! around method
-> ":around方法"
-> n.
-> 有限定符`:around`的方法.
-> 见[method](#method), [qualifier](#qualifier)
-! array
-> "数组"
-> n.
-> 有类型`ARRAY`的对象
-! array element type
-> "数组元素类型"
-> n.
-> 1 数组关联的类型
-> 2 数组的实际数据元素类型
-> 3 数组的被表达的数组元素类型
-> 见[actual array element type](#actual array element type), [expressed array element type](#expressed array element type)
-! array total size
-> "数组总大小"
-> n.
-> 数组中元素总数量, 按数组维度之积计算.
-> 见[dimension](#dimension)
-! assign
-> "赋值"
-> v.t.
-> 改变已建立的绑定中变量的值.
-> 见[binding](#binding), [variable](#variable), [setq](../Symbols#setq)
-! association list
-> "关联列表"
-> n.
-> 表示关联的键值的cons列表, 每个cons的car是键, cdr是键对应的值.
-> 见[cons](#cons)
-! asterisk
-> "*"
-> n.
-> 标准字符`*`, 见图2-5.
-! at-sign
-> "@"
-> n.
-> 标准字符`@`, 见图2-5.
-! atom
-> "原子"
-> n.
-> 不是cons的对象
-> 见[](#)
-! atomic
-> "原子的"
-> adj.
-> 原子的.
-> 见[atom](#atom)
-! atomic type specifier
-> "原子类型描述符"
-> n.
-> 对每个原子类型描述符`x`, 存在一个等价的的复合类型描述符`(x)`
-> 见[compound type specifier](#compound type specifier)
-! attribute
-> "属性"
-> n.
-> 字符的程序可见的方面, 字符的标准属性是其编码, 见13.1.3
-> 见[code](#code)
-! aux variable
-> "辅助变量"
-> n.
-> 在lambda列表中由`&aux`引入的变量, 辅助变量不是参数.
-> 见[lambda list](#lambda list)
-! auxiliary method
-> "辅助方法"
-> n.
-> 构成方法对应的广义函数的完备方法集合中的一个方法.
-> 见[primary methods](#primary methods), [method combination](#method combination)
-! backquote
-
-! backslash
-> "\\"
-> n.
-> `\`, 称为逆斜线(reverse solidus)或反斜线(backslash). 见图2-5.
-! base character
-
-! base string
-
-! before method
-
-! bidirectional
-
-! binary
-
-! bind
-
-! binding
-
-! bit
-
-! bit array
-
-! bit vector
-
-! bit-wise logical operation specifier
-
-! block
-
-! block tag
-
-! boa lambda list
-
-! body parameter
-
-! boolean
-
-! boolean equivalent
-
-! bound
+; <span id="#()">()</span> `()` n.
+: 符号`nil`的另一个记法, 强调`nil`表示空列表.
+
+; <span id="#absolute">absolute</span> 绝对的 adj.
+: 1 特定的时间点, 见[time](#time).
+: 2 目录层次中特定位置, 见[pathname](#pathname).
+: 见[relative](#relative)
+
+; <span id="#access">access</span> 访问 n., v.t.
+* 1 读或写位置的值或数组中元素的值.
+* 2 尝试访问位置的值.
+
+见[place](#place), [value](#value), [array](#array)
+
+; <span id="#accessibility">accessibility</span> 可访问性 n.
+* 可访问的状态.
+
+; <span id="#accessible">accessible</span> 可访问的 adj.
+: 1 (对象)被引用的能力.
+: 2 (类的实现的共享或本地槽)已在实例的类或超类中定义.
+: 3 (包中符号)在当前包中不使用包前缀可被引用的能力, 不管符号存在于包中还是继承获得的.
+见[object](#object), [instance](#instance), [symbol](#symbol)
+
+; <span id="#accessor">accessor</span> 访问器 n.
+: 执行访问的操作符.
+
+见[operator](#operator), [reader](#reader), [writer](#writer)
+
+; <span id="#active">active</span>
+: "活跃的"
+: adj.
+: 1 (处理器, 重启器或捕获标签)已被建立但还未被解除
+: 2 (数组中元素)由大于等于0但小于填充指针的索引. 对没有填充指针的数组, 所有元素被认为是获取的.
+: 见[handler](#handler), [restart](#restart), [catch tag](#catch tag), [fill pointer](#fill pointer)
+
+; <span id="#actual-adjustability">actual adjustability</span>
+: "实际可调整性"
+: n.
+: 数组相关的一个广义布尔值, 标识数组是否是实际可调整的.
+: 见[actually adjustable](#actually adjustable), [expressed adjustability](#expressed adjustability), [adjustable-array-p](../Symbols#adjustable-array-p)
+
+; <span id="#actual-argument">actual argument</span>
+: "实参"
+: n. Trad.
+: 参数.
+: 见[argument](#argument)
+
+; <span id="#actual-array-element-type"></span>
+: "实际数组元素类型"
+: n.
+: 数组实际被特化后的类型, 是数组的被表达的数组元组类型的升级的数组元素类型.
+: 见[array](#array), [array-element-type](../Symbols#array-element-type), [expressed array element type](#expressed array element type), [upgraded array element type](#upgraded array element type)
+
+; <span id="#actual-complex-part-type">actual complex part type</span>
+: "实际复数部分类型"
+: n.
+: 复数的实部和虚部的实际表示的类型, 是复数的被表达的复数部分类型的升级的复数部分类型.
+: 见[complext](#complext), [expressed complex part type ](#expressed complex part type ), [upgraded complex part type](#upgraded complex part type)
+
+; <span id="#actual-parameter">actual parameter</span>
+: "实参"
+: n. Trad.
+: 参数.
+: 见[argument](#argument)
+
+; <span id="#actually-adjustable">actually adjustable</span>
+: "实际可调整的"
+: adj.
+: 可用函数`ADJUST-ARRAY`直接修改数组特性. 需要满足: 数组被表达为可调整的 或 显式用`ADJUSTABLE-ARRY-P`测试.
+: 见[expressly adjustable](#expressly adjustable), [adjust-array](../Symbols#adjust-array), [adjustable-array-p](../Symbols#adjustable-array-p)
+
+; <span id="#adjustability">adjustability</span>
+: "可调整性"
+: n.
+: 1 被表达的可调整性
+: 2 实际可调整性
+: 见[expressed adjustability](#expressed adjustability), [actual adjustability](#actual adjustability)
+
+; <span id="#adjustable">adjustable</span>
+: "可调整的"
+: adj.
+: 1 表达的可调整性
+: 2 实际可调整性
+: 见[expressly adjustable](#expressly adjustable), [actually adjustable](#actually adjustable)
+
+; <span id="#after-method">after method</span>
+: ":after方法"
+: n.
+: 由限定符`:after`的方法.
+: 见[method](#method), [qualifier](#qualifier)
+
+; <span id="#alist">alist</span>
+: "关联列表"
+: n.
+: 关联列表.
+: 见[association list](#association list)
+
+; <span id="#alphabetic">alphabetic</span>
+: "字母的"
+: n. adj.
+: 1 字符: 标准字符, 实现定义的字符, 图形字符
+: 2 字符的要素特质, 见2.1.4.1和2.2
+: 3 当前`readtable`中有语法类型要素和有要素特质的字符, 见图2-8
+: 见[character](#character)
+
+; <span id="#alphanumeric">alphanumeric</span>
+: "字母或数字的"
+: adj.
+: 字母字符或数值字符.
+: 见[alphabetic](#alphabetic), [numeric](#numeric)
+
+; <span id="#ampersand">ampersand</span>
+: "&"
+: n.
+: `&`的标准字符. 见图2-5.
+: 见[standard character](#standard character)
+
+; <span id="#anonymous">anonymous</span>
+: "匿名的"
+: adj.
+: 1 (类或函数)没有名字
+: 2 (重启器)有名字nil
+: 见[mame](#name)
+
+; <span id="#apparently-uninterned">apparently uninterned</span>
+: "明显未内部化的"
+: adj.
+: 主包为`nil`.
+: 见[home package](#home package)
+
+; <span id="#applicable">applicable</span>
+: "可应用的"
+: adj.
+: 1 处理器可应用
+: 2 方法可应用
+: 3 重启器可应用
+: 见[applicable handler](#applicable handler), [applicable method](#applicable method), [applicable restart](#applicable restart)
+
+; <span id="#applicable-handler">applicable handler</span>
+: "可应用的处理器"
+: n.
+: 活跃处理器关联的类型包含给定条件.
+: 见[condition](#condition), [handler](#handler)
+
+; <span id="#applicable-method">applicable method</span>
+: "可应用的方法"
+: n.
+: 广义函数的方法, 其参数满足参数特化符, 见7.6.6.1.1
+: 见[method](#method), [parameter specializers](#parameter specializers)
+
+; <span id="#applicable-restart">applicable restart</span>
+: "可应用的重启器"
+: n.
+: 1 活跃处理器关联的测试在给定条件作为参数时返回真值
+: 2 活跃处理器关联的测试在`nil`作为参数时返回真值
+: 见[handler](#handler)
+
+; <span id="#apply">apply</span>
+: "APPLY函数"
+: v.t.
+: 使用列表中元素作为参数调用函数
+: 见[call](#call), [function](#function)
+
+; <span id="#argument">argument</span>
+: "参数"
+: n.
+: 1 作为函数被调用时的数据
+: 2 格式控制中的格式化参数
+: 见[function](#function), [format argument](#format argument)
+
+; <span id="#argument-evaluation-order">argument evaluation order</span>
+: "参数求值顺序"
+: n.
+: 参数在函数调用中的被求值的顺序, 见3.1
+
+; <span id="#argument-precedence-order">argument precedence order</span>
+: "参数优先级顺序"
+: n.
+: 广义函数排序可应用的方法时考虑的参数顺序
+: 见[applicable method](#applicable method)
+
+; <span id="#around-method">around method</span> `:around`方法/围绕方法 n.
+: 有限定符`:around`的方法.
+: 见[method](#method), [qualifier](#qualifier)
+
+; <span id="#array">array</span> 数组 n.
+: 有类型`ARRAY`的对象
+
+; <span id="#array-element-type">array element type</span> 数组元素类型 n.
+: 1 数组关联的类型
+: 2 数组的实际数据元素类型
+: 3 数组的被表达的数组元素类型
+: 见[actual array element type](#actual array element type), [expressed array element type](#expressed array element type)
+
+; <span id="#array-total-size">array total size</span>
+: "数组总大小"
+: n.
+: 数组中元素总数量, 按数组维度之积计算.
+: 见[dimension](#dimension)
+
+; <span id="#assign">assign</span>
+: "赋值"
+: v.t.
+: 改变已建立的绑定中变量的值.
+: 见[binding](#binding), [variable](#variable), [setq](../Symbols#setq)
+
+; <span id="#association-list">association list</span>
+: "关联列表"
+: n.
+: 表示关联的键值的cons列表, 每个cons的car是键, cdr是键对应的值.
+: 见[cons](#cons)
+
+; <span id="#asterisk">asterisk</span>
+: "*"
+: n.
+: 标准字符`*`, 见图2-5.
 
-! bound declaration
+; <span id="#at-sign">at-sign</span>
+: "@"
+: n.
+: 标准字符`@`, 见图2-5.
 
-! bounded
+; <span id="#atom">atom</span>
+: "原子"
+: n.
+: 不是cons的对象
+: 见[](#)
 
-! bounding index
+; <span id="#atomic">atomic</span>
+: "原子的"
+: adj.
+: 原子的.
+: 见[atom](#atom)
 
-! bounding index designator
+; <span id="#atomic-type-specifier">atomic type specifier</span>
+: "原子类型描述符"
+: n.
+: 对每个原子类型描述符`x`, 存在一个等价的的复合类型描述符`(x)`
+: 见[compound type specifier](#compound type specifier)
 
-! break loop
+; <span id="#attribute">attribute</span>
+: "属性"
+: n.
+: 字符的程序可见的方面, 字符的标准属性是其编码, 见13.1.3
+: 见[code](#code)
 
-! broadcast stream
+; <span id="#aux-variable">aux variable</span>
+: "辅助变量"
+: n.
+: 在lambda列表中由`&aux`引入的变量, 辅助变量不是参数.
+: 见[lambda list](#lambda list)
 
-! built-in class
+; <span id="#auxiliary-method">auxiliary method</span>
+: "辅助方法"
+: n.
+: 构成方法对应的广义函数的完备方法集合中的一个方法.
+: 见[primary methods](#primary methods), [method combination](#method combination)
 
-! built-in type
+; <span id="#backquote"></span>
 
-! byte
+; <span id="#backslash"></span>
+: "\\"
+: n.
+: `\`, 称为逆斜线(reverse solidus)或反斜线(backslash). 见图2-5.
 
-! byte specifier
+; <span id="#base-character">base character</span>
 
-! cadr
+; <span id="#base-string">base string</span>
 
-! call
+; <span id="#before-method">before method</span>
 
-! captured initialization form
+; <span id="#bidirectional">bidirectional</span>
 
-! car
+; <span id="#binary">binary</span>
 
-! case
+; <span id="#bind">bind</span>
 
-! case sensitivity mode
+; <span id="#binding">binding</span>
 
-! catch
+; <span id="#bit">bit</span>
 
-! catch tag
+; <span id="#bit-array">bit array</span>
 
-! cddr
+; <span id="#bit-vector">bit vector</span>
 
-! cdr
+; <span id="#bit-wise-logical-operation-specifier">bit-wise logical operation specifier</span>
 
-! cell
+; <span id="#block">block</span>
 
-! character
+; <span id="#block-tag">block tag</span>
 
-! character code
+; <span id="#boa-lambda-list">boa lambda list</span>
 
-! character designator
+; <span id="#body-parameter">body parameter</span>
 
-! circular
+; <span id="#boolean">boolean</span>
 
-! circular list
+; <span id="#boolean-equivalent">boolean equivalent</span>
 
-! class
+; <span id="#bound">bound</span>
 
-! class designator
+; <span id="#bound-declaration">bound declaration</span>
 
-! class precedence list
+; <span id="#bounded">bounded</span>
 
-! close
+; <span id="#bounding-index">bounding index</span>
 
-! closed
+; <span id="#bounding-index-designator">bounding index designator</span>
 
-! closure
+; <span id="#break-loop">break loop</span>
 
-! coalesce
+; <span id="#broadcast-stream">broadcast stream</span>
 
-! code
+; <span id="#built-in-class">built-in class</span>
 
-! coerce
+; <span id="#built-in-type">built-in type</span>
 
-! colon
+; <span id="#byte">byte</span>
 
-! comma
+; <span id="#byte-specifier">byte specifier</span>
 
-! compilation
+; <span id="#cadr">cadr</span>
 
-! compilation environment
+; <span id="#call">call</span>
 
-! compilation unit
+; <span id="#captured-initialization-form">captured initialization form</span>
 
-! compile
+; <span id="#car">car</span>
 
-! compile time
+; <span id="#case">case</span>
 
-! compile-time definition
+; <span id="#case-sensitivity-mode">case sensitivity mode</span>
 
-! compiled code
+; <span id="#catch">catch</span>
 
-! compiled file
+; <span id="#catch-tag">catch tag</span>
 
-! compiled function
+; <span id="#cddr">cddr</span>
 
-! compiler
+; <span id="#cdr">cdr</span>
 
-! compiler macro
+; <span id="#cell">cell</span>
 
-! compiler macro expansion
+; <span id="#character">character</span>
 
-! compiler macro form
+; <span id="#character-code">character code</span>
 
-! compiler macro function
+; <span id="#character-designator">character designator</span>
 
-! complex
+; <span id="#circular">circular</span>
 
-! complex float
+; <span id="#circular-list">circular list</span>
 
-! complex part type
+; <span id="#class">class</span>
 
-! complex rational
+; <span id="#class-designator">class designator</span>
 
-! complex single float
+; <span id="#class-precedence-list">class precedence list</span>
 
-! composite stream
+; <span id="#close">close</span>
 
-! compound form
+; <span id="#closed">closed</span>
 
-! compound type specifier
+; <span id="#closure">closure</span>
 
-! concatenated stream
+; <span id="#coalesce">coalesce</span>
 
-! condition
+; <span id="#code">code</span>
 
-! condition designator
+; <span id="#coerce">coerce</span>
 
-! condition handler
+; <span id="#colon">colon</span>
 
-! condition reporter
+; <span id="#comma">comma</span>
 
-! conditional newline
+; <span id="#compilation">compilation</span>
 
-! conformance
+; <span id="#compilation-environment">compilation environment</span>
 
-! conforming code
+; <span id="#compilation-unit">compilation unit</span>
 
-! conforming implementation
+; <span id="#compile">compile</span>
 
-! conforming processor
+; <span id="#compile-time">compile time</span>
 
-! conforming program
+; <span id="#compile-time-definition">compile-time definition</span>
 
-! congruent
+; <span id="#compiled-code">compiled code</span>
 
-! cons
+; <span id="#compiled-file">compiled file</span>
 
-! constant
+; <span id="#compiled-function">compiled function</span>
 
-! constant form
+; <span id="#compiler">compiler</span>
 
-! constant object
+; <span id="#compiler-macro">compiler macro</span>
 
-! constant variable
+; <span id="#compiler-macro-expansion">compiler macro expansion</span>
 
-! constituent
+; <span id="#compiler-macro-form">compiler macro form</span>
 
-! constituent trait
+; <span id="#compiler-macro-function">compiler macro function</span>
 
-! constructed stream
+; <span id="#complex">complex</span>
 
-! contagion
+; <span id="#complex-float">complex float</span>
 
-! continuable
+; <span id="#complex-part-type">complex part type</span>
 
-! control form
+; <span id="#complex-rational">complex rational</span>
 
-! copy
+; <span id="#complex-single-float">complex single float</span>
 
-! correctable
+; <span id="#composite-stream">composite stream</span>
 
-! current input base
+; <span id="#compound-form">compound form</span>
 
-! current logical block
+; <span id="#compound-type-specifier">compound type specifier</span>
 
-! current output base
+; <span id="#concatenated-stream">concatenated stream</span>
 
-! current package
+; <span id="#condition">condition</span>
 
-! current pprint dispatch table
+; <span id="#condition-designator">condition designator</span>
 
-! current random state
+; <span id="#condition-handler">condition handler</span>
 
-! current readtable
+; <span id="#condition-reporter">condition reporter</span>
 
-! data type
+; <span id="#conditional-newline">conditional newline</span>
 
-! debug I/O
+; <span id="#conformance">conformance</span>
 
-! debugger
+; <span id="#conforming-code">conforming code</span>
 
-! declaration
+; <span id="#conforming-implementation">conforming implementation</span>
 
-! declaration identifier
+; <span id="#conforming-processor">conforming processor</span>
 
-! declaration specifier
+; <span id="#conforming-program">conforming program</span>
 
-! declare
+; <span id="#congruent">congruent</span>
 
-! decline
+; <span id="#cons">cons</span>
 
-! decoded time
+; <span id="#constant">constant</span>
 
-! default method
+; <span id="#constant-form">constant form</span>
 
-! defaulted initialization argument list
+; <span id="#constant-object">constant object</span>
 
-! define-method-combination arguments lambda list
+; <span id="#constant-variable">constant variable</span>
 
-! define-modify-macro lambda list
+; <span id="#constituent">constituent</span>
 
-! defined name
+; <span id="#constituent-trait">constituent trait</span>
 
-! defining form
+; <span id="#constructed-stream">constructed stream</span>
 
-! defsetf lambda list
+; <span id="#contagion">contagion</span>
 
-! deftype lambda list
+; <span id="#continuable">continuable</span>
 
-! denormalized
+; <span id="#control-form">control form</span>
 
-! derived type
+; <span id="#copy">copy</span>
 
-! derived type specifier
+; <span id="#correctable">correctable</span>
 
-! designator
+; <span id="#current-input-base">current input base</span>
 
-! destructive
+; <span id="#current-logical-block">current logical block</span>
 
-! destructuring lambda list
+; <span id="#current-output-base">current output base</span>
 
-! different
+; <span id="#current-package">current package</span>
 
-! digit
+; <span id="#current-pprint-dispatch-table">current pprint dispatch table</span>
 
-! dimension
+; <span id="#current-random-state">current random state</span>
 
-! direct instance
+; <span id="#current-readtable">current readtable</span>
 
-! direct subclass
+; <span id="#data-type">data type</span>
 
-! direct superclass
+; <span id="#debug-I/O">debug I/O</span>
 
-! disestablish
+; <span id="#debugger">debugger</span>
 
-! disjoint
+; <span id="#declaration">declaration</span>
 
-! dispatching macro character
+; <span id="#declaration-identifier">declaration identifier</span>
 
-! displaced array
+; <span id="#declaration-specifier">declaration specifier</span>
 
-! distinct
+; <span id="#declare">declare</span>
 
-! documentation string
+; <span id="#decline">decline</span>
 
-! dot
+; <span id="#decoded-time">decoded time</span>
 
-! dotted list
+; <span id="#default-method">default method</span>
 
-! dotted pair
+; <span id="#defaulted-initialization-argument-list">defaulted initialization argument list</span>
 
-! double float
+; <span id="#define-method-combination-arguments-lambda-list">define-method-combination arguments lambda list</span>
 
-! double-quote
+; <span id="#define-modify-macro-lambda-list">define-modify-macro lambda list</span>
 
-! dynamic binding
+; <span id="#defined-name">defined name</span>
 
-! dynamic environment
+; <span id="#defining-form">defining form</span>
 
-! dynamic extent
+; <span id="#defsetf-lambda-list">defsetf lambda list</span>
 
-! dynamic scope
+; <span id="#deftype-lambda-list">deftype lambda list</span>
 
-! dynamic variable
+; <span id="#denormalized">denormalized</span>
 
-! echo stream
+; <span id="#derived-type">derived type</span>
 
-! effective method
+; <span id="#derived-type-specifier">derived type specifier</span>
 
-! element
+; <span id="#designator">designator</span>
 
-! element type
+; <span id="#destructive">destructive</span>
 
-! em
+; <span id="#destructuring-lambda-list">destructuring lambda list</span>
 
-! empty list
+; <span id="#different">different</span>
 
-! empty type
+; <span id="#digit">digit</span>
 
-! end of file
+; <span id="#dimension">dimension</span>
 
-! environment
+; <span id="#direct-instance">direct instance</span>
 
-! environment object
+; <span id="#direct-subclass">direct subclass</span>
 
-! environment parameter
+; <span id="#direct-superclass">direct superclass</span>
 
-! error
+; <span id="#disestablish">disestablish</span>
 
-! error output
+; <span id="#disjoint">disjoint</span>
 
-! escape
+; <span id="#dispatching-macro-character">dispatching macro character</span>
 
-! establish
+; <span id="#displaced-array">displaced array</span>
 
-! evaluate
+; <span id="#distinct">distinct</span>
 
-! evaluation
+; <span id="#documentation-string">documentation string</span>
 
-! evaluation environment
+; <span id="#dot">dot</span>
 
-! execute
+; <span id="#dotted-list">dotted list</span>
 
-! execution time
+; <span id="#dotted-pair">dotted pair</span>
 
-! exhaustive partition
+; <span id="#double-float">double float</span>
 
-! exhaustive union
+; <span id="#double-quote">double-quote</span>
 
-! exit point
+; <span id="#dynamic-binding">dynamic binding</span>
 
-! explicit return
+; <span id="#dynamic-environment">dynamic environment</span>
 
-! explicit use
+; <span id="#dynamic-extent">dynamic extent</span>
 
-! exponent marker
+; <span id="#dynamic-scope">dynamic scope</span>
 
-! Marker  Meaning
+; <span id="#dynamic-variable">dynamic variable</span>
 
-! D or d  double-float
+; <span id="#echo-stream">echo stream</span>
 
-! E or e  float (see *read-default-float-format*)
+; <span id="#effective-method">effective method</span>
 
-! F or f  single-float
+; <span id="#element">element</span>
 
-! L or l  long-float
+; <span id="#element-type">element type</span>
 
-! S or s  short-float
+; <span id="#em">em</span>
 
-! Figure 26-1. Exponent Markers
+; <span id="#empty-list">empty list</span>
 
-! export
+; <span id="#empty-type">empty type</span>
 
-! exported
+; <span id="#end-of-file">end of file</span>
 
-! expressed adjustability
+; <span id="#environment">environment</span>
 
-! expressed array element type
+; <span id="#environment-object">environment object</span>
 
-! expressed complex part type
+; <span id="#environment-parameter">environment parameter</span>
 
-! expression
+; <span id="#error">error</span>
 
-! expressly adjustable
+; <span id="#error-output">error output</span>
 
-! extended character
+; <span id="#escape">escape</span>
 
-! extended function designator
+; <span id="#establish">establish</span>
 
-! extended lambda list
+; <span id="#evaluate">evaluate</span>
 
-! extension
+; <span id="#evaluation">evaluation</span>
 
-! extent
+; <span id="#evaluation-environment">evaluation environment</span>
 
-! external file format
+; <span id="#execute">execute</span>
 
-! external file format designator
+; <span id="#execution-time">execution time</span>
 
-! external symbol
+; <span id="#exhaustive-partition">exhaustive partition</span>
 
-! externalizable object
+; <span id="#exhaustive-union">exhaustive union</span>
 
-! false
+; <span id="#exit-point">exit point</span>
 
-! fbound
+; <span id="#explicit-return">explicit return</span>
 
-! feature
+; <span id="#explicit-use">explicit use</span>
 
-! feature expression
+; <span id="#exponent-marker">exponent marker</span>
 
-! features list
+; <span id="#Marker--Meaning">Marker  Meaning</span>
 
-! file
+; <span id="#D-or-d--double-float">D or d  double-float</span>
 
-! file compiler
+; <span id="#E or e -float-(see-*read-default-float-format*)">E or e  float (see *read-default-float-format*)</span>
 
-! file position
+; <span id="#F-or-f--single-float">F or f  single-float</span>
 
-! file position designator
+; <span id="#L-or-l--long-float">L or l  long-float</span>
 
-! file stream
+; <span id="#S-or-s--short-float">S or s  short-float</span>
 
-! file system
+; <span id="#export">export</span>
 
-! filename
+; <span id="#exported">exported</span>
 
-! fill pointer
+; <span id="#expressed-adjustability">expressed adjustability</span>
 
-! finite
+; <span id="#expressed-array-element-type">expressed array element type</span>
 
-! fixnum
+; <span id="#expressed-complex-part-type">expressed complex part type</span>
 
-! float
+; <span id="#expression">expression</span>
 
-! for-value
+; <span id="#expressly-adjustable">expressly adjustable</span>
 
-! form
+; <span id="#extended-character">extended character</span>
+
+; <span id="#extended-function-designator">extended function designator</span>
+
+; <span id="#extended-lambda-list">extended lambda list</span>
+
+; <span id="#extension">extension</span>
+
+; <span id="#extent">extent</span>
+
+; <span id="#external-file-format">external file format</span>
+
+; <span id="#external-file-format-designator">external file format designator</span>
+
+; <span id="#external-symbol">external symbol</span>
+
+; <span id="#externalizable-object">externalizable object</span>
+
+; <span id="#false">false</span>
+
+; <span id="#fbound">fbound</span>
+
+; <span id="#feature">feature</span>
+
+; <span id="#feature-expression">feature expression</span>
+
+; <span id="#features-list">features list</span>
+
+; <span id="#file">file</span>
+
+; <span id="#file-compiler">file compiler</span>
+
+; <span id="#file-position">file position</span>
+
+; <span id="#file-position-designator">file position designator</span>
+
+; <span id="#file-stream">file stream</span>
+
+; <span id="#file-system">file system</span>
+
+; <span id="#filename">filename</span>
+
+; <span id="#fill-pointer">fill pointer</span>
+
+; <span id="#finite">finite</span>
+
+; <span id="#fixnum">fixnum</span>
+
+; <span id="#float">float</span>
+
+; <span id="#for-value">for-value</span>
+
+; <span id="#form">form</span>
 >
-> n.
-> 1 要被求值的对象.
-> 2 一个符号, 一个复合形式或一个自求值对象.
-> 3 一个复合形式, 首元素是操作符, 例如`quote`形式是个常量形式.
-> 见[symbol](#symbol), [compound form](#compound form), [self-evaluating object](#self-evaluating object), [operator](#operator).
-! formal argument
+: n.
+: 1 要被求值的对象.
+: 2 一个符号, 一个复合形式或一个自求值对象.
+: 3 一个复合形式, 首元素是操作符, 例如`quote`形式是个常量形式.
+: 见[symbol](#symbol), [compound form](#compound form), [self-evaluating object](#self-evaluating object), [operator](#operator).
 
-! formal parameter
+; <span id="#formal-argument">formal argument</span>
 
-! format
+; <span id="#formal-parameter">formal parameter</span>
 
-! format argument
+; <span id="#format">format</span>
 
-! format control
+; <span id="#format-argument">format argument</span>
 
-! format directive
+; <span id="#format-control">format control</span>
 
-! format string
+; <span id="#format-directive">format directive</span>
 
-! free declaration
+; <span id="#format-string">format string</span>
 
-! fresh
+; <span id="#free-declaration">free declaration</span>
 
-! freshline
+; <span id="#fresh">fresh</span>
 
-! funbound
+; <span id="#freshline">freshline</span>
 
-! function
+; <span id="#funbound">funbound</span>
 
-! function block name
+; <span id="#function">function</span>
 
-! function cell
+; <span id="#function-block-name">function block name</span>
 
-! function designator
+; <span id="#function-cell">function cell</span>
 
-! function form
+; <span id="#function-designator">function designator</span>
 
-! function name
+; <span id="#function-form">function form</span>
 
-! functional evaluation
+; <span id="#function-name">function name</span>
 
-! functional value
+; <span id="#functional-evaluation">functional evaluation</span>
 
-! further compilation
+; <span id="#functional-value">functional value</span>
 
-! general
+; <span id="#further-compilation">further compilation</span>
 
-! generalized boolean
+; <span id="#general">general</span>
 
-! generalized instance
+; <span id="#generalized-boolean">generalized boolean</span>
 
-! generalized reference
+; <span id="#generalized-instance">generalized instance</span>
 
-! generalized synonym stream
+; <span id="#generalized-reference">generalized reference</span>
 
-! generic function
+; <span id="#generalized-synonym-stream">generalized synonym stream</span>
 
-! generic function lambda list
+; <span id="#generic-function">generic function</span>
 
-! gensym
+; <span id="#generic-function-lambda-list">generic function lambda list</span>
 
-! global declaration
+; <span id="#gensym">gensym</span>
 
-! global environment
+; <span id="#global-declaration">global declaration</span>
 
-! global variable
+; <span id="#global-environment">global environment</span>
 
-! glyph
+; <span id="#global-variable">global variable</span>
 
-! go
+; <span id="#glyph">glyph</span>
 
-! go point one of possibly several exit points that are established by tagbody (or other abstractions, such as prog, which are built from tagbody).
+; <span id="#go">go</span>
 
-! go tag
+; <span id="#go-point">go point</span>
 
-! graphic
+; <span id="#go-tag">go tag</span>
 
-! handle
+; <span id="#graphic">graphic</span>
 
-! handler
+; <span id="#handle">handle</span>
 
-! hash table
+; <span id="#handler">handler</span>
 
-! home package
+; <span id="#hash-table">hash table</span>
 
-! I/O customization variable
+; <span id="#home-package">home package</span>
 
-! *debug-io*        *error-io*         query-io*
+; <span id="#IO-customization-variable">I/O customization variable</span>
 
-! *standard-input*  *standard-output*  *trace-output*
+```lisp
+*debug-io*        *error-io*         query-io*
+*standard-input*  *standard-output*  *trace-output*
+```
 
-! Figure 26-2. Standardized I/O Customization Variables
+; <span id="#identical">identical</span>
 
-! identical
+; <span id="#identifier">identifier</span>
 
-! identifier
+; <span id="#immutable">immutable</span>
 
-! immutable
+; <span id="#implementation">implementation</span>
 
-! implementation
+; <span id="#implementation-limit">implementation limit</span>
 
-! implementation limit
+; <span id="#implementation-defined">implementation-defined</span>
 
-! implementation-defined
+; <span id="#implementation-dependent">implementation-dependent</span>
 
-! implementation-dependent
+; <span id="#implementation-independent">implementation-independent</span>
 
-! implementation-independent
+; <span id="#implicit-block">implicit block</span>
 
-! implicit block
+; <span id="#implicit-compilation">implicit compilation</span>
 
-! implicit compilation
+; <span id="#implicit-progn">implicit progn</span>
 
-! implicit progn
+; <span id="#implicit-tagbody">implicit tagbody</span>
 
-! implicit tagbody
+; <span id="#import">import</span>
 
-! import
+; <span id="#improper-list">improper list</span>
 
-! improper list
+; <span id="#inaccessible">inaccessible</span>
 
-! inaccessible
+; <span id="#indefinite-extent">indefinite extent</span>
 
-! indefinite extent
+; <span id="#indefinite-scope">indefinite scope</span>
 
-! indefinite scope
+; <span id="#indicator">indicator</span>
 
-! indicator
+; <span id="#indirect-instance">indirect instance</span>
 
-! indirect instance
+; <span id="#inherit">inherit</span>
 
-! inherit
+; <span id="#initial-pprint-dispatch-table">initial pprint dispatch table</span>
 
-! initial pprint dispatch table
+; <span id="#initial-readtable">initial readtable</span>
 
-! initial readtable
+; <span id="#initialization-argument-list">initialization argument list</span>
 
-! initialization argument list
+; <span id="#initialization-form">initialization form</span>
 
-! initialization form
+; <span id="#input">input</span>
 
-! input
+; <span id="#instance">instance</span>
 
-! instance
+; <span id="#integer">integer</span>
 
-! integer
+; <span id="#interactive-stream">interactive stream</span>
 
-! interactive stream
+; <span id="#intern">intern</span>
 
-! intern
+; <span id="#internal-symbol">internal symbol</span>
 
-! internal symbol
+; <span id="#internal-time">internal time</span>
 
-! internal time
+; <span id="#internal-time-unit">internal time unit</span>
 
-! internal time unit
+; <span id="#interned">interned</span>
 
-! interned
+; <span id="#interpreted-function">interpreted function</span>
 
-! interpreted function
+; <span id="#interpreted-implementation">interpreted implementation</span>
 
-! interpreted implementation
+; <span id="#interval-designator">interval designator</span>
 
-! interval designator
+; <span id="#invalid">invalid</span>
 
-! invalid
+; <span id="#iteration-form">iteration form</span>
 
-! iteration form
+; <span id="#iteration-variable">iteration variable</span>
 
-! iteration variable
+; <span id="#key">key</span>
 
-! key
+; <span id="#keyword">keyword</span>
 
-! keyword
+; <span id="#keyword-parameter">keyword parameter</span>
 
-! keyword parameter
+; <span id="#keyword/value-pair">keyword/value pair</span>
 
-! keyword/value pair
+; <span id="#lambda-combination">lambda combination</span>
 
-! lambda combination
+; <span id="#lambda-expression">lambda expression</span>
 
-! lambda expression
+; <span id="#lambda-form">lambda form</span>
 
-! lambda form
+; <span id="#lambda-list">lambda list</span>
 
-! lambda list
+; <span id="#lambda-list-keyword">lambda list keyword</span>
 
-! lambda list keyword
+; <span id="#lambda-variable">lambda variable</span>
 
-! lambda variable
+; <span id="#leaf">leaf</span>
 
-! leaf
+; <span id="#leap-seconds">leap seconds</span>
 
-! leap seconds
+; <span id="#left-parenthesis">left-parenthesis</span>
 
-! left-parenthesis
+; <span id="#length">length</span>
 
-! length
+; <span id="#lexical-binding">lexical binding</span>
 
-! lexical binding
+; <span id="#lexical-closure">lexical closure</span>
 
-! lexical closure
+; <span id="#lexical-environment">lexical environment</span>
 
-! lexical environment
+; <span id="#lexical-scope">lexical scope</span>
 
-! lexical scope
+; <span id="#lexical-variable">lexical variable</span>
 
-! lexical variable
+; <span id="#Lisp-image">Lisp image</span> Lisp镜像 n.
 
-! Lisp image
+一个Common Lisp实现的运行实例.
+Lisp镜像时一个单一的地址空间, 其中每个对象可以通过单一的通用的全局环境, 直接引用符合该规范的其它对象. 
 
-! Lisp printer
+外部操作系统称其为核心镜像(core image)、fork、化身(incarnation)、作业或进程.
+注意操作系统中的进程与这里定义的Lisp镜像技术上是正交的. 在操作系统中, 单个进程可以有多个Lisp镜像, 多个进程也可以在单一Lisp镜像中.
+因此, Lisp镜像的特征是一个完全共享的地址空间, 所有对象可以之间相互引用.
+注意, 两个通过通信机制允许共享部分但不是全部对象的进程, 被视为不同的Lisp镜像.
 
-! Lisp read-eval-print loop
+; <span id="#Lisp-printer">Lisp printer</span>
 
-! Lisp reader
+; <span id="#Lisp-read-eval-print-loop">Lisp read-eval-print loop</span>
 
-! list
+; <span id="#Lisp-reader">Lisp reader</span> Lisp读取器 n. Trad.
 
-! list designator
+从流中解析对象的字符表示, 生成对象的过程.
+该过程由函数`read`实现.
 
-! list structure
+; <span id="#list">list</span>
 
-! literal
+; <span id="#list-designator">list designator</span>
 
-! load
+; <span id="#list-structure">list structure</span>
 
-! load time
+; <span id="#literal">literal</span>
 
-! load time value
+; <span id="#load">load</span>
 
-! loader
+; <span id="#load-time">load time</span>
 
-! local declaration
+; <span id="#load-time-value">load time value</span>
 
-! local precedence order
+; <span id="#loader">loader</span>
 
-! local slot
+; <span id="#local-declaration">local declaration</span>
 
-! logical block
+; <span id="#local-precedence-order">local precedence order</span>
 
-! logical host
+; <span id="#local-slot">local slot</span>
 
-! logical host designator
+; <span id="#logical-block">logical block</span>
 
-! logical pathname
+; <span id="#logical-host">logical host</span>
 
-! long float
+; <span id="#logical-host-designator">logical host designator</span>
 
-! loop keyword
+; <span id="#logical-pathname">logical pathname</span>
 
-! lowercase
+; <span id="#long-float">long float</span>
 
-! macro
+; <span id="#loop-keyword">loop keyword</span>
+
+; <span id="#lowercase">lowercase</span>
+
+; <span id="#macro">macro</span>
 >
-> n.
-> 1 一个宏形式.
-> 2 一个宏函数.
-> 3 一个宏的名称.
-> 见[macro form](#macro form), [macro function](#macro function), [macro name](#macro name).
-! macro character
+: n.
+: 1 一个宏形式.
+: 2 一个宏函数.
+: 3 一个宏的名称.
+: 见[macro form](#macro form), [macro function](#macro function), [macro name](#macro name).
+
+; <span id="#macro-character">macro character</span>
 >
-> n.
-> 一个字符, 当Lisp读取器在其主分发循环中遇到时, 引入读取器宏.
-> 宏字符与宏没有关系.
-> 见[](#)
-! macro expansion
+: n.
+: 一个字符, 当Lisp读取器在其主分发循环中遇到时, 引入读取器宏.
+: 宏字符与宏没有关系.
+: 见[](#)
+
+; <span id="#macro-expansion">macro expansion</span>
 >
-> n.
-> 1 将宏形式转换为另一个形式的过程.
-> 2 作为该过程结果产生的宏.
-> 见[reader macro](#reader macro).
-! macro form
+: n.
+: 1 将宏形式转换为另一个形式的过程.
+: 2 作为该过程结果产生的宏.
+: 见[reader macro](#reader macro).
+
+; <span id="#macro-form">macro form</span>
 >
-> n.
-> 代表另一个形式的形式(为了抽象、信息隐藏、语法遍历), 即或者是首元素为宏名称的复合形式, 或者是一个命名了符号宏的符号的形式.
-> 见[compound form](#compound form), [macro name](#macro name), [symbol macro](#symbol macro).
-! macro function
+: n.
+: 代表另一个形式的形式(为了抽象、信息隐藏、语法遍历), 即或者是首元素为宏名称的复合形式, 或者是一个命名了符号宏的符号的形式.
+: 见[compound form](#compound form), [macro name](#macro name), [symbol macro](#symbol macro).
+
+; <span id="#macro-function">macro function</span>
 >
-> n.
-> 一个有两个参数的函数: 形式和环境, 这个函数实现了宏扩展, 生成作为原始参数的形式求值后的形式.
-> 见[form](#form), [environment](#environment), [macro expansion](#macro expansion).
-! macro lambda list
+: n.
+: 一个有两个参数的函数: 形式和环境, 这个函数实现了宏扩展, 生成作为原始参数的形式求值后的形式.
+: 见[form](#form), [environment](#environment), [macro expansion](#macro expansion).
+
+; <span id="#macro-lambda-list">macro lambda list</span>
 >
-> n.
-> 用在形式中以建立宏定义的扩展的lambda列表, 例如`defmacro`、`macrolet`.
-> 见[3.4.4 宏lambda列表](../03-Evaluation-and-Compilation#3.4.4)
-! macro name
+: n.
+: 用在形式中以建立宏定义的扩展的lambda列表, 例如`defmacro`、`macrolet`.
+: 见[3.4.4 宏lambda列表](../03-Evaluation-and-Compilation#3.4.4)
+
+; <span id="#macro-name">macro name</span>
 >
-> n.
-> 一个名称, 作为`macro-function`参数时返回true,
-> 用在复合形式的首元素处, 标识该形式为宏形式.
-> 见[macro-function](../Symbols#macro-function), [macro form](#macro form).
-! macroexpand hook
+: n.
+: 一个名称, 作为`macro-function`参数时返回true,
+: 用在复合形式的首元素处, 标识该形式为宏形式.
+: 见[macro-function](../Symbols#macro-function), [macro form](#macro form).
+
+; <span id="#macroexpand-hook">macroexpand hook</span>
 >
-> n.
-> `*macroexpand-hook*`的值对应的函数.
-> 见[`*macroexpand-hook*`](../Symbols#*macroexpand-hook*)
-! mapping
+: n.
+: `*macroexpand-hook*`的值对应的函数.
+: 见[`*macroexpand-hook*`](../Symbols#*macroexpand-hook*)
 
-! metaclass
+; <span id="#mapping">mapping</span>
 
-! Metaobject Protocol
+; <span id="#metaclass">metaclass</span>
 
-! method
+; <span id="#Metaobject-Protocol">Metaobject Protocol</span>
 
-! method combination
+; <span id="#method">method</span>
 
-! method-defining form
+; <span id="#method-combination">method combination</span>
 
-! method-defining operator
+; <span id="#method-defining-form">method-defining form</span>
 
-! minimal compilation
+; <span id="#method-defining-operator">method-defining operator</span>
 
-! modified lambda list
+; <span id="#minimal-compilation">minimal compilation</span>
 
-! most recent
+; <span id="#modified-lambda-list">modified lambda list</span>
 
-! multiple escape
+; <span id="#most-recent">most recent</span>
 
-! multiple values
+; <span id="#multiple-escape">multiple escape</span>
 
-! name
+; <span id="#multiple-values">multiple values</span>
 
-! named constant
+; <span id="#name">name</span>
 
-! namespace
+; <span id="#named-constant">named constant</span>
 
-! namestring
+; <span id="#namespace">namespace</span>
 
-! newline
+; <span id="#namestring">namestring</span>
 
-! next method
+; <span id="#newline">newline</span>
 
-! nickname
+; <span id="#next-method">next method</span>
 
-! nil
+; <span id="#nickname">nickname</span>
 
-! non-atomic
+; <span id="#nil">nil</span>
 
-! non-constant variable
+; <span id="#non-atomic">non-atomic</span>
 
-! non-correctable
+; <span id="#non-constant-variable">non-constant variable</span>
 
-! non-empty
+; <span id="#non-correctable">non-correctable</span>
 
-! non-generic function
+; <span id="#non-empty">non-empty</span>
 
-! non-graphic
+; <span id="#non-generic-function">non-generic function</span>
 
-! non-list
+; <span id="#non-graphic">non-graphic</span>
 
-! non-local exit
+; <span id="#non-list">non-list</span>
 
-! non-nil
+; <span id="#non-local-exit">non-local exit</span>
 
-! non-null lexical environment
+; <span id="#non-nil">non-nil</span>
 
-! non-simple
+; <span id="#non-null-lexical-environment">non-null lexical environment</span>
 
-! non-terminating
+; <span id="#non-simple">non-simple</span>
 
-! non-top-level form
+; <span id="#non-terminating">non-terminating</span>
 
-! normal return
+; <span id="#non-top-level-form">non-top-level form</span>
 
-! normalized
+; <span id="#normal-return">normal return</span>
 
-! null
+; <span id="#normalized">normalized</span>
 
-! null lexical environment
+; <span id="#null">null</span>
 
-! number
+; <span id="#null-lexical-environment">null lexical environment</span>
 
-! numeric
+; <span id="#number">number</span>
 
-! object
+; <span id="#numeric">numeric</span>
 
-! object-traversing
+; <span id="#object">object</span>
 
-! open
+; <span id="#object-traversing">object-traversing</span>
 
-! operator
+; <span id="#open">open</span>
 
-! optimize quality
+; <span id="#operator">operator</span>
 
-! optional parameter
+; <span id="#optimize-quality">optimize quality</span>
 
-! ordinary function
+; <span id="#optional-parameter">optional parameter</span>
 
-! ordinary lambda list
+; <span id="#ordinary-function">ordinary function</span>
 
-! otherwise inaccessible part
+; <span id="#ordinary-lambda-list">ordinary lambda list</span>
 
-! output
+; <span id="#otherwise-inaccessible-part">otherwise inaccessible part</span>
 
-! package
+; <span id="#output">output</span>
 
-! package cell
+; <span id="#package">package</span>
 
-! package designator
+; <span id="#package-cell">package cell</span>
 
-! package marker
+; <span id="#package-designator">package designator</span>
 
-! package prefix
+; <span id="#package-marker">package marker</span>
 
-! package registry
+; <span id="#package-prefix">package prefix</span>
 
-! pairwise
+; <span id="#package-registry">package registry</span>
 
-! parallel
+; <span id="#pairwise">pairwise</span>
 
-! parameter
+; <span id="#parallel">parallel</span>
 
-! parameter specializer
+; <span id="#parameter">parameter</span>
 
-! parameter specializer name
+; <span id="#parameter-specializer">parameter specializer</span>
 
-! pathname
+; <span id="#parameter-specializer-name">parameter specializer name</span>
 
-! pathname designator
+; <span id="#pathname">pathname</span>
 
-! physical pathname
+; <span id="#pathname-designator">pathname designator</span>
 
-! place
+; <span id="#physical-pathname">physical pathname</span>
 
-! plist
+; <span id="#place">place</span>
 
-! portable
+; <span id="#plist">plist</span>
 
-! potential copy
+; <span id="#portable">portable</span>
 
-! potential number
-> "可能的数值"
-> n.
-> 在一些符合标准的实现中被Lisp读取器解析为数值的文本内容, 但不要求被解析为数值.
-> 没有对象是可能的数值: 一个对象或者是数值, 或者不是, 见[2.3.1.1 可能的数值的记号](../02-Syntax#2.3.1.1).
-> 见[number](#number)
-! pprint dispatch table
+; <span id="#potential-copy">potential copy</span>
 
-! predicate
+; <span id="#potential-number">potential number</span>
+: "可能的数值"
+: n.
+: 在一些符合标准的实现中被Lisp读取器解析为数值的文本内容, 但不要求被解析为数值.
+: 没有对象是可能的数值: 一个对象或者是数值, 或者不是, 见[2.3.1.1 可能的数值的记号](../02-Syntax#2.3.1.1).
+: 见[number](#number)
 
-! present
+; <span id="#pprint-dispatch-table">pprint dispatch table</span>
 
-! pretty print
+; <span id="#predicate">predicate</span>
 
-! pretty printer
+; <span id="#present">present</span>
 
-! pretty printing stream
+; <span id="#pretty-print">pretty print</span>
 
-! primary method
+; <span id="#pretty-printer">pretty printer</span>
 
-! primary value
+; <span id="#pretty-printing-stream">pretty printing stream</span>
 
-! principal
+; <span id="#primary-method">primary method</span>
 
-! print name
+; <span id="#primary-value">primary value</span>
 
-! printer control variable
+; <span id="#principal">principal</span>
 
-! printer escaping
+; <span id="#print-name">print name</span>
 
-! printing
+; <span id="#printer-control-variable">printer control variable</span>
 
-! process
+; <span id="#printer-escaping">printer escaping</span>
 
-! processor
+; <span id="#printing">printing</span>
 
-! proclaim
+; <span id="#process">process</span>
 
-! proclamation
+; <span id="#processor">processor</span>
 
-! prog tag
+; <span id="#proclaim">proclaim</span>
 
-! program
+; <span id="#proclamation">proclamation</span>
 
-! programmer
+; <span id="#prog-tag">prog tag</span>
 
-! programmer code
+; <span id="#program">program</span>
 
-! proper list
+; <span id="#programmer">programmer</span>
 
-! proper name
+; <span id="#programmer-code">programmer code</span>
 
-! proper sequence
+; <span id="#proper-list">proper list</span>
 
-! proper subtype
+; <span id="#proper-name">proper name</span>
 
-! property
+; <span id="#proper-sequence">proper sequence</span>
 
-! property indicator
+; <span id="#proper-subtype">proper subtype</span>
 
-! property list
+; <span id="#property">property</span>
 
-! property value
+; <span id="#property-indicator">property indicator</span>
 
-! purports to conform
+; <span id="#property-list">property list</span>
 
-! qualified method
+; <span id="#property-value">property value</span>
 
-! qualifier
+; <span id="#purports-to-conform">purports to conform</span>
 
-! query I/O
+; <span id="#qualified-method">qualified method</span>
 
-! quoted object
+; <span id="#qualifier">qualifier</span>
 
-! radix
+; <span id="#query-I/O">query I/O</span>
 
-! random state
+; <span id="#quoted-object">quoted object</span>
 
-! rank
+; <span id="#radix">radix</span>
 
-! ratio
+; <span id="#random-state">random state</span>
 
-! ratio marker
+; <span id="#rank">rank</span>
 
-! rational
+; <span id="#ratio">ratio</span>
 
-! read
+; <span id="#ratio-marker">ratio marker</span>
 
-! readably
+; <span id="#rational">rational</span>
 
-! reader
+; <span id="#read">read</span>
 
-! reader macro
+; <span id="#readably">readably</span>
 
-! reader macro function
+; <span id="#reader">reader</span>
 
-! readtable
+; <span id="#reader-macro">reader macro</span>
 
-! readtable case
+; <span id="#reader-macro-function">reader macro function</span>
 
-! readtable designator
+; <span id="#readtable">readtable</span>
 
-! recognizable subtype
+; <span id="#readtable-case">readtable case</span>
 
-! reference
+; <span id="#readtable-designator">readtable designator</span>
 
-! registered package
+; <span id="#recognizable-subtype">recognizable subtype</span>
 
-! relative
+; <span id="#reference">reference</span>
 
-! repertoire
+; <span id="#registered-package">registered package</span>
 
-! report
+; <span id="#relative">relative</span>
 
-! report message
+; <span id="#repertoire">repertoire</span>
 
-! required parameter
+; <span id="#report">report</span>
 
-! rest list
+; <span id="#report-message">report message</span>
 
-! rest parameter
+; <span id="#required-parameter">required parameter</span>
 
-! restart
+; <span id="#rest-list">rest list</span>
 
-! restart designator
+; <span id="#rest-parameter">rest parameter</span>
 
-! restart function
+; <span id="#restart">restart</span>
 
-! abort     muffle-warning  use-value
+; <span id="#restart-designator">restart designator</span>
 
-! continue  store-value
+; <span id="#restart-function">restart function</span>
 
-! Figure 26-4. Standardized Restart Functions
+```lisp
+abort     muffle-warning  use-value
+continue  store-value
+```
 
-! return
+; <span id="#return">return</span>
 
-! return value
+; <span id="#return-value">return value</span>
 
-! right-parenthesis
+; <span id="#right-parenthesis">right-parenthesis</span>
 
-! Rubout
+; <span id="#Rubout">Rubout</span>
 >
-> n.
-> 删除字符.
-> 见[13.1.7 字符名称](../13-Characters#13.1.7)
-! run time
+: n.
+: 删除字符.
+: 见[13.1.7 字符名称](../13-Characters#13.1.7)
 
-! run-time compiler
+; <span id="#run-time">run time</span>
 
-! run-time definition
+; <span id="#run-time-compiler">run-time compiler</span>
 
-! run-time environment
+; <span id="#run-time-definition">run-time definition</span>
 
-! safe
+; <span id="#run-time-environment">run-time environment</span>
 
-! safe call
+; <span id="#safe">safe</span>
 
-! same
+; <span id="#safe-call">safe call</span>
 
-! satisfy the test
+; <span id="#same">same</span>
 
-! scope
+; <span id="#satisfy-the-test">satisfy the test</span>
 
-! script
+; <span id="#scope">scope</span>
 
-! secondary value
+; <span id="#script">script</span>
 
-! section
+; <span id="#secondary-value">secondary value</span>
 
-! self-evaluating object
+; <span id="#section">section</span>
 
-! semi-standard
+; <span id="#self-evaluating-object">self-evaluating object</span>
 
-! semicolon
+; <span id="#semi-standard">semi-standard</span>
 
-! sequence
+; <span id="#semicolon">semicolon</span>
 
-! sequence function
+; <span id="#sequence">sequence</span>
 
-! sequential
+; <span id="#sequence-function">sequence function</span>
 
-! sequentially
+; <span id="#sequential">sequential</span>
 
-! serious condition
+; <span id="#sequentially">sequentially</span>
 
-! session
+; <span id="#serious-condition">serious condition</span>
 
-! set
+; <span id="#session">session</span>
 
-! setf expander
+; <span id="#set">set</span>
 
-! setf expansion
+; <span id="#setf-expander">setf expander</span>
 
-! setf function
+; <span id="#setf-expansion">setf expansion</span>
 
-! setf function name
+; <span id="#setf-function">setf function</span>
 
-! shadow
+; <span id="#setf-function-name">setf function name</span>
 
-! shadowing symbol
+; <span id="#shadow">shadow</span>
 
-! shadowing symbols list
+; <span id="#shadowing-symbol">shadowing symbol</span>
 
-! shared slot
+; <span id="#shadowing-symbols-list">shadowing symbols list</span>
 
-! sharpsign
-> "#"
-> n.
-> 井号符号. 见图2-5.
-> 见[standard character](#standard character)
-! short float
+; <span id="#shared-slot">shared slot</span>
 
-! sign
+; <span id="#sharpsign">sharpsign</span>
+: "#"
+: n.
+: 井号符号. 见图2-5.
+: 见[standard character](#standard character)
 
-! signal
+; <span id="#short-float">short float</span>
 
-! signature
+; <span id="#sign">sign</span>
 
-! similar
+; <span id="#signal">signal</span>
 
-! similarity
+; <span id="#signature">signature</span>
 
-! simple
+; <span id="#similar">similar</span>
 
-! simple array
+; <span id="#similarity">similarity</span>
 
-! simple bit array
+; <span id="#simple">simple</span>
 
-! simple bit vector
+; <span id="#simple-array">simple array</span>
 
-! simple condition
+; <span id="#simple-bit-array">simple bit array</span>
 
-! simple general vector
+; <span id="#simple-bit-vector">simple bit vector</span>
 
-! simple string
+; <span id="#simple-condition">simple condition</span>
 
-! simple vector
+; <span id="#simple-general-vector">simple general vector</span>
 
-! single escape
+; <span id="#simple-string">simple string</span>
 
-! single float
+; <span id="#simple-vector">simple vector</span>
 
-! single-quote
+; <span id="#single-escape">single escape</span>
 
-! singleton
+; <span id="#single-float">single float</span>
 
-! situation
+; <span id="#single-quote">single-quote</span>
 
-! slash
+; <span id="#singleton">singleton</span>
 
-! slot
+; <span id="#situation">situation</span>
 
-! slot specifier
+; <span id="#slash">slash</span>
 
-! source code
+; <span id="#slot">slot</span>
 
-! source file
+; <span id="#slot-specifier">slot specifier</span>
 
-! space
+; <span id="#source-code">source code</span>
 
-! special form
+; <span id="#source-file">source file</span>
+
+; <span id="#space">space</span>
+
+; <span id="#special-form">special form</span>
 >
-> n
-> 不是宏形式的一个列表, 是一个有特殊语法或特殊求值规则形式, 可能操作求值环境或控制流.
-> 特殊形式的首个元素是特殊操作符.
-> 见[form](#form), [macro form](#macro form), [evaluation](#evaluation), [special operator](#special operator).
-! special operator
+: n
+: 不是宏形式的一个列表, 是一个有特殊语法或特殊求值规则形式, 可能操作求值环境或控制流.
+: 特殊形式的首个元素是特殊操作符.
+: 见[form](#form), [macro form](#macro form), [evaluation](#evaluation), [special operator](#special operator).
+
+; <span id="#special-operator">special operator</span>
 >
-> 图3-2中列举的一组固定符号, 出现在形式的car中将该形式标识为特殊形式..
-> 见[symbol](#symbol), [special form](#special form).
-! special variable
+: 图3-2中列举的一组固定符号, 出现在形式的car中将该形式标识为特殊形式..
+: 见[symbol](#symbol), [special form](#special form).
 
-! specialize
+; <span id="#special-variable">special variable</span>
 
-! specialized
+; <span id="#specialize">specialize</span>
 
-! specialized lambda list
+; <span id="#specialized">specialized</span>
 
-! spreadable argument list designator
+; <span id="#specialized-lambda-list">specialized lambda list</span>
 
-! stack allocate
+; <span id="#spreadable-argument-list-designator">spreadable argument list designator</span>
 
-! stack-allocated
+; <span id="#stack-allocate">stack allocate</span>
 
-! standard character
+; <span id="#stack-allocated">stack-allocated</span>
 
-! standard class
+; <span id="#standard-character">standard character</span>
 
-! standard generic function a function of type standard-generic-function.
+; <span id="#standard-class">standard class</span>
 
-! standard input
+; <span id="#standard generic function a function-of-type-standard-generic-function.">standard generic function a function of type standard-generic-function.</span>
 
-! standard method combination
+; <span id="#standard-input">standard input</span>
 
-! standard object
+; <span id="#standard-method-combination">standard method combination</span>
 
-! standard output
+; <span id="#standard-object">standard object</span>
 
-! standard pprint dispatch table
+; <span id="#standard-output">standard output</span>
 
-! standard readtable
+; <span id="#standard-pprint-dispatch-table">standard pprint dispatch table</span>
 
-! standard syntax
+; <span id="#standard-readtable">standard readtable</span>
 
-! standardized
+; <span id="#standard-syntax">standard syntax</span>
 
-! startup environment
+; <span id="#standardized">standardized</span>
 
-! step
+; <span id="#startup-environment">startup environment</span>
 
-! stream
+; <span id="#step">step</span>
 
-! stream associated with a file
+; <span id="#stream">stream</span>
 
-! stream designator
+; <span id="#stream-associated-with-a-file">stream associated with a file</span>
 
-! stream element type
+; <span id="#stream-designator">stream designator</span>
 
-! stream variable
+; <span id="#stream-element-type">stream element type</span>
 
-! stream variable designator
+; <span id="#stream-variable">stream variable</span>
 
-! string
+; <span id="#stream-variable-designator">stream variable designator</span>
 
-! string designator
+; <span id="#string">string</span>
 
-! string equal
+; <span id="#string-designator">string designator</span>
 
-! string stream
+; <span id="#string-equal">string equal</span>
 
-! structure
+; <span id="#string-stream">string stream</span>
 
-! structure class
+; <span id="#structure">structure</span>
 
-! structure name
+; <span id="#structure-class">structure class</span>
 
-! style warning
+; <span id="#structure-name">structure name</span>
 
-! subclass
+; <span id="#style-warning">style warning</span>
 
-! subexpression
+; <span id="#subclass">subclass</span>
 
-! subform
+; <span id="#subexpression">subexpression</span>
 
-! subrepertoire
+; <span id="#subform">subform</span>
 
-! subtype
+; <span id="#subrepertoire">subrepertoire</span>
 
-! superclass
+; <span id="#subtype">subtype</span>
 
-! supertype
+; <span id="#superclass">superclass</span>
 
-! supplied-p parameter
+; <span id="#supertype">supertype</span>
 
-! symbol
+; <span id="#supplied-p-parameter">supplied-p parameter</span>
 
-! symbol macro
+; <span id="#symbol">symbol</span>
 
-! synonym stream
+; <span id="#symbol-macro">symbol macro</span>
 
-! synonym stream symbol
+; <span id="#synonym-stream">synonym stream</span>
 
-! syntax type
+; <span id="#synonym-stream-symbol">synonym stream symbol</span>
 
-! system class
+; <span id="#syntax-type">syntax type</span>
 
-! system code
+; <span id="#system-class">system class</span>
 
-! t
+; <span id="#system-code">system code</span>
 
-! tag
+; <span id="#t">t</span>
 
-! tail
+; <span id="#tag">tag</span>
 
-! target
+; <span id="#tail">tail</span>
 
-! terminal I/O
+; <span id="#target">target</span>
 
-! terminating
+; <span id="#terminal-I/O">terminal I/O</span>
 
-! tertiary value
+; <span id="#terminating">terminating</span>
 
-! throw
+; <span id="#tertiary-value">tertiary value</span>
 
-! tilde
+; <span id="#throw">throw</span>
 
-! time
+; <span id="#tilde">tilde</span>
 
-! time zone
+; <span id="#time">time</span>
 
-! token
-> "记号"
-> 数值或符号的文本表示. 见[2.3 解释记号](../02-Syntax#2.3)
-> 见[number](#number), [symbol](#symbol)
-! top level form
+; <span id="#time-zone">time zone</span>
 
-! trace output
+; <span id="#token">token</span>
+: "记号"
+: 数值或符号的文本表示. 见[2.3 解释记号](../02-Syntax#2.3)
+: 见[number](#number), [symbol](#symbol)
 
-! tree
+; <span id="#top-level-form">top level form</span>
 
-! tree structure
+; <span id="#trace-output">trace output</span>
 
-! true
+; <span id="#tree">tree</span>
 
-! truename
+; <span id="#tree-structure">tree structure</span>
 
-! two-way stream
+; <span id="#true">true</span>
 
-! type
+; <span id="#truename">truename</span>
 
-! type declaration
+; <span id="#two-way-stream">two-way stream</span>
 
-! type equivalent
+; <span id="#type">type</span>
 
-! type expand
+; <span id="#type-declaration">type declaration</span>
 
-! type specifier
+; <span id="#type-equivalent">type equivalent</span>
 
-! unbound
+; <span id="#type-expand">type expand</span>
 
-! unbound variable
+; <span id="#type-specifier">type specifier</span>
 
-! undefined function
+; <span id="#unbound">unbound</span>
 
-! unintern
+; <span id="#unbound-variable">unbound variable</span>
 
-! uninterned
+; <span id="#undefined-function">undefined function</span>
 
-! universal time
+; <span id="#unintern">unintern</span>
 
-! unqualified method
+; <span id="#uninterned">uninterned</span>
 
-! unregistered package
+; <span id="#universal-time">universal time</span>
 
-! unsafe
+; <span id="#unqualified-method">unqualified method</span>
 
-! unsafe call
+; <span id="#unregistered-package">unregistered package</span>
 
-! upgrade
+; <span id="#unsafe">unsafe</span>
 
-! upgraded array element type
+; <span id="#unsafe-call">unsafe call</span>
 
-! upgraded complex part type
+; <span id="#upgrade">upgrade</span>
 
-! uppercase
+; <span id="#upgraded-array-element-type">upgraded array element type</span>
 
-! use
+; <span id="#upgraded-complex-part-type">upgraded complex part type</span>
 
-! use list
+; <span id="#uppercase">uppercase</span>
 
-! user
+; <span id="#use">use</span>
 
-! valid array dimension
+; <span id="#use-list">use list</span>
 
-! valid array index
+; <span id="#user">user</span>
 
-! valid array row-major index
+; <span id="#valid-array-dimension">valid array dimension</span>
 
-! valid fill pointer
+; <span id="#valid-array-index">valid array index</span>
 
-! valid logical pathname host
+; <span id="#valid-array-row-major-index">valid array row-major index</span>
 
-! valid pathname device
+; <span id="#valid-fill-pointer">valid fill pointer</span>
 
-! valid pathname directory
+; <span id="#valid-logical-pathname-host">valid logical pathname host</span>
 
-! valid pathname host
+; <span id="#valid-pathname-device">valid pathname device</span>
 
-! valid pathname name
+; <span id="#valid-pathname-directory">valid pathname directory</span>
 
-! valid pathname type
+; <span id="#valid-pathname-host">valid pathname host</span>
 
-! valid pathname version
+; <span id="#valid-pathname-name">valid pathname name</span>
 
-! valid physical pathname host
+; <span id="#valid-pathname-type">valid pathname type</span>
 
-! valid sequence index
+; <span id="#valid-pathname-version">valid pathname version</span>
 
-! value
+; <span id="#valid-physical-pathname-host">valid physical pathname host</span>
 
-! value cell
+; <span id="#valid-sequence-index">valid sequence index</span>
 
-! variable
+; <span id="#value">value</span>
 
-! vector
+; <span id="#value-cell">value cell</span>
 
-! vertical-bar
-> "|"
-> n.
-> `|`, 称为竖线的标准字符.
-> 见[](#)
-! whitespace
+; <span id="#variable">variable</span>
 
-! wild
+; <span id="#vector">vector</span>
 
-! write
+; <span id="#vertical-bar">vertical-bar</span>
+: "|"
+: n.
+: `|`, 称为竖线的标准字符.
+: 见[](#)
 
-! writer
+; <span id="#whitespace">whitespace</span>
 
-! yield
+; <span id="#wild">wild</span>
+
+; <span id="#write">write</span>
+
+; <span id="#writer">writer</span>
+
+; <span id="#yield">yield</span>

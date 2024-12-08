@@ -4,3 +4,5 @@ jupyter-notebooks/Rust
 jupyter-notebooks/Scala
 jupyter-notebooks/tools
 jupyter-notebooks/TLA
+
+**/.vscode/**

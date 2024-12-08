@@ -1,6 +1,6 @@
 created: 20241202063826364
 creator: jargonzhou
-modified: 20241202071553925
+modified: 20241204032019187
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-16 Strings
@@ -26,4 +26,34 @@ type: text/vnd.tiddlywiki
 
 !! 16.2 字符串的字典
 
-见[[字符串的字典|CLHS Dictionary]].
+* system class `string`
+* type `base-string`
+* type `simple-string`
+* type `simple-base-string`
+* function `simple-string-p`
+* accessor `char`
+* accessor `schar`
+* function `string`
+* function `string-upcase`
+* function `string-downcase`
+* function `string-capitalize`
+* function `nstring-upcase`
+* function `nstring-downcase`
+* function `nstring-capitalize`
+* function `string-trim`
+* function `string-left-trim`
+* function `string-right-trim`
+* function `string=`
+* function `string/=`
+* function `string<`
+* function `string>`
+* function `string<=`
+* function `string>=`
+* function `string-equal`
+* function `string-not-equal`
+* function `string-lessp`
+* function `string-greaterp`
+* function `string-not-greaterp`
+* function `string-not-lessp`
+* function `stringp`
+* function `make-string`

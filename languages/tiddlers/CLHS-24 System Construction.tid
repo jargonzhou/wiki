@@ -1,6 +1,6 @@
 created: 20241202065654451
 creator: jargonzhou
-modified: 20241202071529310
+modified: 20241204032749984
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-24 System Construction
@@ -16,7 +16,7 @@ type: text/vnd.tiddlywiki
 
 包含源代码的文件称为源文件. 加载源文件是通过顺序的读文件中形式、读取后立即求值完成的.
 
-包含已编译的代码的文件称为已编译的文件. 加载已编译的文件与加载源文件类似, 除非这个文件不包含文本而是包含由编译器创建的预先理解的表达式的依赖于实现的表示. 通常, 加载已编译的文件比加载源文件快. 见[[3.2 编译|../03-Evaluation-and-Compilation#3.2]].
+包含已编译的代码的文件称为已编译的文件. 加载已编译的文件与加载源文件类似, 除非这个文件不包含文本而是包含由编译器创建的预先理解的表达式的依赖于实现的表示. 通常, 加载已编译的文件比加载源文件快. 见[[3.2 编译|CLHS-03 Evaluation and Compilation]].
 
 区分源文件与已编译文件的方法是依赖于实现的.
 
@@ -83,4 +83,19 @@ in implementation C ...  (CONS 7 X)
 
 !! 24.2 系统构造的字典
 
-见[[系统构造的字典|CLHS dictionary]].
+* function `compile-file`
+* function `compile-file-pathname`
+* function `load`
+* macro `with-compilation-unit`
+* variable ``*features*``
+* variable ``*compile-file-pathname*``
+* variable ``*compile-file-truename*``
+* variable ``*load-pathname*``
+* variable ``*load-truename*``
+* variable ``*compile-print*``
+* variable ``*compile-verbose*``
+* variable ``*load-print*``
+* variable ``*load-verbose*``
+* variable ``*modules*``
+* function `provide`
+* function `require`

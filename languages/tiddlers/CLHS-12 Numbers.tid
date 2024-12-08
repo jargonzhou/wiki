@@ -1,6 +1,6 @@
 created: 20241202063128544
 creator: jargonzhou
-modified: 20241202071646625
+modified: 20241204031843309
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-12 Numbers
@@ -441,4 +441,187 @@ random-state-p
 
 !! 12.2 数值的字典
 
-见 [[数值的字典|CLHS Dictionary]].
+* system class `number`
+* system class `complex`
+* system class `real`
+* system class `float`
+* type `short-float`
+* type `single-float`
+* type `double-float`
+* type `long-float`
+* system class `rational`
+* system class `ratio`
+* system class `integer`
+* type `signed-byte`
+* type `unsigned-byte`
+* type `specifier mod`
+* type `bit`
+* type `fixnum`
+* type `bignum`
+* function `=`
+* function `/=`
+* function `<`
+* function `>`
+* function `<=`
+* function `>=`
+* function `max`
+* function `min`
+* function `minusp`
+* function `plusp`
+* function `zerop`
+* function `floor`
+* function `ffloor`
+* function `ceiling`
+* function `fceiling`
+* function `truncate`
+* function `ftruncate`
+* function `round`
+* function `fround`
+* function `sin`
+* function `cos`
+* function `tan`
+* function `asin`
+* function `acos`
+* function `atan`
+* constant variable `pi`
+* function `sinh`
+* function `cosh`
+* function `tanh`
+* function `asinh`
+* function `acosh`
+* function `atanh`
+* function `*`
+* function `+`
+* function `-`
+* function `/`
+* function `1+`
+* function `1-`
+* function `abs`
+* function `evenp`
+* function `oddp`
+* function `exp`
+* function `expt`
+* function `gcd`
+* macro `incf`
+* macro `decf`
+* function `lcm`
+* function `log`
+* function `mod`
+* function `rem`
+* function `signum`
+* function `sqrt`
+* function `isqrt`
+* system class `random-state`
+* function `make-random-state`
+* function `random`
+* function `random-state-p`
+* variable ``*random-state*``
+* function `numberp`
+* function `cis`
+* function `complex`
+* function `complexp`
+* function `conjugate`
+* function `phase`
+* function `realpart`
+* function `imagpart`
+* function `upgraded-complex-part-type`
+* function `realp`
+* function `numerator`
+* function `denominator`
+* function `rational`
+* function `rationalize`
+* function `rationalp`
+* function `ash`
+* function `integer-length`
+* function `integerp`
+* function `parse-integer`
+* function `boole`
+* constant variable `boole-1`
+* constant variable `boole-2`
+* constant variable `boole-and`
+* constant variable `boole-andc1`
+* constant variable `boole-andc2`
+* constant variable `boole-c1`
+* constant variable `boole-c2`
+* constant variable `boole-clr`
+* constant variable `boole-eqv`
+* constant variable `boole-ior`
+* constant variable `boole-nand`
+* constant variable `boole-nor`
+* constant variable `boole-orc1`
+* constant variable `boole-orc2`
+* constant variable `boole-set`
+* constant variable `boole-xor`
+* function `logand`
+* function `logandc1`
+* function `logandc2`
+* function `logeqv`
+* function `logior`
+* function `lognand`
+* function `lognor`
+* function `lognot`
+* function `logorc1`
+* function `logorc2`
+* function `logxor`
+* function `logbitp`
+* function `logcount`
+* function `logtest`
+* function `byte`
+* function `byte-size`
+* function `byte-position`
+* function `deposit-field`
+* function `dpb`
+* accessor `ldb`
+* function `ldb-test`
+* accessor `mask-field`
+* constant variable `most-positive-fixnum`
+* constant variable `most-negative-fixnum`
+* function `decode-float`
+* function `scale-float`
+* function `float-radix`
+* function `float-sign`
+* function `float-digits`
+* function `float-precision`
+* function `integer-decode-float`
+* function `float`
+* function `floatp`
+* constant variable `most-positive-short-float`
+* constant variable `least-positive-short-float`
+* constant variable `least-positive-normalized-short-float`
+* constant variable `most-positive-double-float`
+* constant variable `least-positive-double-float`
+* constant variable `least-positive-normalized-double-float`
+* constant variable `most-positive-long-float`
+* constant variable `least-positive-long-float`
+* constant variable `least-positive-normalized-long-float`
+* constant variable `most-positive-single-float`
+* constant variable `least-positive-single-float`
+* constant variable `least-positive-normalized-single-float`
+* constant variable `most-negative-short-float`
+* constant variable `least-negative-short-float`
+* constant variable `least-negative-normalized-short-float`
+* constant variable `most-negative-single-float`
+* constant variable `least-negative-single-float`
+* constant variable `least-negative-normalized-single-float`
+* constant variable `most-negative-double-float`
+* constant variable `least-negative-double-float`
+* constant variable `least-negative-normalized-double-float`
+* constant variable `most-negative-long-float`
+* constant variable `least-negative-long-float`
+* constant variable `least-negative-normalized-long-float`
+* constant variable `short-float-epsilon`
+* constant variable `short-float-negative-epsilon`
+* constant variable `single-float-epsilon`
+* constant variable `single-float-negative-epsilon`
+* constant variable `double-float-epsilon`
+* constant variable `double-float-negative-epsilon`
+* constant variable `long-float-epsilon`
+* constant variable `long-float-negative-epsilon`
+* condition `type arithmetic-error`
+* function `arithmetic-error-operands`
+* function `arithmetic-error-operation`
+* condition `type division-by-zero`
+* condition `type floating-point-invalid-operation`
+* condition `type floating-point-inexact`
+* condition `type floating-point-overflow`
+* condition `type floating-point-underflow`

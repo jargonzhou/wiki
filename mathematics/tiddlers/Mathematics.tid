@@ -1,7 +1,7 @@
 created: 20230104152413814
 creator: jargonzhou
-modified: 20241129035218833
-modifier: jargonzhou
+modified: 20241207050246480
+modifier: zhoujiagen@gmail.com
 tags: TableOfContents
 title: Mathematics
 type: text/vnd.tiddlywiki
@@ -10,11 +10,17 @@ type: text/vnd.tiddlywiki
 
 * [[Terminology]]
 
+! Topics
+
+* [[Linear Algebra]]
+* [[Probability and Statistics]]
+
 ! Symbols
 
 * [[Symbols]]
 
-! Machine Learning
+! Application
+!! Machine Learning
 
 * [[NLP]]
 

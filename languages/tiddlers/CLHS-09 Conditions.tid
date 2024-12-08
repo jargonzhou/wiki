@@ -1,6 +1,6 @@
 created: 20241202062520306
 creator: jargonzhou
-modified: 20241202071418072
+modified: 20241204031738524
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-09 Conditions
@@ -407,4 +407,49 @@ etypecase
 
 !! 9.2 状况的字典
 
-见[[状况的字典|CLHS Dictionary]].
+* condition type `condition`
+* condition type `warning`
+* condition type `style-warning`
+* condition type `serious-condition`
+* condition type `error`
+* condition type `cell-error`
+* function `cell-error-name`
+* condition type `parse-error`
+* condition type `storage-condition`
+* macro `assert`
+* function `error`
+* function `cerror`
+* macro `check-type`
+* condition type `simple-error`
+* function `invalid-method-error`
+* function `method-combination-error`
+* function `signal`
+* condition type `simple-condition`
+* function `simple-condition-format-control`
+* function `warn`
+* condition type `simple-warning`
+* function `invoke-debugger`
+* function `break`
+* variable ``*debugger-hook*``
+* variable ``*break-on-signals*``
+* macro `handler-bind`
+* macro `handler-case`
+* macro `ignore-errors`
+* macro `define-condition`
+* function `make-condition`
+* system class `restart`
+* function `compute-restarts`
+* function `find-restart`
+* function `invoke-restart`
+* function `invoke-restart-interactively`
+* macro `restart-bind`
+* macro `restart-case`
+* function `restart-name`
+* macro `with-condition-restarts`
+* macro `with-simple-restart`
+* restart `abort`
+* restart `continue`
+* restart `muffle-warning`
+* restart `store-value`
+* restart `use-value`
+* function `abort`

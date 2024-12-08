@@ -1,6 +1,6 @@
 created: 20241202065040398
 creator: jargonzhou
-modified: 20241202071459592
+modified: 20241204032140296
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-20 Files
@@ -93,4 +93,13 @@ truename
 
 !! 20.2 文件的字典
 
-见[[文件的字典|CLHS Dictionary]].
+* function `directory`
+* function `probe-file`
+* function `ensure-directories-exist`
+* function `truename`
+* function `file-author`
+* function `file-write-date`
+* function `rename-file`
+* function `delete-file`
+* condition type `file-error`
+* function `file-error-pathname`

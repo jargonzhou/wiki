@@ -1,6 +1,6 @@
 created: 20241202062817495
 creator: jargonzhou
-modified: 20241202071535893
+modified: 20241204031801116
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-10 Symbols
@@ -36,4 +36,23 @@ symbol-value
 
 !! 10.2 符号的字典
 
-见 [[符号的字典|CLHS Dictionary]].
+* system class `symbol`
+* type `keyword`
+* function `symbolp`
+* function `keywordp`
+* function `make-symbol`
+* function `copy-symbol`
+* function `gensym`
+* variable `*gensym-counter*`
+* function `gentemp`
+* accessor `symbol-function`
+* function `symbol-name`
+* function `symbol-package`
+* accessor `symbol-plist`
+* accessor `symbol-value`
+* accessor `get`
+* function `remprop`
+* function `boundp`
+* function `makunbound`
+* function `set`
+* condition type `unbound-variable`

@@ -1,6 +1,6 @@
 created: 20241202061825560
 creator: jargonzhou
-modified: 20241202071435788
+modified: 20241204031542037
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-05 Data and Control Flow
@@ -478,4 +478,74 @@ remf
 
 !! 5.3 数据和控制流的字典
 
-见[[数据和控制流的字典|CLHS Dictionary]].
+* function `apply`
+* macro `defun`
+* accessor `fdefinition`
+* function `fboundp`
+* function `fmakunbound`
+* special operator `flet`
+* function `funcall`
+* special operator `function`
+* function `function-lambda-expression`
+* function `functionp`
+* function `compiled-function-p`
+* constant variable `call-arguments-limit`
+* constant variable `lambda-list-keywords`
+* constant variable `lambda-parameters-limit`
+* macro `defconstant`
+* macro `defparameter`
+* macro `defvar`
+* macro `destructuring-bind`
+* special operator `let`
+* special operator `progv`
+* specialform `setq`
+* macro `psetq`
+* special operator `block`
+* special operator `catch`
+* special operator `go`
+* special operator `return-from`
+* macro `return`
+* special operator `tagbody`
+* special operator `throw`
+* special operator `unwind-protect`
+* constant variable `nil`
+* function `not`
+* constant variable `t`
+* function `eq`
+* function `eql`
+* function `equal`
+* function `equalp`
+* function `identity`
+* function `complement`
+* function `constantly`
+* function `every`
+* macro `and`
+* macro `cond`
+* special operator `if`
+* macro `or`
+* macro `when`
+* macro `unless`
+* macro `case`
+* macro `typecase`
+* macro `multiple-value-bind`
+* special operator `multiple-value-call`
+* macro `multiple-value-list`
+* special operator `multiple-value-prog1`
+* macro `multiple-value-setq`
+* accessor `values`
+* function `values-list`
+* constant variable `multiple-values-limit`
+* macro `nth-value`
+* macro `prog`
+* macro `prog1`
+* special operator `progn`
+* macro `define-modify-macro`
+* macro `defsetf`
+* macro `define-setf-expander`
+* function `get-setf-expansion`
+* macro `setf`
+* macro `shiftf`
+* macro `rotatef`
+* condition type `control-error`
+* condition type `program-error`
+* condition type `undefined-function`
