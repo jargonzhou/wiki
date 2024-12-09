@@ -1,0 +1,16 @@
+2024-12-09 08:58:54 [INFO] <KERNEL> Starting common-lisp kernel
+2024-12-09 08:58:54 [INFO] <KERNEL> Parsing connection file c:\Users\zhouj\AppData\Roaming\jupyter\runtime\kernel-v371e573a3419a7326dc825d17c708587b9885805a.json
+2024-12-09 08:58:54 [INFO] <MAC> Starting message authentification
+2024-12-09 08:58:54 [INFO] <MAC> Using hmac with sha256 digest for message signing.
+2024-12-09 08:58:54 [INFO] <HB-CHANNEL> Starting channel on tcp://127.0.0.1:9000
+2024-12-09 08:58:54 [INFO] <IOPUB-CHANNEL> Starting channel on tcp://127.0.0.1:9004
+2024-12-09 08:58:54 [INFO] <SHELL-CHANNEL> Starting channel on tcp://127.0.0.1:9002
+2024-12-09 08:58:54 [INFO] <STDIN-CHANNEL> Starting channel on tcp://127.0.0.1:9003
+2024-12-09 08:58:54 [INFO] <CONTROL-CHANNEL> Starting channel on tcp://127.0.0.1:9001
+2024-12-09 08:58:54 [INFO] <HISTORY> Starting history
+2024-12-09 08:58:54 [INFO] <HB-CHANNEL> Starting thread
+2024-12-09 08:58:54 [INFO] <KERNEL> Loading CLHS map
+2024-12-09 08:58:54 [INFO] <KERNEL> Handling kernel_info_request message
+2024-12-09 08:58:54 [INFO] <KERNEL> Handling kernel_info_request message
+2024-12-09 08:58:54 [INFO] <KERNEL> Handling kernel_info_request message
+2024-12-09 08:58:54 [INFO] <KERNEL> Handling kernel_info_request message

@@ -1,22 +1,60 @@
 created: 20241126051155393
 creator: jargonzhou
-modified: 20241207105733090
+modified: 20241209135557733
 modifier: jargonzhou
 tags: TableOfContents
 title: Languages
+type: text/vnd.tiddlywiki
 
 * [[Languages FAQ]]
+
+! Theory
+
+* [[Automata Theory]]
+* [[Type Systems]]
 
 ! Compiler Engineering
 
 * [[Glossary|Compiler Glossary]]
+* [[Computer Architecture]]
+* [[GCC]]
+* [[LLVM]]
+* [[JVM]]
 
 ! The Zoo of Programming Languages
+
+* [[Assembly]]
+* [[C]]
+* [[C++]]
+* [[Datalog]]
+* [[Erlang]]
+* [[Elixir]]
+* [[Golang]]
+* [[Haskell]]
+* [[Idirs]]
+* [[Java]]
+* [[JavaScript]]
+* [[Kotlin]]
 * [[Lisp]]
 ** [[Common Lisp]]
 ** [[Scheme]]
 ** [[Racket]]
 ** [[Clojure]]
+* [[OCaml]]
+* [[Prolog]]
+* [[Python]]
+* [[Rust]]
+* [[Scala]]
+
+
+! Programming Applications
+
+* [[Concurrency Programming]]
+* [[Parallel Programming]]
+* [[Operating System Programming]]
+* [[Logic Programming]]
+* [[Probabilistic Logic Programming]]
+* [[Model Checking]]
 
 ! <<a "Tools">> Tools
 

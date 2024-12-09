@@ -1,0 +1,68 @@
+created: 20241209062857247
+creator: jargonzhou
+modified: 20241209070202251
+modifier: jargonzhou
+title: Data Engineering Methodology
+
+! Terminology
+
+!! 应用视角(Application Perspective)
+
+* 数据系统特征
+** 可靠性(Reliability)
+** 可扩展性(Scalability)
+** 可维护性(Maintainability)
+
+* 数据模型(Data Model), 查询语言(Query Langauges)
+
+* 存储(Storage), 检索(Retrieval)
+
+* 编码数据(Encoding Data)
+
+* 分布式数据(Distributed Data)
+** 复制(Replication)
+** 分区(Partitioning)
+** 事务(Transaction)
+** 一致性(Consistency)
+** 共识(Consensus)
+
+* 数据处理(Data Processing)
+** 批处理(Batch Processing)
+** 流处理(Stream Processing)
+
+!! 平台视角(Platform Perspective)
+
+* 基础设施(Infrastructure)
+** 集群(Cluster)
+** 计算(Compute)
+** 存储(Storage)
+** 网络(Network)
+** 组织挑战(Organization Challenge)
+
+* 平台(Platform)
+** 制备集群(Provision Cluster)
+** 平台验证(Platform Validation)
+** 安全性(Security)
+** 身份管理提供者(Identity Management Provider)
+** 高可用(High Availablity)
+** 备份(Backup), 灾难恢复(Disaster Recovery)
+
+* 云(Cloud)
+** 虚拟化(Virtualization)
+
+!! 工程化视角(Engineering Perspective)
+
+* 数据工程生命周期(Data Engineering Lifecycle)
+* 数据架构设计(Data Architecture Designing)
+* 源系统(Source System)
+* 存储抽象(Storage Abstraction)
+* 数据摄入(Data Ingestion)
+* 数据查询(Data Query), 数据模型(Data Model), 数据转换(Data Transformation)
+* 提供数据(Serving Data)
+* 安全性(Secutiry), 隐私(Privary)
+
+! References
+
+* Kleppmann, Martin. ''Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems''. 2017. O'Reilly Media.
+* Kunigk, Jan / Buss, Ian / Wilkinson, Paul / George, Lars. ''Architecting Modern Data Platforms''. 2018. O’Reilly Media.
+* Reis, Joe / Housley, Matt. ''Fundamentals of Data Engineering''. 2022. O’Reilly Media.

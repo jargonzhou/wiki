@@ -1,0 +1,19 @@
+created: 20241209133058048
+creator: jargonzhou
+modified: 20241209134057976
+modifier: jargonzhou
+tags: Languages
+title: Model Checking
+
+! Terminology
+
+! Applications
+
+* [[SPIN]]
+* [[TLA+]]
+
+! References
+
+* Baier, C. & Katoen, J.-P. ''Principles of Model Checking''. MIT Press, 2008.
+* Clarke, E. M.; Henzinger, T. A.; Veith, H. & Bloem, R. ''Handbook of Model Checking''. Springer, 2018.
+

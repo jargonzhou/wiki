@@ -1,0 +1,18 @@
+created: 20241209133928401
+creator: jargonzhou
+modified: 20241209134031866
+modifier: jargonzhou
+tags: [[Model Checking]]
+title: SPIN
+
+<<<.tc-big-quote
+SPIN
+
+Spin is a widely used open-source software verification tool. The tool can be used for the formal verification of multi-threaded software applications. The tool was developed at Bell Labs in the Unix group of the Computing Sciences Research Center, starting in 1980, and has been available freely since 1991. Spin continues to evolve to keep pace with new developments in the field. In April 2002 the tool was awarded the ACM System Software Award.
+<<<
+
+! Terminology
+
+! References
+
+* Ben-Ari, M. ''Principles of the Spin Model Checker''. Springer, 2008.

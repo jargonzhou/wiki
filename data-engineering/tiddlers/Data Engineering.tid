@@ -1,13 +1,19 @@
 created: 20241202010418110
 creator: jargonzhou
-modified: 20241202013306922
+modified: 20241209070938850
 modifier: jargonzhou
 tags: [[Data Engineering]] TableOfContents
 title: Data Engineering
 
 ! [[Data Theory]]
 
-! [[Databases]]
+* [[Data Engineering Methodology]]
+* [[Distributed Systems]]
+
+! [[Database Systems]]
+
+* [[Architecture of Database Systems]]
+* [[Internal of Database Systems]]
 
 ! [[Data Storage]]
 
@@ -16,3 +22,4 @@ title: Data Engineering
 * [[Delay Queue]]
 
 ! [[Data Mesh]]
+

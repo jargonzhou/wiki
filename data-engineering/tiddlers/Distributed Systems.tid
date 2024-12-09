@@ -1,0 +1,33 @@
+created: 20241209070650338
+creator: jargonzhou
+modified: 20241209094854781
+modifier: jargonzhou
+tags: [[Data Engineering]]
+title: Distributed Systems
+
+! Terminology
+
+算法(Algorithms):
+
+* 同步(Synchronous), 半同步(Paritially Synchronous), 异步(Asynchronous)
+* 网络模型(Network Model)
+* 共享内存模型(Shared Memeory Model)
+* 领导者选举(Leader Election)
+* 共识(Consensus)
+* 失败检测(Failure Detection)
+* 逻辑时间(Logical Time)
+* 全局快照(Global Snapshots)
+
+应用(Application):
+
+* 分布式事务(Distributed Transactions)
+* 复制(Replication)
+* 一致性(Consistency)
+
+! References
+
+* Lynch, Nancy A. ''Distributed Algorithms''. 1996. Morgan Kaufmann.
+* Tanenbaum, Andrew S. / Steen, Maarten Van. ''Distributed Systems: Principles and Paradigms''. 2006, 2. edition. Pearson.
+* Joshi, Unmesh. ''Patterns of Distributed Systems''. 2023. Addison-Wesley Professional 
+* Cachin, Christian / Guerraoui, Rachid / Lu\is, Rodrigues. ''Introduction to Reliable and Secure Distributed Programming''. 2011, 2. edition. Springer Science & Business Media.
+

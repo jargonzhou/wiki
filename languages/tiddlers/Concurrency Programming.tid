@@ -1,0 +1,17 @@
+created: 20241209095922013
+creator: jargonzhou
+modified: 20241209134500459
+modifier: jargonzhou
+tags: Languages
+title: Concurrency Programming
+
+! Terminology
+
+! Temporal Logic
+
+
+
+! References
+
+* Herlihy, Maurice / Shavit, Nir / Luchangco, Victor / Spear, Michael. ''The Art of Multiprocessor Programming''. 2021, 2. edition. Elsevier. 
+* Manna, Z. & Pnueli, A. ''The Temporal Logic of Reactive and Concurrent Systems''. Springer Scienee+Business. Media, 1992.

@@ -1,0 +1,38 @@
+created: 20241209063327539
+creator: jargonzhou
+modified: 20241209132501000
+modifier: jargonzhou
+tags: [[Database Systems]]
+title: Architecture of Database Systems
+
+! Terminology
+
+* 数据库管理系统(Database Management Systems(DBMSs))
+
+主要组件(Main Components):
+
+* 客户端通信管理器(Client Communication Manager)
+** 协议(Protocol)
+* 进程管理器(Process Manager)
+** 准入控制(Admission Control)
+* 关系性查询处理器(Relational Query Processor)
+** 查询解析(Query Parsing)
+** 查询重写(Query Rewrite)
+** 查询优化器(Query Optimizer)
+** 查询执行器(Query Executor)
+* 事务性存储管理器(Transactional Storage Manager)
+** 访问方法(Access Methods)
+** 缓冲区管理器(Buffer Manager)
+** 锁管理器(Lock Manager)
+** 日志管理器(Log Manager)
+* 共享组件和工具(Shared Component and Utilities)
+** 目录管理器(Catalog Manager)
+** 内存管理器(Memory Manager)
+** 管理(Administration), 监控(Monitoring)和工具(Utilities)
+** 复制服务(Replication Service)
+
+! References
+
+* Jeffrey D. Ullman, Jennifer Widom. ''A First Course in Database Systems''. 2008, 3. edition.
+* Hellerstein, Joseph M. / Stonebraker, Michael / Hamilton, James. ''Architecture of a Database System''. 2007.
+* Garcia-Molina, Hector / Ullman, Jeffrey D. / Widom, Jennifer. ''Database Systems: The Complete Boo''k. 2008, 2. edition. Pearson Education.

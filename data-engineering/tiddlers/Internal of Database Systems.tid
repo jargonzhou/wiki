@@ -1,0 +1,50 @@
+created: 20241209063707958
+creator: jargonzhou
+modified: 20241209081326203
+modifier: jargonzhou
+tags: [[Database Systems]]
+title: Internal of Database Systems
+
+! Terminology
+
+
+组织(Organization):
+
+* 文件格式(File Format)
+* 访问方法(Access Methods)
+* 临时内存(Temporay Memory), 永久内存(Permanent Memory)
+* 堆(Heap)组织
+* 顺序(Sequential)组织
+* 哈希(Hashing)组织
+* 树结构(Tree-Structure)组织
+** B-树(B-Tree)
+* 倒排索引(Inverted Indexes)
+* 位图索引(Bitmap Indexes)
+* 多维数据(Multidimenisonal Data)组织
+* 日志结构存储(Log-Structured Storage)
+
+存储引擎(Storage Engine):
+
+* 事务处理(Transaction Processing)
+* 并发控制(Concurrency Control)
+* 恢复(Recovery)
+
+其他:
+
+* 查询优化(Query Optimization)
+
+
+! 数据组织
+
+! 事务处理
+
+! 并发控制
+
+! 恢复
+
+! 查询优化
+
+! References
+
+* Albano, Antonio / Colazzo, Dario / an Renzo Orsini, Giorgio Ghelli. ''Relational DBMS Internals''. 2015.
+* Petrov, Alex. ''Database Internals: A Deep Dive into How Distributed Data Systems Work''. 2019. O'Reilly Media.

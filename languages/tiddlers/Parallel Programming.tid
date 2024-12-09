@@ -1,0 +1,15 @@
+created: 20241209100112339
+creator: jargonzhou
+modified: 20241209100322772
+modifier: jargonzhou
+tags: Languages
+title: Parallel Programming
+
+! Terminology
+
+
+! References
+
+* McKenney, Paul E. ''Is Parallel Programming Hard, And, If So, What Can You Do About It?''. 2017.
+* Pacheco, Peter / Malensek, Matthew. ''An Introduction to Parallel Programming''. 2021, 2. edition. Morgan Kaufmann.
+* Robey, Robert / Zamora, Yuliana. ''Parallel and High Performance Computing''. 2021. Manning.
