@@ -1,0 +1,26 @@
+created: 20241211033833340
+creator: jargonzhou
+modified: 20241212230034954
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Iceberg
+
+<<<.tc-big-quote
+Iceberg is ''a high-performance format for huge analytic tables'''. Iceberg brings the reliability and simplicity of SQL tables to big data, while making it possible for engines like Spark, Trino, Flink, Presto, Hive and Impala to safely work with the same tables, at the same time.
+<<<
+
+! Terminology
+
+! 特性
+
+* Expressive SQL Iceberg supports ''flexible SQL commands to merge new data, update existing rows, and perform targeted deletes''. Iceberg can eagerly rewrite data files for read performance, or it can use delete deltas for faster updates.
+* Full Schema Evolution ''Schema evolution just works''. Adding a column won't bring back "zombie" data. Columns can be renamed and reordered. Best of all, schema changes never require rewriting your table.
+* Hidden Partitioning Iceberg handles the tedious and error-prone task of ''producing partition values for rows in a table and skips unnecessary partitions and files automatically''. No extra filters are needed for fast queries, and table layout can be updated as data or queries change.
+* Time Travel and Rollback Time-travel enables ''reproducible queries that use exactly the same table snapshot, or lets users easily examine changes''. Version rollback allows users to quickly correct problems by resetting tables to a good state.
+* Data Compaction Data compaction is supported out-of-the-box and you can choose from different ''rewrite strategies'' such as bin-packing or sorting to optimize file layout and size.
+
+
+! References
+
+* [[Home|https://iceberg.apache.org/]]
+* Shiran, Tomer / Hughes, Jason / Merced, Alex. ''Apache Iceberg: The Definitive Guide''. 2024. O’Reilly Media.

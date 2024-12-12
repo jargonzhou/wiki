@@ -1,0 +1,16 @@
+created: 20241211020020074
+creator: jargonzhou
+modified: 20241211020055690
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Amazon S3
+
+<<<.tc-big-quote
+Amazon Simple Storage Service (Amazon S3) is storage for the internet. You can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere on the web.
+<<<
+
+! Terminology
+
+
+! References
+* [[Doc|https://docs.aws.amazon.com/s3/]]

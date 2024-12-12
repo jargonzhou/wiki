@@ -1,0 +1,20 @@
+created: 20241211020525557
+creator: jargonzhou
+modified: 20241211021059759
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: MinIO
+
+<<<.tc-big-quote
+MinIO offers high-performance, S3 compatible object storage. Native to Kubernetes, MinIO is the only object storage suite available on every public cloud, every Kubernetes distribution, the private cloud and the edge. MinIO is software-defined and is 100% open source under GNU AGPL v3.
+<<<
+
+! Terminology
+
+! Applications
+
+* [[action|https://github.com/jargonzhou/application-store/tree/main/data-engineering/minio]]
+
+! References
+
+* [[Code|https://github.com/minio/minio]]

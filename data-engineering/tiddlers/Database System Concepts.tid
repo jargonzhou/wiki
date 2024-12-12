@@ -1,0 +1,36 @@
+created: 20241210094123434
+creator: jargonzhou
+modified: 20241210101948796
+modifier: jargonzhou
+tags: [[Architecture of Database Systems]]
+title: Database System Concepts
+
+
+! 运行实例上下文
+
+# 大学分生多个系(department). 每个系由唯一的名字(dept_name)标识, 坐落在特定的建筑(building)中, 各有经费预算(budget).
+# 每个系有一个开设课程列表(course). 每门课程有课程号(course_id)、课程名(title)、系名(dept_name)和学分(credits), 可能有先修要求(prerequisites).
+# 教师(instructor)由个人唯一的标识号(ID)标识. 每位教师有姓名(name)、所在系(dept_name)和工资(salary).
+# 学生(student)由个人唯一的标识号(ID)标识. 每位学生有姓名(name)、主修的系(dept_name)和已修学分数(tot_cred).
+# 大学维护一个教室列表(classroom), 详细说明楼名(building)、房间号(room_number)和容量(capacity).
+# 大学维护开设的所有课程的开课列表(section). 每次开课由课程号(course_id)、开课号(sec_id)、年(year)和学期(semester)来标识, 与之相关联的有学期、年、楼名(building)、房间号(room_number)和时段号(time_slot_id, 即上课的时间).
+# 系有一个教学任务列表(teaches), 说明每位教师的授课情况.
+# 大学有一个所有学生课程注册的列表(takes), 说明每位学生在哪些课程的哪次开课中注册了.
+
+! 表
+
+* department: 系
+* course:     课程
+* prereq:     课程先修要求
+* instructor: 教师
+* student:    学生
+* classroom:  教室
+* section:    开课
+* time_slot:  时段
+* advisor:    教师指导学生
+* teaches:    教师授课
+* takes:      学生选课
+
+! References
+
+* [[website|https://db-book.com/]]

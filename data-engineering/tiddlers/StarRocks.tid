@@ -1,0 +1,18 @@
+created: 20241211034227228
+creator: jargonzhou
+modified: 20241211034302330
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: StarRocks
+
+<<<.tc-big-quote
+StarRocks, a Linux Foundation project, is ''a next-generation sub-second MPP OLAP database for full analytics scenarios''', including multi-dimensional analytics, real-time analytics, and ad-hoc queries.
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://www.starrocks.io/]]
+* [[Code|https://github.com/StarRocks/StarRocks]]

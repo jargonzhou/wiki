@@ -1,0 +1,22 @@
+created: 20241211012320218
+creator: jargonzhou
+modified: 20241211012347488
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: SQLite
+
+<<<.tc-big-quote
+SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.
+SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day.
+
+The SQLite file format is stable, cross-platform, and backwards compatible and the developers pledge to keep it that way through the year 2050.
+
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://www.sqlite.org/index.html]]
+* [[Code|https://sqlite.org/src/doc/trunk/README.md]]

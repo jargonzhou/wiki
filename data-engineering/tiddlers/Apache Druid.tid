@@ -1,0 +1,83 @@
+created: 20241211030703807
+creator: jargonzhou
+modified: 20241211034514929
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Druid
+
+<<<.tc*big*quote
+Druid is a high performance real-time analytics database. Druid's main value add is to reduce time to insight and action.
+
+Druid is designed for workflows where fast queries and ingest really matter. Druid excels at powering UIs, running operational (ad-hoc) queries, or handling high concurrency. Consider Druid as an open source alternative to data warehouses for a variety of use cases. The design documentation explains the key concepts.
+<<<
+
+! Terminology
+
+! 系统结构
+
+[img[https://druid.apache.org/assets/images/druid-architecture-a2d14e8be60d586632471e97383e406c.svg]]
+
+服务:
+
+* Master server
+** ''Coordinator'': manage data availability on the cluster
+*** 8081
+** ''Overlord'': control the assignment of data ingestion workloads
+*** 8090
+* Query server
+** ''Broker'': handle queries from external clients
+*** 8082
+** ''Router'': route requests to Brokers, Coordinators, Overlords
+*** 8088
+* Data server
+** ''Middle Manager'': ingest data
+*** 8091, 8100*8199
+** ''Peon'': task execution system
+** ''Historical'': store and query historical data
+*** cache data segments on local disk,
+*** server queries from local disk cache and an in*memory cache
+*** 8083
+** ''Indexer'': alternative to Middle Manager + Peon
+
+外部依赖:
+
+* ''Deep storage'': store any data ingested into the system, ex S3, HDFS, NFS.
+* ''Metadata storage'': hold shared system metadata, ex segment usage information, task information.
+* ''ZooKeeper'': internal service discovery, coordination, leader election.
+
+! 存储组件
+
+* ''datasources'': partitioned by time, optionally by other attributes.
+* ''chunk'': each time range
+* ''segements'': within a chunk, data is partitioned into one or more segments.
+** each segment is a single file: a few million rows of data.
+** segment identifier: `[datasource name]_[start time chunk-end time chunk]_[version number]_[partition number]`
+
+! 数据摄入(Data Ingestion)
+
+* indexing
+Middle Manager create segments as mutable and uncommitted
+
+* handoff
+periodically, segments are committed and published to **deep storage**, become immutable, move from **Middle Managers** to **Historical services**. An entry about the segment is also written to the **metadata storage** to tell **Coordinator** what data is available on the cluster.
+
+
+! 查询处理(Query Processing)
+
+flow: using time and attribute pruning
+
+* ''Broker'' identifies the segments may pertain to the query.
+* ''Broker'' identifies which ''Historical'' and ''Middle Manager'' service are serving those segments, distribute a rewritten subquery to the services.
+* ''Historical'' and ''Middle Manager'' services execute subqueries and return results to ''Broker''.
+* ''Broker'' merges the results to get the final answer.
+
+! 部署
+
+Docker Compose: [[link|https://github.com/apache/druid/blob/31.0.0/distribution/docker/docker-compose.yml]]
+
+配置: [[link|https://druid.apache.org/docs/latest/configuration/]]
+
+
+! References
+
+* [[Code|https://github.com/apache/druid]]

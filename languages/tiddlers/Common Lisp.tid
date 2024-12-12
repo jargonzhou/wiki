@@ -1,6 +1,6 @@
 created: 20241126050006202
 creator: jargonzhou
-modified: 20241206091156027
+modified: 20241212103736247
 modifier: jargonzhou
 tags: Lisp TableOfContents
 title: Common Lisp
@@ -12,18 +12,18 @@ type: text/vnd.tiddlywiki
 
 ! Topics
 
-* [[Macro]]
+* [[宏|Common Lisp Macro]]
 * [[CLOS]]: Common Lisp Object System.
 
 ! Tools
 
-* [[ASDF]]: the de facto standard build facility for Common Lisp.
+* [[ASDF]]: the de facto standard build facility for Common Lisp.  `_ASDF.ipynb`, `_ASDF UIOP.ipynb`
 * [[Alive]]: The Average Lisp VSCode Environment.
 * [[CL-Project]]: Generate modern project skeletons for Common Lisp.
 * [[Common Lisp language support for VS Code|https://github.com/qingpeng9802/vscode-common-lisp]]: This VS Code extension supports Syntax Highlighting, Snippets, Completion, Hover, Definition, References, Document Symbol, Call Hierarchy, and Semantic Tokens for Common Lisp.
-* [[Quicklisp]]:  a library manager for Common Lisp
+* [[Quicklisp]]:  a library manager for Common Lisp. `_quicklisp.ipynb`
 * [[Roswell]]: Common Lisp environment setup Utility.
-* [[SBCL]]: Common Lisp compiler.
+* [[SBCL]]: Common Lisp compiler. `_SBCL.ipynb`, `SBCL Threading.ipynb`
 * [[SLIME]]: The Superior Lisp Interaction Mode for Emacs.
 * [[SLY]]: Sylvester the Cat's Common Lisp IDE for Emacs.
 
@@ -40,17 +40,22 @@ type: text/vnd.tiddlywiki
 * [[Caveman2]]: Lightweight web application framework.
 * [[cl-base64|https://quickdocs.org/cl-base64]]: Base64 encoding and decoding with URI support.
 * [[cl-indentify|https://github.com/yitzchak/cl-indentify|]]: A code beautifier for Common Lisp.
+* [[cl-ppcre|https://github.com/edicl/cl-ppcre]]: Portable Perl-compatible regular expressions for Common Lisp.
+* [[cl-yaml|https://github.com/eudoxia0/cl-yaml]]: A YAML parser and emitter built on top of [[libyaml|http://pyyaml.org/wiki/LibYAML]]. Uses the [[cl-libyaml|https://github.com/eudoxia0/cl-libyaml]] library.
 * [[closer-mop|https://github.com/pcostanza/closer-mop]]: Closer to MOP is a compatibility layer that rectifies many of the absent or incorrect CLOS Meta Object Protocol (MOP) features across a broad range of Common Lisp implementations.
 * [[dissect|https://github.com/Shinmera/dissect]]: A lib for introspecting the call stack and active restarts.
 * [[eclector|https://github.com/s-expressionists/Eclector]]: A portable, extensible Common Lisp reader.
-* [[FiveAM]]: Common Lisp regression testing framework.
+* [[FiveAM]]: Common Lisp regression testing framework. `FiveAM.ipynb`
+* [[iterate|https://iterate.common-lisp.dev/]]: iterate is an iteration construct for Common Lisp. It is similar to the CL:LOOP macro, with these distinguishing marks: (1) it is extensible, (2) it helps editors like Emacs indent iterate forms by having a more lisp-like syntax, and (3) it isn't part of the ANSI standard for Common Lisp (which is sometimes a bad thing and sometimes good). `_iterate.ipynb`
 * [[ironclad|https://github.com/sharplispers/ironclad]]: A cryptographic toolkit written in Common Lisp.
 * [[multilang-documentation|https://github.com/Shinmera/multilang-documentation]]: A drop-in replacement for cl:documentation with support for multiple languages.
+* [[named-readtables|https://github.com/melisgl/named-readtables]]: Named-Readtables is a library that provides a namespace for readtables akin to the already-existing namespace of packages.
 * [[nontrivial-gray-streams|https://github.com/yitzchak/nontrivial-gray-streams]]: A compatibility layer for Gray streams including extensions.
 * [[Prove]]: archived, see [[Rove]].
 * [[puri|https://quickdocs.org/puri]]: Portable Universal Resource Indentifier Library.
 * [[pzmq|https://github.com/orivej/pzmq]]: ZeroMQ bindings. 
 * [[Rove]]: a unit testing framework for Common Lisp applications.
+* [[rutils|https://github.com/vseloved/rutils]]: RUTILS is a syntactic utilities package for Common Lisp. `_rutils.ipynb`
 * [[shasht|https://github.com/yitzchak/shasht]]: JSON reading and writing for the Kzinti.
 * [[static-vectors|https://github.com/sionescu/static-vectors]]: Create vectors allocated in static memory.
 * [[trivial-do|https://github.com/yitzchak/trivial-do]]: Looping extensions that follow the style of the core DO functions.
@@ -58,6 +63,7 @@ type: text/vnd.tiddlywiki
 * [[trivial-mimes|https://github.com/Shinmera/trivial-mimes]]: Tiny library to detect mime types in files.
 * [[trivial-features|https://github.com/trivial-features/trivial-features]]: Ensures consistent *FEATURES* across multiple CLs.
 * [[usocket|https://github.com/usocket/usocket]]: Universal socket library for Common Lisp.
+* [[yason|https://github.com/phmarek/yason]]: Common Lisp JSON serializer written with simplicity in mind.
 
 ! More
 

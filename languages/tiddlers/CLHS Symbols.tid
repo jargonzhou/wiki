@@ -1,6 +1,6 @@
 created: 20241202072021071
 creator: jargonzhou
-modified: 20241205051555332
+modified: 20241211091321880
 modifier: jargonzhou
 tags: CLHS
 title: CLHS Symbols
@@ -8,981 +8,1009 @@ type: text/vnd.tiddlywiki
 
 > There are 978 symbols in the `COMMON-LISP` package.
 
-# [[&allow-other-keys]]
-# [[&aux]]
-# [[&body]]
-# [[&environment]]
-# [[&key]]
-# [[&optional]]
-# [[&rest]]
-# [[&whole]]
-# [[*]]
-# [[**|*]]
-# [[***|*]]
-# [[*break-on-signals*]]
-# [[*compile-file-pathname*]]
-# [[*compile-file-truename*]]
-# [[*compile-print*]]
-# [[*compile-verbose*]]
-# [[*debug-io*]]
-# [[*debugger-hook*]]
-# [[*default-pathname-defaults*]]
-# [[*error-output*]]
-# [[*features*]]
-# [[*gensym-counter*]]
-# [[*load-pathname*]]
-# [[*load-print*]]
-# [[*load-truename*]]
-# [[*load-verbose*]]
-# [[*macroexpand-hook*]]
-# [[*modules*]]
-# [[*package*]]
-# [[*print-array*]]
-# [[*print-base*]]
-# [[*print-case*]]
-# [[*print-circle*]]
-# [[*print-escape*]]
-# [[*print-gensym*]]
-# [[*print-length*]]
-# [[*print-level*]]
-# [[*print-lines*]]
-# [[*print-miser-width*]]
-# [[*print-pprint-dispatch*]]
-# [[*print-pretty*]]
-# [[*print-radix*]]
-# [[*print-readably*]]
-# [[*print-right-margin*]]
-# [[*query-io*]]
-# [[*random-state*]]
-# [[*read-base*]]
-# [[*read-default-float-format*]]
-# [[*read-eval*]]
-# [[*read-suppress*]]
-# [[*readtable*]]
-# [[*standard-input*]]
-# [[*standard-output*]]
-# [[*terminal-io*]]
-# [[*trace-output*]]
-# [[+]]
-# [[++]]
-# [[+++]]
-# [[-]]
-# [[/]]
-# [[//|/]]
-# [[///|/]]
-# [[/=]]
-# [[1+]]
-# [[1-]]
-# [[<]]
-# [[<=]]
-# [[=]]
-# [[>]]
-# [[>=]]
-# [[abort]]
-# [[abs]]
-# [[acons]]
-# [[acos]]
-# [[acosh]]
-# [[add-method]]
-# [[adjoin]]
-# [[adjust-array]]
-# [[adjustable-array-p]]
-# [[allocate-instance]]
-# [[alpha-char-p]]
-# [[alphanumericp]]
-# [[and]]
-# [[append]]
-# [[apply]]
-# [[apropos]]
-# [[apropos-list]]
-# [[aref]]
-# [[arithmetic-error]]
-# [[arithmetic-error-operands]]
-# [[arithmetic-error-operation]]
-# [[array]]
-# [[array-dimension]]
-# [[array-dimension-limit]]
-# [[array-dimensions]]
-# [[array-displacement]]
-# [[array-element-type]]
-# [[array-has-fill-pointer-p]]
-# [[array-in-bounds-p]]
-# [[array-rank]]
-# [[array-rank-limit]]
-# [[array-row-major-index]]
-# [[array-total-size]]
-# [[array-total-size-limit]]
-# [[arrayp]]
-# [[ash]]
-# [[asin]]
-# [[asinh]]
-# [[assert]]
-# [[assoc]]
-# [[assoc-if]]
-# [[assoc-if-not]]
-# [[atan]]
-# [[atanh]]
-# [[atom]]
-# [[base-char]]
-# [[base-string]]
-# [[bignum]]
-# [[bit]]
-# [[bit-and]]
-# [[bit-andc1]]
-# [[bit-andc2]]
-# [[bit-eqv]]
-# [[bit-ior]]
-# [[bit-nand]]
-# [[bit-nor]]
-# [[bit-not]]
-# [[bit-orc1]]
-# [[bit-orc2]]
-# [[bit-vector]]
-# [[bit-vector-p]]
-# [[bit-xor]]
-# [[block]]
-# [[boole]]
-# [[boole-1]]
-# [[boole-2]]
-# [[boole-and]]
-# [[boole-andc1]]
-# [[boole-andc2]]
-# [[boole-c1]]
-# [[boole-c2]]
-# [[boole-clr]]
-# [[boole-eqv]]
-# [[boole-ior]]
-# [[boole-nand]]
-# [[boole-nor]]
-# [[boole-orc1]]
-# [[boole-orc2]]
-# [[boole-set]]
-# [[boole-xor]]
-# [[boolean]]
-# [[both-case-p]]
-# [[boundp]]
-# [[break]]
-# [[broadcast-stream]]
-# [[broadcast-stream-streams]]
-# [[built-in-class]]
-# [[butlast]]
-# [[byte]]
-# [[byte-position]]
-# [[byte-size]]
-# [[caaaar]]
-# [[caaadr]]
-# [[caaar]]
-# [[caadar]]
-# [[caaddr]]
-# [[caadr]]
-# [[caar]]
-# [[cadaar]]
-# [[cadadr]]
-# [[cadar]]
-# [[caddar]]
-# [[cadddr]]
-# [[caddr]]
-# [[cadr]]
-# [[call-arguments-limit]]
-# [[call-method]]
-# [[call-next-method]]
-# [[car]]
-# [[case]]
-# [[catch]]
-# [[ccase]]
-# [[cdaaar]]
-# [[cdaadr]]
-# [[cdaar]]
-# [[cdadar]]
-# [[cdaddr]]
-# [[cdadr]]
-# [[cdar]]
-# [[cddaar]]
-# [[cddadr]]
-# [[cddar]]
-# [[cdddar]]
-# [[cddddr]]
-# [[cdddr]]
-# [[cddr]]
-# [[cdr]]
-# [[ceiling]]
-# [[cell-error]]
-# [[cell-error-name]]
-# [[cerror]]
-# [[change-class]]
-# [[char]]
-# [[char-code]]
-# [[char-code-limit]]
-# [[char-downcase]]
-# [[char-equal]]
-# [[char-greaterp]]
-# [[char-int]]
-# [[char-lessp]]
-# [[char-name]]
-# [[char-not-equal]]
-# [[char-not-greaterp]]
-# [[char-not-lessp]]
-# [[char-upcase]]
-# [[char/=]]
-# [[char<]]
-# [[char<=]]
-# [[char=]]
-# [[char>]]
-# [[char>=]]
-# [[character]]
-# [[characterp]]
-# [[check-type]]
-# [[cis]]
-# [[class]]
-# [[class-name]]
-# [[class-of]]
-# [[clear-input]]
-# [[clear-output]]
-# [[close]]
-# [[clrhash]]
-# [[code-char]]
-# [[coerce]]
-# [[compilation-speed]]
-# [[compile]]
-# [[compile-file]]
-# [[compile-file-pathname]]
-# [[compiled-function]]
-# [[compiled-function-p]]
-# [[compiler-macro]]
-# [[compiler-macro-function]]
-# [[complement]]
-# [[complex]]
-# [[complexp]]
-# [[compute-applicable-methods]]
-# [[compute-restarts]]
-# [[concatenate]]
-# [[concatenated-stream]]
-# [[concatenated-stream-streams]]
-# [[cond]]
-# [[condition]]
-# [[conjugate]]
-# [[cons]]
-# [[consp]]
-# [[constantly]]
-# [[constantp]]
-# [[continue]]
-# [[control-error]]
-# [[copy-alist]]
-# [[copy-list]]
-# [[copy-pprint-dispatch]]
-# [[copy-readtable]]
-# [[copy-seq]]
-# [[copy-structure]]
-# [[copy-symbol]]
-# [[copy-tree]]
-# [[cos]]
-# [[cosh]]
-# [[count]]
-# [[count-if]]
-# [[count-if-not]]
-# [[ctypecase]]
-# [[debug]]
-# [[decf]]
-# [[declaim]]
-# [[declaration]]
-# [[declare]]
-# [[decode-float]]
-# [[decode-universal-time]]
-# [[defclass]]
-# [[defconstant]]
-# [[defgeneric]]
-# [[define-compiler-macro]]
-# [[define-condition]]
-# [[define-method-combination]]
-# [[define-modify-macro]]
-# [[define-setf-expander]]
-# [[define-symbol-macro]]
-# [[defmacro]]
-# [[defmethod]]
-# [[defpackage]]
-# [[defparameter]]
-# [[defsetf]]
-# [[defstruct]]
-# [[deftype]]
-# [[defun]]
-# [[defvar]]
-# [[delete]]
-# [[delete-duplicates]]
-# [[delete-file]]
-# [[delete-if]]
-# [[delete-if-not]]
-# [[delete-package]]
-# [[denominator]]
-# [[deposit-field]]
-# [[describe]]
-# [[describe-object]]
-# [[destructuring-bind]]
-# [[digit-char]]
-# [[digit-char-p]]
-# [[directory]]
-# [[directory-namestring]]
-# [[disassemble]]
-# [[division-by-zero]]
-# [[do]]
-# [[do*]]
-# [[do-all-symbols]]
-# [[do-external-symbols]]
-# [[do-symbols]]
-# [[documentation]]
-# [[dolist]]
-# [[dotimes]]
-# [[double-float]]
-# [[double-float-epsilon]]
-# [[double-float-negative-epsilon]]
-# [[dpb]]
-# [[dribble]]
-# [[dynamic-extent]]
-# [[ecase]]
-# [[echo-stream]]
-# [[echo-stream-input-stream]]
-# [[echo-stream-output-stream]]
-# [[ed]]
-# [[eighth]]
-# [[elt]]
-# [[encode-universal-time]]
-# [[end-of-file]]
-# [[endp]]
-# [[enough-namestring]]
-# [[ensure-directories-exist]]
-# [[ensure-generic-function]]
-# [[eq]]
-# [[eql]]
-# [[equal]]
-# [[equalp]]
-# [[error]]
-# [[etypecase]]
-# [[eval]]
-# [[eval-when]]
-# [[evenp]]
-# [[every]]
-# [[exp]]
-# [[export]]
-# [[expt]]
-# [[extended-char]]
-# [[fboundp]]
-# [[fceiling]]
-# [[fdefinition]]
-# [[ffloor]]
-# [[fifth]]
-# [[file-author]]
-# [[file-error]]
-# [[file-error-pathname]]
-# [[file-length]]
-# [[file-namestring]]
-# [[file-position]]
-# [[file-stream]]
-# [[file-string-length]]
-# [[file-write-date]]
-# [[fill]]
-# [[fill-pointer]]
-# [[find]]
-# [[find-all-symbols]]
-# [[find-class]]
-# [[find-if]]
-# [[find-if-not]]
-# [[find-method]]
-# [[find-package]]
-# [[find-restart]]
-# [[find-symbol]]
-# [[finish-output]]
-# [[first]]
-# [[fixnum]]
-# [[flet]]
-# [[float]]
-# [[float-digits]]
-# [[float-precision]]
-# [[float-radix]]
-# [[float-sign]]
-# [[floating-point-inexact]]
-# [[floating-point-invalid-operation]]
-# [[floating-point-overflow]]
-# [[floating-point-underflow]]
-# [[floatp]]
-# [[floor]]
-# [[fmakunbound]]
-# [[force-output]]
-# [[format]]
-# [[formatter]]
-# [[fourth]]
-# [[fresh-line]]
-# [[fround]]
-# [[ftruncate]]
-# [[ftype]]
-# [[funcall]]
-# [[function]]
-# [[function-keywords]]
-# [[function-lambda-expression]]
-# [[functionp]]
-# [[gcd]]
-# [[generic-function]]
-# [[gensym]]
-# [[gentemp]]
-# [[get]]
-# [[get-decoded-time]]
-# [[get-dispatch-macro-character]]
-# [[get-internal-real-time]]
-# [[get-internal-run-time]]
-# [[get-macro-character]]
-# [[get-output-stream-string]]
-# [[get-properties]]
-# [[get-setf-expansion]]
-# [[get-universal-time]]
-# [[getf]]
-# [[gethash]]
-# [[go]]
-# [[graphic-char-p]]
-# [[handler-bind]]
-# [[handler-case]]
-# [[hash-table]]
-# [[hash-table-count]]
-# [[hash-table-p]]
-# [[hash-table-rehash-size]]
-# [[hash-table-rehash-threshold]]
-# [[hash-table-size]]
-# [[hash-table-test]]
-# [[host-namestring]]
-# [[identity]]
-# [[if]]
-# [[ignorable]]
-# [[ignore]]
-# [[ignore-errors]]
-# [[imagpart]]
-# [[import]]
-# [[in-package]]
-# [[incf]]
-# [[initialize-instance]]
-# [[inline]]
-# [[input-stream-p]]
-# [[inspect]]
-# [[integer]]
-# [[integer-decode-float]]
-# [[integer-length]]
-# [[integerp]]
-# [[interactive-stream-p]]
-# [[intern]]
-# [[internal-time-units-per-second]]
-# [[intersection]]
-# [[invalid-method-error]]
-# [[invoke-debugger]]
-# [[invoke-restart]]
-# [[invoke-restart-interactively]]
-# [[isqrt]]
-# [[keyword]]
-# [[keywordp]]
-# [[labels]]
-# [[lambda]]
-# [[lambda-list-keywords]]
-# [[lambda-parameters-limit]]
-# [[last]]
-# [[lcm]]
-# [[ldb]]
-# [[ldb-test]]
-# [[ldiff]]
-# [[least-negative-double-float]]
-# [[least-negative-long-float]]
-# [[least-negative-normalized-double-float]]
-# [[least-negative-normalized-long-float]]
-# [[least-negative-normalized-short-float]]
-# [[least-negative-normalized-single-float]]
-# [[least-negative-short-float]]
-# [[least-negative-single-float]]
-# [[least-positive-double-float]]
-# [[least-positive-long-float]]
-# [[least-positive-normalized-double-float]]
-# [[least-positive-normalized-long-float]]
-# [[least-positive-normalized-short-float]]
-# [[least-positive-normalized-single-float]]
-# [[least-positive-short-float]]
-# [[least-positive-single-float]]
-# [[length]]
-# [[let]]
-# [[let*]]
-# [[lisp-implementation-type]]
-# [[lisp-implementation-version]]
-# [[list]]
-# [[list*]]
-# [[list-all-packages]]
-# [[list-length]]
-# [[listen]]
-# [[listp]]
-# [[load]]
-# [[load-logical-pathname-translations]]
-# [[load-time-value]]
-# [[locally]]
-# [[log]]
-# [[logand]]
-# [[logandc1]]
-# [[logandc2]]
-# [[logbitp]]
-# [[logcount]]
-# [[logeqv]]
-# [[logical-pathname]]
-# [[logical-pathname-translations]]
-# [[logior]]
-# [[lognand]]
-# [[lognor]]
-# [[lognot]]
-# [[logorc1]]
-# [[logorc2]]
-# [[logtest]]
-# [[logxor]]
-# [[long-float]]
-# [[long-float-epsilon]]
-# [[long-float-negative-epsilon]]
-# [[long-site-name]]
-# [[loop]]
-# [[loop-finish]]
-# [[lower-case-p]]
-# [[machine-instance]]
-# [[machine-type]]
-# [[machine-version]]
-# [[macro-function]]
-# [[macroexpand]]
-# [[macroexpand-1]]
-# [[macrolet]]
-# [[make-array]]
-# [[make-broadcast-stream]]
-# [[make-concatenated-stream]]
-# [[make-condition]]
-# [[make-dispatch-macro-character]]
-# [[make-echo-stream]]
-# [[make-hash-table]]
-# [[make-instance]]
-# [[make-instances-obsolete]]
-# [[make-list]]
-# [[make-load-form]]
-# [[make-load-form-saving-slots]]
-# [[make-method]]
-# [[make-package]]
-# [[make-pathname]]
-# [[make-random-state]]
-# [[make-sequence]]
-# [[make-string]]
-# [[make-string-input-stream]]
-# [[make-string-output-stream]]
-# [[make-symbol]]
-# [[make-synonym-stream]]
-# [[make-two-way-stream]]
-# [[makunbound]]
-# [[map]]
-# [[map-into]]
-# [[mapc]]
-# [[mapcan]]
-# [[mapcar]]
-# [[mapcon]]
-# [[maphash]]
-# [[mapl]]
-# [[maplist]]
-# [[mask-field]]
-# [[max]]
-# [[member]]
-# [[member-if]]
-# [[member-if-not]]
-# [[merge]]
-# [[merge-pathnames]]
-# [[method]]
-# [[method-combination]]
-# [[method-combination-error]]
-# [[method-qualifiers]]
-# [[min]]
-# [[minusp]]
-# [[mismatch]]
-# [[mod]]
-# [[most-negative-double-float]]
-# [[most-negative-fixnum]]
-# [[most-negative-long-float]]
-# [[most-negative-short-float]]
-# [[most-negative-single-float]]
-# [[most-positive-double-float]]
-# [[most-positive-fixnum]]
-# [[most-positive-long-float]]
-# [[most-positive-short-float]]
-# [[most-positive-single-float]]
-# [[muffle-warning]]
-# [[multiple-value-bind]]
-# [[multiple-value-call]]
-# [[multiple-value-list]]
-# [[multiple-value-prog1]]
-# [[multiple-value-setq]]
-# [[multiple-values-limit]]
-# [[name-char]]
-# [[namestring]]
-# [[nbutlast]]
-# [[nconc]]
-# [[next-method-p]]
-# [[nil]]
-# [[nintersection]]
-# [[ninth]]
-# [[no-applicable-method]]
-# [[no-next-method]]
-# [[not]]
-# [[notany]]
-# [[notevery]]
-# [[notinline]]
-# [[nreconc]]
-# [[nreverse]]
-# [[nset-difference]]
-# [[nset-exclusive-or]]
-# [[nstring-capitalize]]
-# [[nstring-downcase]]
-# [[nstring-upcase]]
-# [[nsublis]]
-# [[nsubst]]
-# [[nsubst-if]]
-# [[nsubst-if-not]]
-# [[nsubstitute]]
-# [[nsubstitute-if]]
-# [[nsubstitute-if-not]]
-# [[nth]]
-# [[nth-value]]
-# [[nthcdr]]
-# [[null]]
-# [[number]]
-# [[numberp]]
-# [[numerator]]
-# [[nunion]]
-# [[oddp]]
-# [[open]]
-# [[open-stream-p]]
-# [[optimize]]
-# [[or]]
-# [[otherwise]]
-# [[output-stream-p]]
-# [[package]]
-# [[package-error]]
-# [[package-error-package]]
-# [[package-name]]
-# [[package-nicknames]]
-# [[package-shadowing-symbols]]
-# [[package-use-list]]
-# [[package-used-by-list]]
-# [[packagep]]
-# [[pairlis]]
-# [[parse-error]]
-# [[parse-integer]]
-# [[parse-namestring]]
-# [[pathname]]
-# [[pathname-device]]
-# [[pathname-directory]]
-# [[pathname-host]]
-# [[pathname-match-p]]
-# [[pathname-name]]
-# [[pathname-type]]
-# [[pathname-version]]
-# [[pathnamep]]
-# [[peek-char]]
-# [[phase]]
-# [[pi]]
-# [[plusp]]
-# [[pop]]
-# [[position]]
-# [[position-if]]
-# [[position-if-not]]
-# [[pprint]]
-# [[pprint-dispatch]]
-# [[pprint-exit-if-list-exhausted]]
-# [[pprint-fill]]
-# [[pprint-indent]]
-# [[pprint-linear]]
-# [[pprint-logical-block]]
-# [[pprint-newline]]
-# [[pprint-pop]]
-# [[pprint-tab]]
-# [[pprint-tabular]]
-# [[prin1]]
-# [[prin1-to-string]]
-# [[princ]]
-# [[princ-to-string]]
-# [[print]]
-# [[print-not-readable]]
-# [[print-not-readable-object]]
-# [[print-object]]
-# [[print-unreadable-object]]
-# [[probe-file]]
-# [[proclaim]]
-# [[prog]]
-# [[prog*]]
-# [[prog1]]
-# [[prog2]]
-# [[progn]]
-# [[program-error]]
-# [[progv]]
-# [[provide]]
-# [[psetf]]
-# [[psetq]]
-# [[push]]
-# [[pushnew]]
-# [[quote]]
-# [[random]]
-# [[random-state]]
-# [[random-state-p]]
-# [[rassoc]]
-# [[rassoc-if]]
-# [[rassoc-if-not]]
-# [[ratio]]
-# [[rational]]
-# [[rationalize]]
-# [[rationalp]]
-# [[read]]
-# [[read-byte]]
-# [[read-char]]
-# [[read-char-no-hang]]
-# [[read-delimited-list]]
-# [[read-from-string]]
-# [[read-line]]
-# [[read-preserving-whitespace]]
-# [[read-sequence]]
-# [[reader-error]]
-# [[readtable]]
-# [[readtable-case]]
-# [[readtablep]]
-# [[real]]
-# [[realp]]
-# [[realpart]]
-# [[reduce]]
-# [[reinitialize-instance]]
-# [[rem]]
-# [[remf]]
-# [[remhash]]
-# [[remove]]
-# [[remove-duplicates]]
-# [[remove-if]]
-# [[remove-if-not]]
-# [[remove-method]]
-# [[remprop]]
-# [[rename-file]]
-# [[rename-package]]
-# [[replace]]
-# [[require]]
-# [[rest]]
-# [[restart]]
-# [[restart-bind]]
-# [[restart-case]]
-# [[restart-name]]
-# [[return]]
-# [[return-from]]
-# [[revappend]]
-# [[reverse]]
-# [[room]]
-# [[rotatef]]
-# [[round]]
-# [[row-major-aref]]
-# [[rplaca]]
-# [[rplacd]]
-# [[safety]]
-# [[satisfies]]
-# [[sbit]]
-# [[scale-float]]
-# [[schar]]
-# [[search]]
-# [[second]]
-# [[sequence]]
-# [[serious-condition]]
-# [[set]]
-# [[set-difference]]
-# [[set-dispatch-macro-character]]
-# [[set-exclusive-or]]
-# [[set-macro-character]]
-# [[set-pprint-dispatch]]
-# [[set-syntax-from-char]]
-# [[setf]]
-# [[setq]]
-# [[seventh]]
-# [[shadow]]
-# [[shadowing-import]]
-# [[shared-initialize]]
-# [[shiftf]]
-# [[short-float]]
-# [[short-float-epsilon]]
-# [[short-float-negative-epsilon]]
-# [[short-site-name]]
-# [[signal]]
-# [[signed-byte]]
-# [[signum]]
-# [[simple-array]]
-# [[simple-base-string]]
-# [[simple-bit-vector]]
-# [[simple-bit-vector-p]]
-# [[simple-condition]]
-# [[simple-condition-format-arguments]]
-# [[simple-condition-format-control]]
-# [[simple-error]]
-# [[simple-string]]
-# [[simple-string-p]]
-# [[simple-type-error]]
-# [[simple-vector]]
-# [[simple-vector-p]]
-# [[simple-warning]]
-# [[sin]]
-# [[single-float]]
-# [[single-float-epsilon]]
-# [[single-float-negative-epsilon]]
-# [[sinh]]
-# [[sixth]]
-# [[sleep]]
-# [[slot-boundp]]
-# [[slot-exists-p]]
-# [[slot-makunbound]]
-# [[slot-missing]]
-# [[slot-unbound]]
-# [[slot-value]]
-# [[software-type]]
-# [[software-version]]
-# [[some]]
-# [[sort]]
-# [[space]]
-# [[special]]
-# [[special-operator-p]]
-# [[speed]]
-# [[sqrt]]
-# [[stable-sort]]
-# [[standard]]
-# [[standard-char]]
-# [[standard-char-p]]
-# [[standard-class]]
-# [[standard-generic-function]]
-# [[standard-method]]
-# [[standard-object]]
-# [[step]]
-# [[storage-condition]]
-# [[store-value]]
-# [[stream]]
-# [[stream-element-type]]
-# [[stream-error]]
-# [[stream-error-stream]]
-# [[stream-external-format]]
-# [[streamp]]
-# [[string]]
-# [[string-capitalize]]
-# [[string-downcase]]
-# [[string-equal]]
-# [[string-greaterp]]
-# [[string-left-trim]]
-# [[string-lessp]]
-# [[string-not-equal]]
-# [[string-not-greaterp]]
-# [[string-not-lessp]]
-# [[string-right-trim]]
-# [[string-stream]]
-# [[string-trim]]
-# [[string-upcase]]
-# [[string/=]]
-# [[string<]]
-# [[string<=]]
-# [[string=]]
-# [[string>]]
-# [[string>=]]
-# [[stringp]]
-# [[structure]]
-# [[structure-class]]
-# [[structure-object]]
-# [[style-warning]]
-# [[sublis]]
-# [[subseq]]
-# [[subsetp]]
-# [[subst]]
-# [[subst-if]]
-# [[subst-if-not]]
-# [[substitute]]
-# [[substitute-if]]
-# [[substitute-if-not]]
-# [[subtypep]]
-# [[svref]]
-# [[sxhash]]
-# [[symbol]]
-# [[symbol-function]]
-# [[symbol-macrolet]]
-# [[symbol-name]]
-# [[symbol-package]]
-# [[symbol-plist]]
-# [[symbol-value]]
-# [[symbolp]]
-# [[synonym-stream]]
-# [[synonym-stream-symbol]]
-# [[t]]
-# [[tagbody]]
-# [[tailp]]
-# [[tan]]
-# [[tanh]]
-# [[tenth]]
-# [[terpri]]
-# [[the]]
-# [[third]]
-# [[throw]]
-# [[time]]
-# [[trace]]
-# [[translate-logical-pathname]]
-# [[translate-pathname]]
-# [[tree-equal]]
-# [[truename]]
-# [[truncate]]
-# [[two-way-stream]]
-# [[two-way-stream-input-stream]]
-# [[two-way-stream-output-stream]]
-# [[type]]
-# [[type-error]]
-# [[type-error-datum]]
-# [[type-error-expected-type]]
-# [[type-of]]
-# [[typecase]]
-# [[typep]]
-# [[unbound-slot]]
-# [[unbound-slot-instance]]
-# [[unbound-variable]]
-# [[undefined-function]]
-# [[unexport]]
-# [[unintern]]
-# [[union]]
-# [[unless]]
-# [[unread-char]]
-# [[unsigned-byte]]
-# [[untrace]]
-# [[unuse-package]]
-# [[unwind-protect]]
-# [[update-instance-for-different-class]]
-# [[update-instance-for-redefined-class]]
-# [[upgraded-array-element-type]]
-# [[upgraded-complex-part-type]]
-# [[upper-case-p]]
-# [[use-package]]
-# [[use-value]]
-# [[user-homedir-pathname]]
-# [[values]]
-# [[values-list]]
-# [[variable]]
-# [[vector]]
-# [[vector-pop]]
-# [[vector-push]]
-# [[vector-push-extend]]
-# [[vectorp]]
-# [[warn]]
-# [[warning]]
-# [[when]]
-# [[wild-pathname-p]]
-# [[with-accessors]]
-# [[with-compilation-unit]]
-# [[with-condition-restarts]]
-# [[with-hash-table-iterator]]
-# [[with-input-from-string]]
-# [[with-open-file]]
-# [[with-open-stream]]
-# [[with-output-to-string]]
-# [[with-package-iterator]]
-# [[with-simple-restart]]
-# [[with-slots]]
-# [[with-standard-io-syntax]]
-# [[write]]
-# [[write-byte]]
-# [[write-char]]
-# [[write-line]]
-# [[write-sequence]]
-# [[write-string]]
-# [[write-to-string]]
-# [[y-or-n-p]]
-# [[yes-or-no-p]]
-# [[zerop]]
+Scope:
+
+* Ordinary Lambda Lists
+* Macro Lambda Lists
+* Evaluation and Compilation
+* Types and Classes
+* Data and Control Flow
+* Iteration
+* Objects
+* Structures
+* Conditions
+* Symbols
+* Packages
+* Numbers
+* Characters
+* Conses
+* Arrays
+* Strings
+* Sequences
+* Hash Tables
+* Filenames
+* Files
+* Streams
+* Printer
+* Reader
+* System
+* Environment
+
+# [[&allow-other-keys]] `Ordinary Lambda Lists`
+# [[&aux]] `Ordinary Lambda Lists`
+# [[&body]] `Macro Lambda Lists`
+# [[&environment]] `Macro Lambda Lists`
+# [[&key]] `Ordinary Lambda Lists`
+# [[&optional]] `Ordinary Lambda Lists`
+# [[&rest]] `Ordinary Lambda Lists`
+# [[&whole]] `Ordinary Lambda Lists`
+# [[*]] `Environment` `Numbers`
+# [[**|*]] `Environment`
+# [[***|*]] `Environment`
+# [[*break-on-signals*]] `Conditions`
+# [[*compile-file-pathname*]] `System`
+# [[*compile-file-truename*]] `System`
+# [[*compile-print*]] `System`
+# [[*compile-verbose*]] `System`
+# [[*debug-io*]] `Streams`
+# [[*debugger-hook*]] `Conditions`
+# [[*default-pathname-defaults*]] `Filenames`
+# [[*error-output*]] `Streams`
+# [[*features*]] `System`
+# [[*gensym-counter*]] `Symbols`
+# [[*load-pathname*]] `System`
+# [[*load-print*]] `System`
+# [[*load-truename*]] `System`
+# [[*load-verbose*]] `System`
+# [[*macroexpand-hook*]] `Evaluation and Compilation`
+# [[*modules*]] `System`
+# [[*package*]] `Packages`
+# [[*print-array*]] `Printer`
+# [[*print-base*]] `Printer`
+# [[*print-case*]] `Printer`
+# [[*print-circle*]] `Printer`
+# [[*print-escape*]] `Printer`
+# [[*print-gensym*]] `Printer`
+# [[*print-length*]] `Printer`
+# [[*print-level*]] `Printer`
+# [[*print-lines*]] `Printer`
+# [[*print-miser-width*]] `Printer`
+# [[*print-pprint-dispatch*]] `Printer`
+# [[*print-pretty*]] `Printer`
+# [[*print-radix*]] `Printer`
+# [[*print-readably*]] `Printer`
+# [[*print-right-margin*]] `Printer`
+# [[*query-io*]] `Streams`
+# [[*random-state*]] `Numbers`
+# [[*read-base*]] `Reader`
+# [[*read-default-float-format*]] `Reader`
+# [[*read-eval*]] `Reader`
+# [[*read-suppress*]] `Reader`
+# [[*readtable*]] `Reader`
+# [[*standard-input*]] `Streams`
+# [[*standard-output*]] `Streams`
+# [[*terminal-io*]] `Streams`
+# [[*trace-output*]] `Streams`
+# [[+]] `Environment` `Numbers`
+# [[++]] `Environment`
+# [[+++]] `Environment`
+# [[-]] `Environment` `Numbers`
+# [[/]] `Environment` `Numbers`
+# [[//|/]] `Environment`
+# [[///|/]] `Environment`
+# [[/=]] `Numbers`
+# [[1+]] `Numbers`
+# [[1-]] `Numbers`
+# [[<]] `Numbers`
+# [[<=]] `Numbers`
+# [[=]] `Numbers`
+# [[>]] `Numbers`
+# [[>=]] `Numbers`
+# [[abort]] `Conditions`
+# [[abs]] `Numbers`
+# [[acons]] `Conses`
+# [[acos]] `Numbers`
+# [[acosh]] `Numbers`
+# [[add-method]] `Objects`
+# [[adjoin]] `Conses`
+# [[adjust-array]] `Arrays`
+# [[adjustable-array-p]] `Arrays`
+# [[allocate-instance]] `Objects`
+# [[alpha-char-p]] `Characters`
+# [[alphanumericp]] `Characters`
+# [[and]] `Data and Control Flow`  `Types and Classes`
+# [[append]] `Conses`
+# [[apply]] `Data and Control Flow`
+# [[apropos]] `Environment`
+# [[apropos-list]] `Environment`
+# [[aref]] `Arrays`
+# [[arithmetic-error]] `Numbers`
+# [[arithmetic-error-operands]] `Numbers`
+# [[arithmetic-error-operation]] `Numbers`
+# [[array]] `Arrays`
+# [[array-dimension]] `Arrays`
+# [[array-dimension-limit]] `Arrays`
+# [[array-dimensions]] `Arrays`
+# [[array-displacement]] `Arrays`
+# [[array-element-type]] `Arrays`
+# [[array-has-fill-pointer-p]] `Arrays`
+# [[array-in-bounds-p]] `Arrays`
+# [[array-rank]] `Arrays`
+# [[array-rank-limit]] `Arrays`
+# [[array-row-major-index]] `Arrays`
+# [[array-total-size]] `Arrays`
+# [[array-total-size-limit]] `Arrays`
+# [[arrayp]] `Arrays`
+# [[ash]] `Numbers`
+# [[asin]] `Numbers`
+# [[asinh]] `Numbers`
+# [[assert]] `Conditions`
+# [[assoc]] `Conses`
+# [[assoc-if]] `Conses`
+# [[assoc-if-not]] `Conses`
+# [[atan]] `Numbers`
+# [[atanh]] `Numbers`
+# [[atom]] `Conses`
+# [[base-char]] `Characters`
+# [[base-string]] `Strings`
+# [[bignum]] `Numbers`
+# [[bit]] `Arrays`  `Numbers`
+# [[bit-and]] `Arrays`
+# [[bit-andc1]] `Arrays`
+# [[bit-andc2]] `Arrays`
+# [[bit-eqv]] `Arrays`
+# [[bit-ior]] `Arrays`
+# [[bit-nand]] `Arrays`
+# [[bit-nor]] `Arrays`
+# [[bit-not]] `Arrays`
+# [[bit-orc1]] `Arrays`
+# [[bit-orc2]] `Arrays`
+# [[bit-vector]] `Arrays`
+# [[bit-vector-p]] `Arrays`
+# [[bit-xor]] `Arrays`
+# [[block]] `Data and Control Flow`
+# [[boole]] `Numbers`
+# [[boole-1]] `Numbers`
+# [[boole-2]] `Numbers`
+# [[boole-and]] `Numbers`
+# [[boole-andc1]] `Numbers`
+# [[boole-andc2]] `Numbers`
+# [[boole-c1]] `Numbers`
+# [[boole-c2]] `Numbers`
+# [[boole-clr]] `Numbers`
+# [[boole-eqv]] `Numbers`
+# [[boole-ior]] `Numbers`
+# [[boole-nand]] `Numbers`
+# [[boole-nor]] `Numbers`
+# [[boole-orc1]] `Numbers`
+# [[boole-orc2]] `Numbers`
+# [[boole-set]] `Numbers`
+# [[boole-xor]] `Numbers`
+# [[boolean]] `Types and Classes`
+# [[both-case-p]] `Characters`
+# [[boundp]] `Symbols`
+# [[break]] `Conditions`
+# [[broadcast-stream]] `Streams`
+# [[broadcast-stream-streams]] `Streams`
+# [[built-in-class]] `Types and Classes`
+# [[butlast]] `Conses`
+# [[byte]] `Numbers`
+# [[byte-position]] `Numbers`
+# [[byte-size]] `Numbers`
+# [[caaaar]] `Conses`
+# [[caaadr]] `Conses`
+# [[caaar]] `Conses`
+# [[caadar]] `Conses`
+# [[caaddr]] `Conses`
+# [[caadr]] `Conses`
+# [[caar]] `Conses`
+# [[cadaar]] `Conses`
+# [[cadadr]] `Conses`
+# [[cadar]] `Conses`
+# [[caddar]] `Conses`
+# [[cadddr]] `Conses`
+# [[caddr]] `Conses`
+# [[cadr]] `Conses`
+# [[call-arguments-limit]] `Data and Control Flow`
+# [[call-method]] `Objects`
+# [[call-next-method]] `Objects`
+# [[car]] `Conses`
+# [[case]] `Data and Control Flow`
+# [[catch]] `Data and Control Flow`
+# [[ccase]] `Data and Control Flow`
+# [[cdaaar]] `Conses`
+# [[cdaadr]] `Conses`
+# [[cdaar]] `Conses`
+# [[cdadar]] `Conses`
+# [[cdaddr]] `Conses`
+# [[cdadr]] `Conses`
+# [[cdar]] `Conses`
+# [[cddaar]] `Conses`
+# [[cddadr]] `Conses`
+# [[cddar]] `Conses`
+# [[cdddar]] `Conses`
+# [[cddddr]] `Conses`
+# [[cdddr]] `Conses`
+# [[cddr]] `Conses`
+# [[cdr]] `Conses`
+# [[ceiling]] `Numbers`
+# [[cell-error]] `Conditions`
+# [[cell-error-name]] `Conditions`
+# [[cerror]] `Conditions`
+# [[change-class]] `Objects`
+# [[char]] `Strings`
+# [[char-code]] `Characters`
+# [[char-code-limit]] `Characters`
+# [[char-downcase]] `Characters`
+# [[char-equal]] `Characters`
+# [[char-greaterp]] `Characters`
+# [[char-int]] `Characters`
+# [[char-lessp]] `Characters`
+# [[char-name]] `Characters`
+# [[char-not-equal]] `Characters`
+# [[char-not-greaterp]] `Characters`
+# [[char-not-lessp]] `Characters`
+# [[char-upcase]] `Characters`
+# [[char/=]] `Characters`
+# [[char<]] `Characters`
+# [[char<=]] `Characters`
+# [[char=]] `Characters`
+# [[char>]] `Characters`
+# [[char>=]] `Characters`
+# [[character]] `Characters`
+# [[characterp]] `Characters`
+# [[check-type]] `Conditions`
+# [[cis]] `Numbers`
+# [[class]] `Types and Classes`
+# [[class-name]] `Objects`
+# [[class-of]] `Objects`
+# [[clear-input]] `Streams`
+# [[clear-output]] `Streams`
+# [[close]] `Streams`
+# [[clrhash]] `Hash Tables`
+# [[code-char]] `Characters`
+# [[coerce]] `Types and Classes`
+# [[compilation-speed]]: 见[[optimize]].
+# [[compile]] `Evaluation and Compilation`
+# [[compile-file]] `System`
+# [[compile-file-pathname]] `System`
+# [[compiled-function]]  `Types and Classes`
+# [[compiled-function-p]] `Data and Control Flow`
+# [[compiler-macro]]: 见[[documentation]].
+# [[compiler-macro-function]] `Evaluation and Compilation`
+# [[complement]] `Data and Control Flow`
+# [[complex]] `Numbers`
+# [[complexp]] `Numbers`
+# [[compute-applicable-methods]] `Objects`
+# [[compute-restarts]] `Conditions`
+# [[concatenate]] `Sequences`
+# [[concatenated-stream]] `Streams`
+# [[concatenated-stream-streams]] `Streams`
+# [[cond]] `Data and Control Flow`
+# [[condition]] `Conditions`
+# [[conjugate]] `Numbers`
+# [[cons]] `Conses`
+# [[consp]] `Conses`
+# [[constantly]] `Data and Control Flow`
+# [[constantp]] `Evaluation and Compilation`
+# [[continue]] `Conditions`
+# [[control-error]] `Data and Control Flow`
+# [[copy-alist]] `Conses`
+# [[copy-list]] `Conses`
+# [[copy-pprint-dispatch]] `Printer`
+# [[copy-readtable]] `Reader`
+# [[copy-seq]] `Sequences`
+# [[copy-structure]] `Structures`
+# [[copy-symbol]] `Symbols`
+# [[copy-tree]] `Conses`
+# [[cos]] `Numbers`
+# [[cosh]] `Numbers`
+# [[count]] `Sequences`
+# [[count-if]] `Sequences`
+# [[count-if-not]] `Sequences`
+# [[ctypecase]] `Data and Control Flow`
+# [[debug]]: 见[[optimize]].
+# [[decf]] `Numbers`
+# [[declaim]] `Evaluation and Compilation`
+# [[declaration]] `Evaluation and Compilation`
+# [[declare]] `Evaluation and Compilation`
+# [[decode-float]] `Numbers`
+# [[decode-universal-time]] `Environment`
+# [[defclass]] `Objects`
+# [[defconstant]] `Data and Control Flow`
+# [[defgeneric]] `Objects`
+# [[define-compiler-macro]] `Evaluation and Compilation`
+# [[define-condition]] `Conditions`
+# [[define-method-combination]] `Objects`
+# [[define-modify-macro]] `Data and Control Flow`
+# [[define-setf-expander]] `Data and Control Flow`
+# [[define-symbol-macro]] `Evaluation and Compilation`
+# [[defmacro]] `Evaluation and Compilation`
+# [[defmethod]] `Objects`
+# [[defpackage]] `Packages`
+# [[defparameter]] `Data and Control Flow`
+# [[defsetf]] `Data and Control Flow`
+# [[defstruct]] `Structures`
+# [[deftype]] `Types and Classes`
+# [[defun]] `Data and Control Flow`
+# [[defvar]] `Data and Control Flow`
+# [[delete]] `Sequences`
+# [[delete-duplicates]] `Sequences`
+# [[delete-file]] `Files`
+# [[delete-if]] `Sequences`
+# [[delete-if-not]] `Sequences`
+# [[delete-package]] `Packages`
+# [[denominator]] `Numbers`
+# [[deposit-field]] `Numbers`
+# [[describe]] `Environment`
+# [[describe-object]] `Environment`
+# [[destructuring-bind]] `Data and Control Flow`
+# [[digit-char]] `Characters`
+# [[digit-char-p]] `Characters`
+# [[directory]] `Files`
+# [[directory-namestring]] `Filenames`
+# [[disassemble]] `Environment`
+# [[division-by-zero]] `Numbers`
+# [[do]] `Iteration`
+# [[do*]] `Iteration`
+# [[do-all-symbols]] `Packages`
+# [[do-external-symbols]] `Packages`
+# [[do-symbols]] `Packages`
+# [[documentation]] `Environment`
+# [[dolist]] `Iteration`
+# [[dotimes]] `Iteration`
+# [[double-float]] `Numbers`
+# [[double-float-epsilon]] `Numbers`
+# [[double-float-negative-epsilon]] `Numbers`
+# [[dpb]] `Numbers`
+# [[dribble]] `Environment`
+# [[dynamic-extent]] `Evaluation and Compilation`
+# [[ecase]] `Data and Control Flow`
+# [[echo-stream]] `Streams`
+# [[echo-stream-input-stream]] `Streams`
+# [[echo-stream-output-stream]] `Streams`
+# [[ed]] `Environment`
+# [[eighth]] `Conses`
+# [[elt]] `Sequences`
+# [[encode-universal-time]] `Environment`
+# [[end-of-file]]  `Streams`
+# [[endp]] `Conses`
+# [[enough-namestring]] `Filenames`
+# [[ensure-directories-exist]] `Files`
+# [[ensure-generic-function]] `Objects`
+# [[eq]] `Data and Control Flow`
+# [[eql]] `Data and Control Flow`  `Types and Classes`
+# [[equal]] `Data and Control Flow`
+# [[equalp]] `Data and Control Flow`
+# [[error]] `Conditions`
+# [[etypecase]] `Data and Control Flow`
+# [[eval]] `Evaluation and Compilation`
+# [[eval-when]] `Evaluation and Compilation`
+# [[evenp]] `Numbers`
+# [[every]] `Data and Control Flow`
+# [[exp]] `Numbers`
+# [[export]] `Packages`
+# [[expt]] `Numbers`
+# [[extended-char]] `Characters`
+# [[fboundp]] `Data and Control Flow`
+# [[fceiling]] `Numbers`
+# [[fdefinition]] `Data and Control Flow`
+# [[ffloor]] `Numbers`
+# [[fifth]] `Conses`
+# [[file-author]] `Files`
+# [[file-error]] `Files`
+# [[file-error-pathname]] `Files`
+# [[file-length]] `Streams`
+# [[file-namestring]] `Filenames`
+# [[file-position]] `Streams`
+# [[file-stream]] `Streams`
+# [[file-string-length]] `Streams`
+# [[file-write-date]] `Files`
+# [[fill]] `Sequences`
+# [[fill-pointer]] `Arrays`
+# [[find]] `Sequences`
+# [[find-all-symbols]] `Packages`
+# [[find-class]] `Objects`
+# [[find-if]] `Sequences`
+# [[find-if-not]] `Sequences`
+# [[find-method]] `Objects`
+# [[find-package]] `Packages`
+# [[find-restart]] `Conditions`
+# [[find-symbol]] `Packages`
+# [[finish-output]] `Streams`
+# [[first]] `Conses`
+# [[fixnum]] `Numbers`
+# [[flet]] `Data and Control Flow`
+# [[float]] `Numbers`
+# [[float-digits]] `Numbers`
+# [[float-precision]] `Numbers`
+# [[float-radix]] `Numbers`
+# [[float-sign]] `Numbers`
+# [[floating-point-inexact]] `Numbers`
+# [[floating-point-invalid-operation]] `Numbers`
+# [[floating-point-overflow]] `Numbers`
+# [[floating-point-underflow]] `Numbers`
+# [[floatp]] `Numbers`
+# [[floor]] `Numbers`
+# [[fmakunbound]] `Data and Control Flow`
+# [[force-output]] `Streams`
+# [[format]] `Printer`
+# [[formatter]] `Printer`
+# [[fourth]] `Conses`
+# [[fresh-line|terpri]] `Streams`
+# [[fround]] `Numbers`
+# [[ftruncate]] `Numbers`
+# [[ftype]] `Evaluation and Compilation`
+# [[funcall]] `Data and Control Flow`
+# [[function]] `Data and Control Flow`  `Types and Classes`
+# [[function-keywords]] `Objects`
+# [[function-lambda-expression]] `Data and Control Flow`
+# [[functionp]] `Data and Control Flow`
+# [[gcd]] `Numbers`
+# [[generic-function]] `Types and Classes`
+# [[gensym]] `Symbols`
+# [[gentemp]] `Symbols`
+# [[get]] `Symbols`
+# [[get-decoded-time]] `Environment`
+# [[get-dispatch-macro-character]] `Reader`
+# [[get-internal-real-time]] `Environment`
+# [[get-internal-run-time]] `Environment`
+# [[get-macro-character]] `Reader`
+# [[get-output-stream-string]] `Streams`
+# [[get-properties]] `Conses`
+# [[get-setf-expansion]] `Data and Control Flow`
+# [[get-universal-time]] `Environment`
+# [[getf]] `Conses`
+# [[gethash]] `Hash Tables`
+# [[go]] `Data and Control Flow`
+# [[graphic-char-p]] `Characters`
+# [[handler-bind]] `Conditions`
+# [[handler-case]] `Conditions`
+# [[hash-table]] `Hash Tables`
+# [[hash-table-count]] `Hash Tables`
+# [[hash-table-p]] `Hash Tables`
+# [[hash-table-rehash-size]] `Hash Tables`
+# [[hash-table-rehash-threshold]] `Hash Tables`
+# [[hash-table-size]] `Hash Tables`
+# [[hash-table-test]] `Hash Tables`
+# [[host-namestring]] `Filenames`
+# [[identity]] `Data and Control Flow`
+# [[if]] `Data and Control Flow`
+# [[ignorable]] `Evaluation and Compilation`
+# [[ignore]] `Evaluation and Compilation`
+# [[ignore-errors]] `Conditions`
+# [[imagpart]] `Numbers`
+# [[import]] `Packages`
+# [[in-package]] `Packages`
+# [[incf]] `Numbers`
+# [[initialize-instance]] `Objects`
+# [[inline]] `Evaluation and Compilation`
+# [[input-stream-p]] `Streams`
+# [[inspect]] `Environment`
+# [[integer]] `Numbers`
+# [[integer-decode-float]] `Numbers`
+# [[integer-length]] `Numbers`
+# [[integerp]] `Numbers`
+# [[interactive-stream-p]] `Streams`
+# [[intern]] `Packages`
+# [[internal-time-units-per-second]] `Environment`
+# [[intersection]] `Conses`
+# [[invalid-method-error]] `Conditions`
+# [[invoke-debugger]] `Conditions`
+# [[invoke-restart]] `Conditions`
+# [[invoke-restart-interactively]] `Conditions`
+# [[isqrt]] `Numbers`
+# [[keyword]] `Symbols`
+# [[keywordp]] `Symbols`
+# [[labels]] `Data and Control Flow`
+# [[lambda]] `Evaluation and Compilation`
+# [[lambda-list-keywords]] `Data and Control Flow`
+# [[lambda-parameters-limit]] `Data and Control Flow`
+# [[last]] `Conses`
+# [[lcm]] `Numbers`
+# [[ldb]] `Numbers`
+# [[ldb-test]] `Numbers`
+# [[ldiff]] `Conses`
+# [[least-negative-double-float]] `Numbers`
+# [[least-negative-long-float]] `Numbers`
+# [[least-negative-normalized-double-float]] `Numbers`
+# [[least-negative-normalized-long-float]] `Numbers`
+# [[least-negative-normalized-short-float]] `Numbers`
+# [[least-negative-normalized-single-float]] `Numbers`
+# [[least-negative-short-float]] `Numbers`
+# [[least-negative-single-float]] `Numbers`
+# [[least-positive-double-float]] `Numbers`
+# [[least-positive-long-float]] `Numbers`
+# [[least-positive-normalized-double-float]] `Numbers`
+# [[least-positive-normalized-long-float]] `Numbers`
+# [[least-positive-normalized-short-float]] `Numbers`
+# [[least-positive-normalized-single-float]] `Numbers`
+# [[least-positive-short-float]] `Numbers`
+# [[least-positive-single-float]] `Numbers`
+# [[length]] `Sequences`
+# [[let]] `Data and Control Flow`
+# [[let*]] `Data and Control Flow`
+# [[lisp-implementation-type]] `Environment`
+# [[lisp-implementation-version]] `Environment`
+# [[list]] `Conses`
+# [[list*]] `Conses`
+# [[list-all-packages]] `Packages`
+# [[list-length]] `Conses`
+# [[listen]] `Streams`
+# [[listp]] `Conses`
+# [[load]] `System`
+# [[load-logical-pathname-translations]] `Filenames`
+# [[load-time-value]] `Evaluation and Compilation`
+# [[locally]] `Evaluation and Compilation`
+# [[log]] `Numbers`
+# [[logand]] `Numbers`
+# [[logandc1]] `Numbers`
+# [[logandc2]] `Numbers`
+# [[logbitp]] `Numbers`
+# [[logcount]] `Numbers`
+# [[logeqv]] `Numbers`
+# [[logical-pathname]] `Filenames`
+# [[logical-pathname-translations]] `Filenames`
+# [[logior]] `Numbers`
+# [[lognand]] `Numbers`
+# [[lognor]] `Numbers`
+# [[lognot]] `Numbers`
+# [[logorc1]] `Numbers`
+# [[logorc2]] `Numbers`
+# [[logtest]] `Numbers`
+# [[logxor]] `Numbers`
+# [[long-float]] `Numbers`
+# [[long-float-epsilon]] `Numbers`
+# [[long-float-negative-epsilon]] `Numbers`
+# [[long-site-name]] `Environment`
+# [[loop]] `Iteration`
+# [[loop-finish]] `Iteration`
+# [[lower-case-p]] `Characters`
+# [[machine-instance]] `Environment`
+# [[machine-type]] `Environment`
+# [[machine-version]] `Environment`
+# [[macro-function]] `Evaluation and Compilation`
+# [[macroexpand]] `Evaluation and Compilation`
+# [[macroexpand-1]] `Evaluation and Compilation`
+# [[macrolet]] `Data and Control Flow`
+# [[make-array]] `Arrays`
+# [[make-broadcast-stream]] `Streams`
+# [[make-concatenated-stream]] `Streams`
+# [[make-condition]] `Conditions`
+# [[make-dispatch-macro-character]] `Reader`
+# [[make-echo-stream]] `Streams`
+# [[make-hash-table]] `Hash Tables`
+# [[make-instance]] `Objects`
+# [[make-instances-obsolete]] `Objects`
+# [[make-list]] `Conses`
+# [[make-load-form]] `Objects`
+# [[make-load-form-saving-slots]] `Objects`
+# [[make-method]] `Objects`
+# [[make-package]] `Packages`
+# [[make-pathname]] `Filenames`
+# [[make-random-state]] `Numbers`
+# [[make-sequence]] `Sequences`
+# [[make-string]] `Strings`
+# [[make-string-input-stream]] `Streams`
+# [[make-string-output-stream]] `Streams`
+# [[make-symbol]] `Symbols`
+# [[make-synonym-stream]] `Streams`
+# [[make-two-way-stream]] `Streams`
+# [[makunbound]] `Symbols`
+# [[map]] `Sequences`
+# [[map-into]] `Sequences`
+# [[mapc]] `Conses`
+# [[mapcan]] `Conses`
+# [[mapcar]] `Conses`
+# [[mapcon]] `Conses`
+# [[maphash]] `Hash Tables`
+# [[mapl]] `Conses`
+# [[maplist]] `Conses`
+# [[mask-field]] `Numbers`
+# [[max]] `Numbers`
+# [[member]] `Conses`  `Types and Classes`
+# [[member-if]] `Conses`
+# [[member-if-not]] `Conses`
+# [[merge]] `Sequences`
+# [[merge-pathnames]] `Filenames`
+# [[method]] `Types and Classes`
+# [[method-combination]] `Types and Classes`
+# [[method-combination-error]] `Conditions`
+# [[method-qualifiers]] `Objects`
+# [[min]] `Numbers`
+# [[minusp]] `Numbers`
+# [[mismatch]] `Sequences`
+# [[mod]] `Numbers`
+# [[most-negative-double-float]] `Numbers`
+# [[most-negative-fixnum]] `Numbers`
+# [[most-negative-long-float]] `Numbers`
+# [[most-negative-short-float]] `Numbers`
+# [[most-negative-single-float]] `Numbers`
+# [[most-positive-double-float]] `Numbers`
+# [[most-positive-fixnum]] `Numbers`
+# [[most-positive-long-float]] `Numbers`
+# [[most-positive-short-float]] `Numbers`
+# [[most-positive-single-float]] `Numbers`
+# [[muffle-warning]] `Conditions`
+# [[multiple-value-bind]] `Data and Control Flow`
+# [[multiple-value-call]] `Data and Control Flow`
+# [[multiple-value-list]] `Data and Control Flow`
+# [[multiple-value-prog1]] `Data and Control Flow`
+# [[multiple-value-setq]] `Data and Control Flow`
+# [[multiple-values-limit]] `Data and Control Flow`
+# [[name-char]] `Characters`
+# [[namestring]] `Filenames`
+# [[nbutlast]] `Conses`
+# [[nconc]] `Conses`
+# [[next-method-p]] `Objects`
+# [[nil]] `Data and Control Flow` `Types and Classes`
+# [[nintersection]] `Conses`
+# [[ninth]] `Conses`
+# [[no-applicable-method]] `Objects`
+# [[no-next-method]] `Objects`
+# [[not]] `Data and Control Flow`  `Types and Classes`
+# [[notany]] `Data and Control Flow`
+# [[notevery]] `Data and Control Flow`
+# [[notinline]] `Evaluation and Compilation`
+# [[nreconc]] `Conses`
+# [[nreverse]] `Sequences`
+# [[nset-difference]] `Conses`
+# [[nset-exclusive-or]] `Conses`
+# [[nstring-capitalize]] `Strings`
+# [[nstring-downcase]] `Strings`
+# [[nstring-upcase]] `Strings`
+# [[nsublis]] `Conses`
+# [[nsubst]] `Conses`
+# [[nsubst-if]] `Conses`
+# [[nsubst-if-not]] `Conses`
+# [[nsubstitute]] `Sequences`
+# [[nsubstitute-if]] `Sequences`
+# [[nsubstitute-if-not]] `Sequences`
+# [[nth]] `Conses`
+# [[nth-value]] `Data and Control Flow`
+# [[nthcdr]] `Conses`
+# [[null]] `Conses`
+# [[number]] `Numbers`
+# [[numberp]] `Numbers`
+# [[numerator]] `Numbers`
+# [[nunion]] `Conses`
+# [[oddp]] `Numbers`
+# [[open]] `Streams`
+# [[open-stream-p]] `Streams`
+# [[optimize]] `Evaluation and Compilation`
+# [[or]] `Data and Control Flow` `Types and Classes`
+# [[otherwise]]: 见[[case]].
+# [[output-stream-p]] `Streams`
+# [[package]] `Packages`
+# [[package-error]] `Packages`
+# [[package-error-package]] `Packages`
+# [[package-name]] `Packages`
+# [[package-nicknames]] `Packages`
+# [[package-shadowing-symbols]] `Packages`
+# [[package-use-list]] `Packages`
+# [[package-used-by-list]] `Packages`
+# [[packagep]] `Packages`
+# [[pairlis]] `Conses`
+# [[parse-error]] `Conditions`
+# [[parse-integer]] `Numbers`
+# [[parse-namestring]] `Filenames`
+# [[pathname]] `Filenames`
+# [[pathname-device]] `Filenames`
+# [[pathname-directory]] `Filenames`
+# [[pathname-host]] `Filenames`
+# [[pathname-match-p]] `Filenames`
+# [[pathname-name]] `Filenames`
+# [[pathname-type]] `Filenames`
+# [[pathname-version]] `Filenames`
+# [[pathnamep]] `Filenames`
+# [[peek-char]] `Streams`
+# [[phase]] `Numbers`
+# [[pi]] `Numbers`
+# [[plusp]] `Numbers`
+# [[pop]] `Conses`
+# [[position]] `Sequences`
+# [[position-if]] `Sequences`
+# [[position-if-not]] `Sequences`
+# [[pprint]] `Printer`
+# [[pprint-dispatch]] `Printer`
+# [[pprint-exit-if-list-exhausted]] `Printer`
+# [[pprint-fill]] `Printer`
+# [[pprint-indent]] `Printer`
+# [[pprint-linear]] `Printer`
+# [[pprint-logical-block]] `Printer`
+# [[pprint-newline]] `Printer`
+# [[pprint-pop]] `Printer`
+# [[pprint-tab]] `Printer`
+# [[pprint-tabular]] `Printer`
+# [[prin1]] `Printer`
+# [[prin1-to-string]] `Printer`
+# [[princ]] `Printer`
+# [[princ-to-string]] `Printer`
+# [[print]] `Printer`
+# [[print-not-readable]] `Printer`
+# [[print-not-readable-object]] `Printer`
+# [[print-object]] `Printer`
+# [[print-unreadable-object]] `Printer`
+# [[probe-file]]  `Files`
+# [[proclaim]] `Evaluation and Compilation`
+# [[prog]] `Data and Control Flow`
+# [[prog*]] `Data and Control Flow`
+# [[prog1]] `Data and Control Flow`
+# [[prog2]] `Data and Control Flow`
+# [[progn]] `Data and Control Flow`
+# [[program-error]] `Data and Control Flow`
+# [[progv]] `Data and Control Flow`
+# [[provide]] `System`
+# [[psetf]] `Data and Control Flow`
+# [[psetq]] `Data and Control Flow`
+# [[push]] `Conses`
+# [[pushnew]] `Conses`
+# [[quote]] `Evaluation and Compilation`
+# [[random]] `Numbers`
+# [[random-state]] `Numbers`
+# [[random-state-p]] `Numbers`
+# [[rassoc]] `Conses`
+# [[rassoc-if]] `Conses`
+# [[rassoc-if-not]] `Conses`
+# [[ratio]] `Numbers`
+# [[rational]] `Numbers`
+# [[rationalize]] `Numbers`
+# [[rationalp]] `Numbers`
+# [[read]] `Reader`
+# [[read-byte]] `Streams`
+# [[read-char]] `Streams`
+# [[read-char-no-hang]] `Streams`
+# [[read-delimited-list]] `Reader`
+# [[read-from-string]] `Reader`
+# [[read-line]] `Streams`
+# [[read-preserving-whitespace]] `Reader`
+# [[read-sequence]] `Streams`
+# [[reader-error]] `Reader`
+# [[readtable]] `Reader`
+# [[readtable-case]] `Reader`
+# [[readtablep]] `Reader`
+# [[real]] `Numbers`
+# [[realp]] `Numbers`
+# [[realpart]] `Numbers`
+# [[reduce]] `Sequences`
+# [[reinitialize-instance]] `Objects`
+# [[rem]] `Numbers`
+# [[remf]] `Conses`
+# [[remhash]] `Hash Tables`
+# [[remove]] `Sequences`
+# [[remove-duplicates]] `Sequences`
+# [[remove-if]] `Sequences`
+# [[remove-if-not]] `Sequences`
+# [[remove-method]] `Objects`
+# [[remprop]] `Symbols`
+# [[rename-file]] `Files`
+# [[rename-package]] `Packages`
+# [[replace]] `Sequences`
+# [[require]] `System`
+# [[rest]] `Conses`
+# [[restart]] `Conditions`
+# [[restart-bind]] `Conditions`
+# [[restart-case]] `Conditions`
+# [[restart-name]] `Conditions`
+# [[return]] `Data and Control Flow`
+# [[return-from]] `Data and Control Flow`
+# [[revappend]] `Conses`
+# [[reverse]] `Sequences`
+# [[room]] `Environment`
+# [[rotatef]] `Data and Control Flow`
+# [[round]] `Numbers`
+# [[row-major-aref]] `Arrays`
+# [[rplaca]] `Conses`
+# [[rplacd]] `Conses`
+# [[safety]]: 见[[optimize]].
+# [[satisfies]] `Types and Classes`
+# [[sbit]] `Arrays`
+# [[scale-float]] `Numbers`
+# [[schar]] `Strings`
+# [[search]] `Sequences`
+# [[second]] `Conses`
+# [[sequence]] `Sequences`
+# [[serious-condition]] `Conditions`
+# [[set]] `Symbols`
+# [[set-difference]] `Conses`
+# [[set-dispatch-macro-character]] `Reader`
+# [[set-exclusive-or]] `Conses`
+# [[set-macro-character]] `Reader`
+# [[set-pprint-dispatch]] `Printer`
+# [[set-syntax-from-char]] `Reader`
+# [[setf]] `Data and Control Flow`
+# [[setq]] `Data and Control Flow`
+# [[seventh]] `Conses`
+# [[shadow]] `Packages`
+# [[shadowing-import]] `Packages`
+# [[shared-initialize]] `Objects`
+# [[shiftf]] `Data and Control Flow`
+# [[short-float]] `Numbers`
+# [[short-float-epsilon]] `Numbers`
+# [[short-float-negative-epsilon]] `Numbers`
+# [[short-site-name]] `Environment`
+# [[signal]] `Conditions`
+# [[signed-byte]] `Numbers`
+# [[signum]] `Numbers`
+# [[simple-array]] `Arrays`
+# [[simple-base-string]] `Strings`
+# [[simple-bit-vector]] `Arrays`
+# [[simple-bit-vector-p]] `Arrays`
+# [[simple-condition]] `Conditions`
+# [[simple-condition-format-arguments]] `Conditions`
+# [[simple-condition-format-control]] `Conditions`
+# [[simple-error]] `Conditions`
+# [[simple-string]] `Strings`
+# [[simple-string-p]] `Strings`
+# [[simple-type-error]] `Types and Classes`
+# [[simple-vector]] `Arrays`
+# [[simple-vector-p]] `Arrays`
+# [[simple-warning]] `Conditions`
+# [[sin]] `Numbers`
+# [[single-float]] `Numbers`
+# [[single-float-epsilon]] `Numbers`
+# [[single-float-negative-epsilon]] `Numbers`
+# [[sinh]] `Numbers`
+# [[sixth]] `Conses`
+# [[sleep]] `Environment`
+# [[slot-boundp]] `Objects`
+# [[slot-exists-p]] `Objects`
+# [[slot-makunbound]] `Objects`
+# [[slot-missing]] `Objects`
+# [[slot-unbound]] `Objects`
+# [[slot-value]] `Objects`
+# [[software-type]] `Environment`
+# [[software-version]] `Environment`
+# [[some]] `Data and Control Flow`
+# [[sort]] `Sequences`
+# [[space]]: 见[[optimize]].
+# [[special]] `Evaluation and Compilation`
+# [[special-operator-p]] `Evaluation and Compilation`
+# [[speed]]: 见[[optimize]].
+# [[sqrt]] `Numbers`
+# [[stable-sort]] `Sequences`
+# [[standard]]: 内置的标准方法组合类型.
+# [[standard-char]] `Characters`
+# [[standard-char-p]] `Characters`
+# [[standard-class]] `Types and Classes`
+# [[standard-generic-function]] `Types and Classes`
+# [[standard-method]] `Types and Classes`
+# [[standard-object]] `Types and Classes`
+# [[step]] `Environment`
+# [[storage-condition]] `Conditions`
+# [[store-value]] `Conditions`
+# [[stream]] `Streams`
+# [[stream-element-type]] `Streams`
+# [[stream-error]] `Streams`
+# [[stream-error-stream]] `Streams`
+# [[stream-external-format]] `Streams`
+# [[streamp]] `Streams`
+# [[string]] `Strings`
+# [[string-capitalize]] `Strings`
+# [[string-downcase]] `Strings`
+# [[string-equal]] `Strings`
+# [[string-greaterp]] `Strings`
+# [[string-left-trim]] `Strings`
+# [[string-lessp]] `Strings`
+# [[string-not-equal]] `Strings`
+# [[string-not-greaterp]] `Strings`
+# [[string-not-lessp]] `Strings`
+# [[string-right-trim]] `Strings`
+# [[string-stream]] `Streams`
+# [[string-trim]] `Strings`
+# [[string-upcase]] `Strings`
+# [[string/=]] `Strings`
+# [[string<]] `Strings`
+# [[string<=]] `Strings`
+# [[string=]] `Strings`
+# [[string>]] `Strings`
+# [[string>=]] `Strings`
+# [[stringp]] `Strings`
+# [[structure]]: 见[[documentation]].
+# [[structure-class]] `Types and Classes`
+# [[structure-object]] `Types and Classes`
+# [[style-warning]] `Conditions`
+# [[sublis]] `Conses`
+# [[subseq]] `Sequences`
+# [[subsetp]] `Conses`
+# [[subst]] `Conses`
+# [[subst-if]] `Conses`
+# [[subst-if-not]] `Conses`
+# [[substitute]] `Sequences`
+# [[substitute-if]] `Sequences`
+# [[substitute-if-not]] `Sequences`
+# [[subtypep]] `Types and Classes`
+# [[svref]] `Arrays`
+# [[sxhash]] `Hash Tables`
+# [[symbol]] `Symbols`
+# [[symbol-function]] `Symbols`
+# [[symbol-macrolet]] `Evaluation and Compilation`
+# [[symbol-name]] `Symbols`
+# [[symbol-package]] `Symbols`
+# [[symbol-plist]] `Symbols`
+# [[symbol-value]] `Symbols`
+# [[symbolp]] `Symbols`
+# [[synonym-stream]] `Streams`
+# [[synonym-stream-symbol]] `Streams`
+# [[t]] `Data and Control Flow`  `Types and Classes`
+# [[tagbody]] `Data and Control Flow`
+# [[tailp]] `Conses`
+# [[tan]] `Numbers`
+# [[tanh]] `Numbers`
+# [[tenth]] `Conses`
+# [[terpri]] `Streams`
+# [[the]] `Evaluation and Compilation`
+# [[third]] `Conses`
+# [[throw]] `Data and Control Flow`
+# [[time]] `Environment`
+# [[trace]] `Environment`
+# [[translate-logical-pathname]] `Filenames`
+# [[translate-pathname]] `Filenames`
+# [[tree-equal]] `Conses`
+# [[truename]] `Files`
+# [[truncate]] `Numbers`
+# [[two-way-stream]] `Streams`
+# [[two-way-stream-input-stream]] `Streams`
+# [[two-way-stream-output-stream]] `Streams`
+# [[type]] `Evaluation and Compilation`
+# [[type-error]] `Types and Classes`
+# [[type-error-datum]] `Types and Classes`
+# [[type-error-expected-type]] `Types and Classes`
+# [[type-of]] `Types and Classes`
+# [[typecase]] `Data and Control Flow`
+# [[typep]] `Types and Classes`
+# [[unbound-slot]] `Objects`
+# [[unbound-slot-instance]] `Objects`
+# [[unbound-variable]] `Symbols`
+# [[undefined-function]] `Data and Control Flow`
+# [[unexport]] `Packages`
+# [[unintern]] `Packages`
+# [[union]] `Conses`
+# [[unless]] `Data and Control Flow`
+# [[unread-char]] `Streams`
+# [[unsigned-byte]] `Numbers`
+# [[untrace]] `Environment`
+# [[unuse-package]] `Packages`
+# [[unwind-protect]] `Data and Control Flow`
+# [[update-instance-for-different-class]] `Objects`
+# [[update-instance-for-redefined-class]] `Objects`
+# [[upgraded-array-element-type]] `Arrays`
+# [[upgraded-complex-part-type]] `Numbers`
+# [[upper-case-p]] `Characters`
+# [[use-package]] `Packages`
+# [[use-value]] `Conditions`
+# [[user-homedir-pathname]] `Environment`
+# [[values]] `Data and Control Flow` `Types and Classes`
+# [[values-list]] `Data and Control Flow`
+# [[variable]]: 见[[documentation]].
+# [[vector]] `Arrays`
+# [[vector-pop]] `Arrays`
+# [[vector-push]] `Arrays`
+# [[vector-push-extend]] `Arrays`
+# [[vectorp]] `Arrays`
+# [[warn]] `Conditions`
+# [[warning]] `Conditions`
+# [[when]] `Data and Control Flow`
+# [[wild-pathname-p]] `Filenames`
+# [[with-accessors]] `Objects`
+# [[with-compilation-unit]] `System`
+# [[with-condition-restarts]] `Conditions`
+# [[with-hash-table-iterator]] `Hash Tables`
+# [[with-input-from-string]] `Streams`
+# [[with-open-file]] `Streams`
+# [[with-open-stream]] `Streams`
+# [[with-output-to-string]] `Streams`
+# [[with-package-iterator]] `Packages`
+# [[with-simple-restart]] `Conditions`
+# [[with-slots]] `Objects`
+# [[with-standard-io-syntax]] `Reader`
+# [[write]] `Printer`
+# [[write-byte]] `Streams`
+# [[write-char]] `Streams`
+# [[write-line]] `Streams`
+# [[write-sequence]] `Streams`
+# [[write-string]] `Printer`  `Streams`
+# [[write-to-string]] `Printer`
+# [[y-or-n-p]] `Streams`
+# [[yes-or-no-p]] `Streams`
+# [[zerop]] `Numbers`

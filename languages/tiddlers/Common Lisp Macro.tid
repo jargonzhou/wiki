@@ -1,9 +1,9 @@
 created: 20241206090340742
 creator: jargonzhou
-modified: 20241207131647276
+modified: 20241211054228321
 modifier: jargonzhou
 tags: [[Common Lisp]]
-title: Macro
+title: Common Lisp Macro
 type: text/vnd.tiddlywiki
 
 ! Terminology
@@ -52,6 +52,18 @@ Example:
 `(a ,@1)     ; (a . 1)
 `(a ,@1 b)   ; ERROR
 ```
+
+! 陷阱
+
+!! 变量捕获(Variable Capture)
+
+!! 求值次数(Number of Evaluations)
+
+!! 求值顺序(Order of Evaluation)
+
+!! 非函数式的展开器(Non-functional Expanders)
+
+!! 递归(Recursion)
 
 ! References
 * Common Lisp: The Language

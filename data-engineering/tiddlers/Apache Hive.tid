@@ -1,0 +1,27 @@
+created: 20241211033340360
+creator: jargonzhou
+modified: 20241211033604221
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Hive
+
+<<<.tc-big-quote
+Apache Hive is a distributed, fault-tolerant data warehouse system that enables analytics at a massive scale. ''Hive Metastore(HMS)'' provides a ''central repository of metadata'' that can easily be analyzed to make informed, data driven decisions, and therefore it is a critical component of many data lake architectures. Hive is ''built on top of Apache Hadoop'' and supports storage on S3, adls, gs etc though hdfs. Hive allows users to read, write, and manage petabytes of data using ''SQL''.
+<<<
+
+! Terminology
+
+! 特性
+
+* Hive-Server 2 (HS2) ''HS2'' supports multi-client concurrency and authentication. It is designed to provide better support for open API clients like ''JDBC'' and ''ODBC''.
+* Hive Metastore Server (HMS) The ''Hive Metastore (HMS)'' is a central repository of metadata for Hive tables and partitions in a relational database, and provides clients (including Hive, Impala and Spark) access to this information using the metastore service API. It has become a building block for data lakes that utilize the diverse world of open-source software, such as ''[[Apache Spark|https://spark.apache.org/]]'' and ''[[Presto|http://prestodb.github.io/]]''. In fact, a whole ecosystem of tools, open-source and otherwise, are built around the Hive Metastore, some of which this diagram illustrates.
+* Hive ACID Hive provides ''full acid support for ORC tables out'' and insert only support to all other formats.
+* Hive Data Compaction Query-based and MR-based ''data compactions'' are supported out-of-the-box.
+* Hive Replication Hive supports ''bootstap and incremental replication'' for backup and recovery.
+* Security and Observability Apache Hive supports kerberos auth and integrates with [[Apache Ranger|https://ranger.apache.org/]] and [[Apache Atlas|https://atlas.apache.org/]] for security and observability.
+* Hive LLAP Apache Hive enables interactive and subsecond SQL through ''Low Latency Analytical Processing (LLAP),'' introduced in Hive 2.0 that makes Hive faster by using persistent query infrastructure and optimized data caching
+* Query planner and Cost based Optimizer Hive uses ''[[Apache Calcite|https://calcite.apache.org/]]'''s ''cost based query optimizer (CBO) and query execution framework'' to optimize sql queries.
+
+! References
+
+* [[Home|https://hive.apache.org/]]

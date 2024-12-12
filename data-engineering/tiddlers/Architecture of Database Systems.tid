@@ -1,6 +1,6 @@
 created: 20241209063327539
 creator: jargonzhou
-modified: 20241209132501000
+modified: 20241210095210121
 modifier: jargonzhou
 tags: [[Database Systems]]
 title: Architecture of Database Systems
@@ -33,6 +33,8 @@ title: Architecture of Database Systems
 
 ! References
 
-* Jeffrey D. Ullman, Jennifer Widom. ''A First Course in Database Systems''. 2008, 3. edition.
 * Hellerstein, Joseph M. / Stonebraker, Michael / Hamilton, James. ''Architecture of a Database System''. 2007.
+* Jeffrey D. Ullman, Jennifer Widom. ''A First Course in Database Systems''. 2008, 3. edition.
 * Garcia-Molina, Hector / Ullman, Jeffrey D. / Widom, Jennifer. ''Database Systems: The Complete Boo''k. 2008, 2. edition. Pearson Education.
+* Bailis, Peter / Hellerstein, Joseph M. / Stonebraker, Michael. ''Readings in Database Systems''. 2015.
+* Silberschatz, Avi / Korth, Henry F. / Sudarshan, S. [[Database System Concepts]]. 2019, 7. edition. McGraw-Hill.

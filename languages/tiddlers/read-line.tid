@@ -1,0 +1,50 @@
+CLHS: Function
+created: 20241210091818571
+creator: jargonzhou
+modified: 20241210092109343
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: read-line
+
+! Syntax
+
+```lisp
+read-line &optional input-stream eof-error-p eof-value recursive-p
+
+=> line, missing-newline-p
+```
+
+! Arguments and Values
+
+; input-stream
+: 输入流指示器. 默认是标准输入.
+
+; eof-error-p
+: 通用布尔值. 默认为true.
+
+; eof-value
+: 一个对象, 默认为`nil`.
+
+; recursive-p
+: 通用布尔值. 默认为false.
+
+; line
+: 一个字符串或`eof-value`.
+
+; missing-newline-p
+: 通用布尔值.
+
+! Description
+
+! Examples
+
+
+! Side Effects
+
+! Affected By
+
+! Exceptional Situations
+
+! See Also
+
+! Notes

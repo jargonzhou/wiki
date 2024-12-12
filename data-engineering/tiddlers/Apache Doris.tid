@@ -1,0 +1,59 @@
+created: 20241211024922206
+creator: jargonzhou
+modified: 20241211030739469
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Doris
+
+<<<.tc-big-quote
+Apache Doris is an easy-to-use, high-performance and real-time analytical database based on MPP architecture, known for its extreme speed and ease of use. It only requires a sub-second response time to return query results under massive data and can support not only high-concurrent point query scenarios but also high-throughput complex analysis scenarios.
+
+All this makes Apache Doris an ideal tool for scenarios including report analysis, ad-hoc query, unified data warehouse, and data lake query acceleration. On Apache Doris, users can build various applications, such as user behavior analysis, AB test platform, log retrieval analysis, user portrait analysis, and order analysis.
+<<<
+
+! Terminology
+
+* 大规模并行计算(Massively Parallel Processing(MPP))
+* 前端(Frontend, FE)
+* 后端(Backend, BE)
+* 基于规则的优化器(Rule Based Optimizer(RBO))
+* 基于成本的优化器(Cost Based Optimizer(CBO))
+
+! 系统结构
+
+[img[https://camo.githubusercontent.com/ef5be2df6eb3d39e38131e840b17e2032b91ac5794b8ef62967916e1658a5f54/68747470733a2f2f63646e2e73656c65637464622e636f6d2f7374617469632f576861745f69735f4170616368655f446f7269735f616462323633393765322e706e67]]
+
+! 存储引擎
+
+! 存储模型
+
+! 查询引擎
+
+! 查询优化器
+
+! 部署
+
+网络端口: [[link|https://doris.apache.org/docs/install/cluster-deployment/standard-deployment#plan-the-ports]]
+
+! 实现
+
+支持工具:
+
+* ANTLR
+* cup: Java(tm) Based Constructor of Useful Parsers (CUP for short), LALR Parser Generatir for Java
+** http://www2.cs.tum.edu/projects/cup/docs.php
+* jflex: JFlex is a lexical analyzer generator (also known as scanner generator) for Java, written in Java. 
+** https://www.jflex.de
+* ProtoBuf
+* Thirft
+* Berkeley DB Java Edition
+** https://www.oracle.com/database/technologies/related/berkeleydb.html 
+** https://en.wikipedia.org/wiki/Berkeley_DB
+** https://docs.oracle.com/en/database/other-databases/
+* XNIO: XNIO is a simplified low-level I/O layer which can be used anywhere you are using NIO today. It frees you from the hassle of dealing with Selectors and the lack of NIO support for multicast sockets and non-socket I/O, while still maintaining all the capabilities present in NIO, and it opens the door to non-obvious optimizations. 
+** https://github.com/xnio/xnio
+
+
+! References
+
+* [[Code|https://github.com/apache/doris/]]

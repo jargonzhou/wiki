@@ -1,0 +1,34 @@
+created: 20241210093514933
+creator: jargonzhou
+modified: 20241211015408939
+modifier: jargonzhou
+tags: [[Data Engineering]] TableOfContents
+title: Database Systems
+
+
+! 数据库会议和期刊
+
+(1) ACM（Association for Computing Machinery）
+
+* SIGMOD: Special Interest Group on Management Of Data https://sigmod.org/
+* PODS: Principles Of Database Systems: http://www.sigmod.org/
+* TODS: Transactions on Database Systems: https://dl.acm.org/journal/tods
+* VLDB: Very Large Data Bases: http://www.vldb.org/
+* KDD: Knowledge Discovery and Data Mining: http://www.sigkdd.org/
+
+(2) IEEE(Institute of Electrical and Electronics Engineers)
+
+* ICDE:International Conference on Data Engineering: http://www.icde.org/
+* ICDM: International Conference on Data Mining: http://www.cs.uvm.edu/~icdm/
+
+(3) Other
+
+* ICDE:International Conference on Data Engineering: http://www.icde.org/
+
+* EDBT: Extending Database Technology: https://www.edbt.org/
+
+* ICDT: International Conference on Database Theory: https://databasetheory.org/icdt-pages
+
+* [[dblp: computer science bibliography|https://dblp.org/]]
+
+* [[arXiv.org e-Print archive|https://arxiv.org/]]

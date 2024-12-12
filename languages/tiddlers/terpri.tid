@@ -1,0 +1,41 @@
+CLHS: Function
+created: 20241210083720444
+creator: jargonzhou
+modified: 20241210083944567
+modifier: jargonzhou
+tags: [[CLHS Symbols]]
+title: terpri
+
+`terpri`, `fresh-line`
+
+! Syntax
+
+
+```lisp
+terpri &optional output-stream => nil
+
+fresh-line &optional output-stream => generalized-boolean
+```
+
+! Arguments and Values
+
+; output-stream
+: 输出流指示器. 默认为标准输出.
+
+; generalized-boolean
+: 通用的布尔值.
+
+! Description
+
+! Examples
+
+
+! Side Effects
+
+! Affected By
+
+! Exceptional Situations
+
+! See Also
+
+! Notes

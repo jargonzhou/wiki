@@ -1,0 +1,17 @@
+created: 20241211012214136
+creator: jargonzhou
+modified: 20241211012235810
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: AlloyDB
+
+<<<.tc-big-quote
+AlloyDB is a fully managed, PostgreSQL-compatible database service with industry-leading performance, availability, and scale.
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://cloud.google.com/alloydb]]

@@ -1,0 +1,17 @@
+created: 20241211012838240
+creator: jargonzhou
+modified: 20241211012903544
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Milvus
+
+<<<.tc-big-quote
+A cloud-native vector database, storage for next generation AI applications
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Code|https://github.com/milvus-io/milvus]]

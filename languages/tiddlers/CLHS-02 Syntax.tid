@@ -1,6 +1,6 @@
 created: 20241202053452457
 creator: jargonzhou
-modified: 20241206092207810
+modified: 20241211060403832
 modifier: jargonzhou
 tags: CLHS
 title: CLHS-02 Syntax
@@ -829,7 +829,7 @@ digit             ; 当前输入基数的数字
 
 注意: 在字符串中放置单转义字符或一个双引号时, 这些字符前需要有一个单转义字符. 多转义字符在字符串中不需要转义.
 
-!!! 2.4.6 <code>&#x60;</code>(backquote)
+!!! 2.4.6 `` ` ``(backquote)
 
 反引号引入了需要构建的数据结构的模板. 例如:
 
@@ -846,7 +846,7 @@ digit             ; 当前输入基数的数字
 ```
 
 当模板中出现`,`时, `,`后紧随的表达式需要被求值后插入在那一点.
-例如, 假设`b`有值`3`, 求值形式<code>&#x60;</code>`(a b ,b ,(+ b 1) b)`的结果为`(a b 3 4 b)`.
+例如, 假设`b`有值`3`, 求值形式 ```(a b ,b ,(+ b 1) b)``的结果为`(a b 3 4 b)`.
 
 如果在模板中, `,`后紧随`@`, 则`@`后紧随的形式被求值为一个对象列表, 列表中对象插入那一点.
 例如, 如果`x`有值`(a b c)`, 则
@@ -858,25 +858,22 @@ digit             ; 当前输入基数的数字
 
 反引号的语法汇总如下:
 
-* <code>&#x60;</code>`basic` 与`'basic`相同, 即`(quote basic)`, 这里表达式`basic`不是列表或向量.
-* <code>&#x60;</code>`,form` 与`form`相同, 这里`form`的表示不以`@`或`.`开始.
-* <code>&#x60;</code>`,@form` 有未定义的后果.
-* <code>&#x60;</code>`(x1 x2 x3 ... xn . atom)` 被解释为:
-* <code>&#x60;</code>`(append [x1] [x2] [x3] ... [xn] (quote atom))`
-* 这里的`[xj]`用于表示`xj`上的转换: <br>
-** <code>&#x60;</code>`[form]` 解释为``(list `form`)``, 有必须再次解释的反引用形式
-** <code>&#x60;</code>`[,form]` 解释为`(list form)`
-** <code>&#x60;</code>`[,@form]` 解释为`form`.
-* <code>&#x60;</code>`(x1 x2 x3 ... xn)` 可被解释为<code>&#x60;</code>`(x1 x2 x3 ... xn . nil)`.
-* <code>&#x60;</code>`(x1 x2 x3 ... xn . ,form)` 被解释为:
-* `(append [x1] [x2] [x3] ... [xn] form)`
-* <code>&#x60;</code>`(x1 x2 x3 ... xn . ,@form)` 有未定义的后果.
-* <code>&#x60;</code> `#(x1 x2 x3 ... xn)` 被解释为``(apply #'vector `(x1 x2 x3 ... xn)`)``.
+* ```basic`` 与`'basic`相同, 即`(quote basic)`, 这里表达式`basic`不是列表或向量.
+* ```,form`` 与`form`相同, 这里`form`的表示不以`@`或`.`开始.
+* ```,@form`` 有未定义的后果.
+* ```(x1 x2 x3 ... xn . atom)`` 被解释为```(append [x1] [x2] [x3] ... [xn] (quote atom))``, 这里的`[xj]`用于表示`xj`上的转换: <br>
+** ```[form]`` 解释为``(list `form`)``, 有必须再次解释的反引用形式
+** ```[,form]`` 解释为`(list form)`
+** ```[,@form]`` 解释为`form`.
+* ```(x1 x2 x3 ... xn)`` 可被解释为```(x1 x2 x3 ... xn . nil)``.
+* ```(x1 x2 x3 ... xn . ,form)`` 被解释为`(append [x1] [x2] [x3] ... [xn] form)`
+* ```(x1 x2 x3 ... xn . ,@form)`` 有未定义的后果.
+* ```#(x1 x2 x3 ... xn)`` 被解释为``(apply #'vector `(x1 x2 x3 ... xn)`)``.
 
 任何使用`,@`的地方, 可以使用 `,.` 作为替代, 表示允许在其后的列表结构上执行破坏性操作(实际上是使用`nconc`替换`append`).
 
-如果使用了 ==嵌套== 的反引用语法, 则最内层的反引用形式应该首先被展开.
-这意味着如果一行中出现多个`,`, 则最左边的属于最内层的`` ` ``.
+如果使用了''嵌套''的反引用语法, 则最内层的反引用形式应该首先被展开.
+这意味着如果一行中出现多个`,`, 则最左边的属于最内层的<code>&#x60;</code>.
 
 实现可以自由的将反引用形式`F1`解释为任意形式`F2`, 只需要在应用上述定义求值时在`equal`语义下生成同样的结果, 替换形式`F2`的副作用行为也与上述定义一致. 构造出的模板副本可能也不可能与模板本身共享列表结果. 作为示例, 上面的定义将
 
@@ -905,7 +902,7 @@ digit             ; 当前输入基数的数字
 
 因为Lisp读取器如何解析包含反引用读取器宏的表达式的精确行为未被描述, 允许实现自由的选择保留了已被描述的语义的表示.
 
-通常实现会选择便于表达式美化打印的表示, 所以``(pprint `(a ,b)`)``会显示`` `(a, b) ``, 而不是`(list 'a b)`. 但这不是必须的.
+通常实现会选择便于表达式美化打印的表示, 所以``(pprint `(a ,b))``会显示`(a, b)`, 而不是`(list 'a b)`. 但这不是必须的.
 
 没有办法做出选择的实现者可以参考 ''IEEE Standard for the Scheme Programming Language'', 这个标准中有对兼容一些用户社区有用的这类表达式的表示的常见选择. 但是不要求任何符合标准的实现使用这些表示.
 
@@ -915,7 +912,7 @@ digit             ; 当前输入基数的数字
 
 !!! 2.4.8 `#`(sharpsign)
 
-`#`是非终结的分发宏字符, 读取可选的数字序列, 在读取一个字符, 并使用这个字符选择一个读取器宏函数.
+`#`是非终结的分发宏字符, 读取可选的数字序列, 再读取一个字符, 并使用这个字符选择一个读取器宏函数.
 
 标准语法中包含`#`字符引入的构造. 这些构造的语法是: 一个表明构造的类型的字符, 后跟一些形式的参数.
 如果这个字符是字符, 其大小写是不重要的, 例如`#O`和`#o`是等价的.
@@ -927,40 +924,40 @@ digit             ; 当前输入基数的数字
 图 2-19. 标准`#`分发宏字符语法.
 
 ```
-    分发字符        意图                      分发字符        意图
-    Backspace      signals error            {              undefined*
-    Tab            signals error            }              undefined*
-    Newline        signals error            +              read-time conditional
-    Linefeed       signals error            -              read-time conditional
-    Page           signals error            .              read-time evaluation
-    Return         signals error            /              undefined
-    Space          signals error            A, a           array
-    !              undefined*               B, b           binary rational
-    "              undefined                C, c           complex number
-    #              reference to = label     D, d           undefined
-    $              undefined                E, e           undefined
-    %              undefined                F, f           undefined
-    &              undefined                G, g           undefined
-    '              function abbreviation    H, h           undefined
-    (              simple vector            I, i           undefined
-    )              signals error            J, j           undefined
-    *              bit vector               K, k           undefined
-    ,              undefined                L, l           undefined
-    :              uninterned symbol        M, m           undefined
-    ;              undefined                N, n           undefined
-    <              signals error            O, o           octal rational
-    =              labels following object  P, p           pathname
-    >              undefined                Q, q           undefined
-    ?              undefined*               R, r           radix-n rational
-    @              undefined                S, s           structure
-    [              undefined*               T, t           undefined
-    \              character object         U, u           undefined
-    ]              undefined*               V, v           undefined
-    ^              undefined                W, w           undefined
-    _              undefined                X, x           hexadecimal rational
-    `              undefined                Y, y           undefined
-    |              balanced comment         Z, z           undefined
-    ~              undefined                Rubout         undefined
+分发字符        意图                      分发字符        意图
+Backspace      signals error            {              undefined*
+Tab            signals error            }              undefined*
+Newline        signals error            +              read-time conditional
+Linefeed       signals error            -              read-time conditional
+Page           signals error            .              read-time evaluation
+Return         signals error            /              undefined
+Space          signals error            A, a           array
+!              undefined*               B, b           binary rational
+"              undefined                C, c           complex number
+#              reference to = label     D, d           undefined
+$              undefined                E, e           undefined
+%              undefined                F, f           undefined
+&              undefined                G, g           undefined
+'              function abbreviation    H, h           undefined
+(              simple vector            I, i           undefined
+)              signals error            J, j           undefined
+*              bit vector               K, k           undefined
+,              undefined                L, l           undefined
+:              uninterned symbol        M, m           undefined
+;              undefined                N, n           undefined
+<              signals error            O, o           octal rational
+=              labels following object  P, p           pathname
+>              undefined                Q, q           undefined
+?              undefined*               R, r           radix-n rational
+@              undefined                S, s           structure
+[              undefined*               T, t           undefined
+\              character object         U, u           undefined
+]              undefined*               V, v           undefined
+^              undefined                W, w           undefined
+_              undefined                X, x           hexadecimal rational
+`              undefined                Y, y           undefined
+|              balanced comment         Z, z           undefined
+~              undefined                Rubout         undefined
 ```
 
 标记了`*`的项是显式预留给用户的, 符合标准的实现不存在定义.

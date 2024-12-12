@@ -1,6 +1,6 @@
 created: 20241126035300004
 creator: jargonzhou
-modified: 20241209135904956
+modified: 20241211015633724
 modifier: jargonzhou
 tags: Index
 title: Index
@@ -9,20 +9,20 @@ title: Index
 
 * [[TiddlyWiki Tutorials]]
 
-! Methodology
+! 方法论
 
 * [[Concept Map]]
 * [[Logic]]
 
-! Languages
+! 编程语言
 
 * [[Languages]]
 
-! Mathematics
+! 数学
 
 * [[Mathematics]]
 
-! Data Engineering
+! 数据工程
 
 * [[Data Engineering]]
 * [[Data Theory]]
@@ -30,3 +30,8 @@ title: Index
 * [[Databases]]
 * [[Data Pipeline]]
 * [[Data Mesh]]
+
+! 期刊和会议
+
+* [[List of computer science journals|https://en.wikipedia.org/wiki/List_of_computer_science_journals]]
+* [[List of computer science conferences|https://en.wikipedia.org/wiki/List_of_computer_science_conferences]]

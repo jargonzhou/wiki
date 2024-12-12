@@ -1,0 +1,17 @@
+created: 20241211012924106
+creator: jargonzhou
+modified: 20241211013023109
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: InfluxDB
+
+<<<.tc-big-quote
+Scalable datastore for metrics, events, and real-time analytics
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Code|https://github.com/influxdata/influxdb]]

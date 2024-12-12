@@ -1,8 +1,8 @@
 created: 20241202010418110
 creator: jargonzhou
-modified: 20241209070938850
+modified: 20241211035228066
 modifier: jargonzhou
-tags: [[Data Engineering]] TableOfContents
+tags: [[Data Engineering]]
 title: Data Engineering
 
 ! [[Data Theory]]
@@ -23,3 +23,32 @@ title: Data Engineering
 
 ! [[Data Mesh]]
 
+! Tools
+
+* [[AlloyDB]] TOUCH
+* [[Amazon S3]] TOUCH `ObjectStore`
+* [[Apache Airflow]] TOUCH
+* [[Apache Arrow]] TOUCH `Column`
+* [[Apache Calcite]] TOUCH
+* [[Apache Doris]] TOUCH `MPP`
+* [[Apache Druid]] TOUCH `OLAP`
+* [[Apache Hive]] TOUCH `OLAP`
+* [[Apache Hudi]] TOUCH `OLAP`
+* [[Apache Iceberg]] TOUCH
+* [[Apache Superset]] TOUCH
+* [[Ceph]] TOUCH
+* [[ClickHouse]] TOUCH `Column` `OLAP`
+** [[ClickVisual]] TOUCH
+* [[Delta Lake]] TOUCH `Format`
+* [[gRPC]] TOUCH
+* [[InfluxDB]] TOUCH `TimeSeries`
+* [[Logica]] TOUCH
+* [[Milvus]] TOUCH `Vector`
+* [[MinIO]] TOUCH `ObjectStore`
+* [[Neon]] TOUCH
+* [[OpenTSDB]] TOUCH `TimeSeries`
+* [[Presto]] TOUCH
+* [[ReadySet]] TOUCH
+* [[SQLite]] TOUCH
+* [[StarRocks]] TOUCH `MPP` `OLAP`
+* [[Velox]] TOUCH

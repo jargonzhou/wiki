@@ -1,0 +1,30 @@
+created: 20241211022657354
+creator: jargonzhou
+modified: 20241211023329884
+modifier: jargonzhou
+title: Ceph
+
+<<<.tc-big-quote
+Ceph delivers ''object'', ''block'', and ''file'' storage in one unified system.
+
+Ceph can be used to provide ''Ceph Object Storage'' to Cloud Platforms and Ceph can be used to provide ''Ceph Block Device'' services to Cloud Platforms. Ceph can be used to deploy a ''Ceph File System''. All Ceph Storage Cluster deployments begin with setting up each Ceph Node and then setting up the network.
+
+A ''Ceph Storage Cluster'' requires the following: at least one ''Ceph Monitor'' and at least one ''Ceph Manager'', and at least as many ''Ceph Object Storage Daemons (OSDs)'' as there are copies of a given object stored in the Ceph cluster (for example, if three copies of a given object are stored in the Ceph cluster, then at least three OSDs must exist in that Ceph cluster).
+
+The ''Ceph Metadata Server'' is necessary to run Ceph File System clients.
+
+It is a best practice to have a ''Ceph Manager'' for each ''Monitor'', but it is not necessary.
+
+
+<<<
+
+! Terminology
+
+
+! References
+
+* Weil, Sage A. / Brandt, Scott A. / Miller, Ethan L. / Long, Darrell D. E. / Maltzahn, Carlos. ''Ceph: A Scalable, High-Performance Distributed File System''. 2006.
+* Weil, Sage A. / Brandt, Scott A. / Miller, Ethan L. / Maltzahn, Carlos. ''CRUSH: Controlled, Scalable, Decentralized Placement of Replicated Data''. 2006.
+* Weil, Sage A. / Leung, Andrew W. / Brandt, Scott A. / Maltzahn, Carlos. ''RADOS: A Scalable, Reliable Storage Service for Petabyte-Scale Storage Clusters''. 2007.
+* Weil, Sage A. ''Ceph: reliable, scalable, and high-performance distributed storage''. 2007.
+* D'Atri, Anthony / Bhembre, Vaibhav / Singh, Karan. ''Learning Ceph''. 2017, 2. edition. Packt.

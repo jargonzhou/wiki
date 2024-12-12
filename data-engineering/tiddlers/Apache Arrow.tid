@@ -1,0 +1,377 @@
+created: 20241211010614651
+creator: jargonzhou
+modified: 20241211024352506
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Arrow
+
+<<<.tc-big-quote
+A cross-language development platform for in-memory analytics.
+
+* ''Format'': Apache Arrow defines a ''language-independent columnar memory format'' for flat and hierarchical data, organized for efficient analytic operations on modern hardware like CPUs and GPUs. The Arrow memory format also supports zero-copy reads for lightning-fast data access without serialization overhead.
+
+* ''Libraries'': Arrow's libraries implement the format and provide building blocks for a range of use cases, including high performance analytics. Many popular projects use Arrow to ship columnar data efficiently or as the basis for analytic engines.
+<<<
+
+! Terminology
+
+! Arrow Columnar Format
+
+We utilize Google’s [[Flatbuffers|http://github.com/google/flatbuffers]] project for metadata serialization, so it will be necessary to refer to the project’s [[Flatbuffers protocol definition files|https://github.com/apache/arrow/tree/main/format]] while reading this document.
+
+<<<.tc-big-quote
+[[FlatBuffers|https://flatbuffers.dev/]]
+
+FlatBuffers is an efficient cross platform serialization library for C++, C#, C, Go, Java, Kotlin, JavaScript, Lobster, Lua, TypeScript, PHP, Python, Rust and Swift. It was originally created at Google for game development and other performance-critical applications.
+<<<
+
+! Arrow C data interface, stream interface
+
+! Arrow Flight RPC
+
+ Arrow Flight is an RPC framework for high-performance data services based on Arrow data, and is built on top of [[gRPC]] and the [[IPC format|https://arrow.apache.org/docs/format/IPC.html]].
+
+! Arrow Flight SQL
+
+! ADBC: Arrow Database Connectivity
+
+! Application
+
+!! Python
+
+requirements.txt:
+
+```
+adbc-driver-manager==0.9.0
+adbc-driver-postgresql==0.9.0
+numpy==1.26.3
+pandas==2.2.0
+pyarrow==15.0.0
+python-dateutil==2.8.2
+pytz==2023.3.post1
+six==1.16.0
+tzdata==2023.4
+```
+
+!!! ADBC PostgreSQL
+
+ex_adbc_postgresql.py:
+
+```python
+
+#!/usr/bin/env python3
+# -*-coding: UTF-8 -*-
+
+# https://arrow.apache.org/adbc/current/python/recipe/postgresql.html
+import adbc_driver_postgresql.dbapi
+import pprint
+
+# PostgreSQL
+#   Database: root
+#       Schema: public
+#           Table: test
+if __name__=="__main__":
+    uri = "postgresql://root:root@localhost:15432/root"
+    with adbc_driver_postgresql.dbapi.connect(uri) as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT 1")
+            assert cur.fetchone() == (1,)
+
+            cur.execute("SELECT * FROM public.test")
+            print(cur.fetchall())
+
+            cur.execute("DROP TABLE IF EXISTS example")
+            cur.execute("CREATE TABLE example (ints INT, bigints BIGINT)")
+            conn.commit()
+
+            cur.executemany("INSERT INTO example VALUES ($1, $2)",
+                            [(1, 2), (3, 4)])
+            cur.execute("SELECT SUM(ints) FROM example")
+            print(cur.fetchone())
+
+            print('Table Schema:')
+            print(conn.adbc_get_table_schema("example"))
+
+            print('Query Schema:')
+            print(cur.adbc_execute_schema("SELECT * FROM example"))
+
+            # List catalogs, schemas, and tables
+            print('Schemas:')
+            objects = conn.adbc_get_objects(depth="all").read_all()
+            objects = objects.to_pylist()
+            pprint.pprint(object=objects, compact=True)
+```
+
+Output:
+
+```shell
+(.venv) ➜  python ex_adbc_postgresql.py
+[(1, 'test row 1', True), (2, 'test row 2', False)]
+(4,)
+Table Schema:
+ints: int32
+bigints: int64
+Query Schema:
+ints: int32
+bigints: int64
+Schemas:
+[{'catalog_db_schemas': [], 'catalog_name': 'postgres'},
+ {'catalog_db_schemas': [{'db_schema_name': 'public',
+                          'db_schema_tables': [{'table_columns': [{'column_name': 'id',
+                                                                   'ordinal_position': 1,
+                                                                   'remarks': None,
+                                                                   'xdbc_char_octet_length': None,
+                                                                   'xdbc_column_def': None,
+                                                                   'xdbc_column_size': None,
+                                                                   'xdbc_data_type': None,
+                                                                   'xdbc_datetime_sub': None,
+                                                                   'xdbc_decimal_digits': None,
+                                                                   'xdbc_is_autoincrement': None,
+                                                                   'xdbc_is_generatedcolumn': None,
+                                                                   'xdbc_is_nullable': None,
+                                                                   'xdbc_nullable': None,
+                                                                   'xdbc_num_prec_radix': None,
+                                                                   'xdbc_scope_catalog': None,
+                                                                   'xdbc_scope_schema': None,
+                                                                   'xdbc_scope_table': None,
+                                                                   'xdbc_sql_data_type': None,
+                                                                   'xdbc_type_name': None},
+                                                                  {'column_name': 'name',
+                                                                   'ordinal_position': 2,
+                                                                   'remarks': None,
+                                                                   'xdbc_char_octet_length': None,
+                                                                   'xdbc_column_def': None,
+                                                                   'xdbc_column_size': None,
+                                                                   'xdbc_data_type': None,
+                                                                   'xdbc_datetime_sub': None,
+                                                                   'xdbc_decimal_digits': None,
+                                                                   'xdbc_is_autoincrement': None,
+                                                                   'xdbc_is_generatedcolumn': None,
+                                                                   'xdbc_is_nullable': None,
+                                                                   'xdbc_nullable': None,
+                                                                   'xdbc_num_prec_radix': None,
+                                                                   'xdbc_scope_catalog': None,
+                                                                   'xdbc_scope_schema': None,
+                                                                   'xdbc_scope_table': None,
+                                                                   'xdbc_sql_data_type': None,
+                                                                   'xdbc_type_name': None},
+                                                                  {'column_name': 'archived',
+                                                                   'ordinal_position': 3,
+                                                                   'remarks': None,
+                                                                   'xdbc_char_octet_length': None,
+                                                                   'xdbc_column_def': None,
+                                                                   'xdbc_column_size': None,
+                                                                   'xdbc_data_type': None,
+                                                                   'xdbc_datetime_sub': None,
+                                                                   'xdbc_decimal_digits': None,
+                                                                   'xdbc_is_autoincrement': None,
+                                                                   'xdbc_is_generatedcolumn': None,
+                                                                   'xdbc_is_nullable': None,
+                                                                   'xdbc_nullable': None,
+                                                                   'xdbc_num_prec_radix': None,
+                                                                   'xdbc_scope_catalog': None,
+                                                                   'xdbc_scope_schema': None,
+                                                                   'xdbc_scope_table': None,
+                                                                   'xdbc_sql_data_type': None,
+                                                                   'xdbc_type_name': None}],
+                                                'table_constraints': [{'constraint_column_names': ['id'],
+                                                                       'constraint_column_usage': [],
+                                                                       'constraint_name': 'test_pkey',
+                                                                       'constraint_type': 'PRIMARY '
+                                                                                          'KEY'}],
+                                                'table_name': 'test',
+                                                'table_type': 'table'},
+                                               {'table_columns': [{'column_name': 'ints',
+                                                                   'ordinal_position': 1,
+                                                                   'remarks': None,
+                                                                   'xdbc_char_octet_length': None,
+                                                                   'xdbc_column_def': None,
+                                                                   'xdbc_column_size': None,
+                                                                   'xdbc_data_type': None,
+                                                                   'xdbc_datetime_sub': None,
+                                                                   'xdbc_decimal_digits': None,
+                                                                   'xdbc_is_autoincrement': None,
+                                                                   'xdbc_is_generatedcolumn': None,
+                                                                   'xdbc_is_nullable': None,
+                                                                   'xdbc_nullable': None,
+                                                                   'xdbc_num_prec_radix': None,
+                                                                   'xdbc_scope_catalog': None,
+                                                                   'xdbc_scope_schema': None,
+                                                                   'xdbc_scope_table': None,
+                                                                   'xdbc_sql_data_type': None,
+                                                                   'xdbc_type_name': None},
+                                                                  {'column_name': 'bigints',
+                                                                   'ordinal_position': 2,
+                                                                   'remarks': None,
+                                                                   'xdbc_char_octet_length': None,
+                                                                   'xdbc_column_def': None,
+                                                                   'xdbc_column_size': None,
+                                                                   'xdbc_data_type': None,
+                                                                   'xdbc_datetime_sub': None,
+                                                                   'xdbc_decimal_digits': None,
+                                                                   'xdbc_is_autoincrement': None,
+                                                                   'xdbc_is_generatedcolumn': None,
+                                                                   'xdbc_is_nullable': None,
+                                                                   'xdbc_nullable': None,
+                                                                   'xdbc_num_prec_radix': None,
+                                                                   'xdbc_scope_catalog': None,
+                                                                   'xdbc_scope_schema': None,
+                                                                   'xdbc_scope_table': None,
+                                                                   'xdbc_sql_data_type': None,
+                                                                   'xdbc_type_name': None}],
+                                                'table_constraints': [],
+                                                'table_name': 'example',
+                                                'table_type': 'table'}]}],
+  'catalog_name': 'root'},
+ {'catalog_db_schemas': [], 'catalog_name': 'template1'},
+ {'catalog_db_schemas': [], 'catalog_name': 'template0'}]
+```
+
+!!! Arrow Flight
+
+ex_arrow_flight_server.py:
+
+```python
+# https://arrow.apache.org/cookbook/py/flight.html
+
+import pathlib
+import pyarrow as pa
+import pyarrow.flight
+import pyarrow.parquet
+
+
+class FlightServer(pa.flight.FlightServerBase):
+
+    def __init__(self, location="grpc://0.0.0.0:8815",
+                 repo=pathlib.Path("./datasets"), **kwargs):
+        super(FlightServer, self).__init__(location, **kwargs)
+        self._location = location
+        self._repo = repo
+
+    def _make_flight_info(self, dataset):
+        dataset_path = self._repo / dataset
+        schema = pa.parquet.read_schema(dataset_path)
+        metadata = pa.parquet.read_metadata(dataset_path)
+        descriptor = pa.flight.FlightDescriptor.for_path(
+            dataset.encode('utf-8')
+        )
+        endpoints = [pa.flight.FlightEndpoint(dataset, [self._location])]
+        return pyarrow.flight.FlightInfo(schema,
+                                         descriptor,
+                                         endpoints,
+                                         metadata.num_rows,
+                                         metadata.serialized_size)
+
+    def list_flights(self, context, criteria):
+        for dataset in self._repo.iterdir():
+            yield self._make_flight_info(dataset.name)
+
+    def get_flight_info(self, context, descriptor):
+        return self._make_flight_info(descriptor.path[0].decode('utf-8'))
+
+    def do_put(self, context, descriptor, reader, writer):
+        dataset = descriptor.path[0].decode('utf-8')
+        dataset_path = self._repo / dataset
+        data_table = reader.read_all()
+        pa.parquet.write_table(data_table, dataset_path)
+
+    def do_get(self, context, ticket):
+        dataset = ticket.ticket.decode('utf-8')
+        dataset_path = self._repo / dataset
+        return pa.flight.RecordBatchStream(pa.parquet.read_table(dataset_path))
+
+    def list_actions(self, context):
+        return [
+            ("drop_dataset", "Delete a dataset."),
+        ]
+
+    def do_action(self, context, action):
+        if action.type == "drop_dataset":
+            self.do_drop_dataset(action.body.to_pybytes().decode('utf-8'))
+        else:
+            raise NotImplementedError
+
+    def do_drop_dataset(self, dataset):
+        dataset_path = self._repo / dataset
+        dataset_path.unlink()
+
+
+if __name__ == "__main__":
+    server = FlightServer(location="grpc://0.0.0.0:8815",
+                          repo=pathlib.Path("./datasets"))
+    server._repo.mkdir(exist_ok=True)
+    print(f'Server start at {server._location} with repo {server._repo}')
+    server.serve()
+```
+
+ex_arrow_flight_client.py:
+
+```python
+#!/usr/bin/env python3
+# -*-coding: UTF-8 -*-
+import pyarrow as pa
+import pyarrow.flight
+import pyarrow.parquet
+
+def _list_flights(client):
+    # List existing datasets.
+    for flight in client.list_flights():
+        descriptor = flight.descriptor
+        print("Path:", descriptor.path[0].decode('utf-8'), "Rows:", flight.total_records, "Size:", flight.total_bytes)
+        print("=== Schema ===")
+        print(flight.schema)
+        print("==============")
+        print("")
+
+if __name__=="__main__":
+    client = pa.flight.connect("grpc://0.0.0.0:8815")
+    # Upload a new dataset
+    data_table = pa.table(
+        [["Mario", "Luigi", "Peach"]],
+        names=["Character"]
+    )
+    upload_descriptor = pa.flight.FlightDescriptor.for_path("uploaded.parquet")
+    writer, _ = client.do_put(upload_descriptor, data_table.schema)
+    writer.write_table(data_table)
+    writer.close()
+
+    # Retrieve metadata of newly uploaded dataset
+    flight = client.get_flight_info(upload_descriptor)
+    descriptor = flight.descriptor
+    print("Path:", descriptor.path[0].decode('utf-8'), "Rows:", flight.total_records, "Size:", flight.total_bytes)
+    print("=== Schema ===")
+    print(flight.schema)
+    print("==============")
+
+    # Read content of the dataset
+    reader = client.do_get(flight.endpoints[0].ticket)
+    read_table = reader.read_all()
+    print(read_table.to_pandas().head())
+
+    # Drop the newly uploaded dataset
+    client.do_action(pa.flight.Action("drop_dataset", "uploaded.parquet".encode('utf-8')))
+
+    _list_flights(client=client)
+```
+
+Output:
+
+```shell
+(.venv) ➜  python ex_arrow_flight_server.py
+Server start at grpc://0.0.0.0:8815 with repo datasets
+
+➜  python ex_arrow_flight_client.py
+Path: uploaded.parquet Rows: 3 Size: 363
+=== Schema ===
+Character: string
+==============
+  Character
+0     Mario
+1     Luigi
+2     Peach
+```
+
+! References
+* [[Home|https://arrow.apache.org/]]
+** [[Implementation Status|https://arrow.apache.org/docs/status.html]]
+* [[Code|https://github.com/apache/arrow]]

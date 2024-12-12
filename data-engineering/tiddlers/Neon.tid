@@ -1,0 +1,21 @@
+created: 20241211012107491
+creator: jargonzhou
+modified: 20241211012157068
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Neon
+
+<<<.tc-big-quote
+Serverless Postgres.
+
+The multi-cloud fully managed Postgres with a generous free tier. We separated storage and compute to offer autoscaling, branching, and bottomless storage.
+
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://neon.tech/]]
+* [[Code|https://github.com/neondatabase/neon]]

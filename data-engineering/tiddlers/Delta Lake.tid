@@ -1,0 +1,18 @@
+created: 20241211034840182
+creator: jargonzhou
+modified: 20241211035154234
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Delta Lake
+
+<<<.tc-big-quote
+''Delta Lake'' is an open-source storage framework that enables building a format agnostic [[Lakehouse architecture|http://cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf]] with compute engines including Spark, PrestoDB, Flink, Trino, Hive, Snowflake, Google BigQuery, Athena, Redshift, Databricks, Azure Fabric and APIs for Scala, Java, Rust, and Python. With [[Delta Universal Format|https://docs.delta.io/latest/delta-uniform.html]] aka UniForm, you can read now Delta tables with Iceberg and Hudi clients.
+
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://delta.io/]]

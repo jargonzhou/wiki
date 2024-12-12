@@ -1,6 +1,6 @@
 created: 20241202080237480
 creator: jargonzhou
-modified: 20241207112347629
+modified: 20241210092951899
 modifier: jargonzhou
 tags: CLHS
 title: CLHS Glossary
@@ -544,7 +544,9 @@ title: CLHS Glossary
 
 ; <span id="#derived-type-specifier">derived type specifier</span>
 
-; <span id="#designator">designator</span>
+; <span id="#designator">designator</span> 指示器 n.
+: 一个表示另一个对象的对象.
+: 在操作符的目录项中, 如果一个参数被描述为一个类型的指示器, 该操作符的描述中假设已经有到该类型的恰当的转型(coercion), 即该参数已有该类型. 更多信息见<<# "CLHS-01 Introduction|1.4.1.5 指示器|a-1-4-1-5">>.
 
 ; <span id="#destructive">destructive</span>
 

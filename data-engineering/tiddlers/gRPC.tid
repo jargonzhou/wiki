@@ -1,0 +1,17 @@
+created: 20241211023734893
+creator: jargonzhou
+modified: 20241211023803975
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: gRPC
+
+<<<.tc-big-quote
+A high performance, open source universal RPC framework
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://grpc.io/]]

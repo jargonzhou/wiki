@@ -1,0 +1,38 @@
+created: 20241211013214645
+creator: jargonzhou
+modified: 20241211013956985
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: OpenTSDB
+
+<<<.tc-big-quote
+The Scalable Time Series Database.
+
+Store and serve massive amounts of time series data without losing granularity.
+
+Store:
+
+* Data is stored exactly as you give it
+* Write with millisecond precision
+* Keep raw data forever
+
+Scale:
+
+* Runs on Hadoop and HBase
+* Scales to millions of writes per second
+* Add capacity by adding nodes
+
+Read:
+
+* Generate graphs from the GUI
+* Pull from the HTTP API
+* Choose an open source front-end
+
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://opentsdb.net/]]

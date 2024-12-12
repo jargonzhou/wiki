@@ -1,0 +1,17 @@
+created: 20241211031740172
+creator: jargonzhou
+modified: 20241211031902416
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: ClickVisual
+
+<<<.tc-big-quote
+ClickVisual is a lightweight browser-based logs analytics and logs search platform for [[ClickHouse]].
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Code|https://github.com/clickvisual/clickvisual]]

@@ -1,0 +1,20 @@
+created: 20241211010948179
+creator: jargonzhou
+modified: 20241211012038395
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: ReadySet
+
+<<<.tc-big-quote
+Same database, (much) faster queries
+
+ReadySet is a SQL caching engine (MySQL, Postgres) that helps developers build performant, real-time applications without making code changes or switching databases.
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://readyset.io/]]
+* [[Code|https://github.com/readysettech/readyset]]

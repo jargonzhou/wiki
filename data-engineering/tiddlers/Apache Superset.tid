@@ -1,0 +1,29 @@
+created: 20241211014251580
+creator: jargonzhou
+modified: 20241211024626990
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Superset
+
+<<<.tc-big-quote
+Apache Superset is a Data Visualization and Data Exploration Platform
+<<<
+
+! Terminology
+
+! Application
+
+!! Docker
+
+```shell
+docker pull apache/superset
+docker run -d -p 8088:8088 --name superset apache/superset
+
+docker exec -it superset superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin
+docker exec -it superset superset db upgrade
+docker exec -it superset superset load_examples
+```
+
+! References
+
+* [[Home|https://github.com/apache/superset]]

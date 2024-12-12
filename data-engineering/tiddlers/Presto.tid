@@ -1,0 +1,17 @@
+created: 20241211014032210
+creator: jargonzhou
+modified: 20241211014050522
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Presto
+
+<<<.tc-big-quote
+Presto is an open source SQL query engine that's fast, reliable, and efficient at scale. Use Presto to run interactive/ad hoc queries at sub-second performance for your high volume apps.
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://prestodb.io/]]
