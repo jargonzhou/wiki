@@ -1,0 +1,38 @@
+created: 20241214001858504
+creator: jargonzhou
+modified: 20241214033546311
+modifier: jargonzhou
+tags: TableOfContents
+title: Modeling
+
+! Terminology
+
+* 模型(Model): 一个对象、人或系统的信息表示(informative representation).
+
+! 模型的属性
+
+> Herbert Stachowiak: Allgemeine Modelltheorie, 1973, S. 131–133.
+
+模型至少有三个属性:
+
+# 映射(Mapping): 模型始终是一些东西的模型, 它是某种自然的或人造的、现有的或想象的原件(original)的想象或表示，其中该原件本身可以是一个模型。
+# 简化(Reduction): 通常模型不会包含描述原件的所有属性，而仅包含那些对于模型创建者或用户来说明显相关的属性。
+# 实用(Pragmatism): 模型与其原件并不无歧义的相关。它的目的是作为原件替代品:
+## 对于某些主题(谁的视角?)
+## 在一定的时间范围内(什么时候?)
+## 仅限于某些概念或身体动作(什么目的?).
+
+! 应用
+
+!! 计算机科学
+
+* [[领域驱动设计|DDD]]
+* [[设计模式|Design Patterns]]
+* [[机械同感|Mechanical Sympathy]]
+* [[系统设计|System Design]]
+* [[UML]]
+
+! References
+
+* [[Model - wikipedia|https://en.wikipedia.org/wiki/Model]]
+** [[Conceptual model|https://en.wikipedia.org/wiki/Conceptual_model]]

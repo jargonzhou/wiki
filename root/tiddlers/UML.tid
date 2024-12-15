@@ -1,0 +1,75 @@
+created: 20241214003432018
+creator: jargonzhou
+modified: 20241214013541772
+modifier: jargonzhou
+tags: Modeling
+title: UML
+
+! Terminology
+
+* 统一建模语言(Unified Modeling Language(UML)): 通用的可视化建模语言, 目的是提供一种系统设计可视化的标准方式.
+
+! UML图类型
+
+[img[https://upload.wikimedia.org/wikipedia/commons/e/ed/UML_diagrams_overview.svg]]
+
+!! 结构化的
+
+* 类图(Class diagram)
+* 组件图(Component diagram)
+* 组件结构图(Composite structure diagram)
+* 部署图(Deployment diagram)
+* 对象图(Object diagram)
+* 包图(Package diagram)
+* 剖面图(Profile diagram)
+
+!! 行为的
+
+* 活动图(Activity diagram)
+* 通信图(Communication diagram)
+* 交互概览图(Interaction overview diagram)
+* 时序图(Sequence diagram)
+** 受限时序图(Timing diagram): 时序图的特定类型, 用于展示给定一段时间范围内对象的行为.
+* 状态图(State diagram)
+* 用例图(Use case diagram)
+
+! 应用
+
+!! 工具
+
+* [[draw.io|https://www.drawio.com/]]
+** [[draw.io in TiddlyWiki|https://talk.tiddlywiki.org/t/the-most-powerful-all-in-one-diagram-editor-for-uml-circuit-flowchart-etc/8099]]
+example: [[example-draw.io]]
+
+* [[PlantUML|https://plantuml.com/]]
+
+例: 类图
+
+```plantuml
+@startuml
+class Dummy {
+  String data
+  void methods()
+  String data2
+  method2(): Integer
+}
+
+class Flight {
+   flightNumber : Integer
+   departureTime : Date
+}
+@enduml
+```
+
+* [[UMLet|https://www.umlet.com/]]
+
+<<<.tc-big-quote
+UMLet is a free, open-source UML tool with a simple user interface: draw UML diagrams fast, create sequence and activity diagrams from plain text, share via exports to eps, pdf, jpg, svg, and clipboard, and develop new, custom UML elements.
+
+Find below the full-featured UMLet as stand-alone app for Windows, macOS, and Linux, or as Eclipse plugin. It is also available as web app called [[UMLetino|https://www.umletino.com/]], and as extension to [[Visual Studio Code|https://marketplace.visualstudio.com/items?itemName=TheUMLetTeam.umlet]].
+<<<
+
+! References
+
+* [[Unified Modeling Language - wikipedia|https://en.wikipedia.org/wiki/Unified_Modeling_Language]]
+* Craig Larman. ''Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development''. 2004. Pearson.

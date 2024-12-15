@@ -1,0 +1,103 @@
+created: 20241213231352119
+creator: jargonzhou
+modified: 20241214000623661
+modifier: jargonzhou
+title: Diátaxis
+
+<<<.tc-big-quote
+Diátaxis
+
+Diátaxis is a way of thinking about and doing documentation.
+
+Diátaxis, from the Ancient Greek δῐᾰ́τᾰξῐς: dia (“across”) and taxis (“arrangement”).
+
+It prescribes approaches to content, architecture and form that emerge from a systematic approach to understanding the needs of documentation users.
+
+Diátaxis identifies four distinct needs, and four corresponding forms of documentation - ''tutorials'', ''how-to guides'', ''technical reference'' and ''explanation''. It places them in a systematic relationship, and proposes that documentation should itself be organised around the structures of those needs.
+
+[img[https://diataxis.fr/_images/diataxis.png]]
+
+Diátaxis solves problems related to documentation ''content'' (what to write), ''style'' (how to write it) and ''architecture'' (how to organise it).
+
+As well as serving the users of documentation, Diátaxis has value for documentation creators and maintainers. It is light-weight, easy to grasp and straightforward to apply. It doesn’t impose implementation constraints. It brings an active principle of quality to documentation that helps maintainers think effectively about their own work.
+<<<
+
+! Terminology
+
+* ''教程(tutorial)'': 在指导者的指导下, 动手做获得学习经验.
+* ''如何做的指南(how-to guides)'': 处理现实世界中的问题, 在特定场景中为用户提供实际的指导方向.
+* ''参考信息(reference)'': 技术性的描述, 包含命题或公理性的知识, 不指导如何行动; 是帮助用户正确行动的一些事实陈述, 必须是精确、完备、可靠的信息, 不产生用户分心干扰和没有过多解释.
+* ''解释说明(explanation)'': 提供上下文和背景信息, 围绕主题从不同视角阐述观点, 帮助用户理解并回答问题. 
+* ''行动(action)'': 做事情. ''教程''和''如何做的指南''的关注点.
+* ''认知(cognition)'': 事情本身和如何做事情的理解. ''参考信息''和''解释说明''的关注点.
+* ''习得(acquisition)'': 认知的目的. 借助''教程''和''解释说明''.
+* ''应用(application)'': 采取行动的目的. 借助''如何做的指南''和''参考信息''.
+
+! 示例
+
+!! 文档内容的结构
+
+体现层次关系:
+
+```
+Home                      <- landing page
+    Tutorial              <- landing page
+        Part 1
+        Part 2
+        Part 3
+    How-to guides         <- landing page
+        Install           <- landing page
+            Local installation
+            Docker
+            Virtual machine
+            Linux container
+        Deploy
+        Scale
+    Reference             <- landing page
+        Command-line tool
+        Available endpoints
+        API
+    Explanation           <- landing page
+        Best practice recommendations
+        Security overview
+        Performance
+```
+
+!! 内容页
+
+内容页(content pages)通常是主页(home pages)和着陆页(landing pages), 目的是提供包含材料的概览.
+
+如何做的着陆页例:
+
+```
+How to guides
+=============
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Installation guides
+-------------------
+
+Pellentesque malesuada, ipsum ac mollis pellentesque, risus
+nunc ornare odio, et imperdiet dui mi et dui. Phasellus vel
+porta turpis. In feugiat ultricies ipsum.
+
+* Local installation       |
+* Docker                   |  links to
+* Virtual machines         |  the guides
+* Linux containers         |
+
+Deployment and scaling
+-----------------------
+
+Morbi sed scelerisque ligula. In dictum lacus quis felis
+facilisisvulputate. Quisque lacinia condimentum ipsum
+laoreet tempus.
+
+* Deploy an instance       |  links to
+* Scale your application   |  the guides
+```
+
+! References
+
+* [[Home|https://diataxis.fr/]]

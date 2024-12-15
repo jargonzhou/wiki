@@ -1,6 +1,6 @@
 created: 20241126051155393
 creator: jargonzhou
-modified: 20241209135557733
+modified: 20241215015517142
 modifier: jargonzhou
 tags: TableOfContents
 title: Languages
@@ -55,6 +55,10 @@ type: text/vnd.tiddlywiki
 * [[Logic Programming]]
 * [[Probabilistic Logic Programming]]
 * [[Model Checking]]
+
+! Programming Actions
+
+* [[Unit Testing]]
 
 ! <<a "Tools">> Tools
 

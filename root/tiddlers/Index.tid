@@ -1,6 +1,6 @@
 created: 20241126035300004
 creator: jargonzhou
-modified: 20241211015633724
+modified: 20241214033550159
 modifier: jargonzhou
 tags: Index
 title: Index
@@ -11,8 +11,11 @@ title: Index
 
 ! 方法论
 
-* [[Concept Map]]
+
+* [[Concept Map]]: a diagram that depicts suggested relationships between concepts.
+* [[Diátaxis]]: A systematic approach to technical documentation authoring.
 * [[Logic]]
+* [[Modeling]]
 
 ! 编程语言
 

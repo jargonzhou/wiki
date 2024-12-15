@@ -1,0 +1,18 @@
+created: 20241214032021326
+creator: jargonzhou
+modified: 20241214033535773
+modifier: jargonzhou
+tags: Modeling
+title: System Design
+
+! Terminology
+
+* 系统设计(system design): 在产品开发领域, 系统设计涵盖定义和开发系统的过程. 与系统分析、系统架构和系统工程存在学科上的重叠.
+
+! References
+
+* [[Systems design - wikipeida|https://en.wikipedia.org/wiki/Systems_design]]
+* [[System Desgin Primer|https://github.com/donnemartin/system-design-primer]]: Learn how to design large-scale systems. Prep for the system design interview.
+* Welsh, M.; Culler, D. & Brewer, E. ''SEDA: An Architecture for Well-Conditioned, Scalable Internet Services''. SIGOPS Oper. Syst. Rev., Association for Computing Machinery, 2001, 35, 230–243.
+* Kendall, Kenneth E., and Julie E. Kendall. ''Systems analysis and design''. Pearson, 2014. `TOUCH`
+

@@ -1,0 +1,16 @@
+created: 20241214011027750
+creator: jargonzhou
+modified: 20241214012103824
+modifier: jargonzhou
+tags: Modeling
+title: DDD
+
+! Terminology
+
+* 领域驱动设计(Domain-Driven Design(DDD)): 是一种主要的软件设计方法, 关注于根据领域专家的输入, 开展软件建模活动以匹配领域. 与单个统一的模型不同, 领域驱动设计将大系统拆分为有界的上下文(bounded context), 每个上下文有自己的模型.
+
+! References
+
+* [[Domain-driven design - wikipedia|https://en.wikipedia.org/wiki/Domain-driven_design]]
+* [[Domain-Driven Design Crew|https://github.com/ddd-crew]]: welcome-to-ddd, ddd-starter-modelling-process, eventstorming-glossary-cheat-sheet
+* Vernon, V. ''Implementing Domain-Driven Design''. Addison-Wesley, 2013.

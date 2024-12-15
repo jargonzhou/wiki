@@ -1,29 +1,17 @@
 created: 20241127062257542
 creator: jargonzhou
-modified: 20241127063249480
+modified: 20241213030932697
 modifier: jargonzhou
 tags: [[Common Lisp]] Emacs SLIME
 title: SLIME
 type: text/vnd.tiddlywiki
-
-* 2024-09-02
-* 2024-09-19: skimming SLIME User Manual 2.24.pdf
-
-
-! 2 术语
-
-<!-- 记录阅读过程中出现的关键字及其简单的解释. -->
-
-! 3 介绍
-
-<!-- 描述软件的来源、特性、解决的关键性问题等. -->
 
 <<<.tc-big-quote
 SLIME: The Superior Lisp Interaction Mode for Emacs
 
 SLIME is a Emacs mode for Common Lisp development. Inspired by existing systems such Emacs Lisp and ILISP, we are working to create an environment for hacking Common Lisp in.
 
-SLIME works with GNU Emacs versions 24.3 and later, on Linux, macOS, Windows, \*BSD, Unix.
+SLIME works with GNU Emacs versions 24.3 and later, on Linux, macOS, Windows, BSD, Unix.
 
 features:
 

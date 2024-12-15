@@ -1,0 +1,15 @@
+created: 20241214025351431
+creator: jargonzhou
+modified: 20241214025743161
+modifier: jargonzhou
+tags: Action
+title: Unit Testing
+
+! Terminology
+
+* 单元测试(Unit Testing): 又称组件(component)测试或模块(module)测试, 是软件测试的一种形式, 测试隔离的源代码以验证预期的行为.
+
+! References
+
+* [[Unit testing - wikipedia|https://en.wikipedia.org/wiki/Unit_testing]]
+* Khorikov, V. ''Unit Testing Principles, Practices, and Patterns''. Manning, 2020.

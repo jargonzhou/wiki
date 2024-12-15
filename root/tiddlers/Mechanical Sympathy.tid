@@ -1,0 +1,27 @@
+created: 20241214012230570
+creator: jargonzhou
+modified: 20241214013135349
+modifier: jargonzhou
+tags: Modeling
+title: Mechanical Sympathy
+
+<<<.tc-big-quote
+Mechanical sympathy is when you use a tool or system with an understanding of how it operates best.
+
+"You don't have to be an engineer to be be a racing driver, but you do have to have Mechanical Sympathy." 
+
+- Jackie Stewart, racing driver
+
+When you understand how a system is designed to be used, you can align with the design to gain optimal performance. For example, if you know that a certain type of memory is more efficient when addresses are multiples of a factor, you can optimize your performance by using data structure alignment.
+<<<
+
+! Terminology
+
+* 机械同感(Mechanical Sympathy): 使用工具或系统时, 对它如何最好的工作的方式/方法有深入的理解.
+
+
+! References
+
+* [[AWS Well-Architected Framework > Mechanical Sympathy|https://wa.aws.amazon.com/wellarchitected/2020-07-02T19-33-23/wat.concept.mechanical-sympathy.en.html]]
+* [[Martin Thompson's Blog|https://mechanical-sympathy.blogspot.com/]]
+* [[Google group on Mechanical Sympathy|https://groups.google.com/g/mechanical-sympathy]]: This group is for discussing how to code sympathetically for the underlying stack/platform so good performance can be extracted.
