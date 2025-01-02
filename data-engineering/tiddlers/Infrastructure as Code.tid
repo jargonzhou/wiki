@@ -1,0 +1,24 @@
+created: 20241216094846855
+creator: jargonzhou
+modified: 20241216103027478
+modifier: jargonzhou
+tags: [[Data Engineering]]
+title: Infrastructure as Code
+
+<<<.tc-big-quote
+''Infrastructure as code (IaC)'' is the process of managing and provisioning computer data center resources through ''machine-readable definition files'', rather than physical hardware configuration or interactive configuration tools. The IT infrastructure managed by this process comprises both physical equipment, such as bare-metal servers, as well as virtual machines, and associated configuration resources. The definitions may be in a version control system, rather than maintaining the code through manual processes. The code in the definition files may use either scripts or declarative definitions, but IaC more often employs declarative approaches.
+<<<
+
+! Terminology
+
+! Applications
+
+* [[AWS CodePipeline]]
+* [[AWS CloudFormation]]
+* [[AWS SAM]]
+* [[AWS VPC]]
+
+! References
+
+* [[Infrastructure as code - wikipedia|https://en.wikipedia.org/wiki/Infrastructure_as_code]]
+* Morris, Kief. ''Infrastructure as Code''. 2020, 2. edition. O'Reilly Media.

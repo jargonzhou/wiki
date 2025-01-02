@@ -1,0 +1,60 @@
+created: 20241216083020415
+creator: jargonzhou
+modified: 20241216083652715
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Pinot
+
+<<<.tc-big-quote
+Apache Pinot is ''a real-time distributed OLAP datastore, built to deliver scalable real-time analytics with low latency'''. It can ingest from batch data sources (such as Hadoop HDFS, Amazon S3, Azure ADLS, Google Cloud Storage) as well as stream data sources (such as Apache Kafka).
+
+Pinot was built by engineers at LinkedIn and Uber and is designed to scale up and out with no upper bound. Performance always remains constant based on the size of your cluster and an expected query per second (QPS) threshold.
+<<<
+
+! Terminology
+
+! Architecture
+
+[img[https://docs.pinot.apache.org/~gitbook/image?url=https%3A%2F%2F459170765-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LtH6nl58DdnZnelPdTc-887967055%252Fuploads%252FT5GbT8T6Yb8EirzHJe5K%252Fimage.png%3Falt%3Dmedia%26token%3D89e0ca97-2ca3-4fcd-8eab-95f3c003c89c&width=768&dpr=2&quality=100&sign=0f5e966cc24e8b990b78cf6316de4ac8024b3a36d8b6fd5a819e640400581fed]]
+
+* Apache Helix, Apache ZooKeeper
+* Controller
+* Broker
+* Server
+* Minion
+
+! Storage Model
+
+* Schema
+* Table
+* Segment
+
+Columns are categorized into 3 types:
+
+|Column Type |Description                                                              |h
+|Dimensions  |Typically used in filters and group by, for slicing and dicing into data |
+|Metrics     |Typically used in aggregations, represents the quantitative data         |
+|Time        |Optional column, represents the timestamp associated with each row|
+
+
+! Usage
+
+* [[Running Pinot in Docker|https://docs.pinot.apache.org/basics/getting-started/running-pinot-in-docker]]
+* [[Pinot Data Explorer|https://docs.pinot.apache.org/basics/concepts/components/exploring-pinot]]
+* [[Command-Line Interface (CLI)|https://docs.pinot.apache.org/operators/cli]]
+
+Ports:
+
+|Port |Component Name        |h
+|2123 |Zookeeper Port        |
+|9000 |Pinot Controller Port |
+|8000 |Pinot Broker Port     |
+|7050 |Pinot Server Port     |
+|6000 |Pinot Minino Port     |
+
+
+! References
+
+* [[Home|https://pinot.apache.org/]]
+** [[Doc|https://docs.pinot.apache.org/]]
+* [[Code|https://github.com/apache/pinot]]

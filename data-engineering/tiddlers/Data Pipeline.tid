@@ -1,6 +1,18 @@
 created: 20241202011225236
 creator: jargonzhou
-modified: 20241210095645112
+modified: 20241216052726110
 modifier: jargonzhou
 tags: TableOfContents
 title: Data Pipeline
+
+<<<.tc-big-quote
+QUOTE
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Awesome Pipeline|https://github.com/pditommaso/awesome-pipeline]]: A curated list of awesome pipeline toolkits inspired by [[Awesome Sysadmin|(https://github.com/kahun/awesome-sysadmin]]
+* [[pawesome-etl|https://github.com/pawl/awesome-etl]]: A curated list of notable ETL (extract, transform, load) frameworks, libraries and software.

@@ -1,0 +1,23 @@
+created: 20241216102244792
+creator: jargonzhou
+modified: 20241216103234699
+modifier: jargonzhou
+tags: Infrastructure
+title: AWS VPC
+type: text/vnd.tiddlywiki
+
+! Materials
+
+* [[[AWS] 扫盲，AWS的网络组件介绍|https://zhuanlan.zhihu.com/p/137963921]]
+
+! VPN
+
+* 在 AWS 上使用 OpenVPN 搭建自定义端口的 Site-to-Site VPN
+** strongSwan: https://www.strongswan.org/
+** Open-source, modular and portable IPsec-based VPN solution
+** [[aws-samples/vpn-gateway-strongswan|https://github.com/aws-samples/vpn-gateway-strongswan]]
+** [[Simulating Site-to-Site VPN Customer Gateways Using strongSwan|https://aws.amazon.com/blogs/networking-and-content-delivery/simulating-site-to-site-vpn-customer-gateways-strongswan/]]
+** [img[https://d2908q01vomqb2.cloudfront.net/5b384ce32d8cdef02bc3a139d4cac0a22bb029e8/2020/08/25/site-to-site-vpn-scenarios-tgw-1.png]]
+* [[Simulating Site-to-Site VPN customer gateways using strongSwan part 2: Certificate-based authentication|https://aws.amazon.com/blogs/networking-and-content-delivery/simulating-site-to-site-vpn-customer-gateways-using-strongswan-part-2-certificate-based-authentication/]]
+
+More: 网络协议 — IPSec 安全隧道协议族

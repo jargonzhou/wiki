@@ -1,6 +1,33 @@
 created: 20241202011242445
 creator: jargonzhou
-modified: 20241210095707903
+modified: 20241216093352591
 modifier: jargonzhou
 tags: TableOfContents
 title: Data Mesh
+type: text/vnd.tiddlywiki
+
+<<<.tc-big-quote
+Data mesh is based on four core principles:
+
+* Domain ownership
+* Data as a product[
+* Self-serve data platform
+* Federated computational governance
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Data mesh - wikipedia|https://en.wikipedia.org/wiki/Data_mesh]]
+* [[What is a Data Mesh? - AWS|https://aws.amazon.com/what-is/data-mesh/]]
+* [[Data mesh - thoughtworks|https://www.thoughtworks.com/what-we-do/data/data-mesh]]
+* [[Data Mesh Architecture: Data Mesh From an Engineering Perspective|https://www.datamesh-architecture.com/]]
+
+books
+
+* Dehghani, Zhamak. ''Data Mesh: Delivering Data-Driven Value at Scale''. 2022. O'Reilly Media.
+* Majchrzak, Jacek / Balnojan, Sven / Siwiak, Marian / Sieraczkiewicz, Mariusz. ''Data Mesh in Action''. 2022. Manning.
+* Dulay, Hubert / Mooney, Stephen. ''Streaming Data Mesh''. 2023. O'Reilly Media.
+* Bellemare, Adam. ''Building an Event-Driven Data Mesh: Patterns for Designing and Building Event-Driven Architectures''. 2023. O'Reilly Media.

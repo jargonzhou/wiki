@@ -1,0 +1,56 @@
+created: 20241224060451860
+creator: jargonzhou
+modified: 20241224103459425
+modifier: jargonzhou
+tags: [[Language Tools]] Scala
+title: Ammonite
+
+<<<.tc-big-quote
+Ammonite lets you use the Scala language for scripting purposes: in the REPL or as scripts.
+<<<
+
+! Terminology
+
+* Ammonite-REPL: 现代化的Scala REPL.
+* Scala Scripts: 轻量级的Scala编程.
+
+! Ammonite-REPL
+
+!! Usage
+
+Action: `jupyter-notebooks/Scala/_Ammonite.ipynb`
+
+```shell
+$ amm.bat
+Loading...
+Welcome to the Ammonite Repl 3.0.0-M1 (Scala 2.13.13 Java 17.0.9)
+@
+
+@ 1 + 1
+1 + 1
+res0: Int = 2
+
+@
+
+@ exit
+exit
+Bye!
+
+```
+
+!! magic imports
+
+```scala
+import $file
+import $exec
+import $cp // class path
+import $ivy // Ivy dependency from Maven central
+import $repo
+```
+
+! Scala Scripts
+
+! References
+
+* [[Home|http://ammonite.io/]]
+* [[Code|https://github.com/com-lihaoyi/Ammonite]]

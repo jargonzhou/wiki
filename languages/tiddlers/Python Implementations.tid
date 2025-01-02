@@ -1,0 +1,19 @@
+created: 20241216034709962
+creator: jargonzhou
+modified: 20241216034730823
+modifier: jargonzhou
+tags: Python
+title: Python Implementations
+
+! [[CPython|https://github.com/python/cpython]]
+
+> CPython is the reference implementation of Python. It is written in C, meeting the C89 standard (Python 3.11 uses C11) with several select C99 features.
+
+! [[Cython|https://cython.org/]]
+
+> Cython is an optimising static compiler for both the Python programming language and the extended Cython programming language (based on Pyrex). It makes writing C extensions for Python as easy as Python itself.
+
+! [[Jython|https://www.jython.org/]]
+
+> The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in Java. The current release (a Jython 2.7.x) only supports Python 2 (sorry). There is work towards a Python 3 in the project’s GitHub repository.
+> - [[Story of Jython|http://hugunin.net/story_of_jython.html]]

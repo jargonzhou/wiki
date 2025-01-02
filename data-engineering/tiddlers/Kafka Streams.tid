@@ -1,0 +1,52 @@
+created: 20241216092017261
+creator: jargonzhou
+modified: 20241216092526772
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Kafka Streams
+type: text/vnd.tiddlywiki
+
+<<<.tc-big-quote
+Kafka Streams is ''a client library for building applications and microservices, where the input and output data are stored in Kafka clusters''. It combines the simplicity of writing and deploying standard Java and Scala applications on the client side with the benefits of Kafka's server-side cluster technology.
+<<<
+
+! Terminology
+
+
+! Concepts
+
+* Stream Processing Topology
+** Stream
+** Processor: source, sink
+* Time: event time, processing time, ingestion time
+* Duality of Streams and Tables
+* Aggregation
+* Windowing
+* State: state store
+* Processing Guarantees
+** exactly one: transactional and idempotent producer (since 0.11.0.0) , KIP-129: Streams Exactly-Once Semantics
+** exactly-once v2: KIP-447: Producer scalability for exactly once semantics
+** out-of-order handling: versioned state store, offset-based semantics/timestamp-based semantics
+
+! Architecture
+
+Kafka Streams simplifies application development by ''building on the Kafka producer and consumer libraries'' and ''leveraging the native capabilities of Kafka to offer data parallelism, distributed coordination, fault tolerance, and operational simplicity''.
+
+* Stream Partitions and Tasks
+* Thread Model
+* Local State Stores
+* Fault Tolerance
+
+! Developer Guide
+
+* Streams DSL
+* The Kafka Streams DSL (Domain Specific Language) is built on top of the Streams Processor API. It is the recommended for most users, especially beginners. Most data processing operations can be expressed in just a few lines of DSL code.
+* Processor API
+* The Processor API allows developers to define and connect custom processors and to interact with state stores. With the Processor API, you can define arbitrary stream processors that process one received record at a time, and connect these processors with their associated state stores to compose the processor topology that represents a customized processing logic.
+
+! References
+
+* [[Doc|https://kafka.apache.org/documentation/streams/]]
+* Jr., William P. Bejeck. ''Kafka Streams in Action''. 2018. Manning.
+
+

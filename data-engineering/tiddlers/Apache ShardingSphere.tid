@@ -1,0 +1,26 @@
+created: 20241216085601324
+creator: jargonzhou
+modified: 20241216090357909
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache ShardingSphere
+
+<<<.tc-big-quote
+The distributed SQL transaction & query engine for data sharding, scaling, encryption, and more - on any database.
+
+projects:
+
+* ''ShardingSphere-JDBC'': a lightweight Java framework that provides additional services at Java’s JDBC layer.
+* ''ShardingSphere-Proxy'': a transparent database proxy, providing a database server that encapsulates database binary protocol to support heterogeneous languages.
+<<<
+
+! Terminology
+
+! Usage
+
+* [[with Spring Boot|https://shardingsphere.apache.org/document/current/en/user-manual/shardingsphere-jdbc/yaml-config/jdbc-driver/spring-boot/]]
+
+! References
+
+* [[Home|https://shardingsphere.apache.org/]]
+* [[Code|https://github.com/apache/shardingsphere]]

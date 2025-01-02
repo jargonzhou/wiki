@@ -1,0 +1,26 @@
+created: 20241216033002830
+creator: jargonzhou
+modified: 20241216033041586
+modifier: jargonzhou
+tags: [[Python Tools]]
+title: Pipenv
+
+<<<.tc-big-quote
+Pipenv is a Python virtualenv management tool that supports a multitude of systems and nicely bridges the gaps between pip, python (using system python, pyenv or asdf) and virtualenv.
+<<<
+
+! Terminology
+
+! Usage
+
+```shell
+pip install pipenv
+
+# files:
+# Pipfile, Pipfile.lock
+# .env
+```
+
+! References
+
+* [[Home|https://pipenv.pypa.io/en/latest/]]

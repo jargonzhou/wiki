@@ -1,0 +1,38 @@
+created: 20241216102037608
+creator: jargonzhou
+modified: 20241216102158382
+modifier: jargonzhou
+tags: Infrastructure
+title: AWS CodePipeline
+type: text/vnd.tiddlywiki
+
+<<<.tc-big-quote
+AWS CodePipeline is a continuous delivery service that enables you to model, visualize, and automate the steps required to release your software.
+
+CodePipeline can deploy applications to EC2 instances by using CodeDeploy, AWS Elastic Beanstalk, or AWS OpsWorks Stacks. CodePipeline can also deploy container-based applications to services by using Amazon ECS. Developers can also use the integration points provided with CodePipeline to plug in other tools or services, including build services, test providers, or other deployment targets or systems.
+<<<
+
+an example release process using CodePipeline:
+[img[https://docs.aws.amazon.com/images/codepipeline/latest/userguide/images/PipelineFlow.png]]
+
+! Concepts
+
+* Pipelines
+** a workflow construct that describes how software changes go through a release process. Each pipeline is made up of a series of stages.
+** Stages
+*** a logical unit you can use to isolate an environment and to limit the number of concurrent changes in that environment
+** Actions
+*** a set of operations performed on application code and configured so that the actions run in the pipeline at a specified point
+* Pipeline executions
+* Stage executions
+* Action executions
+* Transition
+** the point where a pipeline execution moves to the next stage in the pipeline
+* Artifacts
+** the collection of data, such as application source code, built applications, dependencies, definitions files, templates, and so on, that is worked on by pipeline actions
+* Source revisions
+** the version of a source change that triggers a pipeline execution
+
+! References
+
+* [[Doc|https://docs.aws.amazon.com/codepipeline/]]

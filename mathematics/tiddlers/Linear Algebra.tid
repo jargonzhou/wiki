@@ -1,6 +1,6 @@
 created: 20241127084758629
 creator: jargonzhou
-modified: 20241207053752107
+modified: 20241230011305617
 modifier: jargonzhou
 tags: [[Linear Algebra]] Mathematics
 title: Linear Algebra
@@ -8,7 +8,8 @@ title: Linear Algebra
 ! Terminology
 
 * 矩阵与方程组(Matrices and System of Equations)
-** 线性方正组(System of Linear Equations)
+** 线性方程组(System of Linear Equations)
+*** 初等行运算(Elementary Row Operations)
 ** 行阶梯型(Row Echelon Form)
 ** 标量(Scalar), 向量(Vector), 矩阵(Matrices)
 ** 矩阵代数(Matrix Algebra)
@@ -55,6 +56,41 @@ title: Linear Algebra
 ** 条件数(Condition Numbers)
 
 ! 矩阵与方程组
+
+初等行运算:
+
+* I. 交换两行.
+* II. 以非零实数乘以某行.
+* III. 将某行替换为它与其它行的倍数的和.
+
+矩阵算术:
+
+行向量(row vector) $$\overrightarrow	
+{\bold{x}} = (x_{1}, x_{2}, \dots, x_{n})$$
+
+列向量(column vector)
+$$
+\bold{x} = \begin{bmatrix}
+   x_{1} \\
+	 x_{2} \\
+   \vdots \\
+	 x_{n} 
+\end{bmatrix}
+$$
+
+
+矩阵代数: 标量$$\alpha, \beta$$, 矩阵$$A, B, C$$
+
+* 一般的, 矩阵乘法不满足交换律: $$AB \ne BA$$. 
+* $$A + B = B + A$$
+* $$(A + B) + C = A + (B + C)$$
+* $$(AB)C = A(BC)$$: 简写为$$ABC$$
+* $$A(B + C) = AB + AC$$
+* $$(A + B)C = AC + BC$$
+* $$(\alpha \beta)A = \alpha(\beta A)$$
+* $$\alpha (AB) = (\alpha A)B = A(\alpha B)$$
+* $$(\alpha + \beta)A = \alpha A + \beta A$$
+* $$\alpha (A + B) = \alpha A + \alpha B$$
 
 ! 行列式
 

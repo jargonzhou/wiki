@@ -1,0 +1,31 @@
+created: 20241223051856140
+creator: jargonzhou
+modified: 20241224050257138
+modifier: jargonzhou
+tags: [[Language Tools]] Scala
+title: Coursier
+
+<<<.tc-big-quote
+Coursier is the Scala application and artifact manager. It can install Scala applications and setup your Scala development environment. It can also download and cache artifacts from the web.
+<<<
+
+! Terminology
+
+! Usage
+
+```shell
+$ cs setup
+# windows: ~/AppData/Local/Coursier/data/bin
+
+$ cs install scala:2.12.17 scalac:2.12.17
+$ cs launch scala:2.12.17
+$ cs launch scalac:2.12.17
+
+$ scala -version
+$ scalac -version
+$ sbt --script-version
+```
+
+! References
+
+* [[Home|https://get-coursier.io/]]

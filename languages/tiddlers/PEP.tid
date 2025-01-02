@@ -1,0 +1,36 @@
+created: 20241216022941617
+creator: jargonzhou
+modified: 20241216031604011
+modifier: jargonzhou
+tags: Python
+title: PEP
+
+! Terminology
+
+* PEP: Python Enhancement Proposals
+
+! Keys
+
+type key:
+
+* I: Informational
+* P: Process
+* S: Standards Track
+
+status key:
+
+* A: Accepted
+* A: Active
+* D: Deferred
+* `<No letter>`: Draft
+* F: Final
+* P: Provisional
+* R: Rejected
+* S: Superseded
+* W: Withdraw
+
+! PEP 8 – Style Guide for Python Code
+
+! References
+
+* [[PEP 0 – Index of Python Enhancement Proposals (PEPs)|https://peps.python.org/pep-0000/]]

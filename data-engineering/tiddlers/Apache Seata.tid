@@ -1,0 +1,36 @@
+created: 20241216084252866
+creator: jargonzhou
+modified: 20241216085431810
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Seata
+
+<<<.tc-big-quote
+Apache Seata(incubating) is an open source distributed transaction solution that delivers high performance and easy to use distributed transaction services under a microservices architecture.
+<<<
+
+! Terminology
+
+* 分布式的事务(Distributed Transaction): a Global Transaction which is made up with a batch of Branch Transaction, and normally Branch Transaction is just Local Transaction
+* 事务协调者 Transaction Coordinator(TC): Maintain status of global and branch transactions, drive the global commit or rollback.
+* 事务管理器 Transaction Manager(TM): Define the scope of global transaction: begin a global transaction, commit or rollback a global transaction.
+* 资源管理器 Resource Manager(RM): Manage resources that branch transactions working on, talk to TC for registering branch transactions and reporting status of branch transactions, and drive the branch transaction commit or rollback.
+
+! Lifecyle of Seata managed distributed transaction
+
+# TM asks TC to begin a new global transaction. TC generates an XID representing the global transaction.
+# XID is propagated through microservices' invoke chain.
+# RM registers local transaction as a branch of the corresponding global transaction of XID to TC.
+# TM asks TC for committing or rollbacking the corresponding global transaction of XID.
+# TC drives all branch transactions under the corresponding global transaction of XID to finish branch committing or rollbacking.
+
+! Usage
+
+```shell
+seata-server-1.6.1/bin/seata-server.sh -p 8091 -h 127.0.0.1 -m db
+```
+
+! References
+
+* [[Home|https://seata.apache.org/]]
+* [[Code|https://github.com/apache/incubator-seata]]

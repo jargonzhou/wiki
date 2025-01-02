@@ -1,0 +1,18 @@
+created: 20241216092238983
+creator: jargonzhou
+modified: 20241216092611278
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Kafka Connect
+
+<<<.tc-big-quote
+Kafka Connect is ''a tool for scalably and reliably streaming data between Apache Kafka and other systems''. It makes it simple to quickly define connectors that move large collections of data into and out of Kafka. Kafka Connect can ingest entire databases or collect metrics from all your application servers into Kafka topics, making the data available for stream processing with low latency. An export job can deliver data from Kafka topics into secondary storage and query systems or into batch systems for offline analysis.
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Doc|https://kafka.apache.org/documentation/#connect]]
+* Maison, Mickael / Stanley, Kate. ''Kafka Connect''. 2023. O'Reilly Media.

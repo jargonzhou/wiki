@@ -1,6 +1,6 @@
 created: 20241127085339586
 creator: jargonzhou
-modified: 20241209045227268
+modified: 20241218231043143
 modifier: jargonzhou
 tags: [[Probability and Statistics]] Mathematics
 title: Probability and Statistics
@@ -58,6 +58,8 @@ title: Probability and Statistics
 
 * 时间序列(Time Series)
 
+* 多臂赌博机(Multi-Arm Bandit)
+
 ! References
 
 * Devore, Jay L. ''Probability and Statistics for Engineering and Sciences''. 2011, 9. edition. Pearson.
@@ -65,3 +67,4 @@ title: Probability and Statistics
 * Matthias Vallentin. [[The Probability and Statistics Cookbook|http://statistics.zone/]]. 
 * [[Flow Chart for Selecting Commonly Used Statistical Tests|https://www.brookes.ac.uk/getmedia/bede726d-771d-461f-900b-a3526fc7e199/Stats-Flow-Chart.pdf]]
 
+* [[Multi-armed bandit - wikipedia|https://en.wikipedia.org/wiki/Multi-armed_bandit]]

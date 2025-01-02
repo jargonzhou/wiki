@@ -1,0 +1,121 @@
+created: 20241216090608795
+creator: jargonzhou
+modified: 20241216092723050
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Kafka
+
+<<<.tc-big-quote
+Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
+<<<
+
+! Terminology
+
+! KIP
+
+* [[link|https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Improvement+Proposals]]
+
+* KIP-98 - Exactly Once Delivery and Transactional Messaging
+* KIP-975: Docker Image for Apache Kafka
+
+KRaft:
+
+* KIP-500: Replace ZooKeeper with a Self-Managed Metadata Quorum
+* KIP-595: A Raft Protocol for the Metadata Quorum
+* KIP-631: The Quorum-based Kafka Controller
+
+Read from Follower:
+
+* KIP-392: Allow consumers to fetch from closest replica
+
+Physical storage:
+
+* KIP-405: Kafka Tiered Storage
+
+Idempotent/Transactional Producer:
+
+* KIP-360: Improve reliability of idempotent/transactional producer
+* KIP-447: Producer scalability for exactly once semantics
+
+MirrorMaker2:
+
+* KIP-656: MirrorMaker2 Exactly-once Semantics
+
+! Message Delivery Semantics
+
+Since 0.11.0.0, the Kafka producer also supports ''an idempotent delivery option'' which guarantees that resending will not result in duplicate entries in the log.
+Also beginning with 0.11.0.0, the producer supports ''the ability to send messages to multiple topic partitions using transaction-like semantics'': i.e. either all messages are successfully written or none of them are.
+
+! Protocols
+
+* Protocol Primitive Types
+* grammars
+* Common Request and Response Structure
+* Structure
+* Record Batch
+* Constants
+** Error Codes
+** Api Keys
+* The Messages
+
+! Ops
+
+!! Configuration
+
+* Broker Configs
+* Topic Configs
+* Producer Configs
+* Consumer Configs
+* Kafka Connect Configs
+** Source Connector Configs
+** Sink Connector Configs
+* Kafka Streams Configs
+* AdminClient Configs
+* MirrorMaker Configs
+* System Properties
+* Tiered Storage Configs
+
+!! [[Strimzi|https://strimzi.io/]]
+
+Strimzi provides a way to run an Apache Kafka cluster on Kubernetes in various deployment configurations.
+
+example:
+
+* Vert.x in Action - Chapter 7 Designing a reactive application
+* Reactive Systems in Java - Chapter 11 The Event Bus: The Backbone
+
+!! Confluent
+
+[[A Complete Comparison of Apache Kafka vs Confluent|https://www.confluent.io/apache-kafka-vs-confluent/]]： Used by over 70% of the Fortune 500, Apache Kafka has become the foundational platform for streaming data, but self-supporting the open source project puts you in the business of managing low-level data infrastructure. With Kafka at its core, Confluent offers *complete, fully managed, cloud-native data streaming* that's available everywhere your data and applications reside.
+
+!! Monitoring
+
+* Burrow: lag monitoring
+* Xinfra Monitor/Kafka Monitor: end-to-end monitoring
+
+Prometheus:
+
+* [[kafka_exporter|https://github.com/danielqsj/kafka_exporter]]
+* [[JMX Exporter|https://github.com/prometheus/jmx_exporter]]
+
+! Dive into
+
+# Cluster Membership
+# The Controller
+# Replication
+# Request Processing
+# Physical Storage
+
+
+! [[Kafka Streams]]
+! [[Kafka Connect]]
+
+! References
+
+* [[Doc|https://kafka.apache.org/documentation/]]
+* [[Kafka Protocol Guide|https://kafka.apache.org/protocol.html]]
+* [[Code|https://github.com/apache/kafka]]
+
+* Kreps, Jay. ''I Heart Logs: Event Data, Stream Processing, and Data Integration''. 2014-10. O’Reilly Media.
+* [[The Internals of Apache Kafka|https://books.japila.pl/kafka-internals/]]
+* Shapira, Gwen / Palino, Todd / Sivaram, Rajini / Petty, Krit. ''Kafka: The Definitive Guide''. 2021, 2. edition. O’Reilly Media.

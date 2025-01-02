@@ -1,0 +1,24 @@
+created: 20241216032841834
+creator: jargonzhou
+modified: 20241216032935569
+modifier: jargonzhou
+tags: [[Python Tools]]
+title: virtualenv
+
+<<<.tc-big-quote
+a tool to create isolated Python environments. Since Python 3.3, a subset of it has been integrated into the standard library under the `venv` module.
+<<<
+
+! Terminology
+
+! Usage
+
+```shell
+✗ pip3 install virtualenv
+✗ python3 -m virtualenv --help
+```
+
+! References
+
+* [[Home|https://virtualenv.pypa.io/en/latest/index.html]]
+

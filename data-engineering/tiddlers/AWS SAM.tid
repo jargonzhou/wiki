@@ -1,0 +1,53 @@
+created: 20241216101514505
+creator: jargonzhou
+modified: 20241216103329024
+modifier: jargonzhou
+tags: Infrastructure
+title: AWS SAM
+type: text/vnd.tiddlywiki
+
+! Terminology
+
+* SAM: Serverless Application Model
+
+! Usage
+
+* Introduction: Build a Serverless Web Application: https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/
+* Powertools for AWS Lambda (TypeScript) : https://docs.powertools.aws.dev/lambda/typescript/latest/
+** Powertools for AWS Lambda (TypeScript) is a developer toolkit to implement Serverless best practices and increase developer velocity.
+* templates: https://github.com/aws/aws-sam-cli-app-templates
+
+```shell
+sam init --help
+     Interactive Mode:
+        $ sam init
+    Customized Interactive Mode:
+        $ sam init --name sam-app --runtime nodejs18.x --architecture arm64
+        $ sam init --name sam-app --runtime nodejs18.x --dependency-manager npm --app-template hello-world
+        $ sam init --name sam-app --package-type image --architecture arm64
+    Direct Initialization:
+        $ sam init --location gh:aws-samples/cookiecutter-aws-sam-python
+        $ sam init --location git+ssh://git@github.com/aws-samples/cookiecutter-aws-sam-python.git
+        $ sam init --location /path/to/template.zip
+        $ sam init --location /path/to/template/directory
+        $ sam init --location https://example.com/path/to/template.zip
+
+# https://github.com/aws/aws-sam-cli-app-templates
+sam init --name sam-ts-app --location gh:aws/aws-sam-cli-app-templates 
+# --runtime nodejs18.x --package-type image --architecture arm64
+
+sam init --name sam-ts-app --location .\aws-sam-cli-app-templates\nodejs18.x\hello-ts\             in cmd at 16:59:27
+project_name [sam-ts-app]:
+runtime [nodejs18.x]:
+architectures [default]:
+
+sam build
+sam local invoke
+sam local start-api
+```
+
+
+! References
+
+* [[Doc|https://docs.aws.amazon.com/serverless-application-model/index.html]]
+** [[AWS SAM template anatomy|https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-template-anatomy.html]]

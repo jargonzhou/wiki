@@ -1,0 +1,25 @@
+created: 20241216050838764
+creator: jargonzhou
+modified: 20241216052259766
+modifier: jargonzhou
+tags: [[Language Tools]]
+title: GNU Autotools
+
+<<<.tc-big-quote
+The GNU Autotools, also known as the GNU Build System, is a suite of build automation tools designed to support building source code and packaging the resulting binaries. It supports building a codebase for multiple target systems without customizing or modifying the code. It is available on many Linux distributions and Unix-like environments.
+
+Autotools is part of the GNU toolchain and is widely used in many free software and open source packages. Its component tools are free software, licensed under the GNU General Public License with special license exceptions permitting its use with proprietary software.
+<<<
+
+! Terminology
+
+! Components
+
+Autotools consists of the GNU utilities ''Autoconf'', ''Automake'', and ''Libtool''. 
+
+Other related tools include [[GNU Make]], ''GNU gettext'', ''pkg-config'', and [[GCC]].
+
+! References
+
+* [[GNU Autotools - wikipedia|https://en.wikipedia.org/wiki/GNU_Autotools]]
+* Calcote, John. ''Autotools: A Practioner's Guide to GNU Autoconf, Automake, and Libtool''. 2020, 2. edition. No Starch Press.

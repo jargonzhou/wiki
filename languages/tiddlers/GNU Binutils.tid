@@ -1,0 +1,39 @@
+created: 20241216044415908
+creator: jargonzhou
+modified: 20241216044731044
+modifier: jargonzhou
+tags: [[Language Tools]]
+title: GNU Binutils
+
+<<<.tc-big-quote
+a suite of tools including linker, assembler and other tools.
+
+The binutils include the following commands:
+
+* as:	assembler popularly known as GAS (GNU Assembler)
+* ld:	linker
+* gprof:	profiler
+* addr2line:	convert address to file and line
+* ar:	create, modify, and extract from archives
+* c++filt:	demangling filter for C++ symbols
+* dlltool:	creation of Windows dynamic-link libraries
+* gold:	alternative linker for ELF files
+* nlmconv:	object file conversion to a NetWare Loadable Module
+* nm:	list symbols exported by object file
+* objcopy:	copy object files, possibly making changes
+* objdump:	dump information about object files
+* ranlib:	generate indices for archives (for compatibility; same as ar -s)
+* readelf:	display content of ELF[^1] files
+* size:	list total and section sizes
+* strings:	list printable strings
+* strip:	remove symbols from an object file
+* windmc:	generates Windows message resources
+* windres:	compiler for Windows resource files
+<<<
+
+! Terminology
+
+
+! References
+
+* 

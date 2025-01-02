@@ -1,6 +1,6 @@
 created: 20230104152413814
 creator: jargonzhou
-modified: 20241207050246480
+modified: 20241223053713666
 modifier: jargonzhou
 tags: TableOfContents
 title: Mathematics
@@ -19,14 +19,14 @@ type: text/vnd.tiddlywiki
 
 * [[Symbols]]
 
-! Application
-!! Machine Learning
+! Applications
 
+* [[Machine Learning]]
 * [[NLP]]
 
 ! Tools
 
-* [[IPython]], [[Jupyter]]
+* [[IPython]]
 * [[NumPy]]
 * [[pandas]]
 * [[Matplotlib]]

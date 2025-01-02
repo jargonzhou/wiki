@@ -1,0 +1,65 @@
+created: 20241216045332123
+creator: jargonzhou
+modified: 20241216045808102
+modifier: jargonzhou
+tags: Compiler
+title: GCC
+
+<<<.tc-big-quote
+GCC, the GNU Compiler Collection
+
+The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, D and Modula-2 as well as libraries for these languages (libstdc++,...). GCC was originally written as the compiler for the GNU operating system. The GNU system was developed to be 100% free software, free in the sense that it respects the user's freedom.
+<<<
+
+! Terminology
+
+! Usage
+
+!! Installation
+
+Windows: 
+
+* [[WinLibs|https://winlibs.com/]]: WinLibs standalone build of GCC and MinGW-w64 for Windows
+
+Ubuntu:
+
+* example: [[link|https://phoenixnap.com/kb/install-gcc-ubuntu]]
+
+!! Language Standards Supported by GCC
+
+```shell
+# C89, C90
+-std=c90
+-std=iso9899:1990
+
+# C94, C95
+-std=iso9899:199409
+
+# C99
+-std=c99
+-std=iso9899:1999
+
+# C11
+-std=c11
+-std=iso9899:2011
+
+# C17
+-std=c17
+-std=iso9899:2017
+
+# C23
+-std=c23
+-std=iso9899:2024
+
+# with GNU extension
+-std=gnu90
+-std=gnu99
+-std=gnu11
+-std=gnu17
+-std=gnu23
+```
+
+! References
+
+* [[Home|https://gcc.gnu.org/]]
+* Brian Gough. ''An Introduction to GCC''. 2004.

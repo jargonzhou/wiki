@@ -1,0 +1,37 @@
+created: 20241216100531657
+creator: jargonzhou
+modified: 20241216100858028
+modifier: jargonzhou
+tags: Serverless
+title: Apache OpenWhisk
+type: text/vnd.tiddlywiki
+
+<<<.tc-big-quote
+What is Apache OpenWhisk?
+
+Apache OpenWhisk is an open source, distributed [[Serverless|https://en.wikipedia.org/wiki/Serverless_computing]] platform that executes functions (fx) in response to events at any scale. OpenWhisk manages the infrastructure, servers and scaling using Docker containers so you can focus on building amazing and efficient applications.
+
+The OpenWhisk platform supports a programming model in which developers write functional logic (called [[Actions|https://github.com/apache/openwhisk/blob/master/docs/actions.md#openwhisk-actions]]), in any supported programming language, that can be dynamically scheduled and run in response to associated events (via [[Triggers|https://github.com/apache/openwhisk/blob/master/docs/triggers_rules.md#creating-triggers-and-rules]]) from external sources ([[Feeds|https://github.com/apache/openwhisk/blob/master/docs/feeds.md#implementing-feeds]]) or from HTTP requests. The project includes a REST API-based Command Line Interface (CLI) along with other tooling to support packaging, catalog services and many popular container deployment options.
+<<<
+
+! Terminology
+
+! Components
+
+[img[https://github.com/apache/openwhisk/raw/master/docs/images/components_to_repos.png]]
+
+! Programming Model
+
+[[OpenWhisk Programming Model|https://openwhisk.apache.org/documentation.html#programming-model]]
+[img[https://openwhisk.apache.org/images/illustrations/OW-Programming-Model-Horz.png]]
+
+! What happens on an invocation?
+
+[img[https://github.com/apache/openwhisk/raw/master/docs/images/Openwhisk-flow-diagram.png]]
+
+! References
+
+* [[Home|https://openwhisk.apache.org/]]
+* [[Code|https://github.com/apache/openwhisk]]
+* [[Build a serverless app with Node.js and OpenWhisk|https://blog.logrocket.com/build-serverless-app-node-js-openwhisk/]] 2021-12-17
+* Sciabarrà, Michele. ''Learning Apache OpenWhisk''. 2019. O'Reilly Media.

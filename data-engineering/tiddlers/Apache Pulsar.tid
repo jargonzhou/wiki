@@ -1,0 +1,46 @@
+created: 20241216083820940
+creator: jargonzhou
+modified: 20241216084138212
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Pulsar
+
+<<<.tc-big-quote
+Cloud-Native, Distributed Messaging and Streaming
+
+Apache Pulsar is an open-source, distributed messaging and streaming platform built for the cloud.
+
+What is Pulsar?
+
+Apache Pulsar is an all-in-one messaging and streaming platform. Messages can be consumed and acknowledged individually or consumed as streams with less than 10ms of latency. Its layered architecture allows rapid scaling across hundreds of nodes, without data reshuffling.
+
+Its features include multi-tenancy with resource separation and access control, geo-replication across regions, tiered storage and support for six official client languages. It supports up to one million unique topics and is designed to simplify your application architecture.
+<<<
+
+! Terminology
+
+! Architecture
+
+A Pulsar instance is composed of one or more Pulsar clusters.
+
+A Pulsar cluster:
+
+[img[https://pulsar.apache.org/assets/images/pulsar-system-architecture-6890df6b0c59a065a56492659ba87933.png]]
+
+* Global ZK: instance-wide
+* Broker
+** HTTP Server: administrative tasks, topic lookups
+** Dispatcher: asynchronous TCP Server for data transfers
+** Managed Ledger: the storage layer for a single topic
+** Cache
+** Global replicators
+* Bookie: persistent storage of messages
+**in BookKeeper cluster
+* ZK: cluster-wide
+* Pulsar proxy
+
+
+! References
+
+* [[Home|https://pulsar.apache.org/]]
+* [[Code|https://github.com/apache/pulsar]]

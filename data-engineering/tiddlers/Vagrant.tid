@@ -1,0 +1,19 @@
+created: 20241216094734922
+creator: jargonzhou
+modified: 20241216094802011
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Vagrant
+
+<<<.tc-big-quote
+What is Vagrant?
+
+Vagrant is the command line utility for managing the lifecycle of virtual machines. Isolate dependencies and their configuration within a single disposable and consistent environment.
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://developer.hashicorp.com/vagrant]]

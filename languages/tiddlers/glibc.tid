@@ -1,0 +1,28 @@
+created: 20241216044502405
+creator: jargonzhou
+modified: 20241216045135551
+modifier: jargonzhou
+tags: [[Language Tools]]
+title: glibc
+
+<<<.tc-big-quote
+core C library including headers, libraries, and dynamic loader
+
+* GNU Fortran
+* CPP: The C Preprocessor
+* GNAT: The GNU Ada Development Environment
+* Standard C++ Library
+* GCCGO
+* GNU Offloading and Multi Processing Runtime Library
+* Quad-Precision Math Library
+* JIT Library: libgccjit, for embedding GCC inside programs and libraries
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://gcc.gnu.org/]]
+* Sandra Loosemore, Richard M. Stallman, Roland McGrath, Andrew Oram, and Ulrich Drepper. ''The GNU C Library Reference Manual'''. version 2.34.
+

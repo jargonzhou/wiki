@@ -1,6 +1,13 @@
 created: 20241202010418110
 creator: jargonzhou
-modified: 20241211035228066
+modified: 20241217012749729
+modifier: jargonzhou
+tags: [[Data Engineering]]
+title: Data Engineering
+
+created: 20241202010418110
+creator: jargonzhou
+modified: 20241216103031545
 modifier: jargonzhou
 tags: [[Data Engineering]]
 title: Data Engineering
@@ -19,9 +26,22 @@ title: Data Engineering
 
 ! [[Data Pipeline]]
 
+* [[CDC]]: Change Data Capture
+* [[CQL]]
 * [[Delay Queue]]
+* [[Streaming Systems]]
 
 ! [[Data Mesh]]
+
+! Infrastructure
+
+* [[Docker]]
+* [[Infrastructure as Code]]
+* [[Kubernetes]]
+* [[OpenStack]]
+* [[Serverless]]
+* [[Vagrant]]
+
 
 ! Tools
 
@@ -30,19 +50,33 @@ title: Data Engineering
 * [[Apache Airflow]] TOUCH
 * [[Apache Arrow]] TOUCH `Column`
 * [[Apache Calcite]] TOUCH
+* [[Apache Camel]] TOUCH `Enterprise Integration Patterns`
 * [[Apache Doris]] TOUCH `MPP`
 * [[Apache Druid]] TOUCH `OLAP`
+* [[Apache Flink]] TOUCH `Streaming Systems`
+* [[Apache Hadoop]] TOUCH `Distributed Computing`
 * [[Apache Hive]] TOUCH `OLAP`
 * [[Apache Hudi]] TOUCH `OLAP`
 * [[Apache Iceberg]] TOUCH
+* [[Apache Kafka]] TOUCH `Streaming Systems`
+* [[Apache Pinot]] TOUCH `OLAP`
+* [[Apache Pulsar]] TOUCH `Messaging`
+* [[Apache RocketMQ]] TOUCH `Messaging`
+* [[Apache Samza]] TOUCH `Streaming Systems`
+* [[Apache Seata]] TOUCH `Distributed Transaction`
+* [[Apache ShardingSphere]] TOUCH `Distributed SQL`
+* [[Apache Spark]] TOUCH `Distributed Computing`
 * [[Apache Superset]] TOUCH
 * [[Ceph]] TOUCH
 * [[ClickHouse]] TOUCH `Column` `OLAP`
 ** [[ClickVisual]] TOUCH
 * [[Delta Lake]] TOUCH `Format`
+* [[FlockDB|]]: A distributed, fault-tolerant graph database. - not maintained since 2021-09-18.
 * [[gRPC]] TOUCH
+* [[Hazelcast]] TOUCH `Distributed Computing`
 * [[InfluxDB]] TOUCH `TimeSeries`
 * [[Logica]] TOUCH
+* [[Memcached]] TOUCH
 * [[Milvus]] TOUCH `Vector`
 * [[MinIO]] TOUCH `ObjectStore`
 * [[Neon]] TOUCH
@@ -51,4 +85,10 @@ title: Data Engineering
 * [[ReadySet]] TOUCH
 * [[SQLite]] TOUCH
 * [[StarRocks]] TOUCH `MPP` `OLAP`
+* [[Vector]] TOUCH `Observability`
 * [[Velox]] TOUCH
+
+!! Miscellaneous
+
+* [[Manhattan|https://blog.x.com/engineering/en_us/a/2014/manhattan-our-real-time-multi-tenant-distributed-database-for-twitter-scale]]: real-time, multi-tenant distributed database for Twitter scale - 2014-04-02
+* [[MetricsDB|https://blog.x.com/engineering/en_us/topics/infrastructure/2019/metricsdb]]: TimeSeries Database for storing metrics at Twitter - 2019-05-13

@@ -1,0 +1,73 @@
+created: 20241216034820986
+creator: jargonzhou
+modified: 20241216035244710
+modifier: jargonzhou
+tags: Python
+title: Python Modules and Packages
+
+! Terminology
+
+* 模块(Module)
+* 包(Package)
+
+! Usage
+
+example: 
+
+* [[Relative imports for the billionth time|https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time]]
+* [[Relative Imports in Python 3|https://sparkbyexamples.com/python/relative-imports-in-python-3/]]
+
+```shell
+$ tree Myproject
+Myproject/
+├── main.py
+├── package1/
+│   ├── __init__.py
+│   ├── module1.py
+│   └── module2.py
+├── package2/
+    ├── __init__.py
+    ├── module3.py
+    └── module4.py
+
+### (1) Relative Import Module from the Same Package
+# module1.py
+from ..package_2 import module3
+# module1.py
+from module2 import print_hi
+print_hi()
+# Absolute import
+# module1.py
+from Package_1.module2 import print_hi
+
+# erros: "ImportError: attempted relative import with no known parent package"
+# This error occurs because they execute the file as a python script and not as a python module.
+# Run the code on Terminal
+python -m Package.module
+
+### (2) Relative Import Module from Different Packages
+# module1.py
+from ..package_2 import module3
+# module1.py
+from ..package_2.module3 import bar
+
+### (3) Relative Import from Sub Module
+Myproject/
+├── main.py
+└── package1/
+    ├── __init__.py
+    ├── module1a.py
+    ├── module1b.py
+    └── subpackage/
+        ├── __init__.py
+        └── module1c.py
+# module1c.py
+from .. import module1a
+```
+
+
+! References
+
+* Lubanovic, Bill. ''Introducing Python: Modern Computing in Simple Packages''. 2019, 2. edition. O'Reilly Media. - Chapter 11 Modules, Packages, and Goodies
+* Martelli, Alex / Ravenscroft, Anna Martelli / Holden, Steve / McGuire, Paul. ''Python in a Nutshell 
+A Desktop Quick Reference''. 2023, 4. edition. O'Reilly Media. - Chapter 7 Modules and Packages

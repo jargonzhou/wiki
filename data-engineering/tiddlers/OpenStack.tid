@@ -1,0 +1,83 @@
+created: 20241216015803267
+creator: jargonzhou
+modified: 20241216020952028
+modifier: jargonzhou
+tags: Infrastructure
+title: OpenStack
+
+<<<.tc-big-quote
+What is OpenStack? 
+
+OpenStack is a cloud operating system that controls large pools of compute, storage, and networking resources throughout a datacenter, all managed through a dashboard that gives administrators control while empowering their users to provision resources through a web interface.
+<<<
+
+! Terminology
+
+! Services
+
+* Bare Metal service (ironic)
+* Block Storage service (cinder)
+* Compute inside Object Storage service (storlets)
+* Compute service (nova)
+* Containers service (zun)
+* Dashboard (horizon)
+* Database service (trove)
+* DNS service (designate)
+* Identity service (keystone)
+* Image service (glance)
+* Key Manager service (barbican)
+* Load-balancer service (octavia)
+* Messaging service (zaqar)
+* Networking service (neutron)
+* NFV Orchestration service (tacker)
+* Object Storage service (swift)
+* Orchestration service (heat)
+* Placement service (placement)
+* Rating service (cloudkitty)
+* RCA (Root Cause Analysis) service (vitrage)
+* Resource reservation service (blazar)
+* Shared File Systems service (manila)
+* Telemetry Alarming services (aodh)
+* Telemetry Data Collection service (ceilometer)
+* Workflow service (mistral)
+
+! Libraries
+
+* `castellan`: Key Manager interface abstraction
+* `cliff`: Builds command-line programs in Python.
+* `glance_store`: glance backend abstraction library
+* `keystonemiddleware`: Middleware provided for integrating with the OpenStack Identity API.
+* `kuryr`: Bridge between container framework and OpenStack abstractions
+* `neutron-lib`: Library provided for integrating with the OpenStack Networking platform.
+* `os-brick`: library for managing local volume attaches
+* `os-vif`: Library for plugging and unplugging virtual interfaces.
+* `oslo.cache`: Cache management library.
+* `oslo.concurrency`: External process management and task synchronization.
+* `oslo.config`: Configuration option parsing from the command line or configuration files.
+* `oslo.context`: Helpers to maintain useful information about a request context.
+* `oslo.db`: Database connectivity.
+* `oslo.i18n`: Internationalization and translation.
+* `oslo.log`: A logging configuration library.
+* `oslo.messaging`: Inter-process communication.
+* `oslo.middleware`: WSGI middleware library for web service development.
+* `oslo.policy`: Common policy enforcement.
+* `oslo.privsep`: library for privilege separation
+* `oslo.reports`: Error report framework for projects.
+* `oslo.rootwrap`: Fine filtering of shell commands to run as root.
+* `oslo.serialization`: Serialization with special handling for some common types.
+* `oslo.service`: Library for running and managing OpenStack services.
+* `oslo.upgradecheck`: Library of common code for upgrade checks.
+* `oslo.utils`: Library of common low-level utility modules.
+* `oslo.versionedobjects`: Database and RPC object schema versioning.
+* `oslo.vmware`: Common functionality required by VMware drivers in several projects.
+* `stevedore`: Manages dynamic plug-ins for Python applications.
+* `taskflow`: Makes task execution easy, consistent, and reliable.
+
+! DevStack
+
+DevStack is a series of extensible scripts used to quickly bring up a complete OpenStack environment based on the latest versions of everything from git master. It is used interactively as a development environment and as the basis for much of the OpenStack project’s functional testing.
+
+! References
+
+* [[Home|https://www.openstack.org/]]
+* [[DevStack|https://docs.openstack.org/devstack/latest/index.html]]

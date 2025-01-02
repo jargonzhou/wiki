@@ -1,0 +1,29 @@
+created: 20241216062420367
+creator: jargonzhou
+modified: 20241216081741748
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Debezium
+
+<<<.tc-big-quote
+Debezium is ''an open source distributed platform for change data capture''. Start it up, point it at your databases, and your apps can start responding to all of the inserts, updates, and deletes that other apps commit to your databases. Debezium is durable and fast, so your apps can respond quickly and never miss an event, even when things go wrong.
+<<<
+
+! Terminology
+
+! Architecture
+
+* with ''Kafka Connect'' as a source connector
+
+[img[https://debezium.io/documentation/reference/_images/debezium-architecture.png]]
+
+* ''The Debezium Server'': stream changes events from source database to messaging infrastruces
+
+* ''The Debezium Engine'': a Java library embedded in custom application.
+
+! References
+
+* [[Home|https://debezium.io/]]
+* [[Code|https://github.com/debezium/debezium]]
+
+* Escoffier, Clement / Finnigan, Ken. ''Reactive Systems in Java: Resilient, Event-Driven Architecture with Quarkus''. 2021. O’Reilly Media. - Chapter 9. Accessing Data Reactively > Using Debezium to Capture Change

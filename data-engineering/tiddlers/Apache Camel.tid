@@ -1,0 +1,28 @@
+created: 20241216053927583
+creator: jargonzhou
+modified: 20241216054054459
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Camel
+type: text/vnd.tiddlywiki
+
+<<<.tc-big-quote
+What is Camel?
+
+Apache Camel ™ is a versatile open-source ''integration framework'' based on known [[Enterprise Integration Patterns|https://camel.apache.org/components/4.0.x/eips/enterprise-integration-patterns.html]].
+
+Apache Camel uses [[URIs|https://camel.apache.org/manual/uris.html]] to work directly with any kind of transport or messaging model such as [[HTTP|https://camel.apache.org/components/4.0.x/http-component.html]], [[Kafka|https://camel.apache.org/components/4.0.x/kafka-component.html]], [[JMS|https://camel.apache.org/components/4.0.x/jms-component.html]], JBI, SCA, [[MINA|https://camel.apache.org/components/4.0.x/mina-component.html]] or [[CXF|https://camel.apache.org/components/4.0.x/cxf-component.html]], as well as pluggable [[Components|https://camel.apache.org/manual/component.html]] and [[Data Format|https://camel.apache.org/manual/data-format.html]] options.
+
+Apache Camel is a small library with minimal [[dependencies|https://camel.apache.org/manual/what-are-the-dependencies.html]] for easy embedding in any Java application. Apache Camel lets you work with the same [[API|https://camel.apache.org/manual/exchange.html]] regardless which kind of transport is used — so learn the API once and you can interact with all the [[Components|https://camel.apache.org/components/4.0.x/index.html]] provided out-of-box.
+
+Apache Camel provides support for [[Bean Binding|https://camel.apache.org/manual/bean-binding.html]] and seamless integration with popular frameworks such as [[Spring|https://camel.apache.org/manual/spring.html]]. Camel also has extensive support for [[unit testing|https://camel.apache.org/manual/testing.html]] your routes.
+
+<<<
+
+! Terminology
+
+* 企业集成模式(Enterprise Integration Patterns)
+
+! References
+
+* [[Home|https://camel.apache.org/]]

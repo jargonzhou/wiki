@@ -1,0 +1,47 @@
+created: 20241216061947347
+creator: jargonzhou
+modified: 20241216062512066
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Hazelcast
+
+<<<.tc-big-quote
+Hazelcast is ''a distributed computation and storage platform for consistently low-latency querying, aggregation and stateful computation''' against event streams and traditional data sources. It allows you to quickly build resource-efficient, real-time applications. You can deploy it at any scale from small edge devices to a large cluster of cloud instances.
+
+Hazelcast can process data on a set of networked and clustered computers that pool together their random access memories (RAM) to let applications share data with other applications running in the cluster. When data is stored in RAM, applications run a lot faster since it does not need to be retrieved from disk and put into RAM prior to processing. Using Hazelcast, you can store and process your data in RAM, spread and replicate it across a cluster of machines; replication gives you resilience to failures of cluster members.
+
+Hazelcast is implemented in Java language and has clients for Java, C++, .NET, REST, Python, Go and Node.js. Hazelcast also speaks Memcached and REST protocols.
+<<<
+
+! Terminology
+
+! Architecutre
+
+[img[https://docs.hazelcast.com/hazelcast/latest/_images/HighLevelArch.png]]
+
+* cluster, member
+* partitions, replications
+* streaming engine: Jet
+* storage engine: IMap
+
+! Usage
+
+Client:
+
+* Java, C++, .NET, Node.js, Go, Python
+* REST, Memcache
+* `hz-cli`
+
+Building data pipelines:
+
+* Hazelcast CDC is based on [[Debezium]].
+
+Distributed queries:
+
+* SQL: Map, Kafka, Files, JDBC(beta), MongoDB (beta).
+* Predicates API: similar to the Java Persistence Query Language (JPQL).
+
+! References
+
+- [[Doc|https://docs.hazelcast.com/home/]]
+- [[Code|https://github.com/hazelcast/hazelcast]]

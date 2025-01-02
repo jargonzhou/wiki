@@ -1,6 +1,6 @@
 created: 20241211010809322
 creator: jargonzhou
-modified: 20241211014641936
+modified: 20241230043630618
 modifier: jargonzhou
 tags: [[Data Engineering Tools]]
 title: Apache Calcite
@@ -25,6 +25,54 @@ The following features are complete.
 <<<
 
 ! Terminology
+
+! Components
+
+* SQL language
+* Algebra
+* Adapters
+
+! RTFSC
+
+!! Dependencies
+
+* JavaCC
+* FreeMarker, FMPP
+
+!! Projects
+
+* [[Apache Calcite Avatica|https://github.com/apache/calcite-avatica]]: Apache Calcite's Avatica is a framework for building database drivers.
+
+<<<.tc-big-quote
+''Avatica'' is defined by ''a wire API'' between a client and a server. The Avatica //server// is an HTTP server, the Avatica //client// is a JDBC driver, and the wire API is defined by JSON or Protobuf Buffers. The flexibility of the wire API and HTTP transport allows other Avatica clients to be built in any language, implementing any client specification.
+<<<
+
+|Project|Description|h
+|bom||
+|release||
+|arrow|Arrow adapter for Calcite|
+|babel|for [[Babel parser|https://babeljs.io/docs/babel-parser]]|
+|cassandra|Cassandra adapter for Calcite|
+|core|Core Calcite APIs and engine|
+|druid|Druid adapter for Calcite|
+|elasticsearch|Elasticsearch adapter for Calcite|
+|example:csv|An example Calcite provider that reads CSV files|
+|example:function|Examples of user-defined Calcite functions|
+|file|Calcite provider that reads files and URIs|
+|geode|Geode adapter for Calcite|
+|innodb|InnoDB adapter for Calcite|
+|kafka|Kafka adapter for Calcite; exposes Kafka topics as stream tables|
+|linq4j|Calcite APIs for LINQ (Language-Integrated Query) in Java|
+|mongodb|MongoDB adapter for Calcite|
+|pig|Pig adapter for Calcite|
+|piglet|Pig-like language built on top of Calcite algebra|
+|plus|Miscellaneous extras for Calcite|
+|redis|Redis adapter for Calcite|
+|server||
+|spark||
+|splunk|Splunk adapter for Calcite; also a JDBC driver for Splunk|
+|testkit||
+|ubenchmark|Microbenchmarks for Calcite|
 
 ! References
 

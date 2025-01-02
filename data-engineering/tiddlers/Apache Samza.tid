@@ -1,0 +1,22 @@
+created: 20241216082720208
+creator: jargonzhou
+modified: 20241216082916912
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Samza
+
+<<<.tc-big-quote
+Apache Samza: A distributed stream processing framework
+
+Samza allows you to build stateful applications that process data in real-time from multiple sources including Apache Kafka.
+
+Battle-tested at scale, it supports flexible deployment options to run on ''YARN'' or as a ''standalone library'''.
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Home|https://samza.apache.org/]]
+* [[Code|https://github.com/apache/samza]]

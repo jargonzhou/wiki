@@ -1,0 +1,23 @@
+created: 20241216095715311
+creator: jargonzhou
+modified: 20241216101421670
+modifier: jargonzhou
+tags: TableOfContents
+title: Serverless
+
+<<<.tc-big-quote
+"Serverless computing" is a cloud service category in which the customer can use different cloud capabilities types without the customer having to provision, deploy and manage either hardware or software resources, other than providing customer application code or providing customer data. Serverless computing represents a form of virtualized computing." according to ISO/IEC 22123-2 ''Function as a service'' and ''serverless database'' are two forms of serverless computing.
+<<<
+
+! Terminology
+
+
+! Applications
+
+!! [[Apache OpenWhisk]]
+!! [[AWS Lambda]]
+!! [[Knative]]
+
+! References
+
+* [[Serverless computing - wikipedia|https://en.wikipedia.org/wiki/Serverless_computing]]

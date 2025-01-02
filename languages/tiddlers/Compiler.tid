@@ -1,6 +1,21 @@
 created: 20241205023047409
 creator: jargonzhou
-modified: 20241205023057249
+modified: 20241227053601219
 modifier: jargonzhou
 tags: TableOfContents
 title: Compiler
+
+<<<.tc-big-quote
+In computing, a compiler is a computer program that translates computer code written in one programming language (the source language) into another language (the target language). The name "compiler" is primarily used for programs that translate source code from a high-level programming language to a low-level programming language (e.g. assembly language, object code, or machine code) to create an executable program
+<<<
+
+! Terminology
+
+
+! References
+
+* [[Compiler - wikipedia|https://en.wikipedia.org/wiki/Compiler]]
+* Aho, Alfred V. / Ullman, Jeffrey D. ''The Theory of Parsing, Translation, and Compiling''. 1972. Prentice-Hall, Inc.
+* Aho, Alfred V. / Lam, Monica S. / Sethi, Ravi / Ullman, Jeffrey D. ''Compilers: Principles, Techniques, and Tools''. 2007, 2. edition. Pearson. - 龙书
+* Srikant, Y. N. / Shankar, Priti. ''The Compiler Design Handbook: Optimizations and Machine Code Generation''. 2007, 2. edition. CRC Press.
+* Cooper, Keith D. / Torczon, Linda. ''Engineering a Compiler''. 2012, 2. edition. Elsevier.

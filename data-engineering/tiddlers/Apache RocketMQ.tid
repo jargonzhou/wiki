@@ -1,0 +1,81 @@
+created: 20241216081949174
+creator: jargonzhou
+modified: 20241216082641821
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache RocketMQ
+
+<<<.tc-big-quote
+RocketMQ is a distributed messaging and streaming platform with low latency, high performance and reliability, trillion-level capacity and flexible scalability.
+
+It offers a variety of features:
+
+* Messaging patterns including publish/subscribe, request/reply and streaming
+* Financial grade transactional message
+* Built-in fault tolerance and high availability configuration options base on DLedger Controller
+* Built-in message tracing capability, also support opentracing
+* Versatile big-data and streaming ecosystem integration
+* Message retroactivity by time or offset
+* Reliable FIFO and strict ordered messaging in the same queue
+* Efficient pull and push consumption model
+* Million-level message accumulation capacity in a single queue
+* Multiple messaging protocols like gRPC, MQTT, JMS and OpenMessaging
+* Flexible distributed scale-out deployment architecture
+* Lightning-fast batch message exchange system
+* Various message filter mechanics such as SQL and Tag
+* Docker images for isolated testing and cloud isolated clusters
+* Feature-rich administrative dashboard for configuration, metrics and monitoring
+* Authentication and authorization
+* Free open source connectors, for both sources and sinks
+* Lightweight real-time computing
+<<<
+
+! Terminology
+
+! Domain Model
+
+Domain model of Apache RocketMQ:
+
+[img[https://rocketmq.apache.org/assets/images/mainarchi-9b036e7ff5133d050950f25838367a17.png]]
+
+Communication model:
+
+1. RPC-based synchronous model
+[img[https://rocketmq.apache.org/assets/images/syncarchi-ebbd41e1afd6adf432792ee2d7a91748.png]]
+2. Asynchronous communication model
+[img[https://rocketmq.apache.org/assets/images/asyncarchi-e7ee18dd77aca472fb80bb2238d9528b.png]]
+
+Message transmission model
+
+1. Point-to-point model
+[img[https://rocketmq.apache.org/assets/images/p2pmode-fefdc2fbe4792e757e26befc0b3acbff.png]]
+
+2. Publish/subscribe model
+[img[https://rocketmq.apache.org/assets/images/pubsub-042a4e5e5d76806943bd7dcfb730c5d5.png]]
+
+! Architecture
+
+
+Overview
+[img[https://yqintl.alicdn.com/89b22248b52a4b4de4c01824f2329ae5551ec8e3.png]]
+
+Service Discovery
+[img[https://yqintl.alicdn.com/6cf585f664e509179a4aa3121a1e2f356e01e352.png]]
+
+Load Balancing
+[img[https://yqintl.alicdn.com/d4de18953f50a70d17876a4f842e3b23c2198990.png]]
+[img[https://yqintl.alicdn.com/7e15e3486bd4fd2fae75eb58b8838145c1717b4e.png]]
+[img[https://yqintl.alicdn.com/1d5c75422b3e9566f6eeee97fbddc599596cdee6.png]]
+
+Storage System
+[img[https://yqintl.alicdn.com/688836ad499b3074f0c1a9a6cc0a5f241d16324c.png]]
+
+Topic High Availability
+[img[https://yqintl.alicdn.com/163b4feba645afb563463801f3a6216325db531c.png]]
+
+
+! References
+
+- [[Home|https://rocketmq.apache.org/]]
+- [[Code|https://github.com/apache/rocketmq]]
+* [[RocketMQ 5.0 Architecture Analysis: How to Support Diversified Scenarios Based on Cloud-native Architecture|https://www.alibabacloud.com/blog/rocketmq-5-0-architecture-analysis-how-to-support-diversified-scenarios-based-on-cloud-native-architecture_600564]] - 2023-11-20

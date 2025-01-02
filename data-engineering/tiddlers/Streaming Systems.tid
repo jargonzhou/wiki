@@ -1,0 +1,347 @@
+created: 20241216052908628
+creator: jargonzhou
+modified: 20241216054901791
+modifier: jargonzhou
+tags: [[Data Pipeline]]
+title: Streaming Systems
+
+! Terminology
+
+
+! Streaming SQL
+
+!! What Is Streaming SQL?
+
+* Apache Calcite, Apache Flink, Apache Beam: vision of streaming SQL
+
+relational algebra: closure property
+
+TVR: time-varying relation
+
+streams and tables
+
+```sql
+SELECT TABLE ...
+SELECT STREAM ...
+-- system colums:
+--   Sys.Undo: can be referenced from s STREAM query, identify rows that are retractions.
+
+-- SQL 2011:
+-- temporal tables: store a versioned history of the table over time.
+-- AS OF SYSTEM TIME construct: explicitly query and receive a snapshot of the temporal table relation at whatever point in time you specified.
+```
+
+!! Looking Backward: Stream and Table Biases
+
+* the Beam model: stream biased approach
+
+example:
+
+```java
+// Example 6-5. Early, on-time, and late firings via the early/on-time/late API
+
+PCollection<String> raw = IO.read(...);
+PCollection<KV<Team, Integer>> input = raw.apply(new ParseFn());
+PCollection<KV<Team, Integer>> totals = input
+    .apply(Window.into(FixedWindows.of(TWO_MINUTES))
+                .triggering(
+                    AfterWatermark()
+                    .withEarlyFirings(AlignedDelay(ONE_MINUTE))
+                    .withLateFirings(AfterCount(1))))
+    .apply(Sum.integersPerKey());
+```
+
+* the SQL model: table biased approach
+
+example:
+
+```sql
+-- UserScores (user, team, score, timestamp)
+
+-- SCAN
+SELECT team, SUM(score) as total
+FROM UserScores
+GROUP BY team;
+
+-- split into two separate queries
+SELECT team, score
+INTO TeamAndScore
+FROM UserScores;
+
+SELECT team, SUM(score) as total
+INTO TeamTotals
+FROM TeamAndScore
+GROUP BY team
+-- HAVING SUM(score) > 100
+;
+
+-- materialized views
+-- SCAN-AND-STREAM: 
+--   after emit the table at a point in time into a stream, 
+--   continue to trigger all subsequence modifications to the input table
+CREATE MATERIALIZED VIEW TeamAndScoreView AS
+SELECT team, score
+FROM UserScores;
+
+CREATE MATERIALIZED VIEW LargeTeamTotalsView AS
+SELECT team, SUM(score) as total
+FROM TeamAndScoreView
+GROUP BY team
+HAVING SUM(score) > 100;
+```
+
+conversions:
+
+* sources/input tables
+* sinks/output tables
+* grouping/ungrouping operations
+
+!! Looking Forward: Toward Robust Streaming SQL
+
+stream and table selection: if all of the input are tables/streams, the output is a `TABLE`/`STREAM`.
+
+temporal operators:
+
+```sql
+-- Sys.MTime: process time column
+
+/*
+  cases
+*/
+-- order by event time
+-- order by process time
+-- aggregation: SUM, MAX
+-- windowing: explicit windowing statement supported by Apache Calcite
+-- triggers and watermarks
+--   per-record triggers: SQL-ish default
+--   watermark triggers: 
+        EMIT <when> statement: EMIT WHEN WATERMARK PAST <column>
+        columns: EmitTime
+        late firings: AND THEN AFTER <duration>
+            columns: 
+                Sys.EmitTiming: the timing of each row/pane for a given window relative to watermark
+                Sys.EmitIndex: the sequence of revisions for a give window
+--    repeated delay triggers
+--    data-driven triggers:
+        EMIT WHEN Score > 10
+        per-record trigger, HAVING Score > 10
+```
+
+how refinements for a window/row relate to one another:
+
+* `Sys.Undo`
+* accumulating mode
+* accumulating and retracting mode: comsumption of multiplre revisions of a row within a system that allows for queries containing more than one serial grouping operation.
+* discarding mode: narrow use cases, is confusing and error-prone.
+
+! Streaming Join
+
+> TODO: find an implementation or suppports in current systems
+
+!! All Your Joins Are Belong to Streaming
+
+at their hearts, all joins are streaming joins.
+
+example:
+
+```sql
+12:10> SELECT TABLE * FROM Left;    12:10> SELECT TABLE * FROM Right;
+--------------------                --------------------
+| Num | Id | Time |                 | Num | Id | Time |
+--------------------                --------------------
+| 1   | L1 | 12:02 |                | 2   | R2 | 12:01 |
+| 2   | L2 | 12:06 |                | 3   | R3 | 12:04 |
+| 3   | L3 | 12:03 |                | 4   | R4 | 12:05 |
+--------------------                --------------------
+```
+
+!! Unwindowed Joins
+
+ANSI SQL defines 5 types of join:
+
+```sql
+-- 1. FULL OUTER
+12:10> SELECT TABLE
+            Left.Id as L,
+            Right.Id as R,
+        FROM Left FULL OUTER JOIN Right
+        ON L.Num = R.Num;
+---------------
+| L     | R    |
+---------------
+| L1    | null |
+| L2    | R2   |
+| L3    | R3   |
+| null  | R4   |
+---------------
+12:10> SELECT TVR
+            Left.Id as L,
+            Right.Id as R,
+        FROM Left FULL OUTER JOIN Right
+            ON L.Num = R.Num;
+12:00> SELECT STREAM
+            Left.Id as L,
+            Right.Id as R,
+            CURRENT_TIMESTAMP as Time,
+            Sys.Undo as Undo
+        FROM Left FULL OUTER JOIN Right
+            ON L.Num = R.Num;
+
+
+-- 2. LEFT OUTER
+                                            12:00> SELECT STREAM Left.Id as L,
+12:10> SELECT TABLE                                 Right.Id as R,
+        Left.Id as L,                               Sys.EmitTime as Time,
+        Right.Id as R                               Sys.Undo as Undo
+        FROM Left                                   FROM Left
+        LEFT OUTER JOIN Right                       LEFT OUTER JOIN Right
+            ON L.Num = R.Num;                           ON L.Num = R.Num;
+
+-- 3. RIGHT OUTER
+                                            12:00> SELECT STREAM Left.Id as L,
+12:10> SELECT TABLE                                 Right.Id as R,
+        Left.Id as L,                               Sys.EmitTime as Time,
+        Right.Id as R                               Sys.Undo as Undo
+        FROM Left RIGHT OUTER JOIN Right            FROM Left RIGHT OUTER JOIN Right
+            ON L.Num = R.Num;                           ON L.Num = R.Num;
+
+-- 4. INNER
+                                            12:00> SELECT STREAM Left.Id as L,
+12:10> SELECT TABLE                                 Right.Id as R,
+        Left.Id as L,                               Sys.EmitTime as Time,
+        Right.Id as R                               Sys.Undoas Undo
+        FROM Left INNER JOIN Right                  FROM Left INNER JOIN Right
+            ON L.Num = R.Num;                           ON L.Num = R.Num;
+
+-- 5. CROSS
+```
+
+variations:
+
+```sql
+-- 1. ANTI
+                                            12:00> SELECT STREAM Left.Id as L,
+12:10> SELECT TABLE                                 Right.Id as R,                  
+        Left.Id as L,                               Sys.EmitTime as Time,
+        Right.Id as R                               Sys.Undo as Undo
+        FROM Left ANTI JOIN Right                   FROM Left ANTI JOIN Right
+            ON L.Num = R.Num;                           ON L.Num = R.N
+
+-- 2. SEMI
+12:10> SELECT TABLE                         12:10> SELECT TABLE
+        Left.Id as L                                Left.Id as L
+        FROM Left INNER JOIN                        FROM Left SEMI JOIN 
+            Right ON L.Num = R.Num;                     Right ON L.Num = R.Num;
+```
+
+!! Windowed Joins
+
+fixed windows:
+
+```sql
+12:10> SELECT TABLE *,                      12:10> SELECT TABLE *,
+        TUMBLE(Time, INTERVAL '5' MINUTE)           TUMBLE(Time, INTERVAL '5' MINUTE)
+        as Window FROM Left;                        as Window FROM Right
+
+                                            12:10> SELECT TABLE
+                                                    Left.Id as L,
+                                                    Right.Id as R,
+                                                    COALESCE(TUMBLE(Left.Time, INTERVAL '5' MINUTE),
+                                                        TUMBLE(Right.Time, INTERVAL '5' MINUTE)
+12:10> SELECT TABLE                                 ) AS Window
+        Left.Id as L,                               FROM Left
+        Right.Id as R,                              FULL OUTER JOIN Right
+        FROM Left                                       ON L.Num = R.Num AND
+        FULL OUTER JOIN Right                               TUMBLE(Left.Time, INTERVAL '5' MINUTE) =
+        ON L.Num = R.Num;                                   TUMBLE(Right.Time, INTERVAL '5' MINUTE);
+
+
+                                            12:10> SELECT STREAM
+                                            Left.Id as L,
+                                            Right.Id as R,
+                                            Sys.EmitTime as Time,
+                                            COALESCE(TUMBLE(Left.Time, INTERVAL '5' MINUTE),
+12:10> SELECT STREAM                            TUMBLE(Right.Time, INTERVAL '5' MINUTE)
+        Left.Id as L,                       ) AS Window,
+        Right.Id as R,                      Sys.Undo as Undo
+        Sys.EmitTime as Time,               FROM Left
+        Sys.Undo as Undo                    FULL OUTER JOIN Right
+        FROM Left                               ON L.Num = R.Num AND
+        FULL OUTER JOIN Right                       TUMBLE(Left.Time, INTERVAL '5' MINUTE) =
+            ON L.Num = R.Num;                       TUMBLE(Right.Time, INTERVAL '5' MINUTE);
+
+                                            12:10> SELECT TABLE
+                                            Left.Id as L,
+                                            Right.Id as R,
+                                            COALESCE(TUMBLE(Left.Time, INTERVAL '5' MINUTE),
+                                                TUMBLE(Right.Time, INTERVAL '5' MINUTE)
+12:10> SELECT TABLE                         ) AS Window
+        Left.Id as L,                       FROM Left
+        Right.Id as R,                      LEFT OUTER JOIN Right
+        FROM Left                               ON L.Num = R.Num AND
+        LEFT OUTER JOIN Right                       TUMBLE(Left.Time, INTERVAL '5' MINUTE) =
+        ON L.Num = R.Num;                           TUMBLE(Right.Time, INTERVAL '5' MINUTE);
+```
+
+temporal validity windows:
+
+```sql
+12:10> SELECT TABLE * FROM YenRates;
+12:10> SELECT TABLE * FROM YenRates WHERE Curr = "Euro";
+12:10> SELECT TVR * FROM YenRatesWithRegion ORDER BY EventTime;
+
+12:10> SELECT TABLE
+        Curr,
+        MAX(Rate) as Rate,
+        VALIDITY_WINDOW(EventTime) as Window
+        FROM YenRates
+        GROUP BY
+            Curr,
+            5VALIDITY_WINDOW(EventTime)
+        HAVING Curr = "Euro";
+
+12:00> SELECT STREAM
+        Curr,
+        MAX(Rate) as Rate,
+        VALIDITY_WINDOW(EventTime) as Window,
+        Sys.EmitTime as Time,
+        Sys.Undo as Undo,
+        FROM YenRates
+        GROUP BY
+            Curr,
+            VALIDITY_WINDOW(EventTime)
+        HAVING Curr = "Euro";
+
+-- Temporal validity joins
+```
+
+! The Evolution of Large-Scale Data Processing
+
+A brief summary of contributions to streaming systems:
+
+* MapReduce: scalability and simplicity
+* Hadoop: open source ecosystem
+* Flume: pipelines, optimization
+* Storm: low latency with weak consistency
+* Spark: strong consistency
+* MillWheel: out-of-order processing
+* Kafka: durable streams, streams and tables
+* Cloud Dataflow: unified batch plus streaming
+* Flink: open source stream processing innovator
+* Beam: portability
+
+
+! Yahoo Streaming Benchmarks
+
+* [[yahoo/streaming-benchmarks|https://github.com/yahoo/streaming-benchmarks]]: Sanket Chintapalli, Derek Dagit, Bobby Evans, et al. ''Benchmarking Streaming Computation Engines: Storm, Flink and Spark Streaming.'' First Annual Workshop on Emerging Parallel and Distributed Runtime Systems and Middleware. IEEE, 2016.
+
+
+! References
+
+* Tyler Akidau Slava Chernyak / Lax, Reuven. ''Streaming Systems: The What, Where, When, and How of Large-Scale DataProcessing''. 2018. O’Reilly Media.
+** [[Figures: Streaming Systems Book|http://www.streamingbook.net/figures]]. Code: https://github.com/takidau/animations
+* [[Streaming 101: The world beyond batch|https://www.oreilly.com/radar/the-world-beyond-batch-streaming-101/]]: Streaming 101: The world beyond batch. A high-level tour of modern data-processing concepts. By Tyler Akidau, August 5, 2015
+* [[Streaming 102: The world beyond batch|https://www.oreilly.com/radar/the-world-beyond-batch-streaming-102/]]:  Streaming 102: The world beyond batch. The what, where, when, and how of unbounded data processing. By Tyler Akidau, January 20, 2016
+* ''The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing''. http://www.vldb.org/pvldb/vol8/p1792-Akidau.pdf
+
+

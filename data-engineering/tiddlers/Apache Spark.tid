@@ -1,0 +1,76 @@
+created: 20241216060830595
+creator: jargonzhou
+modified: 20241216061849776
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Spark
+
+<<<.tc-big-quote
+Apache Spark is a unified analytics engine for large-scale data processing. It provides high-level APIs in Java, Scala, Python and R, and an optimized engine that supports general execution graphs. It also supports a rich set of higher-level tools including Spark SQL for SQL and structured data processing, pandas API on Spark for pandas workloads, MLlib for machine learning, GraphX for graph processing, and Structured Streaming for incremental computation and stream processing.
+<<<
+
+! Terminology
+
+! Project strucute
+
+```shell
+ $ grep "<module>" pom.xml
+<module>common/sketch</module>             Spark Project Sketch
+<module>common/kvstore</module>            Spark Project Local DB
+<module>common/network-common</module>     Spark Project Networking
+<module>common/network-shuffle</module>    Spark Project Shuffle Streaming Servic
+<module>common/unsafe</module>             Spark Project Unsafe
+<module>common/tags</module>               Spark Project Tags
+<module>core</module>                      Spark Project Core
+<module>graphx</module>
+<module>mllib</module>
+<module>mllib-local</module>
+<module>tools</module>                     Spark Project Tools
+<module>streaming</module>                 Spark Project Streaming
+<module>sql/catalyst</module>              Spark Project Catalyst
+<module>sql/core</module>                  Spark Project SQL
+<module>sql/hive</module>                  Spark Project Hive
+<module>assembly</module>                  Spark Project Assembly
+<module>examples</module>                  Spark Project Examples
+<module>repl</module>                      Spark Project REPL
+<module>launcher</module>                  Spark Project Launcher
+<module>external/kafka-0-10-token-provider</module>  Kafka 0.10+ Token Provider for Streaming
+<module>external/kafka-0-10</module>                 Spark Integration for Kafka 0.10
+<module>external/kafka-0-10-assembly</module>        Spark Integration for Kafka 0.10 Assembly
+<module>external/kafka-0-10-sql</module>             Kafka 0.10+ Source for Structured Streaming
+<module>external/avro</module>                       Spark Avro
+
+<!-- modules enables by profiles -->
+  <module>external/spark-ganglia-lgpl</module>
+  <module>external/kinesis-asl</module>
+  <module>external/kinesis-asl-assembly</module>
+  <module>external/docker-integration-tests</module>
+  <module>resource-managers/yarn</module>
+  <module>common/network-yarn</module>
+  <module>resource-managers/mesos</module>
+  <module>resource-managers/kubernetes/core</module>
+  <module>resource-managers/kubernetes/integration-tests</module>
+  <module>sql/hive-thriftserver</module>
+  <module>hadoop-cloud</module>
+```
+
+
+! PySpark
+
+<<<.tc-big-quote
+PySpark is the Python API for Apache Spark. It enables you to perform real-time, large-scale data processing in a distributed environment using Python. It also provides a PySpark shell for interactively analyzing your data.
+
+PySpark combines Python’s learnability and ease of use with the power of Apache Spark to enable processing and analysis of data at any size for everyone familiar with Python.
+
+PySpark supports all of Spark’s features such as Spark SQL, DataFrames, Structured Streaming, Machine Learning (MLlib) and Spark Core.
+<<<
+
+! References
+
+* [[Home|https://spark.apache.org]]
+** [[PySpark|https://spark.apache.org/docs/latest/api/python/]]
+* [[Code|https://github.com/apache/spark]]
+* Damji, Jules S. / Wenig, Brooke / Das, Tathagata / Lee, Denny. ''Learning Spark''. 2020, 2. edition. O'Reilly Media.
+* Chambers, Bill / Zaharia, Matei. ''Spark: The Definitive Guide''. 2018. O’Reilly Media.
+
+* [[Deep Dive into Spark SQL's Catalyst Optimizer|https://www.databricks.com/blog/2015/04/13/deep-dive-into-spark-sqls-catalyst-optimizer.html]]

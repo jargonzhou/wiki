@@ -1,0 +1,139 @@
+created: 20241216054219231
+creator: jargonzhou
+modified: 20241216090505315
+modifier: jargonzhou
+tags: [[Data Engineering Tools]]
+title: Apache Flink
+
+<<<.tc-big-quote
+Stateful Computations over Data Streams
+
+Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams. Flink has been designed to run in all common cluster environments, perform computations at in-memory speed and at any scale.
+<<<
+
+! Terminology
+
+! Architecture
+
+[img[https://nightlies.apache.org/flink/flink-docs-release-1.16/fig/processes.svg]]
+
+! APIs
+
+from high level to low level:
+
+* SQL: high-level language
+* Table API: declarative DSL
+* DataStream/DataSet API: core APIs
+* Stateful Stream Processing: low-level building block (streams, state, [event] time)
+
+!! CLI
+
+* [[Command-Line Interface|https://nightlies.apache.org/flink/flink-docs-release-1.19/docs/deployment/cli/]]
+
+!! REST
+
+* [[REST API|https://nightlies.apache.org/flink/flink-docs-release-1.19/docs/ops/rest_api/]]
+
+!! Python
+
+* [[Python API|https://nightlies.apache.org/flink/flink-docs-release-1.19/docs/dev/python/overview/]]
+* [[Submitting PyFlink Jobs|https://nightlies.apache.org/flink/flink-docs-release-1.19/docs/deployment/cli/#submitting-pyflink-jobs]]
+
+! Components
+
+* Flink Client
+** Command line interface
+** REST endpoint
+** SQL client
+** Python REPL
+* JobManager
+** Standalone
+** Kubernetes
+** YARN
+* TaskManager
+* External components
+** High Available Service Provider: Zookeeper, Kubernetes HA
+** File Storage and Persistency
+** Resource Provider
+** Metrics Storage
+** Application-level data sources and sinks: connectors
+
+! Deployment 
+
+modes:
+
+* application mode: runs on JobManager then exit
+* per-job mode: deprecated
+* session mode: multiple jobs share one JobManager
+
+!! Configuration
+
+> Starting from Flink-1.19, the default configuration file has been changed to `config.yaml` and placed in the `conf/` directory. Users should directly modify this file to configure Flink.
+
+! Data Structures
+
+(1) `DataStream`
+
+read: `StreamExecutionEnvironment`
+
+transform
+
+write
+
+`SideOutput`, `OutputTag`
+
+(2) environment
+
+`StreamExecutionEnvironment`, `Environment`, `RuntimeContext`
+
+(3) `StreamElement`
+
+`StreamRecord`, `LatencyMarker`, `Watermark`, `StreamStatus`
+
+(4) `Transformation`
+
+`PhysicalTransformation`
+
+(5) `StreamOperator`
+
+flink-streaming-java, flink-table-runtime-blink
+
+(6) `Function`
+
+`SourceFunction`, `SinkFunction`, `Function`
+
+`RichFunction`, `ProcessFunction`
+
+`BroadcaseProcessFunction`
+
+`AsyncFunction`
+
+`CheckpointedFunction`, `ListCheckpointed`
+
+(7) `Partition`
+
+`StreamPartitioner`, `ChannelSelector`
+
+(8) Connector
+
+Flink-connectors module, Bahir
+
+(9) `AbstractID`
+
+(10) State
+
+(11) Dataflow
+
+`StreamGraph`, `JobGraph`, `ExecutionGraph`
+
+! Ecosystem
+
+* [[Ververica Platform|https://www.ververica.com/platform]]: The Enterprise Stream Processing Platform by the Original Creators of Apache Flink®.
+
+! References
+
+* [[Home|https://flink.apache.org]]
+* Hueske, Fabian / Kalavri, Vasiliki. ''Stream Processing with Apache Flink''. 2019. O’Reilly Media.
+* [[Flink 从0到1学习|http://www.54tianzhisheng.cn/2019/06/13/flink-book-paper/]]
+* [[Flink learning blog|http://www.54tianzhisheng.cn/]]
+* 冯飞, 崔鹏云, 陈冠华. ''Flink内核原理与实现''. 机械工业出版社: 2023.
