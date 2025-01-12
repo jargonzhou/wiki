@@ -1,6 +1,6 @@
 created: 20241216022400851
 creator: jargonzhou
-modified: 20241216040303871
+modified: 20250110012011929
 modifier: jargonzhou
 tags: TableOfContents
 title: Python
@@ -39,8 +39,8 @@ title: Python
 
 * [[mock|https://mock.readthedocs.io/en/latest/]]: mock is a library for testing in Python. It allows you to replace parts of your system under test with mock objects and make assertions about how they have been used. mock is now part of the Python standard library, available as `unittest.mock` in Python 3.3 onwards.
 * [[pytest|https://docs.pytest.org/en/7.4.x/]]: The pytest framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries.
-
 * [[Requests: HTTP for Humans™|https://docs.python-requests.org/en/latest/]]: Requests is an elegant and simple HTTP library for Python, built for human beings.
+* [[Twisted|https://github.com/twisted/twisted]]: Event-driven networking engine written in Python.
 
 ! More
 

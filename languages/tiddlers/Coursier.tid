@@ -1,6 +1,6 @@
 created: 20241223051856140
 creator: jargonzhou
-modified: 20241224050257138
+modified: 20250111041811921
 modifier: jargonzhou
 tags: [[Language Tools]] Scala
 title: Coursier
@@ -11,11 +11,47 @@ Coursier is the Scala application and artifact manager. It can install Scala app
 
 ! Terminology
 
+* application: 应用
+
+! Default applications
+
+* cs: 管理Scala环境
+* scala-cli: 编译/运行/打包Scala代码
+* scala: Scala REPL
+* scalac: Scala编译器
+* sbt, sbtn: sbt构建工具
+* ammonite: 增强的Scala REPL
+* scalafmt: Scala代码格式化器
+
+! Commands
+
+* setup: 安装Scala开发环境
+* install, list, update, uninstall, search: 管理安装的Scala应用
+** install: 在安装目录中安装应用
+** list: 查看已安装的应用
+** update: 更新已安装的应用
+** uninstall: 卸载应用
+** search: 搜索应用
+* channel: 配置安装Scala应用的来源渠道
+* launch, bootstrap: Scala应用启动器
+** launch: 按名称启动应用, 或者直接从一个或多个Maven依赖启动
+** bootstrap: 从一个或多个Maven依赖创建二进制启动器
+* java, java-home: 管理安装的JVM
+** java: 管理JVM
+** java-home: 输出JVM的主目录
+* fetch, resolve: 直接操作Maven依赖
+** fetch: 拉取一个或多个Maven依赖
+** resolve: 输出一个或多个Maven依赖的传递依赖
+* complete-dep: 补全Maven坐标
+
+
 ! Usage
 
 ```shell
 $ cs setup
 # windows: ~/AppData/Local/Coursier/data/bin
+# linux: ~/.local/share/coursier/bin
+# MacOS: ~/Library/Application Support/Coursier/bin
 
 $ cs install scala:2.12.17 scalac:2.12.17
 $ cs launch scala:2.12.17
@@ -26,6 +62,11 @@ $ scalac -version
 $ sbt --script-version
 ```
 
+
+给应用传递Java参数: `-J`选项, `JAVA_OPTS`环境变量. 
+
+
 ! References
 
 * [[Home|https://get-coursier.io/]]
+* [[coursier jvm-index|https://github.com/coursier/jvm-index]]

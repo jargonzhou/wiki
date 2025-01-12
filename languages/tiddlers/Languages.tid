@@ -1,6 +1,6 @@
 created: 20241126051155393
 creator: jargonzhou
-modified: 20241230034546381
+modified: 20250111032603766
 modifier: jargonzhou
 tags: TableOfContents
 title: Languages
@@ -115,6 +115,7 @@ type: text/vnd.tiddlywiki
 * [[JFLAP]] `Automata`
 * [[Language Server Protocol]]
 * [[Jupyter]]
+* [[sbt]] `Scala`
 * [[SDKMAN!]] `Java`
 * [[tree-sitter]]
 

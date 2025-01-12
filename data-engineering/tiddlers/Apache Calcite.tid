@@ -1,6 +1,6 @@
 created: 20241211010809322
 creator: jargonzhou
-modified: 20241230043630618
+modified: 20250112141118638
 modifier: jargonzhou
 tags: [[Data Engineering Tools]]
 title: Apache Calcite
@@ -31,6 +31,13 @@ The following features are complete.
 * SQL language
 * Algebra
 * Adapters
+
+! Usage
+
+Action: 
+
+* `jupyter-notebooks/DataEngineering/apache-calcite/Calcite.ipynb`
+* `jupyter-notebooks/DataEngineering/apache-calcite/_sqlline.ipynb`
 
 ! RTFSC
 
@@ -73,6 +80,31 @@ The following features are complete.
 |splunk|Splunk adapter for Calcite; also a JDBC driver for Splunk|
 |testkit||
 |ubenchmark|Microbenchmarks for Calcite|
+
+!! core
+
+> Main package for Calcite, the dynamic data management platform.
+
+|Package|Description|h
+|adapter|Calcite adapters: inculde a schema in JSON model file.|
+|config|Configuration|
+|interpreter|Provides an implementation of relational expressions using an interpreter.|
+|jdbc|JDBC driver for Calcite.|
+|materialize|Management of materialized query results.|
+|model|Provides model files, in JSON format, defining schemas and other metadata.|
+|plan|Defines interfaces for constructing rule-based optimizers of relational expressions: hep, volcano and a visulaizer.|
+|prepare|Preparation of queries (parsing, planning and implementation).|
+|profile|Utilities to analyze data sets.|
+|rel|Defines relational expressions.|
+|rex|Provides a language for representing row-expressions.|
+|runtime|Utilities required at runtime.|
+|schema|Schema SPI.|
+|server|Provides a server for hosting Calcite connections.|
+|sql|Provides a SQL parser and object model.|
+|sql2rel|Translates a SQL parse tree to relational expression.|
+|statistic|Implementations of statistics providers.|
+|tools|Provides utility classes.|
+|util|Provides utility classes.|
 
 ! References
 

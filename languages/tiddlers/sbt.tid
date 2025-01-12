@@ -1,0 +1,22 @@
+created: 20250111032629903
+creator: jargonzhou
+modified: 20250111072807614
+modifier: jargonzhou
+tags: [[Language Tools]] Scala
+title: sbt
+
+<<<.tc-big-quote
+sbt is a build tool for Scala, Java, and more. It requires Java 1.8 or later.
+<<<
+
+! Terminology
+
+
+! Usage
+
+Action: `jupyter-notebooks/Scala/tools/sbt/_sbt.ipynb`
+
+! References
+
+* [[Home|https://www.scala-sbt.org/]]
+* [[1.x Doc|https://www.scala-sbt.org/1.x/docs/]]

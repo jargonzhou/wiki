@@ -18,4 +18,7 @@ Scala/clean.sh
 chmod +x Compiler/clean.sh
 Compiler/clean.sh
 
+chmod +x DataEngineering/clean.sh
+DataEngineering/clean.sh
+
 echo "Done"

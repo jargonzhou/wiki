@@ -1,6 +1,6 @@
 created: 20241223053510988
 creator: jargonzhou
-modified: 20241224103727752
+modified: 20250111090157310
 modifier: jargonzhou
 tags: [[Language Tools]]
 title: Jupyter
@@ -162,6 +162,8 @@ I1026 22:29:10.291006   13307 install.go:121] [3365839d] Go (gonb) kernel config
 !! Java
 
 * [[Ganymede|https://github.com/allen-ball/ganymede]]: The Ganymede Kernel is a Jupyter Notebook Java kernel based on the Java Shell tool, JShell.
+* [[JJava|https://github.com/dflib/jjava]]: JJava is an evolution of the earlier IJava kernel, that is no longer maintained by its authors.
+
 
 !! Rust
 
