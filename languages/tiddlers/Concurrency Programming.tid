@@ -1,17 +1,42 @@
 created: 20241209095922013
 creator: jargonzhou
-modified: 20241209134500459
+modified: 20250212093915023
 modifier: jargonzhou
 tags: Languages
 title: Concurrency Programming
 
 ! Terminology
 
+! Abstraction
+
+!! Process Algebras
+
+CCS (Calculus of Communicating Systems):
+
+* Milner, R., A Calculus for Communicating Systems, Lecture Notes in Computer Science, Vol. 92, Springer, 1980.
+* Milner, R., Communication and Concurrency, Prentice Hall, 1989.
+
+CSP (Communicating Sequential Process):
+
+* Hoare C.A.R., ''Communicating Sequential Processes'', Prentice- Hall, 1985, 256 pages, ISBN 0-13-153271-5. http://www.usingcsp.com/cspbook.pdf.
+* ''Theory of Concurrency'' page of Oxford: https://www.cs.ox.ac.uk/activities/concurrency/research/theory/
+* A.W. Roscoe. ''The Theory and Practice of Concurrency'', Prentice-Hall: 2005.
+
+!! STM(Software Transactional Memory)
+
+* [[more - wikipedia|https://en.wikipedia.org/wiki/Software_transactional_memory]]: ex Clojure Refs
+
 ! Temporal Logic
 
-
+! Verification
 
 ! References
 
+* [[Concurrency (computer science) - wikipedia|https://en.wikipedia.org/wiki/Concurrency_(computer_science)]]
+
+Books:
+
 * Herlihy, Maurice / Shavit, Nir / Luchangco, Victor / Spear, Michael. ''The Art of Multiprocessor Programming''. 2021, 2. edition. Elsevier. 
 * Manna, Z. & Pnueli, A. ''The Temporal Logic of Reactive and Concurrent Systems''. Springer Scienee+Business. Media, 1992.
+* Ben, M. ''Principles of concurrent and distributed programming''. 2006, 2. edition. Addison-Wesley.
+** 并发程序验证(verification), code in Ada, Promela.

@@ -1,6 +1,6 @@
 created: 20241203045520287
 creator: jargonzhou
-modified: 20241223053648129
+modified: 20250120062545237
 modifier: jargonzhou
 tags: [[Language Tools]]
 title: Jupyter Kernels
@@ -14,7 +14,7 @@ files:
 * `kernel.js`
 * logo image file.
 
-list and uages:
+list and usages:
 
 ```shell
 $ jupyter kernelspec list

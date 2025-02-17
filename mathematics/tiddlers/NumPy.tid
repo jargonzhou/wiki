@@ -1,13 +1,10 @@
 created: 20241126082525178
 creator: jargonzhou
-modified: 20241128090648312
+modified: 20250210053608403
 modifier: jargonzhou
 tags: [[Machine Learning]] NumPy
 title: NumPy
 type: text/vnd.tiddlywiki
-
-* 2024-11-20
-* Action: `jupyter-notebooks/Python/numpy/_numpy.ipynb`
 
 <<<.tc-big-quote
 NumPy: Numerical Python
@@ -41,6 +38,8 @@ It provides:
 * `unicode_`: `U`
 
 ! Usage
+
+Action: `jupyter-notebooks/DataEngineering/_DataScience/tools/numpy/_numpy.ipynb`
 
 ```python
 import numpy as np
@@ -107,6 +106,10 @@ np.savez_compressed()
 !! `numpy.fft`
 
 > TODO
+
+! See Also
+
+* [[Numba]]
 
 ! References
 

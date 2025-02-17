@@ -1,40 +1,47 @@
 created: 20241202010418110
 creator: jargonzhou
-modified: 20241217012749729
+modified: 20250212053159670
 modifier: jargonzhou
 tags: [[Data Engineering]]
 title: Data Engineering
 
-created: 20241202010418110
-creator: jargonzhou
-modified: 20241216103031545
-modifier: jargonzhou
-tags: [[Data Engineering]]
-title: Data Engineering
+! Topics
+!! Data Theory
 
-! [[Data Theory]]
-
+* [[Data Theory]]
 * [[Data Engineering Methodology]]
 * [[Distributed Systems]]
 
-! [[Database Systems]]
+!! Database Systems
 
+* [[Database Systems]]
 * [[Architecture of Database Systems]]
 * [[Internal of Database Systems]]
 
-! [[Data Storage]]
+!! Data Storage
 
-! [[Data Pipeline]]
+* [[Data Storage]]
 
+!! Data Pipeline
+
+* [[Data Pipeline]]
 * [[CDC]]: Change Data Capture
 * [[CQL]]
 * [[Delay Queue]]
 * [[Streaming Systems]]
 
-! [[Data Mesh]]
+!! Data Mesh
+
+* [[Data Mesh]]
+
+!! Observability
+
+* [[Observability]] TODO
+* [[System Performance]] TODO
 
 ! Infrastructure
 
+* [[DevOps]]
 * [[Docker]]
 * [[Infrastructure as Code]]
 * [[Kubernetes]]
@@ -82,11 +89,18 @@ title: Data Engineering
 * [[Neon]] TOUCH
 * [[OpenTSDB]] TOUCH `TimeSeries`
 * [[Presto]] TOUCH
+* [[RabbitMQ]] TOUCH `AMQP`
 * [[ReadySet]] TOUCH
 * [[SQLite]] TOUCH
 * [[StarRocks]] TOUCH `MPP` `OLAP`
 * [[Vector]] TOUCH `Observability`
 * [[Velox]] TOUCH
+
+!! System Performance
+
+* [[BPF]] TOUCH `Observability`
+* [[perf]] TOUCH
+* [[strace]]
 
 !! Miscellaneous
 

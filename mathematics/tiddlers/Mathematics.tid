@@ -1,6 +1,6 @@
 created: 20230104152413814
 creator: jargonzhou
-modified: 20241223053713666
+modified: 20250212041701095
 modifier: jargonzhou
 tags: TableOfContents
 title: Mathematics
@@ -21,6 +21,7 @@ type: text/vnd.tiddlywiki
 
 ! Applications
 
+* [[Artificial Intelligence]]
 * [[Machine Learning]]
 * [[NLP]]
 

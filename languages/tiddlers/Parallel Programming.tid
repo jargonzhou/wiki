@@ -1,15 +1,75 @@
 created: 20241209100112339
 creator: jargonzhou
-modified: 20241209100322772
+modified: 20250212084008022
 modifier: jargonzhou
-tags: Languages
+tags: TableOfContents
 title: Parallel Programming
+
+<<<.tc-big-quote
+Parallel computing - wikipedia
+
+Parallel computing is a type of computation in which many calculations or processes are carried out simultaneously.
+Large problems can often be divided into smaller ones, which can then be solved at the same time. There are several different forms of parallel computing: bit-level, instruction-level, data, and task parallelism. Parallelism has long been employed in high-performance computing, but has gained broader interest due to the physical constraints preventing frequency scaling.
+As power consumption (and consequently heat generation) by computers has become a concern in recent years, parallel computing has become the dominant paradigm in computer architecture, mainly in the form of multi-core processors.
+<<<
 
 ! Terminology
 
+* CUDA: Compute Unified Device Architecture.
+* Distributed-memory programming: 分布式内存编程.
+* HPC: high performance computing, 高性能计算.
+* ILP: instruction level parallelism, 指令级并行.
+* MIMD: 多指令多数据.
+* OpenCL: Open Computing Language.
+* parallel: 并行.
+* Share-memory programming: 共享内存编程.
+* SIMD: 单指令多数据.
+* SPMD: 单程序多数据.
+
+
+! Usage
+
+Action:
+
+* Concept Map: `ConceptMap/Parallel Programming.cmap`
+* `jupyter-notebooks/Concurrency and Parallel/_index.ipynb` in Windows WSL
+** `MPI.ipynb`
+** `Pthreads.ipynb`
+** `OpenMP.ipynb`
+** `CUDA.ipynb`: NO NVIDIA GPU currently.
+
+
+! Tools
+
+* [[CUDA]]
+* [[MPI]]
+* [[OpenMP]]
+* [[Pthreads]]
 
 ! References
 
+* [[Parallel Computing - wikipedia|https://en.wikipedia.org/wiki/Parallel_computing]]
+
+Books:
+
+* James Reinders, Jim Jeffers. ''High Performance Parallelism Pearls: Multicore and Many-core Programming Approaches''. Morgan Kaufmann. 2015.
 * McKenney, Paul E. ''Is Parallel Programming Hard, And, If So, What Can You Do About It?''. 2017.
 * Pacheco, Peter / Malensek, Matthew. ''An Introduction to Parallel Programming''. 2021, 2. edition. Morgan Kaufmann.
 * Robey, Robert / Zamora, Yuliana. ''Parallel and High Performance Computing''. 2021. Manning.
+
+
+Model and Tools:
+
+* [[Parallel programming model - wikipedia|https://en.wikipedia.org/wiki/Parallel_programming_model]]
+
+* Kasim, Henry / March, Verdi / Zhang, Rita / See, Simon. ''Survey on Parallel Programming Model''. 2008. IFIP International Federation for Information Processing.
+** 模型评估条件: (i) system architecture, (ii) programming methodologies, (iii) worker management, (iv) workload partitioning scheme, (v) task-to-worker mapping, (vi) synchronization, (vii) communication model.
+** 模型: Pthreads, OpenMP, MPI, UPC, Fortress, CUDA. 
+
+* Diaz, Javier / Munoz-Caro, Camelia / Nino, Alfonso. ''A survey of parallel programming models and tools in the multi and many-core era''. 2012. IEEE Transactions on parallel and distributed systems , Vol. 23, No. 8. IEEE. p. 1369-1386.
+** 并行编程模型分类: 
+*** pure parallel models: Pthreads, OpenMP, MPI.
+*** heterogeneous parallel programming models: CUDA, OpenCL, DirectCompute(Microsoft), Array Building Blocks(Intel).
+*** Partitioned Global Address Space(PGAS) model
+*** hybrid, shared-distributed memory + GPU models
+** 支持并行的语言: Java, High Performance Fortran(HPF), Cilk, Z-level Programming Language(ZPL), Erlang, Glasgow parallel Haskell(GpH)

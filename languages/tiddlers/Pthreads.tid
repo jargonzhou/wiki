@@ -1,0 +1,26 @@
+created: 20250211045613551
+creator: jargonzhou
+modified: 20250212093649173
+modifier: jargonzhou
+tags: [[Parallel Programming]]
+title: Pthreads
+
+<<<.tc-big-quote
+wikipedia:
+
+In computing, POSIX Threads, commonly known as pthreads, is an execution model that exists independently from a programming language, as well as a parallel execution model. It allows a program to control multiple different flows of work that overlap in time. Each flow of work is referred to as a thread, and creation and control over these flows is achieved by making calls to the POSIX Threads API. POSIX Threads is an API defined by the Institute of Electrical and Electronics Engineers (IEEE) standard POSIX.1c, Threads extensions (IEEE Std 1003.1c-1995).
+<<<
+
+! Terminology
+
+! Usage
+
+Actions:
+
+* `jupyter-notebooks/Concurrency and Parallel/Pthreads.ipynb`
+
+! References
+
+* [[Pthreads - wikipedia|https://en.wikipedia.org/wiki/Pthreads]]
+* [[POSIX.1-2024 - 14. Headers - pthread.h|https://pubs.opengroup.org/onlinepubs/9799919799/]]
+* [[pthreads(7) — Linux manual page|https://man7.org/linux/man-pages/man7/pthreads.7.html]]

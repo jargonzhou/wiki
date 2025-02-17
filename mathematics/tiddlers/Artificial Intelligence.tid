@@ -1,0 +1,25 @@
+created: 20250212041715580
+creator: jargonzhou
+modified: 20250212042312483
+modifier: jargonzhou
+tags: TableOfContents
+title: Artificial Intelligence
+
+<<<.tc-big-quote
+wikipedia:
+
+Artificial intelligence (AI), in its broadest sense, is ''intelligence exhibited by machines'', particularly computer systems. It is a field of research in computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximize their chances of achieving defined goals. Such machines may be called AIs.
+<<<
+
+! Terminology
+
+! Usage
+
+Actions:
+
+* Concept Map: `ConceptMap/Mathematics/Artificial Intelligence.cmap`.
+
+! References
+
+* [[Artificial intelligence - wikipedia|https://en.wikipedia.org/wiki/Artificial_intelligence]]
+* Russell, Stuart J. / Norvig, Peter. ''Artificial Intelligence: A Modern Approach''. 2021, 4. edition. Pearson.

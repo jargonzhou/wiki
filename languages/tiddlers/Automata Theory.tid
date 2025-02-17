@@ -1,6 +1,6 @@
 created: 20241209134812165
 creator: jargonzhou
-modified: 20241227052652224
+modified: 20250123013354414
 modifier: jargonzhou
 title: Automata Theory
 
@@ -22,6 +22,8 @@ Automata theory is closely related to ''formal language theory''. In this contex
 ! Automata Simulators
 
 > Well known automata simulators include Turing's World, JFLAP, VAS, TAGS and SimStudio.
+
+* [[JFLAP]]: Java Formal Languages and Automata Package
 
 ! References
 

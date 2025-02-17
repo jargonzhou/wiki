@@ -1,0 +1,33 @@
+created: 20250210015556802
+creator: jargonzhou
+modified: 20250210015956423
+modifier: jargonzhou
+tags: Infrastructure
+title: DevOps
+
+<<<.tc-big-quote
+DevOps is the integration and automation of the software development and information technology operations. 
+
+DevOps encompasses necessary tasks of software development and can lead to shortening development time and improving the development life cycle. 
+
+According to Neal Ford, DevOps, particularly through continuous delivery, employs the "Bring the pain forward" principle, tackling tough tasks early, fostering automation and swift issue detection. Software programmers and architects should use fitness function to keep their software in check.
+
+- wikipedia
+<<<
+
+! Terminology
+
+! Usage
+
+Action: 
+
+* Concept Map: `ConceptMap/application-store/DevOps.cmap`
+* `jupyter-notebooks/DevOps/Python_DevOps.ipynb`
+
+! References
+
+* [[DevOps - wikipedia|https://en.wikipedia.org/wiki/DevOps]]
+* Gift, Noah / Behrman, Kennedy / Deza, Alfredo / Gheorghiu, Grig. ''Python for DevOps''. O’Reilly Media: 2019.
+
+ 
+

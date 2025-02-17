@@ -1,11 +1,13 @@
 created: 20241227052137604
 creator: jargonzhou
-modified: 20241227052332310
+modified: 20250123013329369
 modifier: jargonzhou
 tags: [[Language Tools]]
 title: JFLAP
 
 <<<.tc-big-quote
+JFLAP: Java Formal Languages and Automata Package
+
 JFLAP is software for ''experimenting with formal languages topics including nondeterministic finite automata, nondeterministic pushdown automata, multi-tape Turing machines, several types of grammars, parsing, and L-systems'''. In addition to constructing and testing examples for these, JFLAP allows one to experiment with construction proofs from one form to another, such as converting an NFA to a DFA to a minimal state DFA to a regular expression or regular grammar. [[Click here|https://www.jflap.org/whatis.html]] for more information on what one can do with JFLAP.
 <<<
 
@@ -13,8 +15,18 @@ JFLAP is software for ''experimenting with formal languages topics including non
 
 ! Applications
 
-* action: https://github.com/jargonzhou/hack-modeling/blob/main/JFLAP/README.md
+actions: 
+
+* `jupyter-notebooks/Modeling/JFLAP/_JFLAP.ipynb`
+** Finite Automata
+** Context Free Grammar
+** Turning Machine
+* https://github.com/jargonzhou/jflap
+** Use JFLAP as a library
+
 
 ! References
 
 * [[Home|https://www.jflap.org/]]
+* [[JFLAP – An Interactive Formal Languages and Automata Package|https://www.jflap.org/jflapbook/jflapbook2006.pdf]]
+

@@ -1,0 +1,174 @@
+created: 20250121010645454
+creator: jargonzhou
+modified: 20250121051810752
+modifier: jargonzhou
+tags: TableOfContents
+title: Haskell
+
+<<<.tc-big-quote
+Haskell is a computer programming language. In particular, it is ''a polymorphically statically typed, lazy, purely functional language'', quite different from most other programming languages. The language is named for ''Haskell Brooks Curry'', whose work in mathematical logic serves as a foundation for functional languages. Haskell is based on the ''lambda calculus'', hence the lambda we use as a logo.
+<<<
+
+! Terminology
+
+! Usage
+
+!! GHCUP
+
+tui:
+
+```shell
+# text-based user interface
+ghcup tui
+# Windows: ghcup: thread blocked indefinitely in an STM transaction
+# Use Git Bash instead
+```
+
+```shell
+# list available ghc/cabal versions
+ghcup list
+
+# install the recommended GHC version
+ghcup install ghc
+
+# install a specific GHC version
+ghcup install ghc 8.2.2
+# with cache
+ghcup install hls 2.6.0.0 -c
+
+# set the currently "active" GHC version
+ghcup set ghc 8.4.4
+
+# install cabal-install
+ghcup install cabal
+
+# update ghcup itself
+ghcup upgrade
+```
+
+uninstall:
+
+```shell
+ghcup nuke
+```
+
+!! GHC
+
+!! Cabal
+
+<<<.tc-big-quote
+Cabal: Common Architecture for Building Applications and Libraries
+
+Cabal is a system for building and packaging Haskell libraries and programs. It defines a common interface for package authors and distributors to easily build their applications in a portable way. Cabal is part of a larger infrastructure for distributing, organizing, and cataloging Haskell libraries and programs.
+
+The term cabal can refer to either: ''cabal-the-spec'' (.cabal files), ''cabal-the-library'' (code that understands .cabal files), or ''cabal-the-tool'' (the cabal-install package which provides the cabal executable); usually folks are referring to cabal-the-tool when they say cabal.
+<<<
+
+
+
+example: `learning-haskell/effective-haskell/ch05-projects`
+
+!! Stack
+
+* [[Configuration files|https://docs.haskellstack.org/en/stable/configure/yaml/]]
+* [[hpack|https://github.com/sol/hpack]]: Hpack is a format for Haskell packages. It is a modern alternative to the Cabal package format and follows different design principles.
+
+`ERROR` stack commitAndReleaseBuffer: invalid argument (cannot encode character '\8226')
+
+`SOLUTION` Windows: 时间和语言 > 语言和区域 > 相关设置 管理语言设置 > 更改系统区域设置 > 勾选 Beta版 使用UTF-8 (需要重启电脑)
+
+```shell
+$ stack update # Update the package index.
+
+$ stack new <project-name> # Create a new project from a template.
+$ cd <project-name>
+$ stack setup # Get the appropriate GHC for your project.
+$ stack build # Build the package(s) in this directory/configuration
+
+$ stack repl # Run ghci in the context of package(s) (alias for 'ghci').
+$ stack exec # Execute a command. If the command is absent, the first of any arguments is taken as the command.
+$ stack test # Shortcut for 'build --test'
+
+# path
+$ stack path
+
+$ dependencies
+stack ls dependencies --help
+```
+
+! Tools
+
+Core:
+
+* [[ghcup|https://www.haskell.org/ghcup/]]: The Haskell toolchain installer
+* [[ghc|https://www.haskell.org/ghc/]]: The Glasgow Haskell Compiler
+** [[language extensions|https://downloads.haskell.org/ghc/latest/docs/users_guide/exts/table.html]]
+* [[cabal|https://www.haskell.org/cabal/]]: The Cabal build tool for managing Haskell software
+* [[stack|https://docs.haskellstack.org/en/stable/]]: A cross-platform program for developing Haskell projects (similar to cabal)
+** [[haskeleton|https://github.com/tfausak/haskeleton]]: This project is unmaintained! Haskeleton is now available as a Stack template. 
+* [[hls|https://github.com/haskell/haskell-language-server]]: A language server for developers to integrate with their editor/IDE
+
+VSCode:
+
+* [[Haskell for Visual Studio Code|https://marketplace.visualstudio.com/items?itemName=haskell.haskell]]
+** [[ghci-dap|https://github.com/phoityne/ghci-dap]]
+** [[haskell-debug-adapter|https://github.com/phoityne/haskell-debug-adapter]]
+
+```shell
+cabal install ghci-dap haskell-debug-adapter
+haskell-debug-adapter --version
+```
+
+* [[Ormolu|https://hackage.haskell.org/package/ormolu]]: Ormolu is a formatter for Haskell source code.
+
+```shell
+cabal install ormolu
+```
+
+* [[stylish-haskell|https://github.com/haskell/stylish-haskell]]: Haskell code prettifier.
+
+```shell
+cabal install stylish-haskell
+stylish-haskell --version
+```
+
+* [[IHaskell|https://github.com/IHaskell/IHaskell]]: A Haskell kernel for the Jupyter project.
+
+
+Others:
+
+* [[commercialhaskell/stackage-snapshots|https://github.com/commercialhaskell/stackage-snapshots]]: LTS Haskell and Stackage Nightly snapshot configurations (experimental, for pantry). `ghc-xxx`, `lts-xxx`
+** [[Stackage|https://www.stackage.org/]]: Stable Haskell package sets
+* [[Hackage|https://hackage.haskell.org/]]: The Haskell Package Repository
+** [[base|https://hackage.haskell.org/package/base]]: Core data structures and operations
+* [[Haddock|https://gitlab.haskell.org/ghc/ghc/-/tree/master/utils/haddock]]: the standard tool for generating documentation from Haskell code.
+** [[Haddocks for Libraries included with GHC|https://downloads.haskell.org/~ghc/latest/docs/html/libraries/index.html]]
+* [[haskell/process|https://github.com/haskell/process]]: Library for dealing with system processes.
+* [[Haskell Playground|https://play.haskell.org/]]
+* [[Hoogle API Search|http://www.haskell.org/hoogle/]]: Hoogle is a Haskell API search engine, which allows you to search the Haskell libraries on Stackage by either function name, or by approximate type signature.
+
+! References
+
+* [[Home|https://www.haskell.org/]]
+** [[Doc|https://www.haskell.org/documentation/]]
+** [[The Haskell 2010 language report|https://www.haskell.org/onlinereport/haskell2010/]]
+* [[wiki|https://wiki.haskell.org/]]
+** [[The Typeclassopedia|https://wiki.haskell.org/Typeclassopedia]]: The goal of this document is to serve as a starting point for the student of Haskell wishing to gain a firm grasp of its standard type classes. The essentials of each type class are introduced, with examples, commentary, and extensive references for further reading.
+* [[Code|https://github.com/haskell]]
+** [[GHC Proposals|https://github.com/ghc-proposals/ghc-proposals]]
+
+
+<!-- 
+Books:
+
+ebooks: https://github.com/clojurians-org/haskell-ebook
+
+Programming in Haskell: https://www.cs.nott.ac.uk/~pszgmh/pih.html
+
+Misc:
+
+FP Complete’s Haskell education hub: https://www.fpcomplete.com/haskell/learn/
+
+Functors, Applicatives, And Monads In Pictures: https://www.adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html
+
+-->

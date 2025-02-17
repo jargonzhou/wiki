@@ -1,6 +1,6 @@
 created: 20241216043136828
 creator: jargonzhou
-modified: 20241216044015601
+modified: 20250125023643509
 modifier: jargonzhou
 tags: [[Language Tools]]
 title: SDKMAN!
@@ -23,6 +23,12 @@ use Git Bash:
 
 ```shell
 $ sdk list java
+$ sdk install 21.0.5-tem
+$ sdk default java 17.0.9-tem
+
+$ sdk install ant
+$ sdk install maven
+$ sdk install gradle
 ```
 
 offline mode:

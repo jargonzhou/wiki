@@ -1,0 +1,270 @@
+created: 20250116042225791
+creator: jargonzhou
+modified: 20250121084530391
+modifier: jargonzhou
+tags: Infrastructure
+title: Docker
+
+<<<.tc-big-quote
+What is Docker?
+
+Accelerate how you build, share, and run applications
+
+Docker helps developers build, share, run, and verify applications anywhere — without tedious environment configuration or management.
+<<<
+
+! Terminology
+
+! Architecture
+
+[img[https://docs.docker.com/get-started/images/docker-architecture.webp]]
+
+!! Components
+
+* The Docker daemon
+
+The Docker daemon (`dockerd`) listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes.
+
+* The Docker client
+
+The Docker client (`docker`) is the primary way that many Docker users interact with Docker.
+
+* Docker Desktop
+
+Docker Desktop includes the Docker daemon (`dockerd`), the Docker client (`docker`), Docker Compose, Docker Content Trust, Kubernetes, and Credential Helper.
+
+* Docker registries
+
+A Docker registry stores Docker images.
+
+* Docker objects: Images, Containers
+
+When you use Docker, you are creating and using images, containers, networks, volumes, plugins, and other objects.
+
+An ''image'' is a read-only template with instructions for creating a Docker container.
+
+A ''container'' is a runnable instance of an image.
+
+!! The underlying technology
+
+Docker is written in the **Go** programming language and takes advantage of several features of the Linux kernel to deliver its functionality. Docker uses a technology called ''namespaces'' to provide the isolated workspace called the container. When you run a container, Docker creates a set of namespaces for that container.
+
+These namespaces provide a layer of isolation. Each aspect of a container runs in a separate namespace and its access is limited to that namespace.
+
+!! Releated Tools
+
+
+* [[Cobra|https://cobra.dev/]]: A Framework for Modern CLI Apps in Go.
+* [[containerd|https://containerd.io/]]: containerd is available as a daemon for Linux and Windows. It manages the complete container lifecycle of its host system, from image transfer and storage to container execution and supervision to low-level storage to network attachments and beyond.
+
+[img[https://containerd.io/img/architecture.png]]
+
+* [[runc|https://github.com/opencontainers/runc]]: CLI tool for spawning and running containers according to the OCI specification
+* [[docker-archive/libcontainer|https://github.com/docker-archive/libcontainer]]: PROJECT MOVED TO RUNC
+
+* [[GoogleContainerTools|https://github.com/GoogleContainerTools]]
+** [[GoogleContainerTools/distroless|https://github.com/GoogleContainerTools/distroless]]:  Language focused docker images, minus the operating system.
+
+* [[Portainer|https://docs.portainer.io/]]: Portainer hides the complexity of managing containers behind an easy-to-use UI. By removing the need to use the CLI, write YAML or understand manifests, Portainer makes deploying apps and troubleshooting problems so easy that anyone can do it.
+
+* [[IDEA Docker plugin|https://www.jetbrains.com/help/idea/docker.html]]: [[TLDR tutorial|https://www.cnblogs.com/wk-missQ1/p/16389412.html]]
+
+* [[slimtoolkit/slim|https://github.com/slimtoolkit/slim]]: Slim(toolkit): Don't change anything in your container image and minify it by up to 30x (and for compiled languages even more) making it secure too! (free and open source)
+
+! Usage
+
+!! References
+
+[[link|https://docs.docker.com/reference/]]
+
+* CLI reference
+* API reference
+* Build checks
+* COmpose file reference
+* Dockerfile reference
+
+!! 查看资源占用
+
+```shell
+# which can show disk usage and size of 'Build Cache'
+docker system df
+
+# add -f or --force to not prompt for confirmation
+docker image prune 
+docker container prune
+docker builder prune
+```
+
+!! 缩小容器镜像
+
+ref: 
+
+* [[Shrink Your Docker Images by 99%: Unveiling the Hidden Techniques You Can’t Afford to Miss|https://ismatbabir.medium.com/shrink-your-docker-images-by-99-unveiling-the-hidden-techniques-you-cant-afford-to-miss-8daab435ba3d]]
+* [[The Best Strategies to Slim Docker Images: How to Reduce Docker Image Size|https://semaphoreci.com/blog/reduce-docker-image-size]]
+
+镜像的区别:
+
+* 收拾好你的整个衣柜（Full Distribution Image）
+* 不带任何东西，在目的地购买所有东西（Scratch Image）
+* 仅打包你实际需要的内容（Distroless Image）
+
+
+多阶段 Dockerfile: for Python 
+
+* 构建阶段: 使用 PyInstaller 创建独立的可执行文件
+* 生产阶段: 从scratch镜像开始
+
+!! 结束容器
+
+ref [[Docker容器优雅退出|https://www.cnblogs.com/zhangmingcheng/p/18252004]]
+
+```shell
+# Linux信号
+
+docker stop
+docker kill
+docker rm
+```
+
+!! Docker Registry
+
+Tools:
+
+* [[hyper/docker-registry-web|https://hub.docker.com/r/hyper/docker-registry-web/]]
+* [[mkuchin/docker-registry-web|https://github.com/mkuchin/docker-registry-web/blob/master/web-app/WEB-INF/config.yml]]
+
+!! Docker Swarm Mode
+
+[[key concepts|https://docs.docker.com/engine/swarm/key-concepts/]]
+
+The cluster management and orchestration features embedded in Docker Engine are built using [[swarmkit|https://github.com/docker/swarmkit/]]. Swarmkit is a separate project which implements Docker's orchestration layer and is used directly within Docker.
+
+!! Windows WSL
+
+1. Windows Docker Desktop 修改默认镜像文件位置
+
+```powershell
+#1. 移动文件
+#2. 关闭Docker
+#3. 创建链接
+$ mklink /J C:\Users\zhouj\AppData\Local\Docker\wsl\data D:\docker\data
+为 C:\Users\zhouj\AppData\Local\Docker\wsl\data <<===>> D:\docker\data 创建的联接
+#4. 启动Docker
+#5. 验证
+$ docker images
+REPOSITORY                                                TAG                                                                          IMAGE ID       CREATED         SIZE
+openpolicyagent/opa                                       latest                                                                       10174a1ec5f6   39 hours ago    76.3MB
+...
+```
+
+2. Windows WSL2移动Ubuntu系统位置
+
+```powershell
+$ wsl --shutdown
+$ wsl --export Ubuntu-20.04 D:/wsl.tar
+正在导出，这可能需要几分钟时间。
+操作成功完成。
+$ wsl --unregister Ubuntu-20.04
+正在注销。
+操作成功完成。
+$ wsl --import Ubuntu-20.04 D:\wsl D:\wsl.tar --version 2
+正在导入，这可能需要几分钟时间。
+操作成功完成。
+$ wsl -l
+适用于 Linux 的 Windows 子系统分发:
+docker-desktop-data (默认)
+Ubuntu-20.04
+docker-desktop
+$ wsl -s Ubuntu-20.04
+操作成功完成。
+$ wsl -l
+适用于 Linux 的 Windows 子系统分发:
+Ubuntu-20.04 (默认)
+docker-desktop-data
+docker-desktop
+$ ubuntu2004.exe config --default-user zhoujiagen
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+$ wsl --unregister docker-desktop-data
+正在注销。
+操作成功完成。
+```
+
+3. Docker Desktop启动失败: WSL distro terminated abruptly
+
+```shell
+# 管理员权限执行
+$ netsh winsock reset
+```
+
+after:
+
+```shell
+$ wsl --list --running                                                                                        in cmd at 16:43:12
+适用于 Linux 的 Windows 子系统分发:
+Ubuntu-20.04 (默认)
+docker-desktop
+docker-desktop-data
+```
+
+!! OS
+
+!!! Ubuntu
+
+example with sysbench:
+
+```dockerfile
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+USER root
+RUN curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.deb.sh | bash
+RUN apt-get update && apt-get -y install sysbench
+```
+
+```dockerfile
+# Preventing prompt errors during package installation
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python3
+
+# Cleaning up package lists
+RUN DEBIAN_FRONTEND=noninteractive \
+  apt-get update \
+  && apt-get install -y python3 \
+  && rm -rf /var/lib/apt/lists/*
+
+# Run as non-root user
+RUN useradd -ms /bin/bash apprunner
+USER apprunner
+```
+
+!! Language Runtime
+
+!!! Python
+
+* [[docker-compose not printing stdout in Python app|https://stackoverflow.com/questions/51362213/docker-compose-not-printing-stdout-in-python-app/51362214]]
+
+```python
+# explict flush
+print("Hello? Anyone there?", flush=True)
+```
+
+```yaml
+# docker-compose.yaml
+    environment:
+      - PYTHONUNBUFFERED=1
+```
+
+```shell
+# with -u option
+# -u     : force the stdout and stderr streams to be unbuffered;
+#         this option has no effect on stdin; also PYTHONUNBUFFERED=x
+python -u <entrypoint.py>
+```
+
+! References
+
+* [[Doc|https://docs.docker.com/]]
+* 浙江大学SEL实验室. ''Docker容器与容器云''. 人民邮电出版社: 2016.
+* [[Docker CE|https://github.com/docker/docker-ce/blob/master/README.md]]
+* [[docker/cli|https://github.com/docker/cli]]
+* [[moby/moby|https://github.com/moby/moby]]
+* [[veggiemonk/awesome-docker|https://github.com/veggiemonk/awesome-docker]]: A curated list of Docker resources and projects

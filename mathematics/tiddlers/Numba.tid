@@ -1,0 +1,27 @@
+created: 20250210052203095
+creator: jargonzhou
+modified: 20250210053548256
+modifier: jargonzhou
+tags: [[Machine Learning]] NumPy Numba
+title: Numba
+
+<<<.tc-big-quote
+Numba: A Just-In-Time Compiler for Numerical Functions in Python
+
+Numba is an open source, NumPy-aware optimizing compiler for Python sponsored by Anaconda, Inc. It uses the LLVM compiler project to generate machine code from Python syntax.
+
+Numba can compile a large subset of numerically-focused Python, including many NumPy functions. Additionally, Numba has support for automatic parallelization of loops, generation of GPU-accelerated code, and creation of ufuncs and C callbacks.
+<<<
+
+! Terminology
+
+! Usage
+
+Action:
+
+* `jupyter-notebooks/DataEngineering/_DataScience/tools/numpy/_Numba.ipynb` `TOUCH`
+
+! References
+
+* [[Home|https://numba.pydata.org/]]
+* [[Code|https://github.com/numba/numba]]

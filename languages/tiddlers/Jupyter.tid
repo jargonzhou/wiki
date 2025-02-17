@@ -1,6 +1,6 @@
 created: 20241223053510988
 creator: jargonzhou
-modified: 20250111090157310
+modified: 20250121015125944
 modifier: jargonzhou
 tags: [[Language Tools]]
 title: Jupyter
@@ -116,53 +116,35 @@ conda install -c conda-forge jupyterlab jupyter_console m2w64-gcc m2w64-zeromq
 (cl-jupyter:install)
 ```
 
-    ➜  ~ jupyter-labextension install jupyterlab-debugger-restarts
-
+```shell
+jupyter-labextension install jupyterlab-debugger-restarts
+```
 
 !! Go
 
 * [[gophernotes|https://github.com/gopherdata/gophernotes]]: The Go kernel for Jupyter notebooks and nteract. - latest version 0.7.5 2022-06-01
-
-```shell
-# docker run -it -p 8888:8888 -v /path/to/local/notebooks:/path/to/notebooks/in/docker gopherdata/gophernotes
-$ docker run -it -p 8888:8888 -v d:\workspace\golang\notebook\:/notebook gopherdata/gophernotes
-Unable to find image 'gopherdata/gophernotes:latest' locally
-latest: Pulling from gopherdata/gophernotes
-a44d943737e8: Pull complete
-024d26bc1a42: Pull complete
-5333591451a2: Pull complete
-Digest: sha256:1dd8362f791f4ae1f0c5b31a284c918e7c787d92ca0b9350a582137f9a688195
-Status: Downloaded newer image for gopherdata/gophernotes:latest
-[I 02:14:02.642 NotebookApp] Writing notebook server cookie secret to /root/.local/share/jupyter/runtime/notebook_cookie_secret
-[I 02:14:03.432 NotebookApp] Serving notebooks from local directory: /
-[I 02:14:03.432 NotebookApp] The Jupyter Notebook is running at:
-[I 02:14:03.432 NotebookApp] http://(2668df4cf3f1 or 127.0.0.1):8888/?token=4cda8a93fc0275f6f222911c2667e2d9c235a4135a3c9ccd
-[I 02:14:03.432 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 02:14:03.437 NotebookApp]
-
-    To access the notebook, open this file in a browser:
-        file:///root/.local/share/jupyter/runtime/nbserver-1-open.html
-    Or copy and paste one of these URLs:
-        http://(2668df4cf3f1 or 127.0.0.1):8888/?token=4cda8a93fc0275f6f222911c2667e2d9c235a4135a3c9ccd
-```
-
 * [[GoNB|https://github.com/janpfeifer/gonb]] - latest version 0.10.6 2024-10
 ** [[tutorial|https://github.com/janpfeifer/gonb/blob/main/examples/tutorial.ipynb]]
-** MacOS:
+** Windows: use WSL `~/.local/share/jupyter/kernels/gonb/kernel.json`
+** MacOS
 
-```shell
-go install github.com/janpfeifer/gonb@latest && \
-  go install golang.org/x/tools/cmd/goimports@latest && \
-  go install golang.org/x/tools/gopls@latest
+!! Haskell
 
-gonb --install
-I1026 22:29:10.291006   13307 install.go:121] [3365839d] Go (gonb) kernel configuration installed in "/Users/zhang/Library/Jupyter/kernels/gonb/kernel.json".
-```
+* [[IHaskell|https://github.com/IHaskell/IHaskell]]: A Haskell kernel for the Jupyter project.
 
 !! Java
 
 * [[Ganymede|https://github.com/allen-ball/ganymede]]: The Ganymede Kernel is a Jupyter Notebook Java kernel based on the Java Shell tool, JShell.
 * [[JJava|https://github.com/dflib/jjava]]: JJava is an evolution of the earlier IJava kernel, that is no longer maintained by its authors.
+
+!! OCaml
+
+* [[OCaml Jupyter|https://github.com/akabe/ocaml-jupyter]]: An OCaml kernel for Jupyter (IPython) notebook
+
+```shell
+# windows WSL
+/home/zhoujiagen/.local/share/jupyter/kernels/ocaml-jupyter-default
+```
 
 
 !! Rust

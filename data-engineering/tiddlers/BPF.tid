@@ -1,0 +1,39 @@
+created: 20250212050348287
+creator: jargonzhou
+modified: 20250213021436266
+modifier: jargonzhou
+tags: [[System Performance]]
+title: BPF
+
+<<<.tc-big-quote
+eBPF, also commonly referred to as BPF, is a technology with origins in the Linux kernel that can run untrusted programs in a privileged context such as an operating system kernel.
+<<<
+
+! Terminology
+
+* [[BCC|https://github.com/iovisor/bcc]]: BPF Compiler Collection. `libbcc`.
+* BPF: Berkeley Packet Filter. `libbpf`.
+* [[bpftrace|https://github.com/iovisor/bpftrace]]: a newer front end that provides a special-purpose, high-level language for developing BPF tools.
+* BTF: BPF Type Format. 
+* eBPF: extended BPF.
+* XDP: eXpress Data Path.
+
+! Architecture
+
+[[more|https://docs.cilium.io/en/latest/reference-guides/bpf/architecture/]]
+
+! Usage
+
+! Applications
+
+* [[Cilium|https://cilium.io/]]: Cilium is an open source, cloud native solution for providing, securing, and observing network connectivity between workloads, fueled by the revolutionary Kernel technology eBPF.
+
+! References
+
+* [[eBPF - wikipedia|https://en.wikipedia.org/wiki/EBPF]]
+* [[BPF Document|https://docs.kernel.org/bpf/]]
+
+Books:
+
+* Calavera, David / Fontana, Lorenzo. ''Linux Observability with BPF''. 2019. O’Reilly Media.
+* Gregg, Brendan. ''BPF Performance Tools''. 2020. Pearson Education.

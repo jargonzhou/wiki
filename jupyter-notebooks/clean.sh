@@ -12,6 +12,9 @@ find . -depth -name '.venv' -type d -print -exec rm -r {} +
 chmod +x CommonLisp/clean.sh
 CommonLisp/clean.sh
 
+chmod +x Java/clean.sh
+Java/clean.sh
+
 chmod +x Scala/clean.sh
 Scala/clean.sh
 
@@ -20,5 +23,8 @@ Compiler/clean.sh
 
 chmod +x DataEngineering/clean.sh
 DataEngineering/clean.sh
+
+chmod +x OCaml/clean.sh
+OCaml/clean.sh
 
 echo "Done"
