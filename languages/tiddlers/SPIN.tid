@@ -1,6 +1,6 @@
 created: 20241209133928401
 creator: jargonzhou
-modified: 20250215063725229
+modified: 20250219031446302
 modifier: jargonzhou
 tags: [[Model Checking]]
 title: SPIN
@@ -19,6 +19,7 @@ Spin is a widely used open-source software verification tool. The tool can be us
 * LTL: Linear Temporal Logic
 * pan: for ''p''rotocol ''an''alyzer.
 * PROMELA: ''PRO''cess ''ME''ta ''LA''nguage
+* SPIN: ''S''imple ''P''ROMELA ''In''terpreter
 
 ! Usage
 
