@@ -1,6 +1,6 @@
 created: 20241216081949174
 creator: jargonzhou
-modified: 20241216082641821
+modified: 20250329065945739
 modifier: jargonzhou
 tags: [[Data Engineering Tools]]
 title: Apache RocketMQ
@@ -30,52 +30,296 @@ It offers a variety of features:
 * Lightweight real-time computing
 <<<
 
-! Terminology
-
 ! Domain Model
-
-Domain model of Apache RocketMQ:
 
 [img[https://rocketmq.apache.org/assets/images/mainarchi-9b036e7ff5133d050950f25838367a17.png]]
 
-Communication model:
+!! 消息生产
+!!! 生产者(Producer)
+
+生产者内部属性:
+
+* 客户端ID: SDK自动生成, 集群内全局唯一.
+* 通信参数
+* 预绑定主题列表
+* 事务检查器
+* 发送重试策略
+* 生产者分组: 5.x中无需管理.
+
+!! 消息存储
+!!! 主题(Topic)
+消息传输和存储的分组容器, 由多个队列构成. 
+
+主题内部属性:
+
+* 主题名称
+* 队列列表
+* 消息类型: 普通消息Normal, 顺序消息FIFO, 定时/延时消息Delay, 事务消息Transaction.
+
+!!! 队列(MessageQueue)
+消息传输和存储的实际单元容器, 流式的无限队列结构, 消息在队里中顺序性存储.
+
+!!! 消息(Message)
+最小传输单元, 具有不可变性.
+
+消息内部属性:
+
+* 主题名称: 集群内全局唯一.
+* 消息类型: 普通消息Normal, 顺序消息FIFO, 定时/延时消息Delay, 事务消息Transaction.
+* 消息队列: 实际存储该消息的队列.
+* 消息位点: 该消息在队列中的位置.
+* 消息ID: 集群内每条消息的ID全局唯一, 由生产者客户端自动生成
+* 索引Key列表(可选): 消息的索引键, 由生产者定义.
+* 过滤标签Tag(可选): 一条消息仅支持设置一个标签, 消费者通过Tag对消息过滤仅接收指定标签的消息. 由生产者定义.
+* 定时时间(可选): 消息延时透气的毫秒级时间戳. 由生产者定义. 最大40天.
+* 消息保存时间戳, 服务端完成存储时的本地毫秒级时间戳. 在定时消息和事务消息中指消息对消费者可见的服务端时间.
+* 消息重试次数: 消息消费失败后, 服务端重新投递的次数.
+* 业务自定义属性: 自定义设置的字符串键值对扩展信息.
+* 消息负载: 业务数据, 按二进制字节传输. 最大限制: 普通和顺序消息 4MB, 事务和定时/延时消息 64 KB.
+
+!! 消息消费
+!!! 消费者(Consumer): 消费消息的实体, 必须指定到一个消费者分组中.
+
+消费者内部属性:
+
+* 消费者分组名称
+* 客户端ID
+* 通信参数
+* 预绑定订阅关系
+* 消息监听器: PushConsumer必须设置.
+
+!!! 消费者分组(ConsumerGroup): 用于统一管理底层的多个消费者. 同一组中的消费者必须保持消费逻辑和配置一致.
+
+消费者分组内部属性:
+
+* 消费者分组名称
+* 投递顺序性: 顺序投递, 并发投递.
+* 消费重试策略: 最大重试次数, 重试间隔.
+* 订阅关系: 主题, 消息的过滤规则.
+
+!!! 订阅关系(Subscription): 以消费者组粒度管理, 用于消息过滤, 重试和消费进度的规则配置. 除过滤表达式之外都是持久化的.
+
+订阅关系内部属性:
+
+* 过滤类型: TAG过滤, SQL92过滤.
+* 过滤表达式.
+
+!! Communication model
 
 1. RPC-based synchronous model
-[img[https://rocketmq.apache.org/assets/images/syncarchi-ebbd41e1afd6adf432792ee2d7a91748.png]]
+
 2. Asynchronous communication model
-[img[https://rocketmq.apache.org/assets/images/asyncarchi-e7ee18dd77aca472fb80bb2238d9528b.png]]
 
-Message transmission model
+!! Message transmission model
 
-1. Point-to-point model
-[img[https://rocketmq.apache.org/assets/images/p2pmode-fefdc2fbe4792e757e26befc0b3acbff.png]]
+1. Point-to-point model: 共享队列中的每一条消息只会被唯一一个消费者处理.
 
-2. Publish/subscribe model
-[img[https://rocketmq.apache.org/assets/images/pubsub-042a4e5e5d76806943bd7dcfb730c5d5.png]]
+2. Publish/subscribe model: 同一主题中的每一条消息被所有消费者处理.
+
+! Feature
+
+!! 普通消息
+对消息的处理时机和处理顺序没有特别要求的场景.
+
+MessageType=Normal
+
+生命周期:
+
+* 初始化: 消息被生产者构建, 待发送到服务端.
+* 待消费: 消息被发送到服务带, 对消费者可见, 待消费者消费.
+* 消费中: 消息被消费者获取并处理中. 服务端会等待消费者提交消费结果, 如果一段时间内没收到消费者响应会消息重试.
+* 消费提交: 消费者向服务端提交消费结果, 服务端标记消息被处理(消费成功或失败), 消息在保存时间到期或存储空间不足之前不会被删除.
+* 消息删除: 服务端按照消息存储和清理机制滚动清理最早的消息, 将消息物理删除.
+
+!! 定时/延时消息
+
+应用场景: 分布式定时调度, 任务超时处理.
+
+定时时间格式为毫秒级的Unix时间戳, 最大24小时. 默认为秒级精度.
+
+生命周期:
+
+* 初始化
+* 定时中: 服务端不会立即构建消息索引, 而是将定时消息存在在定时存储系统中, 等待时刻到达.
+* 待消费: 定时时刻到达后, 服务端将消息写入普通存储引擎, 对消费者可见.
+* 消费中
+* 消费提交
+* 消息删除
+
+!! 顺序消息
+
+应用场景: 有序事件处理, 撮合交易(对出价相同的交易单按先出价先交易原则处理), 数据实时增量同步.
+
+MessageType=FIFO
+
+保证:
+
+* 生产顺序性
+** 条件: 单一生产者, 串行发送.
+** 服务端顺序存储: 相同''消息组(MessageGroup)''的消息按先后存储存储在同一个队列中, 不同消息组的消息混合在同一个队列中且不保证连续性.
+* 消费顺序性
+** 条件: 投递顺序(消费者按照接收-处理-应答的语义处理消息), 有限重试(超过最大重试次数后将不再重试, 会跳过这条消息消费).
+
+
+生命周期:
+
+* 初始化
+* 待消费
+* 消费中: 消费失败或超时, 服务端重试的消息属于新消息, 原消息的生命周期已结束.
+* 消费提交
+* 消息删除
+
+!! 事务消息
+
+应用场景: 分布式事务消息(支持最终一致性)
+
+保证消息生产和本地事务的最终一致性.
+
+MessageType=Transaction.
+
+流程: [img[https://rocketmq.apache.org/zh/assets/images/transflow-0b07236d124ddb814aeaf5f6b5f3f72c.png]]
+
+* 1. 生产者将消息发送至服务端.
+* 2. 服务端将消息持久化成功后, 向生产者返回ACK确认, 标记消息为'暂不能投递'(半事务消息).
+* 3. 生产者开始执行本地事务逻辑.
+* 4. 生产者根据本地事务执行结果向服务端提交二次确认结果(Commit或Rollback):
+** Commit: 服务端将消息标记为'可投递', 并投递给消费者.
+** Rollback: 服务端回滚事务, 不将'暂不能投递'消息投递给消费者.
+* 5. 如果在一段时间后, 服务端未收到发送者提交的二次确认结果或收到的二次确认结果为Unknown状态, 服务端对生产者集群中任一实例发起消息回查(参数: 回查的时间间隔和最大回查次数).
+* 6. 生产者收到消息回查后, 需要检查消息对应的本地事务执行的最终结果.
+* 7. 生产者根据查到的本地事务的最终状态再次提交二次确认, 服务端继续步骤4中的处理.
+
+生命周期:
+
+* 初始化: 生产者构建半事务消息, 待发送到服务端.
+* 事务待提交: 服务端将半事务消息存储到事务存储系统中, 等待第二阶段本地事务返回执行结果后再提交. 消息对消费者不可见.
+* 消息回滚: 第二阶段事务执行结果为Rollback, 服务端将半事务消息回滚, 该消息生命周期终止.
+* 提交待消费: 第二阶段事务执行结果为Commit, 服务端将消息存储到普通存储系统中, 消息对消费者可见.
+* 消费中
+* 消费提交
+* 消息删除
+
+!! 消息发送重试和流控机制
+
+客户端SDK中内置请求重试逻辑: 同步发送和异步发送模式均支持. (事务消息只会进行gRPC的透明重试transparent retries, 在网络超时或异常场景中不会进行重试)
+
+指数退避算法参数:
+
+* INITIAL_BACKOFF: 第一次重试失败前后等待时间, 默认1秒.
+* MULTIPLIER: 退避倍率, 默认1.6.
+* JITTER: 随机抖动因子, 默认0.2.
+* MAX_BACKOFF: 等待间隔时间上限, 默认120秒.
+* MIN_CONNECT_TIMEOUT: 最短重试间隔, 默认20秒.
+
+消息流控: 系统水位过高, 服务端通过快速失败返回流控错误.
+
+触发条件: 
+
+* 消费者回溯到指定时刻前开始消费, 造成队列存储压力, 触发消息流控.
+* 队列中堆积消息超过一定数量后触发, 以减少消费者压力.
+
+
+!! 消费者分类
+
+* PushConsumer: 消费者在监听器范围内处理消息, 由监听器回调接口返回消费结果.
+** 由SDK管理消费并发度.
+** 长轮询线程, 先异步拉取消息到内置的缓存队列中, 再分别提交到消费线程中, 触发监听器执行.
+* SimpleConsumer: 消费者自行实现消息拉取和处理, 主动调用接口返回消费结果.
+** 由消费逻辑管理消费线程.
+* PullConsumer: 消费者按队列拉取消息, 选择性的提交消费结果.
+** 由消费逻辑管理消费线程.
+
+!! 消息过滤
+
+目的: 在服务端将符合条件的消息投递给消费者.
+
+流程:
+
+* 生产者在初始化消息时设置一些属性和标签.
+* 消费者在初始化和后续消费流程中向服务端注册订阅关系, 指定过滤条件.
+* 服务端根据消费者注册的订阅关系中过滤条件进行匹配, 将符合条件的消息投递给消费者.
+
+分类:
+
+* Tag标签过滤
+** 规则: 单Tag匹配, 多Tag匹配`||`, 全部匹配`*`
+* SQL属性过滤: 消息的属性包括用户自定义属性和系统属性(Tag标签是一种系统属性 `TAGS`)
+** SQL92语法: `IS NULL`, `IS NOT NULL`, `>`, `>=`, `<`, `<=`, `BETWEEN AND`, `NOT BETWEEN AND`, `IN`, `=`, `<>`, `AND`, `OR`
+
+!! 消费者负载均衡
+
+策略:
+
+* 消息粒度: PushConsumer, SimpleConsumer.
+** 同一个消费者分组中的多个消费者按照消息粒度分摊主题中的所有消息, 同一个队列中的消息被平均分配给多个消费者消费.
+* 队列粒度: PullConsumer.
+** 同一个消费者分组中的多个消费者按照队列粒度消费消息, 每个队列仅被一个消费者消费.
+
+!! 消费进度管理
+
+通过消费位点管理消费进度.
+
+* 消息位点Offset
+* 消费位点ConsumerOffset: 服务端未每个消费者分组维护一份消费记录, 制订了消费者分组消费某一个队列时消费过的最新一条消息的位点.
+
+!! 消费重试
+
+消费重试: 消费者在消费某条消息失败后, 服务端根据重试策略重新消费该消息, 超过一定次数后如还未消费成功, 则不再继续重试而直接将消息发送到死信队列.
+
+推荐重试场景:
+
+* 业务处理失败, 且失败原因跟消息内容无关, 预期一段时间后可处理成功.
+* 当前消息消费失败是一个小概率事件, 后面的消息大概率会消费成功.
+
+!! 消息存储和清理机制
+
+按''存储节点''管理消息的存储时长, 而不是主题或队列粒度管理. - 使用统一的物理日志队列和逻辑队列的二级组织方式, 不支持按主题和队列单独管理.
+
+使用''消息的生产时间''作为判断依据, 而不是消息数量或消息大小的条件.
+
+清理机制: 消息的存储时长过, 或本地磁盘空间不足.
 
 ! Architecture
 
-
-Overview
+!! Overview
 [img[https://yqintl.alicdn.com/89b22248b52a4b4de4c01824f2329ae5551ec8e3.png]]
 
-Service Discovery
+组件:
+
+* Namesrv
+* Broker
+* Controller: since 5.0.0
+** electing broker master
+* proxy: since 5.0.0
+** connect to Namesrv to query topic route(topic-queue-broker).
+** new client access through to proxy to send and subscribe message.
+** can be deployed with broker.
+* new client: since 5.0.0
+
+!! Service Discovery
 [img[https://yqintl.alicdn.com/6cf585f664e509179a4aa3121a1e2f356e01e352.png]]
 
-Load Balancing
+!! Load Balancing
 [img[https://yqintl.alicdn.com/d4de18953f50a70d17876a4f842e3b23c2198990.png]]
 [img[https://yqintl.alicdn.com/7e15e3486bd4fd2fae75eb58b8838145c1717b4e.png]]
 [img[https://yqintl.alicdn.com/1d5c75422b3e9566f6eeee97fbddc599596cdee6.png]]
 
-Storage System
+!! Storage System
 [img[https://yqintl.alicdn.com/688836ad499b3074f0c1a9a6cc0a5f241d16324c.png]]
 
-Topic High Availability
+!! Topic High Availability
 [img[https://yqintl.alicdn.com/163b4feba645afb563463801f3a6216325db531c.png]]
 
+! Usage
+
+Actions:
+
+* https://github.com/jargonzhou/application-store/tree/main/data-engineering/rocketmq
+* https://github.com/jargonzhou/workbench/tree/main/DataEngineering/codes/data-engineering-java/rocketmq
 
 ! References
 
-- [[Home|https://rocketmq.apache.org/]]
-- [[Code|https://github.com/apache/rocketmq]]
+* [[Home|https://rocketmq.apache.org/]]
+* [[Code|https://github.com/apache/rocketmq]]
+* [[RocketMQ 5.0 VS 4.9.X: Comparison of Architecture Diagram|https://www.alibabacloud.com/blog/rocketmq-5-0-vs-4-9-x-comparison-of-architecture-diagram_600742]] - 2024-01-09
 * [[RocketMQ 5.0 Architecture Analysis: How to Support Diversified Scenarios Based on Cloud-native Architecture|https://www.alibabacloud.com/blog/rocketmq-5-0-architecture-analysis-how-to-support-diversified-scenarios-based-on-cloud-native-architecture_600564]] - 2023-11-20
